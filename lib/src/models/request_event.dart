@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -21,15 +22,15 @@ class RequestEvent extends NetworkEvent with _$RequestEvent {
   factory RequestEvent.fromJson(Map<String, dynamic> json) =>
       _$RequestEventFromJson(json);
 
-  // @override
-  // String get name => 'http-request';
+  @override
+  bool get hasBody => body != null && body!.isNotEmpty;
 
-  // @override
-  // Map<String, dynamic> get arguments => {
-  //       "uid": uid,
-  //       "url": url,
-  //       "method": method,
-  //       "headers": headers,
-  //       "body": body
-  //     };
+  @override
+  Map<String, dynamic> get jsonBody =>
+      !hasBody ? {} : jsonDecode(String.fromCharCodes(body!));
+
+  @override
+  String toShortSummary() {
+    return 'RequestEvent :: uid:$uid, url:$url';
+  }
 }

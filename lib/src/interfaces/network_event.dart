@@ -6,25 +6,8 @@ import 'package:json_annotation/json_annotation.dart';
 import 'session_event.dart';
 
 abstract class NetworkEvent extends SessionEvent {
-  bool get hasBody => false;
-  Map<String, dynamic> get jsonBody => {};
-
-  // String get name;
-  // Map<String, dynamic> get arguments;
-
-  // bool get hasBody {
-  //   if (arguments['body'] == null || arguments['body'].isEmpty) {
-  //     return false;
-  //   }
-
-  //   return true;
-  // }
-
-  // Map<String, dynamic> get jsonBody {
-  //   if (!hasBody) return {};
-
-  //   return jsonDecode(String.fromCharCodes(arguments['body']));
-  // }
+  bool get hasBody;
+  Map<String, dynamic> get jsonBody;
 }
 
 class BodyBytesConverter
