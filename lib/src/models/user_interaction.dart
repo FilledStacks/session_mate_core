@@ -1,12 +1,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:session_mate_core/src/enums/interaction_type.dart';
+import 'package:session_mate_core/src/interfaces/session_event.dart';
 import 'package:session_mate_core/src/models/tap_position.dart';
 
 part 'user_interaction.freezed.dart';
 part 'user_interaction.g.dart';
 
 @freezed
-class UserInteraction with _$UserInteraction {
+class UserInteraction with _$UserInteraction implements SessionEvent {
   UserInteraction._();
 
   factory UserInteraction({
