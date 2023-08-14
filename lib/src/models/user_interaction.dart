@@ -21,4 +21,9 @@ class UserInteraction with _$UserInteraction implements SessionEvent {
 
   String get automationKey =>
       '${type.name}_${position.x.toStringAsPrecision(3).replaceAll('.', '')}_${position.y.toStringAsPrecision(3).replaceAll('.', '')}}';
+
+  @override
+  String toShortSummary() {
+    return 'UserInteraction :: type:$type, position:$position';
+  }
 }
