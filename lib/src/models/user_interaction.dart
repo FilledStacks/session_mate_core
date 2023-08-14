@@ -1,19 +1,20 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hive/hive.dart';
 import 'package:session_mate_core/src/enums/interaction_type.dart';
-import 'package:session_mate_core/src/interfaces/session_event.dart';
 import 'package:session_mate_core/src/models/tap_position.dart';
 
 part 'user_interaction.freezed.dart';
 part 'user_interaction.g.dart';
 
 @freezed
-class UserInteraction with _$UserInteraction implements SessionEvent {
+class UserInteraction extends HiveObject with _$UserInteraction {
   UserInteraction._();
 
+  @HiveType(typeId: 1)
   factory UserInteraction({
-    required TapPosition position,
-    required InteractionType type,
-    String? inputData,
+    @HiveField(0) required TapPosition position,
+    @HiveField(1) required InteractionType type,
+    @HiveField(2) String? inputData,
   }) = _UserInteraction;
 
   factory UserInteraction.fromJson(Map<String, dynamic> json) =>

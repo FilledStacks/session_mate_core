@@ -20,7 +20,9 @@ TapPosition _$TapPositionFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TapPosition {
+  @HiveField(0)
   double get x => throw _privateConstructorUsedError;
+  @HiveField(1)
   double get y => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -35,7 +37,7 @@ abstract class $TapPositionCopyWith<$Res> {
           TapPosition value, $Res Function(TapPosition) then) =
       _$TapPositionCopyWithImpl<$Res, TapPosition>;
   @useResult
-  $Res call({double x, double y});
+  $Res call({@HiveField(0) double x, @HiveField(1) double y});
 }
 
 /// @nodoc
@@ -75,7 +77,7 @@ abstract class _$$_TapPositionCopyWith<$Res>
       __$$_TapPositionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double x, double y});
+  $Res call({@HiveField(0) double x, @HiveField(1) double y});
 }
 
 /// @nodoc
@@ -107,15 +109,19 @@ class __$$_TapPositionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TapPosition implements _TapPosition {
-  _$_TapPosition({required this.x, required this.y});
+@HiveType(typeId: 2)
+class _$_TapPosition extends _TapPosition {
+  _$_TapPosition({@HiveField(0) required this.x, @HiveField(1) required this.y})
+      : super._();
 
   factory _$_TapPosition.fromJson(Map<String, dynamic> json) =>
       _$$_TapPositionFromJson(json);
 
   @override
+  @HiveField(0)
   final double x;
   @override
+  @HiveField(1)
   final double y;
 
   @override
@@ -150,16 +156,20 @@ class _$_TapPosition implements _TapPosition {
   }
 }
 
-abstract class _TapPosition implements TapPosition {
-  factory _TapPosition({required final double x, required final double y}) =
-      _$_TapPosition;
+abstract class _TapPosition extends TapPosition {
+  factory _TapPosition(
+      {@HiveField(0) required final double x,
+      @HiveField(1) required final double y}) = _$_TapPosition;
+  _TapPosition._() : super._();
 
   factory _TapPosition.fromJson(Map<String, dynamic> json) =
       _$_TapPosition.fromJson;
 
   @override
+  @HiveField(0)
   double get x;
   @override
+  @HiveField(1)
   double get y;
   @override
   @JsonKey(ignore: true)

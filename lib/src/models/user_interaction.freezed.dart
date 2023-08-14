@@ -20,8 +20,11 @@ UserInteraction _$UserInteractionFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserInteraction {
+  @HiveField(0)
   TapPosition get position => throw _privateConstructorUsedError;
+  @HiveField(1)
   InteractionType get type => throw _privateConstructorUsedError;
+  @HiveField(2)
   String? get inputData => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,7 +39,10 @@ abstract class $UserInteractionCopyWith<$Res> {
           UserInteraction value, $Res Function(UserInteraction) then) =
       _$UserInteractionCopyWithImpl<$Res, UserInteraction>;
   @useResult
-  $Res call({TapPosition position, InteractionType type, String? inputData});
+  $Res call(
+      {@HiveField(0) TapPosition position,
+      @HiveField(1) InteractionType type,
+      @HiveField(2) String? inputData});
 
   $TapPositionCopyWith<$Res> get position;
 }
@@ -91,7 +97,10 @@ abstract class _$$_UserInteractionCopyWith<$Res>
       __$$_UserInteractionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({TapPosition position, InteractionType type, String? inputData});
+  $Res call(
+      {@HiveField(0) TapPosition position,
+      @HiveField(1) InteractionType type,
+      @HiveField(2) String? inputData});
 
   @override
   $TapPositionCopyWith<$Res> get position;
@@ -131,19 +140,25 @@ class __$$_UserInteractionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: 1)
 class _$_UserInteraction extends _UserInteraction {
   _$_UserInteraction(
-      {required this.position, required this.type, this.inputData})
+      {@HiveField(0) required this.position,
+      @HiveField(1) required this.type,
+      @HiveField(2) this.inputData})
       : super._();
 
   factory _$_UserInteraction.fromJson(Map<String, dynamic> json) =>
       _$$_UserInteractionFromJson(json);
 
   @override
+  @HiveField(0)
   final TapPosition position;
   @override
+  @HiveField(1)
   final InteractionType type;
   @override
+  @HiveField(2)
   final String? inputData;
 
   @override
@@ -183,19 +198,22 @@ class _$_UserInteraction extends _UserInteraction {
 
 abstract class _UserInteraction extends UserInteraction {
   factory _UserInteraction(
-      {required final TapPosition position,
-      required final InteractionType type,
-      final String? inputData}) = _$_UserInteraction;
+      {@HiveField(0) required final TapPosition position,
+      @HiveField(1) required final InteractionType type,
+      @HiveField(2) final String? inputData}) = _$_UserInteraction;
   _UserInteraction._() : super._();
 
   factory _UserInteraction.fromJson(Map<String, dynamic> json) =
       _$_UserInteraction.fromJson;
 
   @override
+  @HiveField(0)
   TapPosition get position;
   @override
+  @HiveField(1)
   InteractionType get type;
   @override
+  @HiveField(2)
   String? get inputData;
   @override
   @JsonKey(ignore: true)
