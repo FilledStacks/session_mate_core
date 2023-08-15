@@ -2,21 +2,26 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hive/hive.dart';
 import 'package:session_mate_core/src/interfaces/network_event.dart';
+import 'package:session_mate_core/src/shared/session_event_shared.dart';
 
 part 'request_event.freezed.dart';
 part 'request_event.g.dart';
 
 @freezed
-class RequestEvent extends NetworkEvent with _$RequestEvent {
+class RequestEvent extends HiveObject
+    with _$RequestEvent
+    implements NetworkEvent {
   RequestEvent._();
 
+  @HiveType(typeId: 3)
   factory RequestEvent({
-    required String uid,
-    required String url,
-    required String method,
-    required Map<String, String> headers,
-    @BodyBytesConverter() Uint8List? body,
+    @HiveField(0) required String uid,
+    @HiveField(1) required String url,
+    @HiveField(2) required String method,
+    @HiveField(3) required Map<String, String> headers,
+    @HiveField(4) @BodyBytesConverter() Uint8List? body,
   }) = _RequestEvent;
 
   factory RequestEvent.fromJson(Map<String, dynamic> json) =>
@@ -30,7 +35,7 @@ class RequestEvent extends NetworkEvent with _$RequestEvent {
       !hasBody ? {} : jsonDecode(String.fromCharCodes(body!));
 
   @override
-  String toShortSummary() {
-    return 'RequestEvent :: uid:$uid, url:$url';
+  String toString() {
+    return '$kRequestSessionEvent :: uid:$uid, url:$url';
   }
 }

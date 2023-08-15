@@ -3,6 +3,59 @@
 part of 'response_event.dart';
 
 // **************************************************************************
+// TypeAdapterGenerator
+// **************************************************************************
+
+class ResponseEventAdapter extends TypeAdapter<_$_ResponseEvent> {
+  @override
+  final int typeId = 4;
+
+  @override
+  _$_ResponseEvent read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return _$_ResponseEvent(
+      uid: fields[0] as String,
+      timeMs: fields[1] as int,
+      code: fields[2] as int,
+      headers: (fields[3] as Map).cast<String, String>(),
+      error: fields[4] as String?,
+      body: fields[5] as Uint8List?,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, _$_ResponseEvent obj) {
+    writer
+      ..writeByte(6)
+      ..writeByte(0)
+      ..write(obj.uid)
+      ..writeByte(1)
+      ..write(obj.timeMs)
+      ..writeByte(2)
+      ..write(obj.code)
+      ..writeByte(4)
+      ..write(obj.error)
+      ..writeByte(5)
+      ..write(obj.body)
+      ..writeByte(3)
+      ..write(obj.headers);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ResponseEventAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

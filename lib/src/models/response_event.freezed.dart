@@ -20,11 +20,17 @@ ResponseEvent _$ResponseEventFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ResponseEvent {
+  @HiveField(0)
   String get uid => throw _privateConstructorUsedError;
+  @HiveField(1)
   int get timeMs => throw _privateConstructorUsedError;
+  @HiveField(2)
   int get code => throw _privateConstructorUsedError;
+  @HiveField(3)
   Map<String, String> get headers => throw _privateConstructorUsedError;
+  @HiveField(4)
   String? get error => throw _privateConstructorUsedError;
+  @HiveField(5)
   @BodyBytesConverter()
   Uint8List? get body => throw _privateConstructorUsedError;
 
@@ -41,12 +47,12 @@ abstract class $ResponseEventCopyWith<$Res> {
       _$ResponseEventCopyWithImpl<$Res, ResponseEvent>;
   @useResult
   $Res call(
-      {String uid,
-      int timeMs,
-      int code,
-      Map<String, String> headers,
-      String? error,
-      @BodyBytesConverter() Uint8List? body});
+      {@HiveField(0) String uid,
+      @HiveField(1) int timeMs,
+      @HiveField(2) int code,
+      @HiveField(3) Map<String, String> headers,
+      @HiveField(4) String? error,
+      @HiveField(5) @BodyBytesConverter() Uint8List? body});
 }
 
 /// @nodoc
@@ -107,12 +113,12 @@ abstract class _$$_ResponseEventCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String uid,
-      int timeMs,
-      int code,
-      Map<String, String> headers,
-      String? error,
-      @BodyBytesConverter() Uint8List? body});
+      {@HiveField(0) String uid,
+      @HiveField(1) int timeMs,
+      @HiveField(2) int code,
+      @HiveField(3) Map<String, String> headers,
+      @HiveField(4) String? error,
+      @HiveField(5) @BodyBytesConverter() Uint8List? body});
 }
 
 /// @nodoc
@@ -164,14 +170,15 @@ class __$$_ResponseEventCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: 4)
 class _$_ResponseEvent extends _ResponseEvent {
   _$_ResponseEvent(
-      {required this.uid,
-      required this.timeMs,
-      required this.code,
-      required final Map<String, String> headers,
-      this.error,
-      @BodyBytesConverter() this.body})
+      {@HiveField(0) required this.uid,
+      @HiveField(1) required this.timeMs,
+      @HiveField(2) required this.code,
+      @HiveField(3) required final Map<String, String> headers,
+      @HiveField(4) this.error,
+      @HiveField(5) @BodyBytesConverter() this.body})
       : _headers = headers,
         super._();
 
@@ -179,13 +186,17 @@ class _$_ResponseEvent extends _ResponseEvent {
       _$$_ResponseEventFromJson(json);
 
   @override
+  @HiveField(0)
   final String uid;
   @override
+  @HiveField(1)
   final int timeMs;
   @override
+  @HiveField(2)
   final int code;
   final Map<String, String> _headers;
   @override
+  @HiveField(3)
   Map<String, String> get headers {
     if (_headers is EqualUnmodifiableMapView) return _headers;
     // ignore: implicit_dynamic_type
@@ -193,15 +204,12 @@ class _$_ResponseEvent extends _ResponseEvent {
   }
 
   @override
+  @HiveField(4)
   final String? error;
   @override
+  @HiveField(5)
   @BodyBytesConverter()
   final Uint8List? body;
-
-  @override
-  String toString() {
-    return 'ResponseEvent(uid: $uid, timeMs: $timeMs, code: $code, headers: $headers, error: $error, body: $body)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -243,28 +251,35 @@ class _$_ResponseEvent extends _ResponseEvent {
 
 abstract class _ResponseEvent extends ResponseEvent {
   factory _ResponseEvent(
-      {required final String uid,
-      required final int timeMs,
-      required final int code,
-      required final Map<String, String> headers,
-      final String? error,
-      @BodyBytesConverter() final Uint8List? body}) = _$_ResponseEvent;
+          {@HiveField(0) required final String uid,
+          @HiveField(1) required final int timeMs,
+          @HiveField(2) required final int code,
+          @HiveField(3) required final Map<String, String> headers,
+          @HiveField(4) final String? error,
+          @HiveField(5) @BodyBytesConverter() final Uint8List? body}) =
+      _$_ResponseEvent;
   _ResponseEvent._() : super._();
 
   factory _ResponseEvent.fromJson(Map<String, dynamic> json) =
       _$_ResponseEvent.fromJson;
 
   @override
+  @HiveField(0)
   String get uid;
   @override
+  @HiveField(1)
   int get timeMs;
   @override
+  @HiveField(2)
   int get code;
   @override
+  @HiveField(3)
   Map<String, String> get headers;
   @override
+  @HiveField(4)
   String? get error;
   @override
+  @HiveField(5)
   @BodyBytesConverter()
   Uint8List? get body;
   @override

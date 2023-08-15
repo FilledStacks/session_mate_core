@@ -23,7 +23,8 @@ mixin _$Session {
   @HiveField(0)
   String get id => throw _privateConstructorUsedError;
   @HiveField(1)
-  List<UserInteraction> get events => throw _privateConstructorUsedError;
+  @SessionEventConverter()
+  List<SessionEvent> get events => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +37,8 @@ abstract class $SessionCopyWith<$Res> {
       _$SessionCopyWithImpl<$Res, Session>;
   @useResult
   $Res call(
-      {@HiveField(0) String id, @HiveField(1) List<UserInteraction> events});
+      {@HiveField(0) String id,
+      @HiveField(1) @SessionEventConverter() List<SessionEvent> events});
 }
 
 /// @nodoc
@@ -63,7 +65,7 @@ class _$SessionCopyWithImpl<$Res, $Val extends Session>
       events: null == events
           ? _value.events
           : events // ignore: cast_nullable_to_non_nullable
-              as List<UserInteraction>,
+              as List<SessionEvent>,
     ) as $Val);
   }
 }
@@ -76,7 +78,8 @@ abstract class _$$_SessionCopyWith<$Res> implements $SessionCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@HiveField(0) String id, @HiveField(1) List<UserInteraction> events});
+      {@HiveField(0) String id,
+      @HiveField(1) @SessionEventConverter() List<SessionEvent> events});
 }
 
 /// @nodoc
@@ -100,7 +103,7 @@ class __$$_SessionCopyWithImpl<$Res>
       events: null == events
           ? _value._events
           : events // ignore: cast_nullable_to_non_nullable
-              as List<UserInteraction>,
+              as List<SessionEvent>,
     ));
   }
 }
@@ -111,7 +114,9 @@ class __$$_SessionCopyWithImpl<$Res>
 class _$_Session extends _Session {
   _$_Session(
       {@HiveField(0) required this.id,
-      @HiveField(1) required final List<UserInteraction> events})
+      @HiveField(1)
+      @SessionEventConverter()
+      required final List<SessionEvent> events})
       : _events = events,
         super._();
 
@@ -121,10 +126,11 @@ class _$_Session extends _Session {
   @override
   @HiveField(0)
   final String id;
-  final List<UserInteraction> _events;
+  final List<SessionEvent> _events;
   @override
   @HiveField(1)
-  List<UserInteraction> get events {
+  @SessionEventConverter()
+  List<SessionEvent> get events {
     if (_events is EqualUnmodifiableListView) return _events;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_events);
@@ -166,7 +172,9 @@ class _$_Session extends _Session {
 abstract class _Session extends Session {
   factory _Session(
       {@HiveField(0) required final String id,
-      @HiveField(1) required final List<UserInteraction> events}) = _$_Session;
+      @HiveField(1)
+      @SessionEventConverter()
+      required final List<SessionEvent> events}) = _$_Session;
   _Session._() : super._();
 
   factory _Session.fromJson(Map<String, dynamic> json) = _$_Session.fromJson;
@@ -176,7 +184,8 @@ abstract class _Session extends Session {
   String get id;
   @override
   @HiveField(1)
-  List<UserInteraction> get events;
+  @SessionEventConverter()
+  List<SessionEvent> get events;
   @override
   @JsonKey(ignore: true)
   _$$_SessionCopyWith<_$_Session> get copyWith =>

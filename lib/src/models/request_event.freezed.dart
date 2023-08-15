@@ -20,10 +20,15 @@ RequestEvent _$RequestEventFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RequestEvent {
+  @HiveField(0)
   String get uid => throw _privateConstructorUsedError;
+  @HiveField(1)
   String get url => throw _privateConstructorUsedError;
+  @HiveField(2)
   String get method => throw _privateConstructorUsedError;
+  @HiveField(3)
   Map<String, String> get headers => throw _privateConstructorUsedError;
+  @HiveField(4)
   @BodyBytesConverter()
   Uint8List? get body => throw _privateConstructorUsedError;
 
@@ -40,11 +45,11 @@ abstract class $RequestEventCopyWith<$Res> {
       _$RequestEventCopyWithImpl<$Res, RequestEvent>;
   @useResult
   $Res call(
-      {String uid,
-      String url,
-      String method,
-      Map<String, String> headers,
-      @BodyBytesConverter() Uint8List? body});
+      {@HiveField(0) String uid,
+      @HiveField(1) String url,
+      @HiveField(2) String method,
+      @HiveField(3) Map<String, String> headers,
+      @HiveField(4) @BodyBytesConverter() Uint8List? body});
 }
 
 /// @nodoc
@@ -100,11 +105,11 @@ abstract class _$$_RequestEventCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String uid,
-      String url,
-      String method,
-      Map<String, String> headers,
-      @BodyBytesConverter() Uint8List? body});
+      {@HiveField(0) String uid,
+      @HiveField(1) String url,
+      @HiveField(2) String method,
+      @HiveField(3) Map<String, String> headers,
+      @HiveField(4) @BodyBytesConverter() Uint8List? body});
 }
 
 /// @nodoc
@@ -151,13 +156,14 @@ class __$$_RequestEventCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: 3)
 class _$_RequestEvent extends _RequestEvent {
   _$_RequestEvent(
-      {required this.uid,
-      required this.url,
-      required this.method,
-      required final Map<String, String> headers,
-      @BodyBytesConverter() this.body})
+      {@HiveField(0) required this.uid,
+      @HiveField(1) required this.url,
+      @HiveField(2) required this.method,
+      @HiveField(3) required final Map<String, String> headers,
+      @HiveField(4) @BodyBytesConverter() this.body})
       : _headers = headers,
         super._();
 
@@ -165,13 +171,17 @@ class _$_RequestEvent extends _RequestEvent {
       _$$_RequestEventFromJson(json);
 
   @override
+  @HiveField(0)
   final String uid;
   @override
+  @HiveField(1)
   final String url;
   @override
+  @HiveField(2)
   final String method;
   final Map<String, String> _headers;
   @override
+  @HiveField(3)
   Map<String, String> get headers {
     if (_headers is EqualUnmodifiableMapView) return _headers;
     // ignore: implicit_dynamic_type
@@ -179,13 +189,9 @@ class _$_RequestEvent extends _RequestEvent {
   }
 
   @override
+  @HiveField(4)
   @BodyBytesConverter()
   final Uint8List? body;
-
-  @override
-  String toString() {
-    return 'RequestEvent(uid: $uid, url: $url, method: $method, headers: $headers, body: $body)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -225,25 +231,31 @@ class _$_RequestEvent extends _RequestEvent {
 
 abstract class _RequestEvent extends RequestEvent {
   factory _RequestEvent(
-      {required final String uid,
-      required final String url,
-      required final String method,
-      required final Map<String, String> headers,
-      @BodyBytesConverter() final Uint8List? body}) = _$_RequestEvent;
+          {@HiveField(0) required final String uid,
+          @HiveField(1) required final String url,
+          @HiveField(2) required final String method,
+          @HiveField(3) required final Map<String, String> headers,
+          @HiveField(4) @BodyBytesConverter() final Uint8List? body}) =
+      _$_RequestEvent;
   _RequestEvent._() : super._();
 
   factory _RequestEvent.fromJson(Map<String, dynamic> json) =
       _$_RequestEvent.fromJson;
 
   @override
+  @HiveField(0)
   String get uid;
   @override
+  @HiveField(1)
   String get url;
   @override
+  @HiveField(2)
   String get method;
   @override
+  @HiveField(3)
   Map<String, String> get headers;
   @override
+  @HiveField(4)
   @BodyBytesConverter()
   Uint8List? get body;
   @override

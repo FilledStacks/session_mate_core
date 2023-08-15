@@ -18,7 +18,7 @@ class SessionAdapter extends TypeAdapter<_$_Session> {
     };
     return _$_Session(
       id: fields[0] as String,
-      events: (fields[1] as List).cast<UserInteraction>(),
+      events: (fields[1] as List).cast<SessionEvent>(),
     );
   }
 
@@ -50,12 +50,14 @@ class SessionAdapter extends TypeAdapter<_$_Session> {
 _$_Session _$$_SessionFromJson(Map<String, dynamic> json) => _$_Session(
       id: json['id'] as String,
       events: (json['events'] as List<dynamic>)
-          .map((e) => UserInteraction.fromJson(e as Map<String, dynamic>))
+          .map((e) =>
+              const SessionEventConverter().fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
 Map<String, dynamic> _$$_SessionToJson(_$_Session instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'events': instance.events,
+      'events':
+          instance.events.map(const SessionEventConverter().toJson).toList(),
     };
