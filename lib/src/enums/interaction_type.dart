@@ -9,17 +9,11 @@ enum InteractionType {
   @HiveField(1)
   input,
   @HiveField(2)
-  scrollUp,
+  scroll,
   @HiveField(3)
-  scrollDown,
-  @HiveField(4)
-  scrollLeft,
-  @HiveField(5)
-  scrollRight,
-  @HiveField(6)
   longTap,
-  @HiveField(7)
+  @HiveField(4)
   pinchOut,
-  @HiveField(8)
+  @HiveField(5)
   pinchIn,
 }

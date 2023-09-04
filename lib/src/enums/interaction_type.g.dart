@@ -18,18 +18,12 @@ class InteractionTypeAdapter extends TypeAdapter<InteractionType> {
       case 1:
         return InteractionType.input;
       case 2:
-        return InteractionType.scrollUp;
+        return InteractionType.scroll;
       case 3:
-        return InteractionType.scrollDown;
-      case 4:
-        return InteractionType.scrollLeft;
-      case 5:
-        return InteractionType.scrollRight;
-      case 6:
         return InteractionType.longTap;
-      case 7:
+      case 4:
         return InteractionType.pinchOut;
-      case 8:
+      case 5:
         return InteractionType.pinchIn;
       default:
         return InteractionType.tap;
@@ -45,26 +39,17 @@ class InteractionTypeAdapter extends TypeAdapter<InteractionType> {
       case InteractionType.input:
         writer.writeByte(1);
         break;
-      case InteractionType.scrollUp:
+      case InteractionType.scroll:
         writer.writeByte(2);
         break;
-      case InteractionType.scrollDown:
+      case InteractionType.longTap:
         writer.writeByte(3);
         break;
-      case InteractionType.scrollLeft:
+      case InteractionType.pinchOut:
         writer.writeByte(4);
         break;
-      case InteractionType.scrollRight:
-        writer.writeByte(5);
-        break;
-      case InteractionType.longTap:
-        writer.writeByte(6);
-        break;
-      case InteractionType.pinchOut:
-        writer.writeByte(7);
-        break;
       case InteractionType.pinchIn:
-        writer.writeByte(8);
+        writer.writeByte(5);
         break;
     }
   }
