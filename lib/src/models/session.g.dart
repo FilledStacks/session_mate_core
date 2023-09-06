@@ -19,15 +19,18 @@ class SessionAdapter extends TypeAdapter<_$_Session> {
     return _$_Session(
       id: fields[0] as String,
       events: (fields[1] as List).cast<SessionEvent>(),
+      priority: fields[2] as SessionPriority,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$_Session obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(3)
       ..writeByte(0)
       ..write(obj.id)
+      ..writeByte(2)
+      ..write(obj.priority)
       ..writeByte(1)
       ..write(obj.events);
   }
@@ -53,6 +56,9 @@ _$_Session _$$_SessionFromJson(Map<String, dynamic> json) => _$_Session(
           .map((e) =>
               const SessionEventConverter().fromJson(e as Map<String, dynamic>))
           .toList(),
+      priority:
+          $enumDecodeNullable(_$SessionPriorityEnumMap, json['priority']) ??
+              SessionPriority.low,
     );
 
 Map<String, dynamic> _$$_SessionToJson(_$_Session instance) =>
@@ -60,4 +66,11 @@ Map<String, dynamic> _$$_SessionToJson(_$_Session instance) =>
       'id': instance.id,
       'events':
           instance.events.map(const SessionEventConverter().toJson).toList(),
+      'priority': _$SessionPriorityEnumMap[instance.priority]!,
     };
+
+const _$SessionPriorityEnumMap = {
+  SessionPriority.low: 'low',
+  SessionPriority.medium: 'medium',
+  SessionPriority.high: 'high',
+};

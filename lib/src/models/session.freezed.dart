@@ -25,6 +25,8 @@ mixin _$Session {
   @HiveField(1)
   @SessionEventConverter()
   List<SessionEvent> get events => throw _privateConstructorUsedError;
+  @HiveField(2)
+  SessionPriority get priority => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +40,8 @@ abstract class $SessionCopyWith<$Res> {
   @useResult
   $Res call(
       {@HiveField(0) String id,
-      @HiveField(1) @SessionEventConverter() List<SessionEvent> events});
+      @HiveField(1) @SessionEventConverter() List<SessionEvent> events,
+      @HiveField(2) SessionPriority priority});
 }
 
 /// @nodoc
@@ -56,6 +59,7 @@ class _$SessionCopyWithImpl<$Res, $Val extends Session>
   $Res call({
     Object? id = null,
     Object? events = null,
+    Object? priority = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -66,6 +70,10 @@ class _$SessionCopyWithImpl<$Res, $Val extends Session>
           ? _value.events
           : events // ignore: cast_nullable_to_non_nullable
               as List<SessionEvent>,
+      priority: null == priority
+          ? _value.priority
+          : priority // ignore: cast_nullable_to_non_nullable
+              as SessionPriority,
     ) as $Val);
   }
 }
@@ -79,7 +87,8 @@ abstract class _$$_SessionCopyWith<$Res> implements $SessionCopyWith<$Res> {
   @useResult
   $Res call(
       {@HiveField(0) String id,
-      @HiveField(1) @SessionEventConverter() List<SessionEvent> events});
+      @HiveField(1) @SessionEventConverter() List<SessionEvent> events,
+      @HiveField(2) SessionPriority priority});
 }
 
 /// @nodoc
@@ -94,6 +103,7 @@ class __$$_SessionCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? events = null,
+    Object? priority = null,
   }) {
     return _then(_$_Session(
       id: null == id
@@ -104,6 +114,10 @@ class __$$_SessionCopyWithImpl<$Res>
           ? _value._events
           : events // ignore: cast_nullable_to_non_nullable
               as List<SessionEvent>,
+      priority: null == priority
+          ? _value.priority
+          : priority // ignore: cast_nullable_to_non_nullable
+              as SessionPriority,
     ));
   }
 }
@@ -116,7 +130,8 @@ class _$_Session extends _Session {
       {@HiveField(0) required this.id,
       @HiveField(1)
       @SessionEventConverter()
-      required final List<SessionEvent> events})
+      required final List<SessionEvent> events,
+      @HiveField(2) this.priority = SessionPriority.low})
       : _events = events,
         super._();
 
@@ -137,8 +152,13 @@ class _$_Session extends _Session {
   }
 
   @override
+  @JsonKey()
+  @HiveField(2)
+  final SessionPriority priority;
+
+  @override
   String toString() {
-    return 'Session(id: $id, events: $events)';
+    return 'Session(id: $id, events: $events, priority: $priority)';
   }
 
   @override
@@ -147,13 +167,15 @@ class _$_Session extends _Session {
         (other.runtimeType == runtimeType &&
             other is _$_Session &&
             (identical(other.id, id) || other.id == id) &&
-            const DeepCollectionEquality().equals(other._events, _events));
+            const DeepCollectionEquality().equals(other._events, _events) &&
+            (identical(other.priority, priority) ||
+                other.priority == priority));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, const DeepCollectionEquality().hash(_events));
+      runtimeType, id, const DeepCollectionEquality().hash(_events), priority);
 
   @JsonKey(ignore: true)
   @override
@@ -174,7 +196,8 @@ abstract class _Session extends Session {
       {@HiveField(0) required final String id,
       @HiveField(1)
       @SessionEventConverter()
-      required final List<SessionEvent> events}) = _$_Session;
+      required final List<SessionEvent> events,
+      @HiveField(2) final SessionPriority priority}) = _$_Session;
   _Session._() : super._();
 
   factory _Session.fromJson(Map<String, dynamic> json) = _$_Session.fromJson;
@@ -186,6 +209,9 @@ abstract class _Session extends Session {
   @HiveField(1)
   @SessionEventConverter()
   List<SessionEvent> get events;
+  @override
+  @HiveField(2)
+  SessionPriority get priority;
   @override
   @JsonKey(ignore: true)
   _$$_SessionCopyWith<_$_Session> get copyWith =>
