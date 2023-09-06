@@ -15,5 +15,20 @@ enum InteractionType {
   @HiveField(4)
   pinchOut,
   @HiveField(5)
-  pinchIn,
+  pinchIn;
+
+  const InteractionType();
+
+  int get color {
+    switch (this) {
+      case tap:
+        return 0xFF69F0AE;
+      case input:
+        return 0xFFE040FB;
+      case scroll:
+        return 0xFFFF5252;
+      default:
+        return 0xFFFFFFFF;
+    }
+  }
 }

@@ -1,6 +1,7 @@
 library;
 
 export 'src/enums/interaction_type.dart';
+export 'src/enums/session_priority.dart';
 export 'src/interfaces/network_event.dart';
 export 'src/interfaces/session_event.dart';
 export 'src/models/event_position.dart';
