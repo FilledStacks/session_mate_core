@@ -45,4 +45,20 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
             : '';
     return '$runtimeType :: type:$type, position:$position$extra';
   }
+
+  @override
+  String describe() {
+    String text;
+    if (this is TapEvent) {
+      text = 'Tap at $position';
+    } else if (this is InputEvent) {
+      text = 'Input ${(this as InputEvent).inputData} at $position';
+    } else if (this is ScrollEvent) {
+      text = 'Scroll from $position by ${(this as ScrollEvent).scrollDelta}';
+    } else {
+      text = 'TYPE_NOT_KNOWN';
+    }
+
+    return text;
+  }
 }

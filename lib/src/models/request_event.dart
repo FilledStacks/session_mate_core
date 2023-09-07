@@ -38,4 +38,9 @@ class RequestEvent extends HiveObject
   String toString() {
     return '$kRequestSessionEvent :: uid:$uid, url:$url';
   }
+
+  @override
+  String describe() {
+    return 'Request to $url';
+  }
 }

@@ -1,1 +1,3 @@
-abstract class SessionEvent {}
+abstract class SessionEvent {
+  String describe();
+}

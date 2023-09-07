@@ -39,4 +39,9 @@ class ResponseEvent extends HiveObject
   String toString() {
     return '$kResponseSessionEvent :: uid:$uid, statusCode:$code';
   }
+
+  @override
+  String describe() {
+    return 'Response $code with body $body';
+  }
 }
