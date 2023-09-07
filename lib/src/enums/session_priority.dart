@@ -16,11 +16,11 @@ enum SessionPriority {
   String get icon {
     switch (this) {
       case low:
-        return '👎';
+        return 'packages/session_mate/assets/icons/thumbs-down.png';
       case medium:
-        return '⚠️';
+        return 'packages/session_mate/assets/icons/warning.png';
       case high:
-        return '🔥';
+        return 'packages/session_mate/assets/icons/fire.png';
       default:
         return '';
     }
