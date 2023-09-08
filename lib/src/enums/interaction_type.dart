@@ -31,4 +31,17 @@ enum InteractionType {
         return 0xFFFFFFFF;
     }
   }
+
+  int get alternativeColor {
+    switch (this) {
+      case tap:
+        return 0xFF69F0AE;
+      case input:
+        return 0xFFE040FB;
+      case scroll:
+        return 0xFFEE9A9A;
+      default:
+        return 0xFFFFFFFF;
+    }
+  }
 }
