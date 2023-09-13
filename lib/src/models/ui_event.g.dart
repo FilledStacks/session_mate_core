@@ -126,6 +126,52 @@ class ScrollEventAdapter extends TypeAdapter<_$ScrollEvent> {
           typeId == other.typeId;
 }
 
+class RawKeyEventAdapter extends TypeAdapter<_$RawKeyEvent> {
+  @override
+  final int typeId = 13;
+
+  @override
+  _$RawKeyEvent read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return _$RawKeyEvent(
+      position: fields[0] as EventPosition,
+      type: fields[1] as InteractionType,
+      keyId: fields[2] as int,
+      keyLabel: fields[3] as String,
+      usbHidUsage: fields[4] as int,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, _$RawKeyEvent obj) {
+    writer
+      ..writeByte(5)
+      ..writeByte(0)
+      ..write(obj.position)
+      ..writeByte(1)
+      ..write(obj.type)
+      ..writeByte(2)
+      ..write(obj.keyId)
+      ..writeByte(3)
+      ..write(obj.keyLabel)
+      ..writeByte(4)
+      ..write(obj.usbHidUsage);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is RawKeyEventAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
@@ -152,6 +198,7 @@ const _$InteractionTypeEnumMap = {
   InteractionType.longTap: 'longTap',
   InteractionType.pinchOut: 'pinchOut',
   InteractionType.pinchIn: 'pinchIn',
+  InteractionType.rawKeyEvent: 'rawKeyEvent',
 };
 
 _$InputEvent _$$InputEventFromJson(Map<String, dynamic> json) => _$InputEvent(
@@ -190,5 +237,28 @@ Map<String, dynamic> _$$ScrollEventToJson(_$ScrollEvent instance) =>
       'type': _$InteractionTypeEnumMap[instance.type]!,
       'duration': instance.duration,
       'scrollDelta': instance.scrollDelta,
+      'runtimeType': instance.$type,
+    };
+
+_$RawKeyEvent _$$RawKeyEventFromJson(Map<String, dynamic> json) =>
+    _$RawKeyEvent(
+      position: json['position'] == null
+          ? const EventPosition()
+          : EventPosition.fromJson(json['position'] as Map<String, dynamic>),
+      type: $enumDecodeNullable(_$InteractionTypeEnumMap, json['type']) ??
+          InteractionType.rawKeyEvent,
+      keyId: json['keyId'] as int,
+      keyLabel: json['keyLabel'] as String,
+      usbHidUsage: json['usbHidUsage'] as int,
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$RawKeyEventToJson(_$RawKeyEvent instance) =>
+    <String, dynamic>{
+      'position': instance.position,
+      'type': _$InteractionTypeEnumMap[instance.type]!,
+      'keyId': instance.keyId,
+      'keyLabel': instance.keyLabel,
+      'usbHidUsage': instance.usbHidUsage,
       'runtimeType': instance.$type,
     };
