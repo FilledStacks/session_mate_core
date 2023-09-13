@@ -17,8 +17,8 @@ class EventPositionAdapter extends TypeAdapter<_$_EventPosition> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return _$_EventPosition(
-      x: fields[0] as double,
-      y: fields[1] as double,
+      x: fields[0] == null ? 0.0 : fields[0] as double,
+      y: fields[1] == null ? 0.0 : fields[1] as double,
     );
   }
 
@@ -49,8 +49,8 @@ class EventPositionAdapter extends TypeAdapter<_$_EventPosition> {
 
 _$_EventPosition _$$_EventPositionFromJson(Map<String, dynamic> json) =>
     _$_EventPosition(
-      x: (json['x'] as num).toDouble(),
-      y: (json['y'] as num).toDouble(),
+      x: (json['x'] as num?)?.toDouble() ?? 0.0,
+      y: (json['y'] as num?)?.toDouble() ?? 0.0,
     );
 
 Map<String, dynamic> _$$_EventPositionToJson(_$_EventPosition instance) =>

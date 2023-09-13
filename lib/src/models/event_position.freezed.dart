@@ -20,9 +20,9 @@ EventPosition _$EventPositionFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$EventPosition {
-  @HiveField(0)
+  @HiveField(0, defaultValue: 0.0)
   double get x => throw _privateConstructorUsedError;
-  @HiveField(1)
+  @HiveField(1, defaultValue: 0.0)
   double get y => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -37,7 +37,9 @@ abstract class $EventPositionCopyWith<$Res> {
           EventPosition value, $Res Function(EventPosition) then) =
       _$EventPositionCopyWithImpl<$Res, EventPosition>;
   @useResult
-  $Res call({@HiveField(0) double x, @HiveField(1) double y});
+  $Res call(
+      {@HiveField(0, defaultValue: 0.0) double x,
+      @HiveField(1, defaultValue: 0.0) double y});
 }
 
 /// @nodoc
@@ -77,7 +79,9 @@ abstract class _$$_EventPositionCopyWith<$Res>
       __$$_EventPositionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@HiveField(0) double x, @HiveField(1) double y});
+  $Res call(
+      {@HiveField(0, defaultValue: 0.0) double x,
+      @HiveField(1, defaultValue: 0.0) double y});
 }
 
 /// @nodoc
@@ -111,18 +115,21 @@ class __$$_EventPositionCopyWithImpl<$Res>
 @JsonSerializable()
 @HiveType(typeId: 2)
 class _$_EventPosition extends _EventPosition {
-  _$_EventPosition(
-      {@HiveField(0) required this.x, @HiveField(1) required this.y})
+  const _$_EventPosition(
+      {@HiveField(0, defaultValue: 0.0) this.x = 0.0,
+      @HiveField(1, defaultValue: 0.0) this.y = 0.0})
       : super._();
 
   factory _$_EventPosition.fromJson(Map<String, dynamic> json) =>
       _$$_EventPositionFromJson(json);
 
   @override
-  @HiveField(0)
+  @JsonKey()
+  @HiveField(0, defaultValue: 0.0)
   final double x;
   @override
-  @HiveField(1)
+  @JsonKey()
+  @HiveField(1, defaultValue: 0.0)
   final double y;
 
   @override
@@ -158,19 +165,19 @@ class _$_EventPosition extends _EventPosition {
 }
 
 abstract class _EventPosition extends EventPosition {
-  factory _EventPosition(
-      {@HiveField(0) required final double x,
-      @HiveField(1) required final double y}) = _$_EventPosition;
-  _EventPosition._() : super._();
+  const factory _EventPosition(
+      {@HiveField(0, defaultValue: 0.0) final double x,
+      @HiveField(1, defaultValue: 0.0) final double y}) = _$_EventPosition;
+  const _EventPosition._() : super._();
 
   factory _EventPosition.fromJson(Map<String, dynamic> json) =
       _$_EventPosition.fromJson;
 
   @override
-  @HiveField(0)
+  @HiveField(0, defaultValue: 0.0)
   double get x;
   @override
-  @HiveField(1)
+  @HiveField(1, defaultValue: 0.0)
   double get y;
   @override
   @JsonKey(ignore: true)
