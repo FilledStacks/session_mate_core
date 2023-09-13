@@ -15,7 +15,9 @@ enum InteractionType {
   @HiveField(4)
   pinchOut,
   @HiveField(5)
-  pinchIn;
+  pinchIn,
+  @HiveField(6)
+  rawKeyEvent;
 
   const InteractionType();
 
