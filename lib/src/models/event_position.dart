@@ -5,13 +5,13 @@ part 'event_position.freezed.dart';
 part 'event_position.g.dart';
 
 @freezed
-class EventPosition extends HiveObject with _$EventPosition {
-  EventPosition._();
+class EventPosition with _$EventPosition {
+  const EventPosition._();
 
   @HiveType(typeId: 2)
-  factory EventPosition({
-    @HiveField(0) required double x,
-    @HiveField(1) required double y,
+  const factory EventPosition({
+    @HiveField(0, defaultValue: 0.0) @Default(0.0) double x,
+    @HiveField(1, defaultValue: 0.0) @Default(0.0) double y,
   }) = _EventPosition;
 
   factory EventPosition.fromJson(Map<String, dynamic> json) =>
