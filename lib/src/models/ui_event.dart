@@ -42,6 +42,13 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
   factory UIEvent.fromJson(Map<String, dynamic> json) =>
       _$UIEventFromJson(json);
 
+  @override
+  int get hashCode => automationKey.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      other is UIEvent && other.automationKey == other.automationKey;
+
   String get automationKey =>
       '${type.name}_${position.x.toStringAsPrecision(3).replaceAll('.', '')}_${position.y.toStringAsPrecision(3).replaceAll('.', '')}}';
 
