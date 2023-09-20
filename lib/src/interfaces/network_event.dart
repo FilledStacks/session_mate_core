@@ -26,6 +26,8 @@ class BodyBytesConverter
   Map<String, dynamic>? toJson(Uint8List? object) {
     if (object == null) return null;
 
+    if (object.isEmpty) return {};
+
     return jsonDecode(String.fromCharCodes(object));
   }
 }
