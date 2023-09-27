@@ -37,76 +37,89 @@ mixin _$UIEvent {
   EventPosition get position => throw _privateConstructorUsedError;
   @HiveField(1)
   InteractionType get type => throw _privateConstructorUsedError;
+  @HiveField(2)
+  String? get view => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type)
+            @HiveField(1) InteractionType type, @HiveField(2) String? view)
         tap,
-    required TResult Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type, @HiveField(2) String? inputData)
+    required TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) InteractionType type,
+            @HiveField(2) String? inputData,
+            @HiveField(3) String? view)
         input,
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int? duration,
-            @HiveField(3) EventPosition? scrollDelta)
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String? view)
         scroll,
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int keyId,
             @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage)
+            @HiveField(4) int usbHidUsage,
+            @HiveField(5) String? view)
         rawKeyEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type)?
+            @HiveField(1) InteractionType type, @HiveField(2) String? view)?
         tap,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) String? inputData)?
+            @HiveField(2) String? inputData,
+            @HiveField(3) String? view)?
         input,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int? duration,
-            @HiveField(3) EventPosition? scrollDelta)?
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String? view)?
         scroll,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int keyId,
             @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage)?
+            @HiveField(4) int usbHidUsage,
+            @HiveField(5) String? view)?
         rawKeyEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type)?
+            @HiveField(1) InteractionType type, @HiveField(2) String? view)?
         tap,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) String? inputData)?
+            @HiveField(2) String? inputData,
+            @HiveField(3) String? view)?
         input,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int? duration,
-            @HiveField(3) EventPosition? scrollDelta)?
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String? view)?
         scroll,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int keyId,
             @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage)?
+            @HiveField(4) int usbHidUsage,
+            @HiveField(5) String? view)?
         rawKeyEvent,
     required TResult orElse(),
   }) =>
@@ -148,7 +161,8 @@ abstract class $UIEventCopyWith<$Res> {
   @useResult
   $Res call(
       {@HiveField(0) EventPosition position,
-      @HiveField(1) InteractionType type});
+      @HiveField(1) InteractionType type,
+      @HiveField(2) String? view});
 
   $EventPositionCopyWith<$Res> get position;
 }
@@ -168,6 +182,7 @@ class _$UIEventCopyWithImpl<$Res, $Val extends UIEvent>
   $Res call({
     Object? position = null,
     Object? type = null,
+    Object? view = freezed,
   }) {
     return _then(_value.copyWith(
       position: null == position
@@ -178,6 +193,10 @@ class _$UIEventCopyWithImpl<$Res, $Val extends UIEvent>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as InteractionType,
+      view: freezed == view
+          ? _value.view
+          : view // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -199,7 +218,8 @@ abstract class _$$TapEventCopyWith<$Res> implements $UIEventCopyWith<$Res> {
   @useResult
   $Res call(
       {@HiveField(0) EventPosition position,
-      @HiveField(1) InteractionType type});
+      @HiveField(1) InteractionType type,
+      @HiveField(2) String? view});
 
   @override
   $EventPositionCopyWith<$Res> get position;
@@ -217,6 +237,7 @@ class __$$TapEventCopyWithImpl<$Res>
   $Res call({
     Object? position = null,
     Object? type = null,
+    Object? view = freezed,
   }) {
     return _then(_$TapEvent(
       position: null == position
@@ -227,6 +248,10 @@ class __$$TapEventCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as InteractionType,
+      view: freezed == view
+          ? _value.view
+          : view // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -238,6 +263,7 @@ class _$TapEvent extends TapEvent {
   _$TapEvent(
       {@HiveField(0) required this.position,
       @HiveField(1) this.type = InteractionType.tap,
+      @HiveField(2) this.view,
       final String? $type})
       : $type = $type ?? 'tap',
         super._();
@@ -252,23 +278,12 @@ class _$TapEvent extends TapEvent {
   @JsonKey()
   @HiveField(1)
   final InteractionType type;
+  @override
+  @HiveField(2)
+  final String? view;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TapEvent &&
-            (identical(other.position, position) ||
-                other.position == position) &&
-            (identical(other.type, type) || other.type == type));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, position, type);
 
   @JsonKey(ignore: true)
   @override
@@ -280,84 +295,95 @@ class _$TapEvent extends TapEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type)
+            @HiveField(1) InteractionType type, @HiveField(2) String? view)
         tap,
-    required TResult Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type, @HiveField(2) String? inputData)
+    required TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) InteractionType type,
+            @HiveField(2) String? inputData,
+            @HiveField(3) String? view)
         input,
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int? duration,
-            @HiveField(3) EventPosition? scrollDelta)
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String? view)
         scroll,
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int keyId,
             @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage)
+            @HiveField(4) int usbHidUsage,
+            @HiveField(5) String? view)
         rawKeyEvent,
   }) {
-    return tap(position, type);
+    return tap(position, type, view);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type)?
+            @HiveField(1) InteractionType type, @HiveField(2) String? view)?
         tap,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) String? inputData)?
+            @HiveField(2) String? inputData,
+            @HiveField(3) String? view)?
         input,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int? duration,
-            @HiveField(3) EventPosition? scrollDelta)?
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String? view)?
         scroll,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int keyId,
             @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage)?
+            @HiveField(4) int usbHidUsage,
+            @HiveField(5) String? view)?
         rawKeyEvent,
   }) {
-    return tap?.call(position, type);
+    return tap?.call(position, type, view);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type)?
+            @HiveField(1) InteractionType type, @HiveField(2) String? view)?
         tap,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) String? inputData)?
+            @HiveField(2) String? inputData,
+            @HiveField(3) String? view)?
         input,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int? duration,
-            @HiveField(3) EventPosition? scrollDelta)?
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String? view)?
         scroll,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int keyId,
             @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage)?
+            @HiveField(4) int usbHidUsage,
+            @HiveField(5) String? view)?
         rawKeyEvent,
     required TResult orElse(),
   }) {
     if (tap != null) {
-      return tap(position, type);
+      return tap(position, type, view);
     }
     return orElse();
   }
@@ -410,7 +436,8 @@ class _$TapEvent extends TapEvent {
 abstract class TapEvent extends UIEvent {
   factory TapEvent(
       {@HiveField(0) required final EventPosition position,
-      @HiveField(1) final InteractionType type}) = _$TapEvent;
+      @HiveField(1) final InteractionType type,
+      @HiveField(2) final String? view}) = _$TapEvent;
   TapEvent._() : super._();
 
   factory TapEvent.fromJson(Map<String, dynamic> json) = _$TapEvent.fromJson;
@@ -421,6 +448,9 @@ abstract class TapEvent extends UIEvent {
   @override
   @HiveField(1)
   InteractionType get type;
+  @override
+  @HiveField(2)
+  String? get view;
   @override
   @JsonKey(ignore: true)
   _$$TapEventCopyWith<_$TapEvent> get copyWith =>
@@ -437,7 +467,8 @@ abstract class _$$InputEventCopyWith<$Res> implements $UIEventCopyWith<$Res> {
   $Res call(
       {@HiveField(0) EventPosition position,
       @HiveField(1) InteractionType type,
-      @HiveField(2) String? inputData});
+      @HiveField(2) String? inputData,
+      @HiveField(3) String? view});
 
   @override
   $EventPositionCopyWith<$Res> get position;
@@ -457,6 +488,7 @@ class __$$InputEventCopyWithImpl<$Res>
     Object? position = null,
     Object? type = null,
     Object? inputData = freezed,
+    Object? view = freezed,
   }) {
     return _then(_$InputEvent(
       position: null == position
@@ -471,6 +503,10 @@ class __$$InputEventCopyWithImpl<$Res>
           ? _value.inputData
           : inputData // ignore: cast_nullable_to_non_nullable
               as String?,
+      view: freezed == view
+          ? _value.view
+          : view // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -483,6 +519,7 @@ class _$InputEvent extends InputEvent {
       {@HiveField(0) required this.position,
       @HiveField(1) this.type = InteractionType.input,
       @HiveField(2) this.inputData,
+      @HiveField(3) this.view,
       final String? $type})
       : $type = $type ?? 'input',
         super._();
@@ -500,25 +537,12 @@ class _$InputEvent extends InputEvent {
   @override
   @HiveField(2)
   final String? inputData;
+  @override
+  @HiveField(3)
+  final String? view;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InputEvent &&
-            (identical(other.position, position) ||
-                other.position == position) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.inputData, inputData) ||
-                other.inputData == inputData));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, position, type, inputData);
 
   @JsonKey(ignore: true)
   @override
@@ -530,84 +554,95 @@ class _$InputEvent extends InputEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type)
+            @HiveField(1) InteractionType type, @HiveField(2) String? view)
         tap,
-    required TResult Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type, @HiveField(2) String? inputData)
+    required TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) InteractionType type,
+            @HiveField(2) String? inputData,
+            @HiveField(3) String? view)
         input,
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int? duration,
-            @HiveField(3) EventPosition? scrollDelta)
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String? view)
         scroll,
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int keyId,
             @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage)
+            @HiveField(4) int usbHidUsage,
+            @HiveField(5) String? view)
         rawKeyEvent,
   }) {
-    return input(position, type, inputData);
+    return input(position, type, inputData, view);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type)?
+            @HiveField(1) InteractionType type, @HiveField(2) String? view)?
         tap,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) String? inputData)?
+            @HiveField(2) String? inputData,
+            @HiveField(3) String? view)?
         input,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int? duration,
-            @HiveField(3) EventPosition? scrollDelta)?
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String? view)?
         scroll,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int keyId,
             @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage)?
+            @HiveField(4) int usbHidUsage,
+            @HiveField(5) String? view)?
         rawKeyEvent,
   }) {
-    return input?.call(position, type, inputData);
+    return input?.call(position, type, inputData, view);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type)?
+            @HiveField(1) InteractionType type, @HiveField(2) String? view)?
         tap,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) String? inputData)?
+            @HiveField(2) String? inputData,
+            @HiveField(3) String? view)?
         input,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int? duration,
-            @HiveField(3) EventPosition? scrollDelta)?
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String? view)?
         scroll,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int keyId,
             @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage)?
+            @HiveField(4) int usbHidUsage,
+            @HiveField(5) String? view)?
         rawKeyEvent,
     required TResult orElse(),
   }) {
     if (input != null) {
-      return input(position, type, inputData);
+      return input(position, type, inputData, view);
     }
     return orElse();
   }
@@ -661,7 +696,8 @@ abstract class InputEvent extends UIEvent {
   factory InputEvent(
       {@HiveField(0) required final EventPosition position,
       @HiveField(1) final InteractionType type,
-      @HiveField(2) final String? inputData}) = _$InputEvent;
+      @HiveField(2) final String? inputData,
+      @HiveField(3) final String? view}) = _$InputEvent;
   InputEvent._() : super._();
 
   factory InputEvent.fromJson(Map<String, dynamic> json) =
@@ -675,6 +711,9 @@ abstract class InputEvent extends UIEvent {
   InteractionType get type;
   @HiveField(2)
   String? get inputData;
+  @override
+  @HiveField(3)
+  String? get view;
   @override
   @JsonKey(ignore: true)
   _$$InputEventCopyWith<_$InputEvent> get copyWith =>
@@ -692,7 +731,8 @@ abstract class _$$ScrollEventCopyWith<$Res> implements $UIEventCopyWith<$Res> {
       {@HiveField(0) EventPosition position,
       @HiveField(1) InteractionType type,
       @HiveField(2) int? duration,
-      @HiveField(3) EventPosition? scrollDelta});
+      @HiveField(3) EventPosition? scrollDelta,
+      @HiveField(4) String? view});
 
   @override
   $EventPositionCopyWith<$Res> get position;
@@ -714,6 +754,7 @@ class __$$ScrollEventCopyWithImpl<$Res>
     Object? type = null,
     Object? duration = freezed,
     Object? scrollDelta = freezed,
+    Object? view = freezed,
   }) {
     return _then(_$ScrollEvent(
       position: null == position
@@ -732,6 +773,10 @@ class __$$ScrollEventCopyWithImpl<$Res>
           ? _value.scrollDelta
           : scrollDelta // ignore: cast_nullable_to_non_nullable
               as EventPosition?,
+      view: freezed == view
+          ? _value.view
+          : view // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
@@ -757,6 +802,7 @@ class _$ScrollEvent extends ScrollEvent {
       @HiveField(1) this.type = InteractionType.scroll,
       @HiveField(2) this.duration,
       @HiveField(3) this.scrollDelta,
+      @HiveField(4) this.view,
       final String? $type})
       : $type = $type ?? 'scroll',
         super._();
@@ -777,28 +823,12 @@ class _$ScrollEvent extends ScrollEvent {
   @override
   @HiveField(3)
   final EventPosition? scrollDelta;
+  @override
+  @HiveField(4)
+  final String? view;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ScrollEvent &&
-            (identical(other.position, position) ||
-                other.position == position) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.duration, duration) ||
-                other.duration == duration) &&
-            (identical(other.scrollDelta, scrollDelta) ||
-                other.scrollDelta == scrollDelta));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, position, type, duration, scrollDelta);
 
   @JsonKey(ignore: true)
   @override
@@ -810,84 +840,95 @@ class _$ScrollEvent extends ScrollEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type)
+            @HiveField(1) InteractionType type, @HiveField(2) String? view)
         tap,
-    required TResult Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type, @HiveField(2) String? inputData)
+    required TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) InteractionType type,
+            @HiveField(2) String? inputData,
+            @HiveField(3) String? view)
         input,
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int? duration,
-            @HiveField(3) EventPosition? scrollDelta)
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String? view)
         scroll,
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int keyId,
             @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage)
+            @HiveField(4) int usbHidUsage,
+            @HiveField(5) String? view)
         rawKeyEvent,
   }) {
-    return scroll(position, type, duration, scrollDelta);
+    return scroll(position, type, duration, scrollDelta, view);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type)?
+            @HiveField(1) InteractionType type, @HiveField(2) String? view)?
         tap,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) String? inputData)?
+            @HiveField(2) String? inputData,
+            @HiveField(3) String? view)?
         input,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int? duration,
-            @HiveField(3) EventPosition? scrollDelta)?
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String? view)?
         scroll,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int keyId,
             @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage)?
+            @HiveField(4) int usbHidUsage,
+            @HiveField(5) String? view)?
         rawKeyEvent,
   }) {
-    return scroll?.call(position, type, duration, scrollDelta);
+    return scroll?.call(position, type, duration, scrollDelta, view);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type)?
+            @HiveField(1) InteractionType type, @HiveField(2) String? view)?
         tap,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) String? inputData)?
+            @HiveField(2) String? inputData,
+            @HiveField(3) String? view)?
         input,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int? duration,
-            @HiveField(3) EventPosition? scrollDelta)?
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String? view)?
         scroll,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int keyId,
             @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage)?
+            @HiveField(4) int usbHidUsage,
+            @HiveField(5) String? view)?
         rawKeyEvent,
     required TResult orElse(),
   }) {
     if (scroll != null) {
-      return scroll(position, type, duration, scrollDelta);
+      return scroll(position, type, duration, scrollDelta, view);
     }
     return orElse();
   }
@@ -942,7 +983,8 @@ abstract class ScrollEvent extends UIEvent {
       {@HiveField(0) required final EventPosition position,
       @HiveField(1) final InteractionType type,
       @HiveField(2) final int? duration,
-      @HiveField(3) final EventPosition? scrollDelta}) = _$ScrollEvent;
+      @HiveField(3) final EventPosition? scrollDelta,
+      @HiveField(4) final String? view}) = _$ScrollEvent;
   ScrollEvent._() : super._();
 
   factory ScrollEvent.fromJson(Map<String, dynamic> json) =
@@ -958,6 +1000,9 @@ abstract class ScrollEvent extends UIEvent {
   int? get duration;
   @HiveField(3)
   EventPosition? get scrollDelta;
+  @override
+  @HiveField(4)
+  String? get view;
   @override
   @JsonKey(ignore: true)
   _$$ScrollEventCopyWith<_$ScrollEvent> get copyWith =>
@@ -976,7 +1021,8 @@ abstract class _$$RawKeyEventCopyWith<$Res> implements $UIEventCopyWith<$Res> {
       @HiveField(1) InteractionType type,
       @HiveField(2) int keyId,
       @HiveField(3) String keyLabel,
-      @HiveField(4) int usbHidUsage});
+      @HiveField(4) int usbHidUsage,
+      @HiveField(5) String? view});
 
   @override
   $EventPositionCopyWith<$Res> get position;
@@ -998,6 +1044,7 @@ class __$$RawKeyEventCopyWithImpl<$Res>
     Object? keyId = null,
     Object? keyLabel = null,
     Object? usbHidUsage = null,
+    Object? view = freezed,
   }) {
     return _then(_$RawKeyEvent(
       position: null == position
@@ -1020,6 +1067,10 @@ class __$$RawKeyEventCopyWithImpl<$Res>
           ? _value.usbHidUsage
           : usbHidUsage // ignore: cast_nullable_to_non_nullable
               as int,
+      view: freezed == view
+          ? _value.view
+          : view // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -1034,6 +1085,7 @@ class _$RawKeyEvent extends RawKeyEvent {
       @HiveField(2) required this.keyId,
       @HiveField(3) required this.keyLabel,
       @HiveField(4) required this.usbHidUsage,
+      @HiveField(5) this.view,
       final String? $type})
       : $type = $type ?? 'rawKeyEvent',
         super._();
@@ -1058,29 +1110,12 @@ class _$RawKeyEvent extends RawKeyEvent {
   @override
   @HiveField(4)
   final int usbHidUsage;
+  @override
+  @HiveField(5)
+  final String? view;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RawKeyEvent &&
-            (identical(other.position, position) ||
-                other.position == position) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.keyId, keyId) || other.keyId == keyId) &&
-            (identical(other.keyLabel, keyLabel) ||
-                other.keyLabel == keyLabel) &&
-            (identical(other.usbHidUsage, usbHidUsage) ||
-                other.usbHidUsage == usbHidUsage));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, position, type, keyId, keyLabel, usbHidUsage);
 
   @JsonKey(ignore: true)
   @override
@@ -1092,84 +1127,96 @@ class _$RawKeyEvent extends RawKeyEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type)
+            @HiveField(1) InteractionType type, @HiveField(2) String? view)
         tap,
-    required TResult Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type, @HiveField(2) String? inputData)
+    required TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) InteractionType type,
+            @HiveField(2) String? inputData,
+            @HiveField(3) String? view)
         input,
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int? duration,
-            @HiveField(3) EventPosition? scrollDelta)
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String? view)
         scroll,
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int keyId,
             @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage)
+            @HiveField(4) int usbHidUsage,
+            @HiveField(5) String? view)
         rawKeyEvent,
   }) {
-    return rawKeyEvent(position, type, keyId, keyLabel, usbHidUsage);
+    return rawKeyEvent(position, type, keyId, keyLabel, usbHidUsage, view);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type)?
+            @HiveField(1) InteractionType type, @HiveField(2) String? view)?
         tap,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) String? inputData)?
+            @HiveField(2) String? inputData,
+            @HiveField(3) String? view)?
         input,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int? duration,
-            @HiveField(3) EventPosition? scrollDelta)?
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String? view)?
         scroll,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int keyId,
             @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage)?
+            @HiveField(4) int usbHidUsage,
+            @HiveField(5) String? view)?
         rawKeyEvent,
   }) {
-    return rawKeyEvent?.call(position, type, keyId, keyLabel, usbHidUsage);
+    return rawKeyEvent?.call(
+        position, type, keyId, keyLabel, usbHidUsage, view);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(@HiveField(0) EventPosition position,
-            @HiveField(1) InteractionType type)?
+            @HiveField(1) InteractionType type, @HiveField(2) String? view)?
         tap,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) String? inputData)?
+            @HiveField(2) String? inputData,
+            @HiveField(3) String? view)?
         input,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int? duration,
-            @HiveField(3) EventPosition? scrollDelta)?
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String? view)?
         scroll,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) int keyId,
             @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage)?
+            @HiveField(4) int usbHidUsage,
+            @HiveField(5) String? view)?
         rawKeyEvent,
     required TResult orElse(),
   }) {
     if (rawKeyEvent != null) {
-      return rawKeyEvent(position, type, keyId, keyLabel, usbHidUsage);
+      return rawKeyEvent(position, type, keyId, keyLabel, usbHidUsage, view);
     }
     return orElse();
   }
@@ -1225,7 +1272,8 @@ abstract class RawKeyEvent extends UIEvent {
       @HiveField(1) final InteractionType type,
       @HiveField(2) required final int keyId,
       @HiveField(3) required final String keyLabel,
-      @HiveField(4) required final int usbHidUsage}) = _$RawKeyEvent;
+      @HiveField(4) required final int usbHidUsage,
+      @HiveField(5) final String? view}) = _$RawKeyEvent;
   RawKeyEvent._() : super._();
 
   factory RawKeyEvent.fromJson(Map<String, dynamic> json) =
@@ -1243,6 +1291,9 @@ abstract class RawKeyEvent extends UIEvent {
   String get keyLabel;
   @HiveField(4)
   int get usbHidUsage;
+  @override
+  @HiveField(5)
+  String? get view;
   @override
   @JsonKey(ignore: true)
   _$$RawKeyEventCopyWith<_$RawKeyEvent> get copyWith =>

@@ -13,6 +13,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
   factory UIEvent.tap({
     @HiveField(0) required EventPosition position,
     @HiveField(1) @Default(InteractionType.tap) InteractionType type,
+    @HiveField(2) String? view,
   }) = TapEvent;
 
   @HiveType(typeId: 11)
@@ -20,6 +21,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(0) required EventPosition position,
     @HiveField(1) @Default(InteractionType.input) InteractionType type,
     @HiveField(2) String? inputData,
+    @HiveField(3) String? view,
   }) = InputEvent;
 
   @HiveType(typeId: 12)
@@ -28,6 +30,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(1) @Default(InteractionType.scroll) InteractionType type,
     @HiveField(2) int? duration,
     @HiveField(3) EventPosition? scrollDelta,
+    @HiveField(4) String? view,
   }) = ScrollEvent;
 
   @HiveType(typeId: 13)
@@ -37,6 +40,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(2) required int keyId,
     @HiveField(3) required String keyLabel,
     @HiveField(4) required int usbHidUsage,
+    @HiveField(5) String? view,
   }) = RawKeyEvent;
 
   factory UIEvent.fromJson(Map<String, dynamic> json) =>
@@ -61,7 +65,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
             : type.name.contains('rawKeyEvent')
                 ? ', keyLabel:${(this as RawKeyEvent).keyLabel}'
                 : '';
-    return '$runtimeType :: type:$type, position:$position$extra';
+    return '$runtimeType :: view:$view, type:$type, position:$position$extra';
   }
 
   @override

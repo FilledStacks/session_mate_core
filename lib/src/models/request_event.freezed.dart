@@ -31,6 +31,8 @@ mixin _$RequestEvent {
   @HiveField(4)
   @BodyBytesConverter()
   Uint8List? get body => throw _privateConstructorUsedError;
+  @HiveField(5)
+  String? get view => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,7 +51,8 @@ abstract class $RequestEventCopyWith<$Res> {
       @HiveField(1) String url,
       @HiveField(2) String method,
       @HiveField(3) Map<String, String> headers,
-      @HiveField(4) @BodyBytesConverter() Uint8List? body});
+      @HiveField(4) @BodyBytesConverter() Uint8List? body,
+      @HiveField(5) String? view});
 }
 
 /// @nodoc
@@ -70,6 +73,7 @@ class _$RequestEventCopyWithImpl<$Res, $Val extends RequestEvent>
     Object? method = null,
     Object? headers = null,
     Object? body = freezed,
+    Object? view = freezed,
   }) {
     return _then(_value.copyWith(
       uid: null == uid
@@ -92,6 +96,10 @@ class _$RequestEventCopyWithImpl<$Res, $Val extends RequestEvent>
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as Uint8List?,
+      view: freezed == view
+          ? _value.view
+          : view // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -109,7 +117,8 @@ abstract class _$$_RequestEventCopyWith<$Res>
       @HiveField(1) String url,
       @HiveField(2) String method,
       @HiveField(3) Map<String, String> headers,
-      @HiveField(4) @BodyBytesConverter() Uint8List? body});
+      @HiveField(4) @BodyBytesConverter() Uint8List? body,
+      @HiveField(5) String? view});
 }
 
 /// @nodoc
@@ -128,6 +137,7 @@ class __$$_RequestEventCopyWithImpl<$Res>
     Object? method = null,
     Object? headers = null,
     Object? body = freezed,
+    Object? view = freezed,
   }) {
     return _then(_$_RequestEvent(
       uid: null == uid
@@ -150,6 +160,10 @@ class __$$_RequestEventCopyWithImpl<$Res>
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as Uint8List?,
+      view: freezed == view
+          ? _value.view
+          : view // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -163,7 +177,8 @@ class _$_RequestEvent extends _RequestEvent {
       @HiveField(1) required this.url,
       @HiveField(2) required this.method,
       @HiveField(3) required final Map<String, String> headers,
-      @HiveField(4) @BodyBytesConverter() this.body})
+      @HiveField(4) @BodyBytesConverter() this.body,
+      @HiveField(5) this.view})
       : _headers = headers,
         super._();
 
@@ -192,6 +207,9 @@ class _$_RequestEvent extends _RequestEvent {
   @HiveField(4)
   @BodyBytesConverter()
   final Uint8List? body;
+  @override
+  @HiveField(5)
+  final String? view;
 
   @override
   bool operator ==(dynamic other) {
@@ -202,7 +220,8 @@ class _$_RequestEvent extends _RequestEvent {
             (identical(other.url, url) || other.url == url) &&
             (identical(other.method, method) || other.method == method) &&
             const DeepCollectionEquality().equals(other._headers, _headers) &&
-            const DeepCollectionEquality().equals(other.body, body));
+            const DeepCollectionEquality().equals(other.body, body) &&
+            (identical(other.view, view) || other.view == view));
   }
 
   @JsonKey(ignore: true)
@@ -213,7 +232,8 @@ class _$_RequestEvent extends _RequestEvent {
       url,
       method,
       const DeepCollectionEquality().hash(_headers),
-      const DeepCollectionEquality().hash(body));
+      const DeepCollectionEquality().hash(body),
+      view);
 
   @JsonKey(ignore: true)
   @override
@@ -231,12 +251,12 @@ class _$_RequestEvent extends _RequestEvent {
 
 abstract class _RequestEvent extends RequestEvent {
   factory _RequestEvent(
-          {@HiveField(0) required final String uid,
-          @HiveField(1) required final String url,
-          @HiveField(2) required final String method,
-          @HiveField(3) required final Map<String, String> headers,
-          @HiveField(4) @BodyBytesConverter() final Uint8List? body}) =
-      _$_RequestEvent;
+      {@HiveField(0) required final String uid,
+      @HiveField(1) required final String url,
+      @HiveField(2) required final String method,
+      @HiveField(3) required final Map<String, String> headers,
+      @HiveField(4) @BodyBytesConverter() final Uint8List? body,
+      @HiveField(5) final String? view}) = _$_RequestEvent;
   _RequestEvent._() : super._();
 
   factory _RequestEvent.fromJson(Map<String, dynamic> json) =
@@ -258,6 +278,9 @@ abstract class _RequestEvent extends RequestEvent {
   @HiveField(4)
   @BodyBytesConverter()
   Uint8List? get body;
+  @override
+  @HiveField(5)
+  String? get view;
   @override
   @JsonKey(ignore: true)
   _$$_RequestEventCopyWith<_$_RequestEvent> get copyWith =>
