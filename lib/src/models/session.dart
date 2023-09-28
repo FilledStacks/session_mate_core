@@ -16,6 +16,9 @@ class Session extends HiveObject with _$Session {
     @HiveField(0) required String id,
     @HiveField(1) @SessionEventConverter() required List<SessionEvent> events,
     @HiveField(2) @Default(SessionPriority.low) SessionPriority priority,
+    @HiveField(3) @Default(<String>[]) List<String> views,
+    @HiveField(4) String? exception,
+    @HiveField(5) String? stackTrace,
   }) = _Session;
 
   factory Session.fromJson(Map<String, dynamic> json) =>

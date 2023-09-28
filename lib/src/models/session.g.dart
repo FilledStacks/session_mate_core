@@ -20,19 +20,28 @@ class SessionAdapter extends TypeAdapter<_$_Session> {
       id: fields[0] as String,
       events: (fields[1] as List).cast<SessionEvent>(),
       priority: fields[2] as SessionPriority,
+      views: (fields[3] as List).cast<String>(),
+      exception: fields[4] as String?,
+      stackTrace: fields[5] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$_Session obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(2)
       ..write(obj.priority)
+      ..writeByte(4)
+      ..write(obj.exception)
+      ..writeByte(5)
+      ..write(obj.stackTrace)
       ..writeByte(1)
-      ..write(obj.events);
+      ..write(obj.events)
+      ..writeByte(3)
+      ..write(obj.views);
   }
 
   @override
@@ -59,6 +68,11 @@ _$_Session _$$_SessionFromJson(Map<String, dynamic> json) => _$_Session(
       priority:
           $enumDecodeNullable(_$SessionPriorityEnumMap, json['priority']) ??
               SessionPriority.low,
+      views:
+          (json['views'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+              const <String>[],
+      exception: json['exception'] as String?,
+      stackTrace: json['stackTrace'] as String?,
     );
 
 Map<String, dynamic> _$$_SessionToJson(_$_Session instance) =>
@@ -67,6 +81,9 @@ Map<String, dynamic> _$$_SessionToJson(_$_Session instance) =>
       'events':
           instance.events.map(const SessionEventConverter().toJson).toList(),
       'priority': _$SessionPriorityEnumMap[instance.priority]!,
+      'views': instance.views,
+      'exception': instance.exception,
+      'stackTrace': instance.stackTrace,
     };
 
 const _$SessionPriorityEnumMap = {

@@ -27,6 +27,12 @@ mixin _$Session {
   List<SessionEvent> get events => throw _privateConstructorUsedError;
   @HiveField(2)
   SessionPriority get priority => throw _privateConstructorUsedError;
+  @HiveField(3)
+  List<String> get views => throw _privateConstructorUsedError;
+  @HiveField(4)
+  String? get exception => throw _privateConstructorUsedError;
+  @HiveField(5)
+  String? get stackTrace => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,7 +47,10 @@ abstract class $SessionCopyWith<$Res> {
   $Res call(
       {@HiveField(0) String id,
       @HiveField(1) @SessionEventConverter() List<SessionEvent> events,
-      @HiveField(2) SessionPriority priority});
+      @HiveField(2) SessionPriority priority,
+      @HiveField(3) List<String> views,
+      @HiveField(4) String? exception,
+      @HiveField(5) String? stackTrace});
 }
 
 /// @nodoc
@@ -60,6 +69,9 @@ class _$SessionCopyWithImpl<$Res, $Val extends Session>
     Object? id = null,
     Object? events = null,
     Object? priority = null,
+    Object? views = null,
+    Object? exception = freezed,
+    Object? stackTrace = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -74,6 +86,18 @@ class _$SessionCopyWithImpl<$Res, $Val extends Session>
           ? _value.priority
           : priority // ignore: cast_nullable_to_non_nullable
               as SessionPriority,
+      views: null == views
+          ? _value.views
+          : views // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      exception: freezed == exception
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stackTrace: freezed == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -88,7 +112,10 @@ abstract class _$$_SessionCopyWith<$Res> implements $SessionCopyWith<$Res> {
   $Res call(
       {@HiveField(0) String id,
       @HiveField(1) @SessionEventConverter() List<SessionEvent> events,
-      @HiveField(2) SessionPriority priority});
+      @HiveField(2) SessionPriority priority,
+      @HiveField(3) List<String> views,
+      @HiveField(4) String? exception,
+      @HiveField(5) String? stackTrace});
 }
 
 /// @nodoc
@@ -104,6 +131,9 @@ class __$$_SessionCopyWithImpl<$Res>
     Object? id = null,
     Object? events = null,
     Object? priority = null,
+    Object? views = null,
+    Object? exception = freezed,
+    Object? stackTrace = freezed,
   }) {
     return _then(_$_Session(
       id: null == id
@@ -118,6 +148,18 @@ class __$$_SessionCopyWithImpl<$Res>
           ? _value.priority
           : priority // ignore: cast_nullable_to_non_nullable
               as SessionPriority,
+      views: null == views
+          ? _value._views
+          : views // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      exception: freezed == exception
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as String?,
+      stackTrace: freezed == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -131,8 +173,12 @@ class _$_Session extends _Session {
       @HiveField(1)
       @SessionEventConverter()
       required final List<SessionEvent> events,
-      @HiveField(2) this.priority = SessionPriority.low})
+      @HiveField(2) this.priority = SessionPriority.low,
+      @HiveField(3) final List<String> views = const <String>[],
+      @HiveField(4) this.exception,
+      @HiveField(5) this.stackTrace})
       : _events = events,
+        _views = views,
         super._();
 
   factory _$_Session.fromJson(Map<String, dynamic> json) =>
@@ -155,10 +201,26 @@ class _$_Session extends _Session {
   @JsonKey()
   @HiveField(2)
   final SessionPriority priority;
+  final List<String> _views;
+  @override
+  @JsonKey()
+  @HiveField(3)
+  List<String> get views {
+    if (_views is EqualUnmodifiableListView) return _views;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_views);
+  }
+
+  @override
+  @HiveField(4)
+  final String? exception;
+  @override
+  @HiveField(5)
+  final String? stackTrace;
 
   @override
   String toString() {
-    return 'Session(id: $id, events: $events, priority: $priority)';
+    return 'Session(id: $id, events: $events, priority: $priority, views: $views, exception: $exception, stackTrace: $stackTrace)';
   }
 
   @override
@@ -169,13 +231,24 @@ class _$_Session extends _Session {
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._events, _events) &&
             (identical(other.priority, priority) ||
-                other.priority == priority));
+                other.priority == priority) &&
+            const DeepCollectionEquality().equals(other._views, _views) &&
+            (identical(other.exception, exception) ||
+                other.exception == exception) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, const DeepCollectionEquality().hash(_events), priority);
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_events),
+      priority,
+      const DeepCollectionEquality().hash(_views),
+      exception,
+      stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -197,7 +270,10 @@ abstract class _Session extends Session {
       @HiveField(1)
       @SessionEventConverter()
       required final List<SessionEvent> events,
-      @HiveField(2) final SessionPriority priority}) = _$_Session;
+      @HiveField(2) final SessionPriority priority,
+      @HiveField(3) final List<String> views,
+      @HiveField(4) final String? exception,
+      @HiveField(5) final String? stackTrace}) = _$_Session;
   _Session._() : super._();
 
   factory _Session.fromJson(Map<String, dynamic> json) = _$_Session.fromJson;
@@ -212,6 +288,15 @@ abstract class _Session extends Session {
   @override
   @HiveField(2)
   SessionPriority get priority;
+  @override
+  @HiveField(3)
+  List<String> get views;
+  @override
+  @HiveField(4)
+  String? get exception;
+  @override
+  @HiveField(5)
+  String? get stackTrace;
   @override
   @JsonKey(ignore: true)
   _$$_SessionCopyWith<_$_Session> get copyWith =>
