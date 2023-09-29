@@ -44,3 +44,17 @@ class Session extends HiveObject with _$Session {
     }
   }
 }
+
+@freezed
+class SessionStats with _$SessionStats {
+  factory SessionStats({
+    required int occurences,
+    @Default({}) Map<String, int> androidVersions,
+    @Default({}) Map<String, int> iosVersions,
+    @Default({}) Map<String, int> users,
+    @Default({}) Map<String, int> appVersions,
+  }) = _SessionStats;
+
+  factory SessionStats.fromJson(Map<String, dynamic> json) =>
+      _$SessionStatsFromJson(json);
+}

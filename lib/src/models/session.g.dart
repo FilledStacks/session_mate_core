@@ -91,3 +91,33 @@ const _$SessionPriorityEnumMap = {
   SessionPriority.medium: 'medium',
   SessionPriority.high: 'high',
 };
+
+_$_SessionStats _$$_SessionStatsFromJson(Map<String, dynamic> json) =>
+    _$_SessionStats(
+      occurences: json['occurences'] as int,
+      androidVersions: (json['androidVersions'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(k, e as int),
+          ) ??
+          const {},
+      iosVersions: (json['iosVersions'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(k, e as int),
+          ) ??
+          const {},
+      users: (json['users'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(k, e as int),
+          ) ??
+          const {},
+      appVersions: (json['appVersions'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(k, e as int),
+          ) ??
+          const {},
+    );
+
+Map<String, dynamic> _$$_SessionStatsToJson(_$_SessionStats instance) =>
+    <String, dynamic>{
+      'occurences': instance.occurences,
+      'androidVersions': instance.androidVersions,
+      'iosVersions': instance.iosVersions,
+      'users': instance.users,
+      'appVersions': instance.appVersions,
+    };
