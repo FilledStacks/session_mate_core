@@ -8,7 +8,7 @@ part 'session_stats.g.dart';
 class SessionStats with _$SessionStats {
   @HiveType(typeId: 14)
   factory SessionStats({
-    @HiveField(0) required int occurences,
+    @HiveField(0) required int occurrences,
     @HiveField(1) @Default({}) Map<String, int> androidVersions,
     @HiveField(2) @Default({}) Map<String, int> iosVersions,
     @HiveField(3) @Default({}) Map<String, int> users,
@@ -18,5 +18,5 @@ class SessionStats with _$SessionStats {
   factory SessionStats.fromJson(Map<String, dynamic> json) =>
       _$SessionStatsFromJson(json);
 
-  factory SessionStats.empty() => SessionStats(occurences: 0);
+  factory SessionStats.empty() => SessionStats(occurrences: 0);
 }

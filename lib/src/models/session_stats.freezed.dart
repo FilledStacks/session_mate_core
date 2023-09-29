@@ -21,7 +21,7 @@ SessionStats _$SessionStatsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$SessionStats {
   @HiveField(0)
-  int get occurences => throw _privateConstructorUsedError;
+  int get occurrences => throw _privateConstructorUsedError;
   @HiveField(1)
   Map<String, int> get androidVersions => throw _privateConstructorUsedError;
   @HiveField(2)
@@ -44,7 +44,7 @@ abstract class $SessionStatsCopyWith<$Res> {
       _$SessionStatsCopyWithImpl<$Res, SessionStats>;
   @useResult
   $Res call(
-      {@HiveField(0) int occurences,
+      {@HiveField(0) int occurrences,
       @HiveField(1) Map<String, int> androidVersions,
       @HiveField(2) Map<String, int> iosVersions,
       @HiveField(3) Map<String, int> users,
@@ -64,16 +64,16 @@ class _$SessionStatsCopyWithImpl<$Res, $Val extends SessionStats>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? occurences = null,
+    Object? occurrences = null,
     Object? androidVersions = null,
     Object? iosVersions = null,
     Object? users = null,
     Object? appVersions = null,
   }) {
     return _then(_value.copyWith(
-      occurences: null == occurences
-          ? _value.occurences
-          : occurences // ignore: cast_nullable_to_non_nullable
+      occurrences: null == occurrences
+          ? _value.occurrences
+          : occurrences // ignore: cast_nullable_to_non_nullable
               as int,
       androidVersions: null == androidVersions
           ? _value.androidVersions
@@ -104,7 +104,7 @@ abstract class _$$_SessionStatsCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@HiveField(0) int occurences,
+      {@HiveField(0) int occurrences,
       @HiveField(1) Map<String, int> androidVersions,
       @HiveField(2) Map<String, int> iosVersions,
       @HiveField(3) Map<String, int> users,
@@ -122,16 +122,16 @@ class __$$_SessionStatsCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? occurences = null,
+    Object? occurrences = null,
     Object? androidVersions = null,
     Object? iosVersions = null,
     Object? users = null,
     Object? appVersions = null,
   }) {
     return _then(_$_SessionStats(
-      occurences: null == occurences
-          ? _value.occurences
-          : occurences // ignore: cast_nullable_to_non_nullable
+      occurrences: null == occurrences
+          ? _value.occurrences
+          : occurrences // ignore: cast_nullable_to_non_nullable
               as int,
       androidVersions: null == androidVersions
           ? _value._androidVersions
@@ -158,7 +158,7 @@ class __$$_SessionStatsCopyWithImpl<$Res>
 @HiveType(typeId: 14)
 class _$_SessionStats implements _SessionStats {
   _$_SessionStats(
-      {@HiveField(0) required this.occurences,
+      {@HiveField(0) required this.occurrences,
       @HiveField(1) final Map<String, int> androidVersions = const {},
       @HiveField(2) final Map<String, int> iosVersions = const {},
       @HiveField(3) final Map<String, int> users = const {},
@@ -173,7 +173,7 @@ class _$_SessionStats implements _SessionStats {
 
   @override
   @HiveField(0)
-  final int occurences;
+  final int occurrences;
   final Map<String, int> _androidVersions;
   @override
   @JsonKey()
@@ -216,7 +216,7 @@ class _$_SessionStats implements _SessionStats {
 
   @override
   String toString() {
-    return 'SessionStats(occurences: $occurences, androidVersions: $androidVersions, iosVersions: $iosVersions, users: $users, appVersions: $appVersions)';
+    return 'SessionStats(occurrences: $occurrences, androidVersions: $androidVersions, iosVersions: $iosVersions, users: $users, appVersions: $appVersions)';
   }
 
   @override
@@ -224,8 +224,8 @@ class _$_SessionStats implements _SessionStats {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SessionStats &&
-            (identical(other.occurences, occurences) ||
-                other.occurences == occurences) &&
+            (identical(other.occurrences, occurrences) ||
+                other.occurrences == occurrences) &&
             const DeepCollectionEquality()
                 .equals(other._androidVersions, _androidVersions) &&
             const DeepCollectionEquality()
@@ -239,7 +239,7 @@ class _$_SessionStats implements _SessionStats {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      occurences,
+      occurrences,
       const DeepCollectionEquality().hash(_androidVersions),
       const DeepCollectionEquality().hash(_iosVersions),
       const DeepCollectionEquality().hash(_users),
@@ -261,7 +261,7 @@ class _$_SessionStats implements _SessionStats {
 
 abstract class _SessionStats implements SessionStats {
   factory _SessionStats(
-      {@HiveField(0) required final int occurences,
+      {@HiveField(0) required final int occurrences,
       @HiveField(1) final Map<String, int> androidVersions,
       @HiveField(2) final Map<String, int> iosVersions,
       @HiveField(3) final Map<String, int> users,
@@ -272,7 +272,7 @@ abstract class _SessionStats implements SessionStats {
 
   @override
   @HiveField(0)
-  int get occurences;
+  int get occurrences;
   @override
   @HiveField(1)
   Map<String, int> get androidVersions;

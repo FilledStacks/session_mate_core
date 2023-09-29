@@ -17,7 +17,7 @@ class SessionStatsAdapter extends TypeAdapter<_$_SessionStats> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return _$_SessionStats(
-      occurences: fields[0] as int,
+      occurrences: fields[0] as int,
       androidVersions: (fields[1] as Map).cast<String, int>(),
       iosVersions: (fields[2] as Map).cast<String, int>(),
       users: (fields[3] as Map).cast<String, int>(),
@@ -30,7 +30,7 @@ class SessionStatsAdapter extends TypeAdapter<_$_SessionStats> {
     writer
       ..writeByte(5)
       ..writeByte(0)
-      ..write(obj.occurences)
+      ..write(obj.occurrences)
       ..writeByte(1)
       ..write(obj.androidVersions)
       ..writeByte(2)
@@ -58,7 +58,7 @@ class SessionStatsAdapter extends TypeAdapter<_$_SessionStats> {
 
 _$_SessionStats _$$_SessionStatsFromJson(Map<String, dynamic> json) =>
     _$_SessionStats(
-      occurences: json['occurences'] as int,
+      occurrences: json['occurrences'] as int,
       androidVersions: (json['androidVersions'] as Map<String, dynamic>?)?.map(
             (k, e) => MapEntry(k, e as int),
           ) ??
@@ -79,7 +79,7 @@ _$_SessionStats _$$_SessionStatsFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_SessionStatsToJson(_$_SessionStats instance) =>
     <String, dynamic>{
-      'occurences': instance.occurences,
+      'occurrences': instance.occurrences,
       'androidVersions': instance.androidVersions,
       'iosVersions': instance.iosVersions,
       'users': instance.users,
