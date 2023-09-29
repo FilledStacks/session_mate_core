@@ -23,13 +23,14 @@ class SessionAdapter extends TypeAdapter<_$_Session> {
       views: (fields[3] as List).cast<String>(),
       exception: fields[4] as String?,
       stackTrace: fields[5] as String?,
+      sessionStats: fields[6] as SessionStats,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$_Session obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(2)
@@ -38,6 +39,8 @@ class SessionAdapter extends TypeAdapter<_$_Session> {
       ..write(obj.exception)
       ..writeByte(5)
       ..write(obj.stackTrace)
+      ..writeByte(6)
+      ..write(obj.sessionStats)
       ..writeByte(1)
       ..write(obj.events)
       ..writeByte(3)
@@ -73,6 +76,8 @@ _$_Session _$$_SessionFromJson(Map<String, dynamic> json) => _$_Session(
               const <String>[],
       exception: json['exception'] as String?,
       stackTrace: json['stackTrace'] as String?,
+      sessionStats:
+          SessionStats.fromJson(json['sessionStats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_SessionToJson(_$_Session instance) =>
@@ -84,6 +89,7 @@ Map<String, dynamic> _$$_SessionToJson(_$_Session instance) =>
       'views': instance.views,
       'exception': instance.exception,
       'stackTrace': instance.stackTrace,
+      'sessionStats': instance.sessionStats,
     };
 
 const _$SessionPriorityEnumMap = {
@@ -91,33 +97,3 @@ const _$SessionPriorityEnumMap = {
   SessionPriority.medium: 'medium',
   SessionPriority.high: 'high',
 };
-
-_$_SessionStats _$$_SessionStatsFromJson(Map<String, dynamic> json) =>
-    _$_SessionStats(
-      occurences: json['occurences'] as int,
-      androidVersions: (json['androidVersions'] as Map<String, dynamic>?)?.map(
-            (k, e) => MapEntry(k, e as int),
-          ) ??
-          const {},
-      iosVersions: (json['iosVersions'] as Map<String, dynamic>?)?.map(
-            (k, e) => MapEntry(k, e as int),
-          ) ??
-          const {},
-      users: (json['users'] as Map<String, dynamic>?)?.map(
-            (k, e) => MapEntry(k, e as int),
-          ) ??
-          const {},
-      appVersions: (json['appVersions'] as Map<String, dynamic>?)?.map(
-            (k, e) => MapEntry(k, e as int),
-          ) ??
-          const {},
-    );
-
-Map<String, dynamic> _$$_SessionStatsToJson(_$_SessionStats instance) =>
-    <String, dynamic>{
-      'occurences': instance.occurences,
-      'androidVersions': instance.androidVersions,
-      'iosVersions': instance.iosVersions,
-      'users': instance.users,
-      'appVersions': instance.appVersions,
-    };

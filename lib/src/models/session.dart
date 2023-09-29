@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
 import 'package:session_mate_core/session_mate_core.dart';
+import 'package:session_mate_core/src/models/session_stats.dart';
 import 'package:session_mate_core/src/shared/session_event_shared.dart';
 
 part 'session.freezed.dart';
@@ -19,6 +20,7 @@ class Session extends HiveObject with _$Session {
     @HiveField(3) @Default(<String>[]) List<String> views,
     @HiveField(4) String? exception,
     @HiveField(5) String? stackTrace,
+    @HiveField(6) required SessionStats sessionStats,
   }) = _Session;
 
   factory Session.fromJson(Map<String, dynamic> json) =>
@@ -43,18 +45,4 @@ class Session extends HiveObject with _$Session {
       return 'just now';
     }
   }
-}
-
-@freezed
-class SessionStats with _$SessionStats {
-  factory SessionStats({
-    required int occurences,
-    @Default({}) Map<String, int> androidVersions,
-    @Default({}) Map<String, int> iosVersions,
-    @Default({}) Map<String, int> users,
-    @Default({}) Map<String, int> appVersions,
-  }) = _SessionStats;
-
-  factory SessionStats.fromJson(Map<String, dynamic> json) =>
-      _$SessionStatsFromJson(json);
 }
