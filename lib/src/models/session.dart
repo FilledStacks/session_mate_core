@@ -30,7 +30,8 @@ class Session extends HiveObject with _$Session {
       DateTime.fromMillisecondsSinceEpoch(int.parse(createdAtTimestamp)));
 
   String get timeAgo {
-    final datetime = DateTime.fromMillisecondsSinceEpoch(int.parse(id));
+    final datetime =
+        DateTime.fromMillisecondsSinceEpoch(int.parse(createdAtTimestamp));
     final diff = DateTime.now().difference(datetime);
 
     if (diff.inDays >= 1) {
