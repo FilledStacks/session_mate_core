@@ -24,13 +24,14 @@ class ResponseEventAdapter extends TypeAdapter<_$_ResponseEvent> {
       error: fields[4] as String?,
       body: fields[5] as Uint8List?,
       view: fields[6] as String?,
+      order: fields[7] as int,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$_ResponseEvent obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.uid)
       ..writeByte(1)
@@ -43,6 +44,8 @@ class ResponseEventAdapter extends TypeAdapter<_$_ResponseEvent> {
       ..write(obj.body)
       ..writeByte(6)
       ..write(obj.view)
+      ..writeByte(7)
+      ..write(obj.order)
       ..writeByte(3)
       ..write(obj.headers);
   }
@@ -72,6 +75,7 @@ _$_ResponseEvent _$$_ResponseEventFromJson(Map<String, dynamic> json) =>
       body: const BodyBytesConverter()
           .fromJson(json['body'] as Map<String, dynamic>?),
       view: json['view'] as String?,
+      order: json['order'] as int? ?? 0,
     );
 
 Map<String, dynamic> _$$_ResponseEventToJson(_$_ResponseEvent instance) =>
@@ -83,4 +87,5 @@ Map<String, dynamic> _$$_ResponseEventToJson(_$_ResponseEvent instance) =>
       'error': instance.error,
       'body': const BodyBytesConverter().toJson(instance.body),
       'view': instance.view,
+      'order': instance.order,
     };

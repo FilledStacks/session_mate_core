@@ -33,6 +33,8 @@ mixin _$RequestEvent {
   Uint8List? get body => throw _privateConstructorUsedError;
   @HiveField(5)
   String? get view => throw _privateConstructorUsedError;
+  @HiveField(6)
+  int get order => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -52,7 +54,8 @@ abstract class $RequestEventCopyWith<$Res> {
       @HiveField(2) String method,
       @HiveField(3) Map<String, String> headers,
       @HiveField(4) @BodyBytesConverter() Uint8List? body,
-      @HiveField(5) String? view});
+      @HiveField(5) String? view,
+      @HiveField(6) int order});
 }
 
 /// @nodoc
@@ -74,6 +77,7 @@ class _$RequestEventCopyWithImpl<$Res, $Val extends RequestEvent>
     Object? headers = null,
     Object? body = freezed,
     Object? view = freezed,
+    Object? order = null,
   }) {
     return _then(_value.copyWith(
       uid: null == uid
@@ -100,6 +104,10 @@ class _$RequestEventCopyWithImpl<$Res, $Val extends RequestEvent>
           ? _value.view
           : view // ignore: cast_nullable_to_non_nullable
               as String?,
+      order: null == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -118,7 +126,8 @@ abstract class _$$_RequestEventCopyWith<$Res>
       @HiveField(2) String method,
       @HiveField(3) Map<String, String> headers,
       @HiveField(4) @BodyBytesConverter() Uint8List? body,
-      @HiveField(5) String? view});
+      @HiveField(5) String? view,
+      @HiveField(6) int order});
 }
 
 /// @nodoc
@@ -138,6 +147,7 @@ class __$$_RequestEventCopyWithImpl<$Res>
     Object? headers = null,
     Object? body = freezed,
     Object? view = freezed,
+    Object? order = null,
   }) {
     return _then(_$_RequestEvent(
       uid: null == uid
@@ -164,6 +174,10 @@ class __$$_RequestEventCopyWithImpl<$Res>
           ? _value.view
           : view // ignore: cast_nullable_to_non_nullable
               as String?,
+      order: null == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -178,7 +192,8 @@ class _$_RequestEvent extends _RequestEvent {
       @HiveField(2) required this.method,
       @HiveField(3) required final Map<String, String> headers,
       @HiveField(4) @BodyBytesConverter() this.body,
-      @HiveField(5) this.view})
+      @HiveField(5) this.view,
+      @HiveField(6) this.order = 0})
       : _headers = headers,
         super._();
 
@@ -210,6 +225,10 @@ class _$_RequestEvent extends _RequestEvent {
   @override
   @HiveField(5)
   final String? view;
+  @override
+  @JsonKey()
+  @HiveField(6)
+  final int order;
 
   @override
   bool operator ==(dynamic other) {
@@ -221,7 +240,8 @@ class _$_RequestEvent extends _RequestEvent {
             (identical(other.method, method) || other.method == method) &&
             const DeepCollectionEquality().equals(other._headers, _headers) &&
             const DeepCollectionEquality().equals(other.body, body) &&
-            (identical(other.view, view) || other.view == view));
+            (identical(other.view, view) || other.view == view) &&
+            (identical(other.order, order) || other.order == order));
   }
 
   @JsonKey(ignore: true)
@@ -233,7 +253,8 @@ class _$_RequestEvent extends _RequestEvent {
       method,
       const DeepCollectionEquality().hash(_headers),
       const DeepCollectionEquality().hash(body),
-      view);
+      view,
+      order);
 
   @JsonKey(ignore: true)
   @override
@@ -256,7 +277,8 @@ abstract class _RequestEvent extends RequestEvent {
       @HiveField(2) required final String method,
       @HiveField(3) required final Map<String, String> headers,
       @HiveField(4) @BodyBytesConverter() final Uint8List? body,
-      @HiveField(5) final String? view}) = _$_RequestEvent;
+      @HiveField(5) final String? view,
+      @HiveField(6) final int order}) = _$_RequestEvent;
   _RequestEvent._() : super._();
 
   factory _RequestEvent.fromJson(Map<String, dynamic> json) =
@@ -281,6 +303,9 @@ abstract class _RequestEvent extends RequestEvent {
   @override
   @HiveField(5)
   String? get view;
+  @override
+  @HiveField(6)
+  int get order;
   @override
   @JsonKey(ignore: true)
   _$$_RequestEventCopyWith<_$_RequestEvent> get copyWith =>

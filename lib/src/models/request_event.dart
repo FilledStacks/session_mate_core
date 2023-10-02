@@ -23,6 +23,7 @@ class RequestEvent extends HiveObject
     @HiveField(3) required Map<String, String> headers,
     @HiveField(4) @BodyBytesConverter() Uint8List? body,
     @HiveField(5) String? view,
+    @HiveField(6) @Default(0) int order,
   }) = _RequestEvent;
 
   factory RequestEvent.fromJson(Map<String, dynamic> json) =>

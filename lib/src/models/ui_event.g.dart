@@ -20,19 +20,22 @@ class TapEventAdapter extends TypeAdapter<_$TapEvent> {
       position: fields[0] as EventPosition,
       type: fields[1] as InteractionType,
       view: fields[2] as String?,
+      order: fields[3] as int,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$TapEvent obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(4)
       ..writeByte(0)
       ..write(obj.position)
       ..writeByte(1)
       ..write(obj.type)
       ..writeByte(2)
-      ..write(obj.view);
+      ..write(obj.view)
+      ..writeByte(3)
+      ..write(obj.order);
   }
 
   @override
@@ -61,13 +64,14 @@ class InputEventAdapter extends TypeAdapter<_$InputEvent> {
       type: fields[1] as InteractionType,
       inputData: fields[2] as String?,
       view: fields[3] as String?,
+      order: fields[4] as int,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$InputEvent obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.position)
       ..writeByte(1)
@@ -75,7 +79,9 @@ class InputEventAdapter extends TypeAdapter<_$InputEvent> {
       ..writeByte(2)
       ..write(obj.inputData)
       ..writeByte(3)
-      ..write(obj.view);
+      ..write(obj.view)
+      ..writeByte(4)
+      ..write(obj.order);
   }
 
   @override
@@ -105,13 +111,14 @@ class ScrollEventAdapter extends TypeAdapter<_$ScrollEvent> {
       duration: fields[2] as int?,
       scrollDelta: fields[3] as EventPosition?,
       view: fields[4] as String?,
+      order: fields[5] as int,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$ScrollEvent obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.position)
       ..writeByte(1)
@@ -121,7 +128,9 @@ class ScrollEventAdapter extends TypeAdapter<_$ScrollEvent> {
       ..writeByte(3)
       ..write(obj.scrollDelta)
       ..writeByte(4)
-      ..write(obj.view);
+      ..write(obj.view)
+      ..writeByte(5)
+      ..write(obj.order);
   }
 
   @override
@@ -152,13 +161,14 @@ class RawKeyEventAdapter extends TypeAdapter<_$RawKeyEvent> {
       keyLabel: fields[3] as String,
       usbHidUsage: fields[4] as int,
       view: fields[5] as String?,
+      order: fields[6] as int,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$RawKeyEvent obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.position)
       ..writeByte(1)
@@ -170,7 +180,9 @@ class RawKeyEventAdapter extends TypeAdapter<_$RawKeyEvent> {
       ..writeByte(4)
       ..write(obj.usbHidUsage)
       ..writeByte(5)
-      ..write(obj.view);
+      ..write(obj.view)
+      ..writeByte(6)
+      ..write(obj.order);
   }
 
   @override
@@ -194,6 +206,7 @@ _$TapEvent _$$TapEventFromJson(Map<String, dynamic> json) => _$TapEvent(
       type: $enumDecodeNullable(_$InteractionTypeEnumMap, json['type']) ??
           InteractionType.tap,
       view: json['view'] as String?,
+      order: json['order'] as int? ?? 0,
       $type: json['runtimeType'] as String?,
     );
 
@@ -202,6 +215,7 @@ Map<String, dynamic> _$$TapEventToJson(_$TapEvent instance) =>
       'position': instance.position,
       'type': _$InteractionTypeEnumMap[instance.type]!,
       'view': instance.view,
+      'order': instance.order,
       'runtimeType': instance.$type,
     };
 
@@ -222,6 +236,7 @@ _$InputEvent _$$InputEventFromJson(Map<String, dynamic> json) => _$InputEvent(
           InteractionType.input,
       inputData: json['inputData'] as String?,
       view: json['view'] as String?,
+      order: json['order'] as int? ?? 0,
       $type: json['runtimeType'] as String?,
     );
 
@@ -231,6 +246,7 @@ Map<String, dynamic> _$$InputEventToJson(_$InputEvent instance) =>
       'type': _$InteractionTypeEnumMap[instance.type]!,
       'inputData': instance.inputData,
       'view': instance.view,
+      'order': instance.order,
       'runtimeType': instance.$type,
     };
 
@@ -245,6 +261,7 @@ _$ScrollEvent _$$ScrollEventFromJson(Map<String, dynamic> json) =>
           ? null
           : EventPosition.fromJson(json['scrollDelta'] as Map<String, dynamic>),
       view: json['view'] as String?,
+      order: json['order'] as int? ?? 0,
       $type: json['runtimeType'] as String?,
     );
 
@@ -255,6 +272,7 @@ Map<String, dynamic> _$$ScrollEventToJson(_$ScrollEvent instance) =>
       'duration': instance.duration,
       'scrollDelta': instance.scrollDelta,
       'view': instance.view,
+      'order': instance.order,
       'runtimeType': instance.$type,
     };
 
@@ -269,6 +287,7 @@ _$RawKeyEvent _$$RawKeyEventFromJson(Map<String, dynamic> json) =>
       keyLabel: json['keyLabel'] as String,
       usbHidUsage: json['usbHidUsage'] as int,
       view: json['view'] as String?,
+      order: json['order'] as int? ?? 0,
       $type: json['runtimeType'] as String?,
     );
 
@@ -280,5 +299,6 @@ Map<String, dynamic> _$$RawKeyEventToJson(_$RawKeyEvent instance) =>
       'keyLabel': instance.keyLabel,
       'usbHidUsage': instance.usbHidUsage,
       'view': instance.view,
+      'order': instance.order,
       'runtimeType': instance.$type,
     };

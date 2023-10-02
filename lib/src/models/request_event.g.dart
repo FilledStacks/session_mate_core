@@ -23,13 +23,14 @@ class RequestEventAdapter extends TypeAdapter<_$_RequestEvent> {
       headers: (fields[3] as Map).cast<String, String>(),
       body: fields[4] as Uint8List?,
       view: fields[5] as String?,
+      order: fields[6] as int,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$_RequestEvent obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.uid)
       ..writeByte(1)
@@ -40,6 +41,8 @@ class RequestEventAdapter extends TypeAdapter<_$_RequestEvent> {
       ..write(obj.body)
       ..writeByte(5)
       ..write(obj.view)
+      ..writeByte(6)
+      ..write(obj.order)
       ..writeByte(3)
       ..write(obj.headers);
   }
@@ -68,6 +71,7 @@ _$_RequestEvent _$$_RequestEventFromJson(Map<String, dynamic> json) =>
       body: const BodyBytesConverter()
           .fromJson(json['body'] as Map<String, dynamic>?),
       view: json['view'] as String?,
+      order: json['order'] as int? ?? 0,
     );
 
 Map<String, dynamic> _$$_RequestEventToJson(_$_RequestEvent instance) =>
@@ -78,4 +82,5 @@ Map<String, dynamic> _$$_RequestEventToJson(_$_RequestEvent instance) =>
       'headers': instance.headers,
       'body': const BodyBytesConverter().toJson(instance.body),
       'view': instance.view,
+      'order': instance.order,
     };

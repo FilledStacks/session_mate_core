@@ -14,6 +14,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(0) required EventPosition position,
     @HiveField(1) @Default(InteractionType.tap) InteractionType type,
     @HiveField(2) String? view,
+    @HiveField(3) @Default(0) int order,
   }) = TapEvent;
 
   @HiveType(typeId: 11)
@@ -22,6 +23,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(1) @Default(InteractionType.input) InteractionType type,
     @HiveField(2) String? inputData,
     @HiveField(3) String? view,
+    @HiveField(4) @Default(0) int order,
   }) = InputEvent;
 
   @HiveType(typeId: 12)
@@ -31,6 +33,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(2) int? duration,
     @HiveField(3) EventPosition? scrollDelta,
     @HiveField(4) String? view,
+    @HiveField(5) @Default(0) int order,
   }) = ScrollEvent;
 
   @HiveType(typeId: 13)
@@ -41,6 +44,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(3) required String keyLabel,
     @HiveField(4) required int usbHidUsage,
     @HiveField(5) String? view,
+    @HiveField(6) @Default(0) int order,
   }) = RawKeyEvent;
 
   factory UIEvent.fromJson(Map<String, dynamic> json) =>

@@ -24,6 +24,7 @@ class ResponseEvent extends HiveObject
     @HiveField(4) String? error,
     @HiveField(5) @BodyBytesConverter() Uint8List? body,
     @HiveField(6) String? view,
+    @HiveField(7) @Default(0) int order,
   }) = _ResponseEvent;
 
   factory ResponseEvent.fromJson(Map<String, dynamic> json) =>
