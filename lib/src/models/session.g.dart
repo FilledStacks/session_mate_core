@@ -24,13 +24,14 @@ class SessionAdapter extends TypeAdapter<_$_Session> {
       exception: fields[4] as String?,
       stackTrace: fields[5] as String?,
       sessionStats: fields[6] as SessionStats,
+      createdAtTimestamp: fields[7] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$_Session obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(2)
@@ -41,6 +42,8 @@ class SessionAdapter extends TypeAdapter<_$_Session> {
       ..write(obj.stackTrace)
       ..writeByte(6)
       ..write(obj.sessionStats)
+      ..writeByte(7)
+      ..write(obj.createdAtTimestamp)
       ..writeByte(1)
       ..write(obj.events)
       ..writeByte(3)
@@ -78,6 +81,7 @@ _$_Session _$$_SessionFromJson(Map<String, dynamic> json) => _$_Session(
       stackTrace: json['stackTrace'] as String?,
       sessionStats:
           SessionStats.fromJson(json['sessionStats'] as Map<String, dynamic>),
+      createdAtTimestamp: json['createdAtTimestamp'] as String,
     );
 
 Map<String, dynamic> _$$_SessionToJson(_$_Session instance) =>
@@ -90,6 +94,7 @@ Map<String, dynamic> _$$_SessionToJson(_$_Session instance) =>
       'exception': instance.exception,
       'stackTrace': instance.stackTrace,
       'sessionStats': instance.sessionStats,
+      'createdAtTimestamp': instance.createdAtTimestamp,
     };
 
 const _$SessionPriorityEnumMap = {

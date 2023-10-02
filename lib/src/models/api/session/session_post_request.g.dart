@@ -18,6 +18,7 @@ _$_SessionPostRequest _$$_SessionPostRequestFromJson(
       exception: json['exception'] as String,
       stackTrace: json['stackTrace'] as String,
       appStats: AppStats.fromJson(json['appStats'] as Map<String, dynamic>),
+      createdAtTimestamp: json['createdAtTimestamp'] as String,
     );
 
 Map<String, dynamic> _$$_SessionPostRequestToJson(
@@ -30,4 +31,5 @@ Map<String, dynamic> _$$_SessionPostRequestToJson(
       'exception': instance.exception,
       'stackTrace': instance.stackTrace,
       'appStats': instance.appStats,
+      'createdAtTimestamp': instance.createdAtTimestamp,
     };

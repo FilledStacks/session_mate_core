@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
 import 'package:session_mate_core/session_mate_core.dart';
-import 'package:session_mate_core/src/models/session_stats.dart';
 import 'package:session_mate_core/src/shared/session_event_shared.dart';
 
 part 'session.freezed.dart';
@@ -21,13 +20,14 @@ class Session extends HiveObject with _$Session {
     @HiveField(4) String? exception,
     @HiveField(5) String? stackTrace,
     @HiveField(6) required SessionStats sessionStats,
+    @HiveField(7) required String createdAtTimestamp,
   }) = _Session;
 
   factory Session.fromJson(Map<String, dynamic> json) =>
       _$SessionFromJson(json);
 
-  String get createdAt => DateFormat.MMMEd()
-      .format(DateTime.fromMillisecondsSinceEpoch(int.parse(id)));
+  String get createdAt => DateFormat.MMMEd().format(
+      DateTime.fromMillisecondsSinceEpoch(int.parse(createdAtTimestamp)));
 
   String get timeAgo {
     final datetime = DateTime.fromMillisecondsSinceEpoch(int.parse(id));

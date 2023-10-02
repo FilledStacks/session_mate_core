@@ -35,6 +35,8 @@ mixin _$Session {
   String? get stackTrace => throw _privateConstructorUsedError;
   @HiveField(6)
   SessionStats get sessionStats => throw _privateConstructorUsedError;
+  @HiveField(7)
+  String get createdAtTimestamp => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -53,7 +55,8 @@ abstract class $SessionCopyWith<$Res> {
       @HiveField(3) List<String> views,
       @HiveField(4) String? exception,
       @HiveField(5) String? stackTrace,
-      @HiveField(6) SessionStats sessionStats});
+      @HiveField(6) SessionStats sessionStats,
+      @HiveField(7) String createdAtTimestamp});
 
   $SessionStatsCopyWith<$Res> get sessionStats;
 }
@@ -78,6 +81,7 @@ class _$SessionCopyWithImpl<$Res, $Val extends Session>
     Object? exception = freezed,
     Object? stackTrace = freezed,
     Object? sessionStats = null,
+    Object? createdAtTimestamp = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -108,6 +112,10 @@ class _$SessionCopyWithImpl<$Res, $Val extends Session>
           ? _value.sessionStats
           : sessionStats // ignore: cast_nullable_to_non_nullable
               as SessionStats,
+      createdAtTimestamp: null == createdAtTimestamp
+          ? _value.createdAtTimestamp
+          : createdAtTimestamp // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 
@@ -134,7 +142,8 @@ abstract class _$$_SessionCopyWith<$Res> implements $SessionCopyWith<$Res> {
       @HiveField(3) List<String> views,
       @HiveField(4) String? exception,
       @HiveField(5) String? stackTrace,
-      @HiveField(6) SessionStats sessionStats});
+      @HiveField(6) SessionStats sessionStats,
+      @HiveField(7) String createdAtTimestamp});
 
   @override
   $SessionStatsCopyWith<$Res> get sessionStats;
@@ -157,6 +166,7 @@ class __$$_SessionCopyWithImpl<$Res>
     Object? exception = freezed,
     Object? stackTrace = freezed,
     Object? sessionStats = null,
+    Object? createdAtTimestamp = null,
   }) {
     return _then(_$_Session(
       id: null == id
@@ -187,6 +197,10 @@ class __$$_SessionCopyWithImpl<$Res>
           ? _value.sessionStats
           : sessionStats // ignore: cast_nullable_to_non_nullable
               as SessionStats,
+      createdAtTimestamp: null == createdAtTimestamp
+          ? _value.createdAtTimestamp
+          : createdAtTimestamp // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -204,7 +218,8 @@ class _$_Session extends _Session {
       @HiveField(3) final List<String> views = const <String>[],
       @HiveField(4) this.exception,
       @HiveField(5) this.stackTrace,
-      @HiveField(6) required this.sessionStats})
+      @HiveField(6) required this.sessionStats,
+      @HiveField(7) required this.createdAtTimestamp})
       : _events = events,
         _views = views,
         super._();
@@ -248,10 +263,13 @@ class _$_Session extends _Session {
   @override
   @HiveField(6)
   final SessionStats sessionStats;
+  @override
+  @HiveField(7)
+  final String createdAtTimestamp;
 
   @override
   String toString() {
-    return 'Session(id: $id, events: $events, priority: $priority, views: $views, exception: $exception, stackTrace: $stackTrace, sessionStats: $sessionStats)';
+    return 'Session(id: $id, events: $events, priority: $priority, views: $views, exception: $exception, stackTrace: $stackTrace, sessionStats: $sessionStats, createdAtTimestamp: $createdAtTimestamp)';
   }
 
   @override
@@ -269,7 +287,9 @@ class _$_Session extends _Session {
             (identical(other.stackTrace, stackTrace) ||
                 other.stackTrace == stackTrace) &&
             (identical(other.sessionStats, sessionStats) ||
-                other.sessionStats == sessionStats));
+                other.sessionStats == sessionStats) &&
+            (identical(other.createdAtTimestamp, createdAtTimestamp) ||
+                other.createdAtTimestamp == createdAtTimestamp));
   }
 
   @JsonKey(ignore: true)
@@ -282,7 +302,8 @@ class _$_Session extends _Session {
       const DeepCollectionEquality().hash(_views),
       exception,
       stackTrace,
-      sessionStats);
+      sessionStats,
+      createdAtTimestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -308,7 +329,8 @@ abstract class _Session extends Session {
       @HiveField(3) final List<String> views,
       @HiveField(4) final String? exception,
       @HiveField(5) final String? stackTrace,
-      @HiveField(6) required final SessionStats sessionStats}) = _$_Session;
+      @HiveField(6) required final SessionStats sessionStats,
+      @HiveField(7) required final String createdAtTimestamp}) = _$_Session;
   _Session._() : super._();
 
   factory _Session.fromJson(Map<String, dynamic> json) = _$_Session.fromJson;
@@ -335,6 +357,9 @@ abstract class _Session extends Session {
   @override
   @HiveField(6)
   SessionStats get sessionStats;
+  @override
+  @HiveField(7)
+  String get createdAtTimestamp;
   @override
   @JsonKey(ignore: true)
   _$$_SessionCopyWith<_$_Session> get copyWith =>

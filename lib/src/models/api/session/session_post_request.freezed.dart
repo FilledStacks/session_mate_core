@@ -27,6 +27,7 @@ mixin _$SessionPostRequest {
   String get exception => throw _privateConstructorUsedError;
   String get stackTrace => throw _privateConstructorUsedError;
   AppStats get appStats => throw _privateConstructorUsedError;
+  String get createdAtTimestamp => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,7 +47,8 @@ abstract class $SessionPostRequestCopyWith<$Res> {
       List<String> views,
       String exception,
       String stackTrace,
-      AppStats appStats});
+      AppStats appStats,
+      String createdAtTimestamp});
 
   $AppStatsCopyWith<$Res> get appStats;
 }
@@ -70,6 +72,7 @@ class _$SessionPostRequestCopyWithImpl<$Res, $Val extends SessionPostRequest>
     Object? exception = null,
     Object? stackTrace = null,
     Object? appStats = null,
+    Object? createdAtTimestamp = null,
   }) {
     return _then(_value.copyWith(
       appId: null == appId
@@ -96,6 +99,10 @@ class _$SessionPostRequestCopyWithImpl<$Res, $Val extends SessionPostRequest>
           ? _value.appStats
           : appStats // ignore: cast_nullable_to_non_nullable
               as AppStats,
+      createdAtTimestamp: null == createdAtTimestamp
+          ? _value.createdAtTimestamp
+          : createdAtTimestamp // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 
@@ -122,7 +129,8 @@ abstract class _$$_SessionPostRequestCopyWith<$Res>
       List<String> views,
       String exception,
       String stackTrace,
-      AppStats appStats});
+      AppStats appStats,
+      String createdAtTimestamp});
 
   @override
   $AppStatsCopyWith<$Res> get appStats;
@@ -145,6 +153,7 @@ class __$$_SessionPostRequestCopyWithImpl<$Res>
     Object? exception = null,
     Object? stackTrace = null,
     Object? appStats = null,
+    Object? createdAtTimestamp = null,
   }) {
     return _then(_$_SessionPostRequest(
       appId: null == appId
@@ -171,6 +180,10 @@ class __$$_SessionPostRequestCopyWithImpl<$Res>
           ? _value.appStats
           : appStats // ignore: cast_nullable_to_non_nullable
               as AppStats,
+      createdAtTimestamp: null == createdAtTimestamp
+          ? _value.createdAtTimestamp
+          : createdAtTimestamp // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -184,7 +197,8 @@ class _$_SessionPostRequest implements _SessionPostRequest {
       required final List<String> views,
       required this.exception,
       required this.stackTrace,
-      required this.appStats})
+      required this.appStats,
+      required this.createdAtTimestamp})
       : _events = events,
         _views = views;
 
@@ -216,10 +230,12 @@ class _$_SessionPostRequest implements _SessionPostRequest {
   final String stackTrace;
   @override
   final AppStats appStats;
+  @override
+  final String createdAtTimestamp;
 
   @override
   String toString() {
-    return 'SessionPostRequest(appId: $appId, events: $events, views: $views, exception: $exception, stackTrace: $stackTrace, appStats: $appStats)';
+    return 'SessionPostRequest(appId: $appId, events: $events, views: $views, exception: $exception, stackTrace: $stackTrace, appStats: $appStats, createdAtTimestamp: $createdAtTimestamp)';
   }
 
   @override
@@ -235,7 +251,9 @@ class _$_SessionPostRequest implements _SessionPostRequest {
             (identical(other.stackTrace, stackTrace) ||
                 other.stackTrace == stackTrace) &&
             (identical(other.appStats, appStats) ||
-                other.appStats == appStats));
+                other.appStats == appStats) &&
+            (identical(other.createdAtTimestamp, createdAtTimestamp) ||
+                other.createdAtTimestamp == createdAtTimestamp));
   }
 
   @JsonKey(ignore: true)
@@ -247,7 +265,8 @@ class _$_SessionPostRequest implements _SessionPostRequest {
       const DeepCollectionEquality().hash(_views),
       exception,
       stackTrace,
-      appStats);
+      appStats,
+      createdAtTimestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -271,7 +290,8 @@ abstract class _SessionPostRequest implements SessionPostRequest {
       required final List<String> views,
       required final String exception,
       required final String stackTrace,
-      required final AppStats appStats}) = _$_SessionPostRequest;
+      required final AppStats appStats,
+      required final String createdAtTimestamp}) = _$_SessionPostRequest;
 
   factory _SessionPostRequest.fromJson(Map<String, dynamic> json) =
       _$_SessionPostRequest.fromJson;
@@ -289,6 +309,8 @@ abstract class _SessionPostRequest implements SessionPostRequest {
   String get stackTrace;
   @override
   AppStats get appStats;
+  @override
+  String get createdAtTimestamp;
   @override
   @JsonKey(ignore: true)
   _$$_SessionPostRequestCopyWith<_$_SessionPostRequest> get copyWith =>

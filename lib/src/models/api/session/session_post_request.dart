@@ -15,6 +15,7 @@ class SessionPostRequest with _$SessionPostRequest {
     required String exception,
     required String stackTrace,
     required AppStats appStats,
+    required String createdAtTimestamp,
   }) = _SessionPostRequest;
 
   factory SessionPostRequest.fromJson(Map<String, dynamic> json) =>
@@ -41,6 +42,7 @@ class SessionPostRequest with _$SessionPostRequest {
         platform: platform,
         userId: userId,
       ),
+      createdAtTimestamp: session.createdAtTimestamp,
     );
   }
 }
