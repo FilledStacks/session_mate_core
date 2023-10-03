@@ -24,7 +24,7 @@ class SessionAdapter extends TypeAdapter<_$_Session> {
       exception: fields[4] as String?,
       stackTrace: fields[5] as String?,
       sessionStats: fields[6] as SessionStats,
-      createdAtTimestamp: fields[7] as String,
+      createdAtTimestamp: fields[7] as int,
     );
   }
 
@@ -81,7 +81,7 @@ _$_Session _$$_SessionFromJson(Map<String, dynamic> json) => _$_Session(
       stackTrace: json['stackTrace'] as String?,
       sessionStats:
           SessionStats.fromJson(json['sessionStats'] as Map<String, dynamic>),
-      createdAtTimestamp: json['createdAtTimestamp'] as String,
+      createdAtTimestamp: json['createdAtTimestamp'] as int,
     );
 
 Map<String, dynamic> _$$_SessionToJson(_$_Session instance) =>

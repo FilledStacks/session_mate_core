@@ -27,7 +27,7 @@ mixin _$SessionPostRequest {
   String get exception => throw _privateConstructorUsedError;
   String get stackTrace => throw _privateConstructorUsedError;
   AppStats get appStats => throw _privateConstructorUsedError;
-  String get createdAtTimestamp => throw _privateConstructorUsedError;
+  int get createdAtTimestamp => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,7 +48,7 @@ abstract class $SessionPostRequestCopyWith<$Res> {
       String exception,
       String stackTrace,
       AppStats appStats,
-      String createdAtTimestamp});
+      int createdAtTimestamp});
 
   $AppStatsCopyWith<$Res> get appStats;
 }
@@ -102,7 +102,7 @@ class _$SessionPostRequestCopyWithImpl<$Res, $Val extends SessionPostRequest>
       createdAtTimestamp: null == createdAtTimestamp
           ? _value.createdAtTimestamp
           : createdAtTimestamp // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ) as $Val);
   }
 
@@ -130,7 +130,7 @@ abstract class _$$_SessionPostRequestCopyWith<$Res>
       String exception,
       String stackTrace,
       AppStats appStats,
-      String createdAtTimestamp});
+      int createdAtTimestamp});
 
   @override
   $AppStatsCopyWith<$Res> get appStats;
@@ -183,7 +183,7 @@ class __$$_SessionPostRequestCopyWithImpl<$Res>
       createdAtTimestamp: null == createdAtTimestamp
           ? _value.createdAtTimestamp
           : createdAtTimestamp // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ));
   }
 }
@@ -231,7 +231,7 @@ class _$_SessionPostRequest implements _SessionPostRequest {
   @override
   final AppStats appStats;
   @override
-  final String createdAtTimestamp;
+  final int createdAtTimestamp;
 
   @override
   String toString() {
@@ -291,7 +291,7 @@ abstract class _SessionPostRequest implements SessionPostRequest {
       required final String exception,
       required final String stackTrace,
       required final AppStats appStats,
-      required final String createdAtTimestamp}) = _$_SessionPostRequest;
+      required final int createdAtTimestamp}) = _$_SessionPostRequest;
 
   factory _SessionPostRequest.fromJson(Map<String, dynamic> json) =
       _$_SessionPostRequest.fromJson;
@@ -310,7 +310,7 @@ abstract class _SessionPostRequest implements SessionPostRequest {
   @override
   AppStats get appStats;
   @override
-  String get createdAtTimestamp;
+  int get createdAtTimestamp;
   @override
   @JsonKey(ignore: true)
   _$$_SessionPostRequestCopyWith<_$_SessionPostRequest> get copyWith =>

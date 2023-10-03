@@ -781,12 +781,13 @@ class _$InputEvent extends InputEvent {
 }
 
 abstract class InputEvent extends UIEvent {
-  factory InputEvent(
-      {@HiveField(0) required final EventPosition position,
-      @HiveField(1) final InteractionType type,
-      @HiveField(2) final String? inputData,
-      @HiveField(3) final String? view,
-      @HiveField(4) final int order}) = _$InputEvent;
+  factory InputEvent({
+    @HiveField(0) required final EventPosition position,
+    @HiveField(1) final InteractionType type,
+    @HiveField(2) final String? inputData,
+    @HiveField(3) final String? view,
+    @HiveField(4) final int order,
+  }) = _$InputEvent;
   InputEvent._() : super._();
 
   factory InputEvent.fromJson(Map<String, dynamic> json) =

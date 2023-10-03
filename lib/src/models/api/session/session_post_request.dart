@@ -15,7 +15,7 @@ class SessionPostRequest with _$SessionPostRequest {
     required String exception,
     required String stackTrace,
     required AppStats appStats,
-    required String createdAtTimestamp,
+    required int createdAtTimestamp,
   }) = _SessionPostRequest;
 
   factory SessionPostRequest.fromJson(Map<String, dynamic> json) =>

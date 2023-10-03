@@ -36,7 +36,7 @@ mixin _$Session {
   @HiveField(6)
   SessionStats get sessionStats => throw _privateConstructorUsedError;
   @HiveField(7)
-  String get createdAtTimestamp => throw _privateConstructorUsedError;
+  int get createdAtTimestamp => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -56,7 +56,7 @@ abstract class $SessionCopyWith<$Res> {
       @HiveField(4) String? exception,
       @HiveField(5) String? stackTrace,
       @HiveField(6) SessionStats sessionStats,
-      @HiveField(7) String createdAtTimestamp});
+      @HiveField(7) int createdAtTimestamp});
 
   $SessionStatsCopyWith<$Res> get sessionStats;
 }
@@ -115,7 +115,7 @@ class _$SessionCopyWithImpl<$Res, $Val extends Session>
       createdAtTimestamp: null == createdAtTimestamp
           ? _value.createdAtTimestamp
           : createdAtTimestamp // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ) as $Val);
   }
 
@@ -143,7 +143,7 @@ abstract class _$$_SessionCopyWith<$Res> implements $SessionCopyWith<$Res> {
       @HiveField(4) String? exception,
       @HiveField(5) String? stackTrace,
       @HiveField(6) SessionStats sessionStats,
-      @HiveField(7) String createdAtTimestamp});
+      @HiveField(7) int createdAtTimestamp});
 
   @override
   $SessionStatsCopyWith<$Res> get sessionStats;
@@ -200,7 +200,7 @@ class __$$_SessionCopyWithImpl<$Res>
       createdAtTimestamp: null == createdAtTimestamp
           ? _value.createdAtTimestamp
           : createdAtTimestamp // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ));
   }
 }
@@ -265,7 +265,7 @@ class _$_Session extends _Session {
   final SessionStats sessionStats;
   @override
   @HiveField(7)
-  final String createdAtTimestamp;
+  final int createdAtTimestamp;
 
   @override
   String toString() {
@@ -330,7 +330,7 @@ abstract class _Session extends Session {
       @HiveField(4) final String? exception,
       @HiveField(5) final String? stackTrace,
       @HiveField(6) required final SessionStats sessionStats,
-      @HiveField(7) required final String createdAtTimestamp}) = _$_Session;
+      @HiveField(7) required final int createdAtTimestamp}) = _$_Session;
   _Session._() : super._();
 
   factory _Session.fromJson(Map<String, dynamic> json) = _$_Session.fromJson;
@@ -359,7 +359,7 @@ abstract class _Session extends Session {
   SessionStats get sessionStats;
   @override
   @HiveField(7)
-  String get createdAtTimestamp;
+  int get createdAtTimestamp;
   @override
   @JsonKey(ignore: true)
   _$$_SessionCopyWith<_$_Session> get copyWith =>

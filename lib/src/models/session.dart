@@ -20,18 +20,17 @@ class Session extends HiveObject with _$Session {
     @HiveField(4) String? exception,
     @HiveField(5) String? stackTrace,
     @HiveField(6) required SessionStats sessionStats,
-    @HiveField(7) required String createdAtTimestamp,
+    @HiveField(7) required int createdAtTimestamp,
   }) = _Session;
 
   factory Session.fromJson(Map<String, dynamic> json) =>
       _$SessionFromJson(json);
 
-  String get createdAt => DateFormat.MMMEd().format(
-      DateTime.fromMillisecondsSinceEpoch(int.parse(createdAtTimestamp)));
+  String get createdAt => DateFormat.MMMEd()
+      .format(DateTime.fromMillisecondsSinceEpoch(createdAtTimestamp));
 
   String get timeAgo {
-    final datetime =
-        DateTime.fromMillisecondsSinceEpoch(int.parse(createdAtTimestamp));
+    final datetime = DateTime.fromMillisecondsSinceEpoch(createdAtTimestamp);
     final diff = DateTime.now().difference(datetime);
 
     if (diff.inDays >= 1) {
