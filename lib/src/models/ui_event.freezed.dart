@@ -41,20 +41,29 @@ mixin _$UIEvent {
   String? get view => throw _privateConstructorUsedError;
   @HiveField(3)
   int get order => throw _privateConstructorUsedError;
+  @HiveField(4)
+  List<ScrollableDescription>? get externalities =>
+      throw _privateConstructorUsedError;
+  @HiveField(5)
+  String get id => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? view,
-            @HiveField(3) int order)
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id)
         tap,
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? inputData,
             @HiveField(3) String? view,
-            @HiveField(4) int order)
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id)
         input,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -62,7 +71,9 @@ mixin _$UIEvent {
             @HiveField(2) int? duration,
             @HiveField(3) EventPosition? scrollDelta,
             @HiveField(4) String? view,
-            @HiveField(5) int order)
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id)
         scroll,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -71,7 +82,9 @@ mixin _$UIEvent {
             @HiveField(3) String keyLabel,
             @HiveField(4) int usbHidUsage,
             @HiveField(5) String? view,
-            @HiveField(6) int order)
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id)
         rawKeyEvent,
   }) =>
       throw _privateConstructorUsedError;
@@ -81,14 +94,18 @@ mixin _$UIEvent {
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? view,
-            @HiveField(3) int order)?
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id)?
         tap,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? inputData,
             @HiveField(3) String? view,
-            @HiveField(4) int order)?
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id)?
         input,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -96,7 +113,9 @@ mixin _$UIEvent {
             @HiveField(2) int? duration,
             @HiveField(3) EventPosition? scrollDelta,
             @HiveField(4) String? view,
-            @HiveField(5) int order)?
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id)?
         scroll,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -105,7 +124,9 @@ mixin _$UIEvent {
             @HiveField(3) String keyLabel,
             @HiveField(4) int usbHidUsage,
             @HiveField(5) String? view,
-            @HiveField(6) int order)?
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id)?
         rawKeyEvent,
   }) =>
       throw _privateConstructorUsedError;
@@ -115,14 +136,18 @@ mixin _$UIEvent {
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? view,
-            @HiveField(3) int order)?
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id)?
         tap,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? inputData,
             @HiveField(3) String? view,
-            @HiveField(4) int order)?
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id)?
         input,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -130,7 +155,9 @@ mixin _$UIEvent {
             @HiveField(2) int? duration,
             @HiveField(3) EventPosition? scrollDelta,
             @HiveField(4) String? view,
-            @HiveField(5) int order)?
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id)?
         scroll,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -139,7 +166,9 @@ mixin _$UIEvent {
             @HiveField(3) String keyLabel,
             @HiveField(4) int usbHidUsage,
             @HiveField(5) String? view,
-            @HiveField(6) int order)?
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id)?
         rawKeyEvent,
     required TResult orElse(),
   }) =>
@@ -183,7 +212,9 @@ abstract class $UIEventCopyWith<$Res> {
       {@HiveField(0) EventPosition position,
       @HiveField(1) InteractionType type,
       @HiveField(2) String? view,
-      @HiveField(3) int order});
+      @HiveField(3) int order,
+      @HiveField(4) List<ScrollableDescription>? externalities,
+      @HiveField(5) String id});
 
   $EventPositionCopyWith<$Res> get position;
 }
@@ -205,6 +236,8 @@ class _$UIEventCopyWithImpl<$Res, $Val extends UIEvent>
     Object? type = null,
     Object? view = freezed,
     Object? order = null,
+    Object? externalities = freezed,
+    Object? id = null,
   }) {
     return _then(_value.copyWith(
       position: null == position
@@ -223,6 +256,14 @@ class _$UIEventCopyWithImpl<$Res, $Val extends UIEvent>
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as int,
+      externalities: freezed == externalities
+          ? _value.externalities
+          : externalities // ignore: cast_nullable_to_non_nullable
+              as List<ScrollableDescription>?,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 
@@ -246,7 +287,9 @@ abstract class _$$TapEventCopyWith<$Res> implements $UIEventCopyWith<$Res> {
       {@HiveField(0) EventPosition position,
       @HiveField(1) InteractionType type,
       @HiveField(2) String? view,
-      @HiveField(3) int order});
+      @HiveField(3) int order,
+      @HiveField(4) List<ScrollableDescription>? externalities,
+      @HiveField(5) String id});
 
   @override
   $EventPositionCopyWith<$Res> get position;
@@ -266,6 +309,8 @@ class __$$TapEventCopyWithImpl<$Res>
     Object? type = null,
     Object? view = freezed,
     Object? order = null,
+    Object? externalities = freezed,
+    Object? id = null,
   }) {
     return _then(_$TapEvent(
       position: null == position
@@ -284,6 +329,14 @@ class __$$TapEventCopyWithImpl<$Res>
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as int,
+      externalities: freezed == externalities
+          ? _value._externalities
+          : externalities // ignore: cast_nullable_to_non_nullable
+              as List<ScrollableDescription>?,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -297,8 +350,11 @@ class _$TapEvent extends TapEvent {
       @HiveField(1) this.type = InteractionType.tap,
       @HiveField(2) this.view,
       @HiveField(3) this.order = 0,
+      @HiveField(4) final List<ScrollableDescription>? externalities,
+      @HiveField(5) this.id = 'TO_BE_GENERATED',
       final String? $type})
-      : $type = $type ?? 'tap',
+      : _externalities = externalities,
+        $type = $type ?? 'tap',
         super._();
 
   factory _$TapEvent.fromJson(Map<String, dynamic> json) =>
@@ -318,6 +374,21 @@ class _$TapEvent extends TapEvent {
   @JsonKey()
   @HiveField(3)
   final int order;
+  final List<ScrollableDescription>? _externalities;
+  @override
+  @HiveField(4)
+  List<ScrollableDescription>? get externalities {
+    final value = _externalities;
+    if (value == null) return null;
+    if (_externalities is EqualUnmodifiableListView) return _externalities;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey()
+  @HiveField(5)
+  final String id;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -335,14 +406,18 @@ class _$TapEvent extends TapEvent {
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? view,
-            @HiveField(3) int order)
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id)
         tap,
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? inputData,
             @HiveField(3) String? view,
-            @HiveField(4) int order)
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id)
         input,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -350,7 +425,9 @@ class _$TapEvent extends TapEvent {
             @HiveField(2) int? duration,
             @HiveField(3) EventPosition? scrollDelta,
             @HiveField(4) String? view,
-            @HiveField(5) int order)
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id)
         scroll,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -359,10 +436,12 @@ class _$TapEvent extends TapEvent {
             @HiveField(3) String keyLabel,
             @HiveField(4) int usbHidUsage,
             @HiveField(5) String? view,
-            @HiveField(6) int order)
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id)
         rawKeyEvent,
   }) {
-    return tap(position, type, view, order);
+    return tap(position, type, view, order, externalities, id);
   }
 
   @override
@@ -372,14 +451,18 @@ class _$TapEvent extends TapEvent {
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? view,
-            @HiveField(3) int order)?
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id)?
         tap,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? inputData,
             @HiveField(3) String? view,
-            @HiveField(4) int order)?
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id)?
         input,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -387,7 +470,9 @@ class _$TapEvent extends TapEvent {
             @HiveField(2) int? duration,
             @HiveField(3) EventPosition? scrollDelta,
             @HiveField(4) String? view,
-            @HiveField(5) int order)?
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id)?
         scroll,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -396,10 +481,12 @@ class _$TapEvent extends TapEvent {
             @HiveField(3) String keyLabel,
             @HiveField(4) int usbHidUsage,
             @HiveField(5) String? view,
-            @HiveField(6) int order)?
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id)?
         rawKeyEvent,
   }) {
-    return tap?.call(position, type, view, order);
+    return tap?.call(position, type, view, order, externalities, id);
   }
 
   @override
@@ -409,14 +496,18 @@ class _$TapEvent extends TapEvent {
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? view,
-            @HiveField(3) int order)?
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id)?
         tap,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? inputData,
             @HiveField(3) String? view,
-            @HiveField(4) int order)?
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id)?
         input,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -424,7 +515,9 @@ class _$TapEvent extends TapEvent {
             @HiveField(2) int? duration,
             @HiveField(3) EventPosition? scrollDelta,
             @HiveField(4) String? view,
-            @HiveField(5) int order)?
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id)?
         scroll,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -433,12 +526,14 @@ class _$TapEvent extends TapEvent {
             @HiveField(3) String keyLabel,
             @HiveField(4) int usbHidUsage,
             @HiveField(5) String? view,
-            @HiveField(6) int order)?
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id)?
         rawKeyEvent,
     required TResult orElse(),
   }) {
     if (tap != null) {
-      return tap(position, type, view, order);
+      return tap(position, type, view, order, externalities, id);
     }
     return orElse();
   }
@@ -493,7 +588,9 @@ abstract class TapEvent extends UIEvent {
       {@HiveField(0) required final EventPosition position,
       @HiveField(1) final InteractionType type,
       @HiveField(2) final String? view,
-      @HiveField(3) final int order}) = _$TapEvent;
+      @HiveField(3) final int order,
+      @HiveField(4) final List<ScrollableDescription>? externalities,
+      @HiveField(5) final String id}) = _$TapEvent;
   TapEvent._() : super._();
 
   factory TapEvent.fromJson(Map<String, dynamic> json) = _$TapEvent.fromJson;
@@ -510,6 +607,12 @@ abstract class TapEvent extends UIEvent {
   @override
   @HiveField(3)
   int get order;
+  @override
+  @HiveField(4)
+  List<ScrollableDescription>? get externalities;
+  @override
+  @HiveField(5)
+  String get id;
   @override
   @JsonKey(ignore: true)
   _$$TapEventCopyWith<_$TapEvent> get copyWith =>
@@ -528,7 +631,9 @@ abstract class _$$InputEventCopyWith<$Res> implements $UIEventCopyWith<$Res> {
       @HiveField(1) InteractionType type,
       @HiveField(2) String? inputData,
       @HiveField(3) String? view,
-      @HiveField(4) int order});
+      @HiveField(4) int order,
+      @HiveField(5) List<ScrollableDescription>? externalities,
+      @HiveField(6) String id});
 
   @override
   $EventPositionCopyWith<$Res> get position;
@@ -550,6 +655,8 @@ class __$$InputEventCopyWithImpl<$Res>
     Object? inputData = freezed,
     Object? view = freezed,
     Object? order = null,
+    Object? externalities = freezed,
+    Object? id = null,
   }) {
     return _then(_$InputEvent(
       position: null == position
@@ -572,6 +679,14 @@ class __$$InputEventCopyWithImpl<$Res>
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as int,
+      externalities: freezed == externalities
+          ? _value._externalities
+          : externalities // ignore: cast_nullable_to_non_nullable
+              as List<ScrollableDescription>?,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -586,8 +701,11 @@ class _$InputEvent extends InputEvent {
       @HiveField(2) this.inputData,
       @HiveField(3) this.view,
       @HiveField(4) this.order = 0,
+      @HiveField(5) final List<ScrollableDescription>? externalities,
+      @HiveField(6) this.id = 'TO_BE_GENERATED',
       final String? $type})
-      : $type = $type ?? 'input',
+      : _externalities = externalities,
+        $type = $type ?? 'input',
         super._();
 
   factory _$InputEvent.fromJson(Map<String, dynamic> json) =>
@@ -610,6 +728,21 @@ class _$InputEvent extends InputEvent {
   @JsonKey()
   @HiveField(4)
   final int order;
+  final List<ScrollableDescription>? _externalities;
+  @override
+  @HiveField(5)
+  List<ScrollableDescription>? get externalities {
+    final value = _externalities;
+    if (value == null) return null;
+    if (_externalities is EqualUnmodifiableListView) return _externalities;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey()
+  @HiveField(6)
+  final String id;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -627,14 +760,18 @@ class _$InputEvent extends InputEvent {
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? view,
-            @HiveField(3) int order)
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id)
         tap,
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? inputData,
             @HiveField(3) String? view,
-            @HiveField(4) int order)
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id)
         input,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -642,7 +779,9 @@ class _$InputEvent extends InputEvent {
             @HiveField(2) int? duration,
             @HiveField(3) EventPosition? scrollDelta,
             @HiveField(4) String? view,
-            @HiveField(5) int order)
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id)
         scroll,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -651,10 +790,12 @@ class _$InputEvent extends InputEvent {
             @HiveField(3) String keyLabel,
             @HiveField(4) int usbHidUsage,
             @HiveField(5) String? view,
-            @HiveField(6) int order)
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id)
         rawKeyEvent,
   }) {
-    return input(position, type, inputData, view, order);
+    return input(position, type, inputData, view, order, externalities, id);
   }
 
   @override
@@ -664,14 +805,18 @@ class _$InputEvent extends InputEvent {
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? view,
-            @HiveField(3) int order)?
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id)?
         tap,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? inputData,
             @HiveField(3) String? view,
-            @HiveField(4) int order)?
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id)?
         input,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -679,7 +824,9 @@ class _$InputEvent extends InputEvent {
             @HiveField(2) int? duration,
             @HiveField(3) EventPosition? scrollDelta,
             @HiveField(4) String? view,
-            @HiveField(5) int order)?
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id)?
         scroll,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -688,10 +835,13 @@ class _$InputEvent extends InputEvent {
             @HiveField(3) String keyLabel,
             @HiveField(4) int usbHidUsage,
             @HiveField(5) String? view,
-            @HiveField(6) int order)?
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id)?
         rawKeyEvent,
   }) {
-    return input?.call(position, type, inputData, view, order);
+    return input?.call(
+        position, type, inputData, view, order, externalities, id);
   }
 
   @override
@@ -701,14 +851,18 @@ class _$InputEvent extends InputEvent {
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? view,
-            @HiveField(3) int order)?
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id)?
         tap,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? inputData,
             @HiveField(3) String? view,
-            @HiveField(4) int order)?
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id)?
         input,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -716,7 +870,9 @@ class _$InputEvent extends InputEvent {
             @HiveField(2) int? duration,
             @HiveField(3) EventPosition? scrollDelta,
             @HiveField(4) String? view,
-            @HiveField(5) int order)?
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id)?
         scroll,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -725,12 +881,14 @@ class _$InputEvent extends InputEvent {
             @HiveField(3) String keyLabel,
             @HiveField(4) int usbHidUsage,
             @HiveField(5) String? view,
-            @HiveField(6) int order)?
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id)?
         rawKeyEvent,
     required TResult orElse(),
   }) {
     if (input != null) {
-      return input(position, type, inputData, view, order);
+      return input(position, type, inputData, view, order, externalities, id);
     }
     return orElse();
   }
@@ -781,13 +939,14 @@ class _$InputEvent extends InputEvent {
 }
 
 abstract class InputEvent extends UIEvent {
-  factory InputEvent({
-    @HiveField(0) required final EventPosition position,
-    @HiveField(1) final InteractionType type,
-    @HiveField(2) final String? inputData,
-    @HiveField(3) final String? view,
-    @HiveField(4) final int order,
-  }) = _$InputEvent;
+  factory InputEvent(
+      {@HiveField(0) required final EventPosition position,
+      @HiveField(1) final InteractionType type,
+      @HiveField(2) final String? inputData,
+      @HiveField(3) final String? view,
+      @HiveField(4) final int order,
+      @HiveField(5) final List<ScrollableDescription>? externalities,
+      @HiveField(6) final String id}) = _$InputEvent;
   InputEvent._() : super._();
 
   factory InputEvent.fromJson(Map<String, dynamic> json) =
@@ -808,6 +967,12 @@ abstract class InputEvent extends UIEvent {
   @HiveField(4)
   int get order;
   @override
+  @HiveField(5)
+  List<ScrollableDescription>? get externalities;
+  @override
+  @HiveField(6)
+  String get id;
+  @override
   @JsonKey(ignore: true)
   _$$InputEventCopyWith<_$InputEvent> get copyWith =>
       throw _privateConstructorUsedError;
@@ -826,7 +991,9 @@ abstract class _$$ScrollEventCopyWith<$Res> implements $UIEventCopyWith<$Res> {
       @HiveField(2) int? duration,
       @HiveField(3) EventPosition? scrollDelta,
       @HiveField(4) String? view,
-      @HiveField(5) int order});
+      @HiveField(5) int order,
+      @HiveField(6) List<ScrollableDescription>? externalities,
+      @HiveField(7) String id});
 
   @override
   $EventPositionCopyWith<$Res> get position;
@@ -850,6 +1017,8 @@ class __$$ScrollEventCopyWithImpl<$Res>
     Object? scrollDelta = freezed,
     Object? view = freezed,
     Object? order = null,
+    Object? externalities = freezed,
+    Object? id = null,
   }) {
     return _then(_$ScrollEvent(
       position: null == position
@@ -876,6 +1045,14 @@ class __$$ScrollEventCopyWithImpl<$Res>
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as int,
+      externalities: freezed == externalities
+          ? _value._externalities
+          : externalities // ignore: cast_nullable_to_non_nullable
+              as List<ScrollableDescription>?,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 
@@ -903,8 +1080,11 @@ class _$ScrollEvent extends ScrollEvent {
       @HiveField(3) this.scrollDelta,
       @HiveField(4) this.view,
       @HiveField(5) this.order = 0,
+      @HiveField(6) final List<ScrollableDescription>? externalities,
+      @HiveField(7) this.id = 'TO_BE_GENERATED',
       final String? $type})
-      : $type = $type ?? 'scroll',
+      : _externalities = externalities,
+        $type = $type ?? 'scroll',
         super._();
 
   factory _$ScrollEvent.fromJson(Map<String, dynamic> json) =>
@@ -930,6 +1110,21 @@ class _$ScrollEvent extends ScrollEvent {
   @JsonKey()
   @HiveField(5)
   final int order;
+  final List<ScrollableDescription>? _externalities;
+  @override
+  @HiveField(6)
+  List<ScrollableDescription>? get externalities {
+    final value = _externalities;
+    if (value == null) return null;
+    if (_externalities is EqualUnmodifiableListView) return _externalities;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey()
+  @HiveField(7)
+  final String id;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -947,14 +1142,18 @@ class _$ScrollEvent extends ScrollEvent {
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? view,
-            @HiveField(3) int order)
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id)
         tap,
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? inputData,
             @HiveField(3) String? view,
-            @HiveField(4) int order)
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id)
         input,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -962,7 +1161,9 @@ class _$ScrollEvent extends ScrollEvent {
             @HiveField(2) int? duration,
             @HiveField(3) EventPosition? scrollDelta,
             @HiveField(4) String? view,
-            @HiveField(5) int order)
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id)
         scroll,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -971,10 +1172,13 @@ class _$ScrollEvent extends ScrollEvent {
             @HiveField(3) String keyLabel,
             @HiveField(4) int usbHidUsage,
             @HiveField(5) String? view,
-            @HiveField(6) int order)
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id)
         rawKeyEvent,
   }) {
-    return scroll(position, type, duration, scrollDelta, view, order);
+    return scroll(
+        position, type, duration, scrollDelta, view, order, externalities, id);
   }
 
   @override
@@ -984,14 +1188,18 @@ class _$ScrollEvent extends ScrollEvent {
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? view,
-            @HiveField(3) int order)?
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id)?
         tap,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? inputData,
             @HiveField(3) String? view,
-            @HiveField(4) int order)?
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id)?
         input,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -999,7 +1207,9 @@ class _$ScrollEvent extends ScrollEvent {
             @HiveField(2) int? duration,
             @HiveField(3) EventPosition? scrollDelta,
             @HiveField(4) String? view,
-            @HiveField(5) int order)?
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id)?
         scroll,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -1008,10 +1218,13 @@ class _$ScrollEvent extends ScrollEvent {
             @HiveField(3) String keyLabel,
             @HiveField(4) int usbHidUsage,
             @HiveField(5) String? view,
-            @HiveField(6) int order)?
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id)?
         rawKeyEvent,
   }) {
-    return scroll?.call(position, type, duration, scrollDelta, view, order);
+    return scroll?.call(
+        position, type, duration, scrollDelta, view, order, externalities, id);
   }
 
   @override
@@ -1021,14 +1234,18 @@ class _$ScrollEvent extends ScrollEvent {
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? view,
-            @HiveField(3) int order)?
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id)?
         tap,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? inputData,
             @HiveField(3) String? view,
-            @HiveField(4) int order)?
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id)?
         input,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -1036,7 +1253,9 @@ class _$ScrollEvent extends ScrollEvent {
             @HiveField(2) int? duration,
             @HiveField(3) EventPosition? scrollDelta,
             @HiveField(4) String? view,
-            @HiveField(5) int order)?
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id)?
         scroll,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -1045,12 +1264,15 @@ class _$ScrollEvent extends ScrollEvent {
             @HiveField(3) String keyLabel,
             @HiveField(4) int usbHidUsage,
             @HiveField(5) String? view,
-            @HiveField(6) int order)?
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id)?
         rawKeyEvent,
     required TResult orElse(),
   }) {
     if (scroll != null) {
-      return scroll(position, type, duration, scrollDelta, view, order);
+      return scroll(position, type, duration, scrollDelta, view, order,
+          externalities, id);
     }
     return orElse();
   }
@@ -1107,7 +1329,9 @@ abstract class ScrollEvent extends UIEvent {
       @HiveField(2) final int? duration,
       @HiveField(3) final EventPosition? scrollDelta,
       @HiveField(4) final String? view,
-      @HiveField(5) final int order}) = _$ScrollEvent;
+      @HiveField(5) final int order,
+      @HiveField(6) final List<ScrollableDescription>? externalities,
+      @HiveField(7) final String id}) = _$ScrollEvent;
   ScrollEvent._() : super._();
 
   factory ScrollEvent.fromJson(Map<String, dynamic> json) =
@@ -1130,6 +1354,12 @@ abstract class ScrollEvent extends UIEvent {
   @HiveField(5)
   int get order;
   @override
+  @HiveField(6)
+  List<ScrollableDescription>? get externalities;
+  @override
+  @HiveField(7)
+  String get id;
+  @override
   @JsonKey(ignore: true)
   _$$ScrollEventCopyWith<_$ScrollEvent> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1149,7 +1379,9 @@ abstract class _$$RawKeyEventCopyWith<$Res> implements $UIEventCopyWith<$Res> {
       @HiveField(3) String keyLabel,
       @HiveField(4) int usbHidUsage,
       @HiveField(5) String? view,
-      @HiveField(6) int order});
+      @HiveField(6) int order,
+      @HiveField(7) List<ScrollableDescription>? externalities,
+      @HiveField(8) String id});
 
   @override
   $EventPositionCopyWith<$Res> get position;
@@ -1173,6 +1405,8 @@ class __$$RawKeyEventCopyWithImpl<$Res>
     Object? usbHidUsage = null,
     Object? view = freezed,
     Object? order = null,
+    Object? externalities = freezed,
+    Object? id = null,
   }) {
     return _then(_$RawKeyEvent(
       position: null == position
@@ -1203,6 +1437,14 @@ class __$$RawKeyEventCopyWithImpl<$Res>
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as int,
+      externalities: freezed == externalities
+          ? _value._externalities
+          : externalities // ignore: cast_nullable_to_non_nullable
+              as List<ScrollableDescription>?,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -1219,8 +1461,11 @@ class _$RawKeyEvent extends RawKeyEvent {
       @HiveField(4) required this.usbHidUsage,
       @HiveField(5) this.view,
       @HiveField(6) this.order = 0,
+      @HiveField(7) final List<ScrollableDescription>? externalities,
+      @HiveField(8) this.id = 'TO_BE_GENERATED',
       final String? $type})
-      : $type = $type ?? 'rawKeyEvent',
+      : _externalities = externalities,
+        $type = $type ?? 'rawKeyEvent',
         super._();
 
   factory _$RawKeyEvent.fromJson(Map<String, dynamic> json) =>
@@ -1250,6 +1495,21 @@ class _$RawKeyEvent extends RawKeyEvent {
   @JsonKey()
   @HiveField(6)
   final int order;
+  final List<ScrollableDescription>? _externalities;
+  @override
+  @HiveField(7)
+  List<ScrollableDescription>? get externalities {
+    final value = _externalities;
+    if (value == null) return null;
+    if (_externalities is EqualUnmodifiableListView) return _externalities;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey()
+  @HiveField(8)
+  final String id;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -1267,14 +1527,18 @@ class _$RawKeyEvent extends RawKeyEvent {
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? view,
-            @HiveField(3) int order)
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id)
         tap,
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? inputData,
             @HiveField(3) String? view,
-            @HiveField(4) int order)
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id)
         input,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -1282,7 +1546,9 @@ class _$RawKeyEvent extends RawKeyEvent {
             @HiveField(2) int? duration,
             @HiveField(3) EventPosition? scrollDelta,
             @HiveField(4) String? view,
-            @HiveField(5) int order)
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id)
         scroll,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -1291,11 +1557,13 @@ class _$RawKeyEvent extends RawKeyEvent {
             @HiveField(3) String keyLabel,
             @HiveField(4) int usbHidUsage,
             @HiveField(5) String? view,
-            @HiveField(6) int order)
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id)
         rawKeyEvent,
   }) {
-    return rawKeyEvent(
-        position, type, keyId, keyLabel, usbHidUsage, view, order);
+    return rawKeyEvent(position, type, keyId, keyLabel, usbHidUsage, view,
+        order, externalities, id);
   }
 
   @override
@@ -1305,14 +1573,18 @@ class _$RawKeyEvent extends RawKeyEvent {
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? view,
-            @HiveField(3) int order)?
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id)?
         tap,
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? inputData,
             @HiveField(3) String? view,
-            @HiveField(4) int order)?
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id)?
         input,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -1320,7 +1592,9 @@ class _$RawKeyEvent extends RawKeyEvent {
             @HiveField(2) int? duration,
             @HiveField(3) EventPosition? scrollDelta,
             @HiveField(4) String? view,
-            @HiveField(5) int order)?
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id)?
         scroll,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -1329,11 +1603,13 @@ class _$RawKeyEvent extends RawKeyEvent {
             @HiveField(3) String keyLabel,
             @HiveField(4) int usbHidUsage,
             @HiveField(5) String? view,
-            @HiveField(6) int order)?
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id)?
         rawKeyEvent,
   }) {
-    return rawKeyEvent?.call(
-        position, type, keyId, keyLabel, usbHidUsage, view, order);
+    return rawKeyEvent?.call(position, type, keyId, keyLabel, usbHidUsage, view,
+        order, externalities, id);
   }
 
   @override
@@ -1343,14 +1619,18 @@ class _$RawKeyEvent extends RawKeyEvent {
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? view,
-            @HiveField(3) int order)?
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id)?
         tap,
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
             @HiveField(2) String? inputData,
             @HiveField(3) String? view,
-            @HiveField(4) int order)?
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id)?
         input,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -1358,7 +1638,9 @@ class _$RawKeyEvent extends RawKeyEvent {
             @HiveField(2) int? duration,
             @HiveField(3) EventPosition? scrollDelta,
             @HiveField(4) String? view,
-            @HiveField(5) int order)?
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id)?
         scroll,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -1367,13 +1649,15 @@ class _$RawKeyEvent extends RawKeyEvent {
             @HiveField(3) String keyLabel,
             @HiveField(4) int usbHidUsage,
             @HiveField(5) String? view,
-            @HiveField(6) int order)?
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id)?
         rawKeyEvent,
     required TResult orElse(),
   }) {
     if (rawKeyEvent != null) {
-      return rawKeyEvent(
-          position, type, keyId, keyLabel, usbHidUsage, view, order);
+      return rawKeyEvent(position, type, keyId, keyLabel, usbHidUsage, view,
+          order, externalities, id);
     }
     return orElse();
   }
@@ -1431,7 +1715,9 @@ abstract class RawKeyEvent extends UIEvent {
       @HiveField(3) required final String keyLabel,
       @HiveField(4) required final int usbHidUsage,
       @HiveField(5) final String? view,
-      @HiveField(6) final int order}) = _$RawKeyEvent;
+      @HiveField(6) final int order,
+      @HiveField(7) final List<ScrollableDescription>? externalities,
+      @HiveField(8) final String id}) = _$RawKeyEvent;
   RawKeyEvent._() : super._();
 
   factory RawKeyEvent.fromJson(Map<String, dynamic> json) =
@@ -1455,6 +1741,12 @@ abstract class RawKeyEvent extends UIEvent {
   @override
   @HiveField(6)
   int get order;
+  @override
+  @HiveField(7)
+  List<ScrollableDescription>? get externalities;
+  @override
+  @HiveField(8)
+  String get id;
   @override
   @JsonKey(ignore: true)
   _$$RawKeyEventCopyWith<_$RawKeyEvent> get copyWith =>

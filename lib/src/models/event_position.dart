@@ -16,4 +16,9 @@ class EventPosition with _$EventPosition {
 
   factory EventPosition.fromJson(Map<String, dynamic> json) =>
       _$EventPositionFromJson(json);
+
+  EventPosition operator -(EventPosition other) => EventPosition(
+        x: x - other.x,
+        y: y - other.y,
+      );
 }

@@ -15,6 +15,8 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(1) @Default(InteractionType.tap) InteractionType type,
     @HiveField(2) String? view,
     @HiveField(3) @Default(0) int order,
+    @HiveField(4) List<ScrollableDescription>? externalities,
+    @HiveField(5) @Default('TO_BE_GENERATED') String id,
   }) = TapEvent;
 
   @HiveType(typeId: 11)
@@ -24,6 +26,8 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(2) String? inputData,
     @HiveField(3) String? view,
     @HiveField(4) @Default(0) int order,
+    @HiveField(5) List<ScrollableDescription>? externalities,
+    @HiveField(6) @Default('TO_BE_GENERATED') String id,
   }) = InputEvent;
 
   @HiveType(typeId: 12)
@@ -34,6 +38,8 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(3) EventPosition? scrollDelta,
     @HiveField(4) String? view,
     @HiveField(5) @Default(0) int order,
+    @HiveField(6) List<ScrollableDescription>? externalities,
+    @HiveField(7) @Default('TO_BE_GENERATED') String id,
   }) = ScrollEvent;
 
   @HiveType(typeId: 13)
@@ -45,6 +51,8 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(4) required int usbHidUsage,
     @HiveField(5) String? view,
     @HiveField(6) @Default(0) int order,
+    @HiveField(7) List<ScrollableDescription>? externalities,
+    @HiveField(8) @Default('TO_BE_GENERATED') String id,
   }) = RawKeyEvent;
 
   factory UIEvent.fromJson(Map<String, dynamic> json) =>
@@ -59,6 +67,8 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
 
   String get automationKey =>
       '${type.name}_${position.x.toStringAsPrecision(3).replaceAll('.', '')}_${position.y.toStringAsPrecision(3).replaceAll('.', '')}}';
+
+  bool get isScrollable => type == InteractionType.scroll;
 
   @override
   String toString() {
