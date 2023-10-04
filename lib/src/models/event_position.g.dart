@@ -51,10 +51,20 @@ _$_EventPosition _$$_EventPositionFromJson(Map<String, dynamic> json) =>
     _$_EventPosition(
       x: (json['x'] as num?)?.toDouble() ?? 0.0,
       y: (json['y'] as num?)?.toDouble() ?? 0.0,
+      capturedDeviceWidth:
+          (json['capturedDeviceWidth'] as num?)?.toDouble() ?? 0,
+      capturedDeviceHeight:
+          (json['capturedDeviceHeight'] as num?)?.toDouble() ?? 0,
+      xDeviation: (json['xDeviation'] as num?)?.toDouble() ?? 0,
+      yDeviation: (json['yDeviation'] as num?)?.toDouble() ?? 0,
     );
 
 Map<String, dynamic> _$$_EventPositionToJson(_$_EventPosition instance) =>
     <String, dynamic>{
       'x': instance.x,
       'y': instance.y,
+      'capturedDeviceWidth': instance.capturedDeviceWidth,
+      'capturedDeviceHeight': instance.capturedDeviceHeight,
+      'xDeviation': instance.xDeviation,
+      'yDeviation': instance.yDeviation,
     };

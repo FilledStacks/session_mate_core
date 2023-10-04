@@ -4,7 +4,6 @@ import 'dart:typed_data';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 import 'package:session_mate_core/src/interfaces/network_event.dart';
-import 'package:session_mate_core/src/models/scrollable_models.dart';
 import 'package:session_mate_core/src/shared/session_event_shared.dart';
 
 part 'response_event.freezed.dart';

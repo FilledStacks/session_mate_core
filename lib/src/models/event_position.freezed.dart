@@ -24,6 +24,10 @@ mixin _$EventPosition {
   double get x => throw _privateConstructorUsedError;
   @HiveField(1, defaultValue: 0.0)
   double get y => throw _privateConstructorUsedError;
+  double get capturedDeviceWidth => throw _privateConstructorUsedError;
+  double get capturedDeviceHeight => throw _privateConstructorUsedError;
+  double get xDeviation => throw _privateConstructorUsedError;
+  double get yDeviation => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,7 +43,11 @@ abstract class $EventPositionCopyWith<$Res> {
   @useResult
   $Res call(
       {@HiveField(0, defaultValue: 0.0) double x,
-      @HiveField(1, defaultValue: 0.0) double y});
+      @HiveField(1, defaultValue: 0.0) double y,
+      double capturedDeviceWidth,
+      double capturedDeviceHeight,
+      double xDeviation,
+      double yDeviation});
 }
 
 /// @nodoc
@@ -57,6 +65,10 @@ class _$EventPositionCopyWithImpl<$Res, $Val extends EventPosition>
   $Res call({
     Object? x = null,
     Object? y = null,
+    Object? capturedDeviceWidth = null,
+    Object? capturedDeviceHeight = null,
+    Object? xDeviation = null,
+    Object? yDeviation = null,
   }) {
     return _then(_value.copyWith(
       x: null == x
@@ -66,6 +78,22 @@ class _$EventPositionCopyWithImpl<$Res, $Val extends EventPosition>
       y: null == y
           ? _value.y
           : y // ignore: cast_nullable_to_non_nullable
+              as double,
+      capturedDeviceWidth: null == capturedDeviceWidth
+          ? _value.capturedDeviceWidth
+          : capturedDeviceWidth // ignore: cast_nullable_to_non_nullable
+              as double,
+      capturedDeviceHeight: null == capturedDeviceHeight
+          ? _value.capturedDeviceHeight
+          : capturedDeviceHeight // ignore: cast_nullable_to_non_nullable
+              as double,
+      xDeviation: null == xDeviation
+          ? _value.xDeviation
+          : xDeviation // ignore: cast_nullable_to_non_nullable
+              as double,
+      yDeviation: null == yDeviation
+          ? _value.yDeviation
+          : yDeviation // ignore: cast_nullable_to_non_nullable
               as double,
     ) as $Val);
   }
@@ -81,7 +109,11 @@ abstract class _$$_EventPositionCopyWith<$Res>
   @useResult
   $Res call(
       {@HiveField(0, defaultValue: 0.0) double x,
-      @HiveField(1, defaultValue: 0.0) double y});
+      @HiveField(1, defaultValue: 0.0) double y,
+      double capturedDeviceWidth,
+      double capturedDeviceHeight,
+      double xDeviation,
+      double yDeviation});
 }
 
 /// @nodoc
@@ -97,6 +129,10 @@ class __$$_EventPositionCopyWithImpl<$Res>
   $Res call({
     Object? x = null,
     Object? y = null,
+    Object? capturedDeviceWidth = null,
+    Object? capturedDeviceHeight = null,
+    Object? xDeviation = null,
+    Object? yDeviation = null,
   }) {
     return _then(_$_EventPosition(
       x: null == x
@@ -106,6 +142,22 @@ class __$$_EventPositionCopyWithImpl<$Res>
       y: null == y
           ? _value.y
           : y // ignore: cast_nullable_to_non_nullable
+              as double,
+      capturedDeviceWidth: null == capturedDeviceWidth
+          ? _value.capturedDeviceWidth
+          : capturedDeviceWidth // ignore: cast_nullable_to_non_nullable
+              as double,
+      capturedDeviceHeight: null == capturedDeviceHeight
+          ? _value.capturedDeviceHeight
+          : capturedDeviceHeight // ignore: cast_nullable_to_non_nullable
+              as double,
+      xDeviation: null == xDeviation
+          ? _value.xDeviation
+          : xDeviation // ignore: cast_nullable_to_non_nullable
+              as double,
+      yDeviation: null == yDeviation
+          ? _value.yDeviation
+          : yDeviation // ignore: cast_nullable_to_non_nullable
               as double,
     ));
   }
@@ -117,7 +169,11 @@ class __$$_EventPositionCopyWithImpl<$Res>
 class _$_EventPosition extends _EventPosition {
   const _$_EventPosition(
       {@HiveField(0, defaultValue: 0.0) this.x = 0.0,
-      @HiveField(1, defaultValue: 0.0) this.y = 0.0})
+      @HiveField(1, defaultValue: 0.0) this.y = 0.0,
+      this.capturedDeviceWidth = 0,
+      this.capturedDeviceHeight = 0,
+      this.xDeviation = 0,
+      this.yDeviation = 0})
       : super._();
 
   factory _$_EventPosition.fromJson(Map<String, dynamic> json) =>
@@ -131,10 +187,22 @@ class _$_EventPosition extends _EventPosition {
   @JsonKey()
   @HiveField(1, defaultValue: 0.0)
   final double y;
+  @override
+  @JsonKey()
+  final double capturedDeviceWidth;
+  @override
+  @JsonKey()
+  final double capturedDeviceHeight;
+  @override
+  @JsonKey()
+  final double xDeviation;
+  @override
+  @JsonKey()
+  final double yDeviation;
 
   @override
   String toString() {
-    return 'EventPosition(x: $x, y: $y)';
+    return 'EventPosition(x: $x, y: $y, capturedDeviceWidth: $capturedDeviceWidth, capturedDeviceHeight: $capturedDeviceHeight, xDeviation: $xDeviation, yDeviation: $yDeviation)';
   }
 
   @override
@@ -143,12 +211,21 @@ class _$_EventPosition extends _EventPosition {
         (other.runtimeType == runtimeType &&
             other is _$_EventPosition &&
             (identical(other.x, x) || other.x == x) &&
-            (identical(other.y, y) || other.y == y));
+            (identical(other.y, y) || other.y == y) &&
+            (identical(other.capturedDeviceWidth, capturedDeviceWidth) ||
+                other.capturedDeviceWidth == capturedDeviceWidth) &&
+            (identical(other.capturedDeviceHeight, capturedDeviceHeight) ||
+                other.capturedDeviceHeight == capturedDeviceHeight) &&
+            (identical(other.xDeviation, xDeviation) ||
+                other.xDeviation == xDeviation) &&
+            (identical(other.yDeviation, yDeviation) ||
+                other.yDeviation == yDeviation));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, x, y);
+  int get hashCode => Object.hash(runtimeType, x, y, capturedDeviceWidth,
+      capturedDeviceHeight, xDeviation, yDeviation);
 
   @JsonKey(ignore: true)
   @override
@@ -167,7 +244,11 @@ class _$_EventPosition extends _EventPosition {
 abstract class _EventPosition extends EventPosition {
   const factory _EventPosition(
       {@HiveField(0, defaultValue: 0.0) final double x,
-      @HiveField(1, defaultValue: 0.0) final double y}) = _$_EventPosition;
+      @HiveField(1, defaultValue: 0.0) final double y,
+      final double capturedDeviceWidth,
+      final double capturedDeviceHeight,
+      final double xDeviation,
+      final double yDeviation}) = _$_EventPosition;
   const _EventPosition._() : super._();
 
   factory _EventPosition.fromJson(Map<String, dynamic> json) =
@@ -179,6 +260,14 @@ abstract class _EventPosition extends EventPosition {
   @override
   @HiveField(1, defaultValue: 0.0)
   double get y;
+  @override
+  double get capturedDeviceWidth;
+  @override
+  double get capturedDeviceHeight;
+  @override
+  double get xDeviation;
+  @override
+  double get yDeviation;
   @override
   @JsonKey(ignore: true)
   _$$_EventPositionCopyWith<_$_EventPosition> get copyWith =>

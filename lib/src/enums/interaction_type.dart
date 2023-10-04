@@ -24,11 +24,11 @@ enum InteractionType {
   int get color {
     switch (this) {
       case tap:
-        return 0xFF69F0AE;
+        return 0xFFff0000;
       case input:
-        return 0xFFE040FB;
+        return 0xFF00ff00;
       case scroll:
-        return 0xFFFF5252;
+        return 0xFF0000ff;
       default:
         return 0xFFFFFFFF;
     }
@@ -37,11 +37,11 @@ enum InteractionType {
   int get alternativeColor {
     switch (this) {
       case tap:
-        return 0xFF69F0AE;
+        return 0xFFff0000;
       case input:
-        return 0xFFE040FB;
+        return 0xFF00ff00;
       case scroll:
-        return 0xFFEE9A9A;
+        return 0xFF0000ff;
       default:
         return 0xFFFFFFFF;
     }

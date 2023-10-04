@@ -12,13 +12,15 @@ class EventPosition with _$EventPosition {
   const factory EventPosition({
     @HiveField(0, defaultValue: 0.0) @Default(0.0) double x,
     @HiveField(1, defaultValue: 0.0) @Default(0.0) double y,
+    @Default(0) double capturedDeviceWidth,
+    @Default(0) double capturedDeviceHeight,
+    @Default(0) double xDeviation,
+    @Default(0) double yDeviation,
   }) = _EventPosition;
 
   factory EventPosition.fromJson(Map<String, dynamic> json) =>
       _$EventPositionFromJson(json);
 
-  EventPosition operator -(EventPosition other) => EventPosition(
-        x: x - other.x,
-        y: y - other.y,
-      );
+  EventPosition operator -(EventPosition other) =>
+      EventPosition(x: x - other.x, y: y - other.y);
 }
