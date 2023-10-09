@@ -21,12 +21,17 @@ ScrollableDescription _$ScrollableDescriptionFromJson(
 
 /// @nodoc
 mixin _$ScrollableDescription {
+  @HiveField(0)
   ScrollAxis get axis => throw _privateConstructorUsedError;
+  @HiveField(1)
   ScrollableRect get rect => throw _privateConstructorUsedError;
 
   /// The offset that the scroll view was on when we captured this data
+  @HiveField(2)
   double get scrollOffsetInPixels => throw _privateConstructorUsedError;
+  @HiveField(3)
   double get maxScrollExtentByPixels => throw _privateConstructorUsedError;
+  @HiveField(4)
   bool get nested => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -42,11 +47,11 @@ abstract class $ScrollableDescriptionCopyWith<$Res> {
       _$ScrollableDescriptionCopyWithImpl<$Res, ScrollableDescription>;
   @useResult
   $Res call(
-      {ScrollAxis axis,
-      ScrollableRect rect,
-      double scrollOffsetInPixels,
-      double maxScrollExtentByPixels,
-      bool nested});
+      {@HiveField(0) ScrollAxis axis,
+      @HiveField(1) ScrollableRect rect,
+      @HiveField(2) double scrollOffsetInPixels,
+      @HiveField(3) double maxScrollExtentByPixels,
+      @HiveField(4) bool nested});
 
   $ScrollableRectCopyWith<$Res> get rect;
 }
@@ -113,11 +118,11 @@ abstract class _$$_ScrollableDescriptionCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {ScrollAxis axis,
-      ScrollableRect rect,
-      double scrollOffsetInPixels,
-      double maxScrollExtentByPixels,
-      bool nested});
+      {@HiveField(0) ScrollAxis axis,
+      @HiveField(1) ScrollableRect rect,
+      @HiveField(2) double scrollOffsetInPixels,
+      @HiveField(3) double maxScrollExtentByPixels,
+      @HiveField(4) bool nested});
 
   @override
   $ScrollableRectCopyWith<$Res> get rect;
@@ -167,29 +172,35 @@ class __$$_ScrollableDescriptionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: 11)
 class _$_ScrollableDescription implements _ScrollableDescription {
   _$_ScrollableDescription(
-      {required this.axis,
-      required this.rect,
-      required this.scrollOffsetInPixels,
-      required this.maxScrollExtentByPixels,
-      this.nested = false});
+      {@HiveField(0) required this.axis,
+      @HiveField(1) required this.rect,
+      @HiveField(2) required this.scrollOffsetInPixels,
+      @HiveField(3) required this.maxScrollExtentByPixels,
+      @HiveField(4) this.nested = false});
 
   factory _$_ScrollableDescription.fromJson(Map<String, dynamic> json) =>
       _$$_ScrollableDescriptionFromJson(json);
 
   @override
+  @HiveField(0)
   final ScrollAxis axis;
   @override
+  @HiveField(1)
   final ScrollableRect rect;
 
   /// The offset that the scroll view was on when we captured this data
   @override
+  @HiveField(2)
   final double scrollOffsetInPixels;
   @override
+  @HiveField(3)
   final double maxScrollExtentByPixels;
   @override
   @JsonKey()
+  @HiveField(4)
   final bool nested;
 
   @override
@@ -234,26 +245,31 @@ class _$_ScrollableDescription implements _ScrollableDescription {
 
 abstract class _ScrollableDescription implements ScrollableDescription {
   factory _ScrollableDescription(
-      {required final ScrollAxis axis,
-      required final ScrollableRect rect,
-      required final double scrollOffsetInPixels,
-      required final double maxScrollExtentByPixels,
-      final bool nested}) = _$_ScrollableDescription;
+      {@HiveField(0) required final ScrollAxis axis,
+      @HiveField(1) required final ScrollableRect rect,
+      @HiveField(2) required final double scrollOffsetInPixels,
+      @HiveField(3) required final double maxScrollExtentByPixels,
+      @HiveField(4) final bool nested}) = _$_ScrollableDescription;
 
   factory _ScrollableDescription.fromJson(Map<String, dynamic> json) =
       _$_ScrollableDescription.fromJson;
 
   @override
+  @HiveField(0)
   ScrollAxis get axis;
   @override
+  @HiveField(1)
   ScrollableRect get rect;
   @override
 
   /// The offset that the scroll view was on when we captured this data
+  @HiveField(2)
   double get scrollOffsetInPixels;
   @override
+  @HiveField(3)
   double get maxScrollExtentByPixels;
   @override
+  @HiveField(4)
   bool get nested;
   @override
   @JsonKey(ignore: true)
@@ -267,9 +283,13 @@ ScrollableRect _$ScrollableRectFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ScrollableRect {
+  @HiveField(0)
   double get left => throw _privateConstructorUsedError;
+  @HiveField(1)
   double get top => throw _privateConstructorUsedError;
+  @HiveField(2)
   double get width => throw _privateConstructorUsedError;
+  @HiveField(3)
   double get height => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -284,7 +304,11 @@ abstract class $ScrollableRectCopyWith<$Res> {
           ScrollableRect value, $Res Function(ScrollableRect) then) =
       _$ScrollableRectCopyWithImpl<$Res, ScrollableRect>;
   @useResult
-  $Res call({double left, double top, double width, double height});
+  $Res call(
+      {@HiveField(0) double left,
+      @HiveField(1) double top,
+      @HiveField(2) double width,
+      @HiveField(3) double height});
 }
 
 /// @nodoc
@@ -334,7 +358,11 @@ abstract class _$$_ScrollableRectCopyWith<$Res>
       __$$_ScrollableRectCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double left, double top, double width, double height});
+  $Res call(
+      {@HiveField(0) double left,
+      @HiveField(1) double top,
+      @HiveField(2) double width,
+      @HiveField(3) double height});
 }
 
 /// @nodoc
@@ -376,19 +404,25 @@ class __$$_ScrollableRectCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: 13)
 class _$_ScrollableRect implements _ScrollableRect {
-  _$_ScrollableRect(this.left, this.top, this.width, this.height);
+  _$_ScrollableRect(@HiveField(0) this.left, @HiveField(1) this.top,
+      @HiveField(2) this.width, @HiveField(3) this.height);
 
   factory _$_ScrollableRect.fromJson(Map<String, dynamic> json) =>
       _$$_ScrollableRectFromJson(json);
 
   @override
+  @HiveField(0)
   final double left;
   @override
+  @HiveField(1)
   final double top;
   @override
+  @HiveField(2)
   final double width;
   @override
+  @HiveField(3)
   final double height;
 
   @override
@@ -426,19 +460,26 @@ class _$_ScrollableRect implements _ScrollableRect {
 }
 
 abstract class _ScrollableRect implements ScrollableRect {
-  factory _ScrollableRect(final double left, final double top,
-      final double width, final double height) = _$_ScrollableRect;
+  factory _ScrollableRect(
+      @HiveField(0) final double left,
+      @HiveField(1) final double top,
+      @HiveField(2) final double width,
+      @HiveField(3) final double height) = _$_ScrollableRect;
 
   factory _ScrollableRect.fromJson(Map<String, dynamic> json) =
       _$_ScrollableRect.fromJson;
 
   @override
+  @HiveField(0)
   double get left;
   @override
+  @HiveField(1)
   double get top;
   @override
+  @HiveField(2)
   double get width;
   @override
+  @HiveField(3)
   double get height;
   @override
   @JsonKey(ignore: true)
@@ -452,11 +493,17 @@ ScrollMetrics _$ScrollMetricsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ScrollMetrics {
+  @HiveField(0)
   double get minScrollExtent => throw _privateConstructorUsedError;
+  @HiveField(1)
   double get maxScrollExtent => throw _privateConstructorUsedError;
+  @HiveField(2)
   double get pixels => throw _privateConstructorUsedError;
+  @HiveField(3)
   double get viewportDimension => throw _privateConstructorUsedError;
+  @HiveField(4)
   ScrollAxis get scrollDirection => throw _privateConstructorUsedError;
+  @HiveField(5)
   double get devicePixelRatio => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -472,12 +519,12 @@ abstract class $ScrollMetricsCopyWith<$Res> {
       _$ScrollMetricsCopyWithImpl<$Res, ScrollMetrics>;
   @useResult
   $Res call(
-      {double minScrollExtent,
-      double maxScrollExtent,
-      double pixels,
-      double viewportDimension,
-      ScrollAxis scrollDirection,
-      double devicePixelRatio});
+      {@HiveField(0) double minScrollExtent,
+      @HiveField(1) double maxScrollExtent,
+      @HiveField(2) double pixels,
+      @HiveField(3) double viewportDimension,
+      @HiveField(4) ScrollAxis scrollDirection,
+      @HiveField(5) double devicePixelRatio});
 }
 
 /// @nodoc
@@ -538,12 +585,12 @@ abstract class _$$_ScrollMetricsCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {double minScrollExtent,
-      double maxScrollExtent,
-      double pixels,
-      double viewportDimension,
-      ScrollAxis scrollDirection,
-      double devicePixelRatio});
+      {@HiveField(0) double minScrollExtent,
+      @HiveField(1) double maxScrollExtent,
+      @HiveField(2) double pixels,
+      @HiveField(3) double viewportDimension,
+      @HiveField(4) ScrollAxis scrollDirection,
+      @HiveField(5) double devicePixelRatio});
 }
 
 /// @nodoc
@@ -595,30 +642,37 @@ class __$$_ScrollMetricsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: 14)
 class _$_ScrollMetrics extends _ScrollMetrics {
   _$_ScrollMetrics(
-      {required this.minScrollExtent,
-      required this.maxScrollExtent,
-      required this.pixels,
-      required this.viewportDimension,
-      required this.scrollDirection,
-      required this.devicePixelRatio})
+      {@HiveField(0) required this.minScrollExtent,
+      @HiveField(1) required this.maxScrollExtent,
+      @HiveField(2) required this.pixels,
+      @HiveField(3) required this.viewportDimension,
+      @HiveField(4) required this.scrollDirection,
+      @HiveField(5) required this.devicePixelRatio})
       : super._();
 
   factory _$_ScrollMetrics.fromJson(Map<String, dynamic> json) =>
       _$$_ScrollMetricsFromJson(json);
 
   @override
+  @HiveField(0)
   final double minScrollExtent;
   @override
+  @HiveField(1)
   final double maxScrollExtent;
   @override
+  @HiveField(2)
   final double pixels;
   @override
+  @HiveField(3)
   final double viewportDimension;
   @override
+  @HiveField(4)
   final ScrollAxis scrollDirection;
   @override
+  @HiveField(5)
   final double devicePixelRatio;
 
   @override
@@ -665,28 +719,34 @@ class _$_ScrollMetrics extends _ScrollMetrics {
 
 abstract class _ScrollMetrics extends ScrollMetrics {
   factory _ScrollMetrics(
-      {required final double minScrollExtent,
-      required final double maxScrollExtent,
-      required final double pixels,
-      required final double viewportDimension,
-      required final ScrollAxis scrollDirection,
-      required final double devicePixelRatio}) = _$_ScrollMetrics;
+      {@HiveField(0) required final double minScrollExtent,
+      @HiveField(1) required final double maxScrollExtent,
+      @HiveField(2) required final double pixels,
+      @HiveField(3) required final double viewportDimension,
+      @HiveField(4) required final ScrollAxis scrollDirection,
+      @HiveField(5) required final double devicePixelRatio}) = _$_ScrollMetrics;
   _ScrollMetrics._() : super._();
 
   factory _ScrollMetrics.fromJson(Map<String, dynamic> json) =
       _$_ScrollMetrics.fromJson;
 
   @override
+  @HiveField(0)
   double get minScrollExtent;
   @override
+  @HiveField(1)
   double get maxScrollExtent;
   @override
+  @HiveField(2)
   double get pixels;
   @override
+  @HiveField(3)
   double get viewportDimension;
   @override
+  @HiveField(4)
   ScrollAxis get scrollDirection;
   @override
+  @HiveField(5)
   double get devicePixelRatio;
   @override
   @JsonKey(ignore: true)
