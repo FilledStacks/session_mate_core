@@ -343,7 +343,7 @@ class __$$TapEventCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@HiveType(typeId: 10)
+@HiveType(typeId: 6)
 class _$TapEvent extends TapEvent {
   _$TapEvent(
       {@HiveField(0) required this.position,
@@ -693,7 +693,7 @@ class __$$InputEventCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@HiveType(typeId: 11)
+@HiveType(typeId: 7)
 class _$InputEvent extends InputEvent {
   _$InputEvent(
       {@HiveField(0) required this.position,
@@ -1071,7 +1071,7 @@ class __$$ScrollEventCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@HiveType(typeId: 12)
+@HiveType(typeId: 8)
 class _$ScrollEvent extends ScrollEvent {
   _$ScrollEvent(
       {@HiveField(0) required this.position,
@@ -1451,7 +1451,7 @@ class __$$RawKeyEventCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@HiveType(typeId: 13)
+@HiveType(typeId: 9)
 class _$RawKeyEvent extends RawKeyEvent {
   _$RawKeyEvent(
       {@HiveField(0) this.position = const EventPosition(),

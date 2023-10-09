@@ -8,7 +8,7 @@ part of 'session_priority.dart';
 
 class SessionPriorityAdapter extends TypeAdapter<SessionPriority> {
   @override
-  final int typeId = 6;
+  final int typeId = 5;
 
   @override
   SessionPriority read(BinaryReader reader) {

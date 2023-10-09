@@ -2,7 +2,7 @@ import 'package:hive/hive.dart';
 
 part 'interaction_type.g.dart';
 
-@HiveType(typeId: 5)
+@HiveType(typeId: 1)
 enum InteractionType {
   @HiveField(0)
   tap,

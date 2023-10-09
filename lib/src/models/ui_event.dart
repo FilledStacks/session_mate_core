@@ -9,7 +9,7 @@ part 'ui_event.g.dart';
 class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
   UIEvent._();
 
-  @HiveType(typeId: 10)
+  @HiveType(typeId: 6)
   factory UIEvent.tap({
     @HiveField(0) required EventPosition position,
     @HiveField(1) @Default(InteractionType.tap) InteractionType type,
@@ -19,7 +19,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(5) @Default('TO_BE_GENERATED') String id,
   }) = TapEvent;
 
-  @HiveType(typeId: 11)
+  @HiveType(typeId: 7)
   factory UIEvent.input({
     @HiveField(0) required EventPosition position,
     @HiveField(1) @Default(InteractionType.input) InteractionType type,
@@ -30,7 +30,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(6) @Default('TO_BE_GENERATED') String id,
   }) = InputEvent;
 
-  @HiveType(typeId: 12)
+  @HiveType(typeId: 8)
   factory UIEvent.scroll({
     @HiveField(0) required EventPosition position,
     @HiveField(1) @Default(InteractionType.scroll) InteractionType type,
@@ -42,7 +42,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(7) @Default('TO_BE_GENERATED') String id,
   }) = ScrollEvent;
 
-  @HiveType(typeId: 13)
+  @HiveType(typeId: 9)
   factory UIEvent.rawKeyEvent({
     @HiveField(0) @Default(EventPosition()) EventPosition position,
     @HiveField(1) @Default(InteractionType.rawKeyEvent) InteractionType type,

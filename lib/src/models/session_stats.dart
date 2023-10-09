@@ -6,7 +6,7 @@ part 'session_stats.g.dart';
 
 @freezed
 class SessionStats with _$SessionStats {
-  @HiveType(typeId: 14)
+  @HiveType(typeId: 10)
   factory SessionStats({
     @HiveField(0) required int occurrences,
     @HiveField(1) @Default({}) Map<String, int> androidVersions,

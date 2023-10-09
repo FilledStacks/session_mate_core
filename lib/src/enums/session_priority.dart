@@ -2,7 +2,7 @@ import 'package:hive/hive.dart';
 
 part 'session_priority.g.dart';
 
-@HiveType(typeId: 6)
+@HiveType(typeId: 5)
 enum SessionPriority {
   @HiveField(0)
   low,

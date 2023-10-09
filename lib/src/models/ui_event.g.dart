@@ -8,7 +8,7 @@ part of 'ui_event.dart';
 
 class TapEventAdapter extends TypeAdapter<_$TapEvent> {
   @override
-  final int typeId = 10;
+  final int typeId = 6;
 
   @override
   _$TapEvent read(BinaryReader reader) {
@@ -57,7 +57,7 @@ class TapEventAdapter extends TypeAdapter<_$TapEvent> {
 
 class InputEventAdapter extends TypeAdapter<_$InputEvent> {
   @override
-  final int typeId = 11;
+  final int typeId = 7;
 
   @override
   _$InputEvent read(BinaryReader reader) {
@@ -109,7 +109,7 @@ class InputEventAdapter extends TypeAdapter<_$InputEvent> {
 
 class ScrollEventAdapter extends TypeAdapter<_$ScrollEvent> {
   @override
-  final int typeId = 12;
+  final int typeId = 8;
 
   @override
   _$ScrollEvent read(BinaryReader reader) {
@@ -164,7 +164,7 @@ class ScrollEventAdapter extends TypeAdapter<_$ScrollEvent> {
 
 class RawKeyEventAdapter extends TypeAdapter<_$RawKeyEvent> {
   @override
-  final int typeId = 13;
+  final int typeId = 9;
 
   @override
   _$RawKeyEvent read(BinaryReader reader) {

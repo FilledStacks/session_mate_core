@@ -8,7 +8,7 @@ part of 'session_stats.dart';
 
 class SessionStatsAdapter extends TypeAdapter<_$_SessionStats> {
   @override
-  final int typeId = 14;
+  final int typeId = 10;
 
   @override
   _$_SessionStats read(BinaryReader reader) {

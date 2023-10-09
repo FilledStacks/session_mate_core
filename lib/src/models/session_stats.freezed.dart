@@ -155,7 +155,7 @@ class __$$_SessionStatsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@HiveType(typeId: 14)
+@HiveType(typeId: 10)
 class _$_SessionStats implements _SessionStats {
   _$_SessionStats(
       {@HiveField(0) required this.occurrences,

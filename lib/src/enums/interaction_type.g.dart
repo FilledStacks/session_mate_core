@@ -8,7 +8,7 @@ part of 'interaction_type.dart';
 
 class InteractionTypeAdapter extends TypeAdapter<InteractionType> {
   @override
-  final int typeId = 5;
+  final int typeId = 1;
 
   @override
   InteractionType read(BinaryReader reader) {
