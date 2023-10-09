@@ -3,6 +3,149 @@
 part of 'scrollable_models.dart';
 
 // **************************************************************************
+// TypeAdapterGenerator
+// **************************************************************************
+
+class ScrollableDescriptionAdapter
+    extends TypeAdapter<_$_ScrollableDescription> {
+  @override
+  final int typeId = 11;
+
+  @override
+  _$_ScrollableDescription read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return _$_ScrollableDescription(
+      axis: fields[0] as ScrollAxis,
+      rect: fields[1] as ScrollableRect,
+      scrollOffsetInPixels: fields[2] as double,
+      maxScrollExtentByPixels: fields[3] as double,
+      nested: fields[4] as bool,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, _$_ScrollableDescription obj) {
+    writer
+      ..writeByte(5)
+      ..writeByte(0)
+      ..write(obj.axis)
+      ..writeByte(1)
+      ..write(obj.rect)
+      ..writeByte(2)
+      ..write(obj.scrollOffsetInPixels)
+      ..writeByte(3)
+      ..write(obj.maxScrollExtentByPixels)
+      ..writeByte(4)
+      ..write(obj.nested);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ScrollableDescriptionAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+class ScrollableRectAdapter extends TypeAdapter<_$_ScrollableRect> {
+  @override
+  final int typeId = 13;
+
+  @override
+  _$_ScrollableRect read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return _$_ScrollableRect(
+      fields[0] as double,
+      fields[1] as double,
+      fields[2] as double,
+      fields[3] as double,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, _$_ScrollableRect obj) {
+    writer
+      ..writeByte(4)
+      ..writeByte(0)
+      ..write(obj.left)
+      ..writeByte(1)
+      ..write(obj.top)
+      ..writeByte(2)
+      ..write(obj.width)
+      ..writeByte(3)
+      ..write(obj.height);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ScrollableRectAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+class ScrollMetricsAdapter extends TypeAdapter<_$_ScrollMetrics> {
+  @override
+  final int typeId = 14;
+
+  @override
+  _$_ScrollMetrics read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return _$_ScrollMetrics(
+      minScrollExtent: fields[0] as double,
+      maxScrollExtent: fields[1] as double,
+      pixels: fields[2] as double,
+      viewportDimension: fields[3] as double,
+      scrollDirection: fields[4] as ScrollAxis,
+      devicePixelRatio: fields[5] as double,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, _$_ScrollMetrics obj) {
+    writer
+      ..writeByte(6)
+      ..writeByte(0)
+      ..write(obj.minScrollExtent)
+      ..writeByte(1)
+      ..write(obj.maxScrollExtent)
+      ..writeByte(2)
+      ..write(obj.pixels)
+      ..writeByte(3)
+      ..write(obj.viewportDimension)
+      ..writeByte(4)
+      ..write(obj.scrollDirection)
+      ..writeByte(5)
+      ..write(obj.devicePixelRatio);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ScrollMetricsAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
