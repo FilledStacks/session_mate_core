@@ -19,17 +19,18 @@ class TapEventAdapter extends TypeAdapter<_$TapEvent> {
     return _$TapEvent(
       position: fields[0] as EventPosition,
       type: fields[1] as InteractionType,
-      view: fields[2] as String?,
+      view: fields[2] as String,
       order: fields[3] as int,
       externalities: (fields[4] as List?)?.cast<ScrollableDescription>(),
       id: fields[5] as String,
+      navigationStackId: fields[6] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$TapEvent obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.position)
       ..writeByte(1)
@@ -40,6 +41,8 @@ class TapEventAdapter extends TypeAdapter<_$TapEvent> {
       ..write(obj.order)
       ..writeByte(5)
       ..write(obj.id)
+      ..writeByte(6)
+      ..write(obj.navigationStackId)
       ..writeByte(4)
       ..write(obj.externalities);
   }
@@ -69,17 +72,18 @@ class InputEventAdapter extends TypeAdapter<_$InputEvent> {
       position: fields[0] as EventPosition,
       type: fields[1] as InteractionType,
       inputData: fields[2] as String?,
-      view: fields[3] as String?,
+      view: fields[3] as String,
       order: fields[4] as int,
       externalities: (fields[5] as List?)?.cast<ScrollableDescription>(),
       id: fields[6] as String,
+      navigationStackId: fields[7] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$InputEvent obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.position)
       ..writeByte(1)
@@ -92,6 +96,8 @@ class InputEventAdapter extends TypeAdapter<_$InputEvent> {
       ..write(obj.order)
       ..writeByte(6)
       ..write(obj.id)
+      ..writeByte(7)
+      ..write(obj.navigationStackId)
       ..writeByte(5)
       ..write(obj.externalities);
   }
@@ -122,17 +128,18 @@ class ScrollEventAdapter extends TypeAdapter<_$ScrollEvent> {
       type: fields[1] as InteractionType,
       duration: fields[2] as int?,
       scrollDelta: fields[3] as EventPosition?,
-      view: fields[4] as String?,
+      view: fields[4] as String,
       order: fields[5] as int,
       externalities: (fields[6] as List?)?.cast<ScrollableDescription>(),
       id: fields[7] as String,
+      navigationStackId: fields[8] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$ScrollEvent obj) {
     writer
-      ..writeByte(8)
+      ..writeByte(9)
       ..writeByte(0)
       ..write(obj.position)
       ..writeByte(1)
@@ -147,6 +154,8 @@ class ScrollEventAdapter extends TypeAdapter<_$ScrollEvent> {
       ..write(obj.order)
       ..writeByte(7)
       ..write(obj.id)
+      ..writeByte(8)
+      ..write(obj.navigationStackId)
       ..writeByte(6)
       ..write(obj.externalities);
   }
@@ -178,17 +187,18 @@ class RawKeyEventAdapter extends TypeAdapter<_$RawKeyEvent> {
       keyId: fields[2] as int,
       keyLabel: fields[3] as String,
       usbHidUsage: fields[4] as int,
-      view: fields[5] as String?,
+      view: fields[5] as String,
       order: fields[6] as int,
       externalities: (fields[7] as List?)?.cast<ScrollableDescription>(),
       id: fields[8] as String,
+      navigationStackId: fields[9] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$RawKeyEvent obj) {
     writer
-      ..writeByte(9)
+      ..writeByte(10)
       ..writeByte(0)
       ..write(obj.position)
       ..writeByte(1)
@@ -205,6 +215,8 @@ class RawKeyEventAdapter extends TypeAdapter<_$RawKeyEvent> {
       ..write(obj.order)
       ..writeByte(8)
       ..write(obj.id)
+      ..writeByte(9)
+      ..write(obj.navigationStackId)
       ..writeByte(7)
       ..write(obj.externalities);
   }
@@ -229,13 +241,14 @@ _$TapEvent _$$TapEventFromJson(Map<String, dynamic> json) => _$TapEvent(
           EventPosition.fromJson(json['position'] as Map<String, dynamic>),
       type: $enumDecodeNullable(_$InteractionTypeEnumMap, json['type']) ??
           InteractionType.tap,
-      view: json['view'] as String?,
+      view: json['view'] as String? ?? '',
       order: json['order'] as int? ?? 0,
       externalities: (json['externalities'] as List<dynamic>?)
           ?.map(
               (e) => ScrollableDescription.fromJson(e as Map<String, dynamic>))
           .toList(),
       id: json['id'] as String? ?? 'TO_BE_GENERATED',
+      navigationStackId: json['navigationStackId'] as String? ?? '',
       $type: json['runtimeType'] as String?,
     );
 
@@ -247,6 +260,7 @@ Map<String, dynamic> _$$TapEventToJson(_$TapEvent instance) =>
       'order': instance.order,
       'externalities': instance.externalities,
       'id': instance.id,
+      'navigationStackId': instance.navigationStackId,
       'runtimeType': instance.$type,
     };
 
@@ -266,13 +280,14 @@ _$InputEvent _$$InputEventFromJson(Map<String, dynamic> json) => _$InputEvent(
       type: $enumDecodeNullable(_$InteractionTypeEnumMap, json['type']) ??
           InteractionType.input,
       inputData: json['inputData'] as String?,
-      view: json['view'] as String?,
+      view: json['view'] as String? ?? '',
       order: json['order'] as int? ?? 0,
       externalities: (json['externalities'] as List<dynamic>?)
           ?.map(
               (e) => ScrollableDescription.fromJson(e as Map<String, dynamic>))
           .toList(),
       id: json['id'] as String? ?? 'TO_BE_GENERATED',
+      navigationStackId: json['navigationStackId'] as String? ?? '',
       $type: json['runtimeType'] as String?,
     );
 
@@ -285,6 +300,7 @@ Map<String, dynamic> _$$InputEventToJson(_$InputEvent instance) =>
       'order': instance.order,
       'externalities': instance.externalities,
       'id': instance.id,
+      'navigationStackId': instance.navigationStackId,
       'runtimeType': instance.$type,
     };
 
@@ -298,13 +314,14 @@ _$ScrollEvent _$$ScrollEventFromJson(Map<String, dynamic> json) =>
       scrollDelta: json['scrollDelta'] == null
           ? null
           : EventPosition.fromJson(json['scrollDelta'] as Map<String, dynamic>),
-      view: json['view'] as String?,
+      view: json['view'] as String? ?? '',
       order: json['order'] as int? ?? 0,
       externalities: (json['externalities'] as List<dynamic>?)
           ?.map(
               (e) => ScrollableDescription.fromJson(e as Map<String, dynamic>))
           .toList(),
       id: json['id'] as String? ?? 'TO_BE_GENERATED',
+      navigationStackId: json['navigationStackId'] as String? ?? '',
       $type: json['runtimeType'] as String?,
     );
 
@@ -318,6 +335,7 @@ Map<String, dynamic> _$$ScrollEventToJson(_$ScrollEvent instance) =>
       'order': instance.order,
       'externalities': instance.externalities,
       'id': instance.id,
+      'navigationStackId': instance.navigationStackId,
       'runtimeType': instance.$type,
     };
 
@@ -331,13 +349,14 @@ _$RawKeyEvent _$$RawKeyEventFromJson(Map<String, dynamic> json) =>
       keyId: json['keyId'] as int,
       keyLabel: json['keyLabel'] as String,
       usbHidUsage: json['usbHidUsage'] as int,
-      view: json['view'] as String?,
+      view: json['view'] as String? ?? '',
       order: json['order'] as int? ?? 0,
       externalities: (json['externalities'] as List<dynamic>?)
           ?.map(
               (e) => ScrollableDescription.fromJson(e as Map<String, dynamic>))
           .toList(),
       id: json['id'] as String? ?? 'TO_BE_GENERATED',
+      navigationStackId: json['navigationStackId'] as String? ?? '',
       $type: json['runtimeType'] as String?,
     );
 
@@ -352,5 +371,6 @@ Map<String, dynamic> _$$RawKeyEventToJson(_$RawKeyEvent instance) =>
       'order': instance.order,
       'externalities': instance.externalities,
       'id': instance.id,
+      'navigationStackId': instance.navigationStackId,
       'runtimeType': instance.$type,
     };

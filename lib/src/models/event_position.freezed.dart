@@ -201,11 +201,6 @@ class _$_EventPosition extends _EventPosition {
   final double yDeviation;
 
   @override
-  String toString() {
-    return 'EventPosition(x: $x, y: $y, capturedDeviceWidth: $capturedDeviceWidth, capturedDeviceHeight: $capturedDeviceHeight, xDeviation: $xDeviation, yDeviation: $yDeviation)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&

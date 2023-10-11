@@ -23,4 +23,17 @@ class EventPosition with _$EventPosition {
 
   EventPosition operator -(EventPosition other) =>
       EventPosition(x: x - other.x, y: y - other.y);
+
+  @override
+  String toString() {
+    final hasCapturedDeviceHeight = capturedDeviceHeight > 0;
+    final hasCapturedDeviceWidth = capturedDeviceWidth > 0;
+    final hasXDeviation = xDeviation > 0;
+    final hasYDeviation = yDeviation > 0;
+    return '''
+x: ${x.floor()}, y: ${y.floor()}
+${hasCapturedDeviceHeight ? 'deviceHeight:${capturedDeviceHeight.floor()}' : ''}${hasCapturedDeviceWidth ? 'deviceWidth:${capturedDeviceWidth.floor()}' : ''}
+${hasXDeviation ? 'xDeviation:${xDeviation.floor()}' : ''}${hasYDeviation ? 'yDeviation:${yDeviation.floor()}' : ''}
+''';
+  }
 }
