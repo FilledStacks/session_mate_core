@@ -1,18 +1,16 @@
 name: session_mate_core
 description: The package that stores the models used for session_mate package and cli
 version: 0.1.0
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/FilledStacks/session_mate_core
 
 environment:
   sdk: ^3.0.6
 
-# Add regular dependencies here.
 dependencies:
   freezed_annotation: ^2.4.1
   hive: ^2.2.3
   intl: ^0.18.1
   json_annotation: ^4.8.1
-  # path: ^1.8.0
 
 dev_dependencies:
   build_runner: ^2.4.6
