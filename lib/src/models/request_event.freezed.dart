@@ -113,11 +113,11 @@ class _$RequestEventCopyWithImpl<$Res, $Val extends RequestEvent>
 }
 
 /// @nodoc
-abstract class _$$_RequestEventCopyWith<$Res>
+abstract class _$$RequestEventImplCopyWith<$Res>
     implements $RequestEventCopyWith<$Res> {
-  factory _$$_RequestEventCopyWith(
-          _$_RequestEvent value, $Res Function(_$_RequestEvent) then) =
-      __$$_RequestEventCopyWithImpl<$Res>;
+  factory _$$RequestEventImplCopyWith(
+          _$RequestEventImpl value, $Res Function(_$RequestEventImpl) then) =
+      __$$RequestEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -131,11 +131,11 @@ abstract class _$$_RequestEventCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RequestEventCopyWithImpl<$Res>
-    extends _$RequestEventCopyWithImpl<$Res, _$_RequestEvent>
-    implements _$$_RequestEventCopyWith<$Res> {
-  __$$_RequestEventCopyWithImpl(
-      _$_RequestEvent _value, $Res Function(_$_RequestEvent) _then)
+class __$$RequestEventImplCopyWithImpl<$Res>
+    extends _$RequestEventCopyWithImpl<$Res, _$RequestEventImpl>
+    implements _$$RequestEventImplCopyWith<$Res> {
+  __$$RequestEventImplCopyWithImpl(
+      _$RequestEventImpl _value, $Res Function(_$RequestEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -149,7 +149,7 @@ class __$$_RequestEventCopyWithImpl<$Res>
     Object? view = freezed,
     Object? order = null,
   }) {
-    return _then(_$_RequestEvent(
+    return _then(_$RequestEventImpl(
       uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -185,8 +185,8 @@ class __$$_RequestEventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 3)
-class _$_RequestEvent extends _RequestEvent {
-  _$_RequestEvent(
+class _$RequestEventImpl extends _RequestEvent {
+  _$RequestEventImpl(
       {@HiveField(0) required this.uid,
       @HiveField(1) required this.url,
       @HiveField(2) required this.method,
@@ -197,8 +197,8 @@ class _$_RequestEvent extends _RequestEvent {
       : _headers = headers,
         super._();
 
-  factory _$_RequestEvent.fromJson(Map<String, dynamic> json) =>
-      _$$_RequestEventFromJson(json);
+  factory _$RequestEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RequestEventImplFromJson(json);
 
   @override
   @HiveField(0)
@@ -234,7 +234,7 @@ class _$_RequestEvent extends _RequestEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RequestEvent &&
+            other is _$RequestEventImpl &&
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.method, method) || other.method == method) &&
@@ -259,12 +259,12 @@ class _$_RequestEvent extends _RequestEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RequestEventCopyWith<_$_RequestEvent> get copyWith =>
-      __$$_RequestEventCopyWithImpl<_$_RequestEvent>(this, _$identity);
+  _$$RequestEventImplCopyWith<_$RequestEventImpl> get copyWith =>
+      __$$RequestEventImplCopyWithImpl<_$RequestEventImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RequestEventToJson(
+    return _$$RequestEventImplToJson(
       this,
     );
   }
@@ -278,11 +278,11 @@ abstract class _RequestEvent extends RequestEvent {
       @HiveField(3) required final Map<String, String> headers,
       @HiveField(4) @BodyBytesConverter() final Uint8List? body,
       @HiveField(5) final String? view,
-      @HiveField(6) final int order}) = _$_RequestEvent;
+      @HiveField(6) final int order}) = _$RequestEventImpl;
   _RequestEvent._() : super._();
 
   factory _RequestEvent.fromJson(Map<String, dynamic> json) =
-      _$_RequestEvent.fromJson;
+      _$RequestEventImpl.fromJson;
 
   @override
   @HiveField(0)
@@ -308,6 +308,6 @@ abstract class _RequestEvent extends RequestEvent {
   int get order;
   @override
   @JsonKey(ignore: true)
-  _$$_RequestEventCopyWith<_$_RequestEvent> get copyWith =>
+  _$$RequestEventImplCopyWith<_$RequestEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

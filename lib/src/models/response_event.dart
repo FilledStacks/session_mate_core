@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 import 'package:session_mate_core/src/interfaces/network_event.dart';
 import 'package:session_mate_core/src/shared/session_event_shared.dart';
+import 'package:xml/xml.dart';
 
 part 'response_event.freezed.dart';
 part 'response_event.g.dart';
@@ -27,15 +28,21 @@ class ResponseEvent extends HiveObject
     @HiveField(7) @Default(0) int order,
   }) = _ResponseEvent;
 
-  factory ResponseEvent.fromJson(Map<String, dynamic> json) =>
-      _$ResponseEventFromJson(json);
+  factory ResponseEvent.fromJson(dynamic json) => _$ResponseEventFromJson(json);
 
   @override
   bool get hasBody => body != null && body!.isNotEmpty;
 
   @override
-  Map<String, dynamic> get jsonBody =>
-      !hasBody ? {} : jsonDecode(String.fromCharCodes(body!));
+  dynamic get decodedBody {
+    if (!hasBody) return null;
+
+    final data = String.fromCharCodes(body!);
+
+    if (data.startsWith('<?xml')) return XmlDocument.parse(data);
+
+    return jsonDecode(data);
+  }
 
   @override
   String toString() {

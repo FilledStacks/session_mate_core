@@ -11,6 +11,8 @@ dependencies:
   hive: ^2.2.3
   intl: ^0.18.1
   json_annotation: ^4.8.1
+  xml: ^5.4.0
+  xml2json: ^5.3.2
 
 dev_dependencies:
   build_runner: ^2.4.6

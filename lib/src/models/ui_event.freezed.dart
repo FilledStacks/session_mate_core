@@ -297,10 +297,10 @@ class _$UIEventCopyWithImpl<$Res, $Val extends UIEvent>
 }
 
 /// @nodoc
-abstract class _$$TapEventCopyWith<$Res> implements $UIEventCopyWith<$Res> {
-  factory _$$TapEventCopyWith(
-          _$TapEvent value, $Res Function(_$TapEvent) then) =
-      __$$TapEventCopyWithImpl<$Res>;
+abstract class _$$TapEventImplCopyWith<$Res> implements $UIEventCopyWith<$Res> {
+  factory _$$TapEventImplCopyWith(
+          _$TapEventImpl value, $Res Function(_$TapEventImpl) then) =
+      __$$TapEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -317,10 +317,11 @@ abstract class _$$TapEventCopyWith<$Res> implements $UIEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TapEventCopyWithImpl<$Res>
-    extends _$UIEventCopyWithImpl<$Res, _$TapEvent>
-    implements _$$TapEventCopyWith<$Res> {
-  __$$TapEventCopyWithImpl(_$TapEvent _value, $Res Function(_$TapEvent) _then)
+class __$$TapEventImplCopyWithImpl<$Res>
+    extends _$UIEventCopyWithImpl<$Res, _$TapEventImpl>
+    implements _$$TapEventImplCopyWith<$Res> {
+  __$$TapEventImplCopyWithImpl(
+      _$TapEventImpl _value, $Res Function(_$TapEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -334,7 +335,7 @@ class __$$TapEventCopyWithImpl<$Res>
     Object? id = null,
     Object? navigationStackId = null,
   }) {
-    return _then(_$TapEvent(
+    return _then(_$TapEventImpl(
       position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
@@ -370,8 +371,8 @@ class __$$TapEventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 6)
-class _$TapEvent extends TapEvent {
-  _$TapEvent(
+class _$TapEventImpl extends TapEvent {
+  _$TapEventImpl(
       {@HiveField(0) required this.position,
       @HiveField(1) this.type = InteractionType.tap,
       @HiveField(2) this.view = '',
@@ -384,8 +385,8 @@ class _$TapEvent extends TapEvent {
         $type = $type ?? 'tap',
         super._();
 
-  factory _$TapEvent.fromJson(Map<String, dynamic> json) =>
-      _$$TapEventFromJson(json);
+  factory _$TapEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TapEventImplFromJson(json);
 
   @override
   @HiveField(0)
@@ -428,8 +429,8 @@ class _$TapEvent extends TapEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TapEventCopyWith<_$TapEvent> get copyWith =>
-      __$$TapEventCopyWithImpl<_$TapEvent>(this, _$identity);
+  _$$TapEventImplCopyWith<_$TapEventImpl> get copyWith =>
+      __$$TapEventImplCopyWithImpl<_$TapEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -624,7 +625,7 @@ class _$TapEvent extends TapEvent {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$TapEventToJson(
+    return _$$TapEventImplToJson(
       this,
     );
   }
@@ -638,10 +639,11 @@ abstract class TapEvent extends UIEvent {
       @HiveField(3) final int order,
       @HiveField(4) final List<ScrollableDescription>? externalities,
       @HiveField(5) final String id,
-      @HiveField(6) final String navigationStackId}) = _$TapEvent;
+      @HiveField(6) final String navigationStackId}) = _$TapEventImpl;
   TapEvent._() : super._();
 
-  factory TapEvent.fromJson(Map<String, dynamic> json) = _$TapEvent.fromJson;
+  factory TapEvent.fromJson(Map<String, dynamic> json) =
+      _$TapEventImpl.fromJson;
 
   @override
   @HiveField(0)
@@ -666,15 +668,16 @@ abstract class TapEvent extends UIEvent {
   String get navigationStackId;
   @override
   @JsonKey(ignore: true)
-  _$$TapEventCopyWith<_$TapEvent> get copyWith =>
+  _$$TapEventImplCopyWith<_$TapEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$InputEventCopyWith<$Res> implements $UIEventCopyWith<$Res> {
-  factory _$$InputEventCopyWith(
-          _$InputEvent value, $Res Function(_$InputEvent) then) =
-      __$$InputEventCopyWithImpl<$Res>;
+abstract class _$$InputEventImplCopyWith<$Res>
+    implements $UIEventCopyWith<$Res> {
+  factory _$$InputEventImplCopyWith(
+          _$InputEventImpl value, $Res Function(_$InputEventImpl) then) =
+      __$$InputEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -692,11 +695,11 @@ abstract class _$$InputEventCopyWith<$Res> implements $UIEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$InputEventCopyWithImpl<$Res>
-    extends _$UIEventCopyWithImpl<$Res, _$InputEvent>
-    implements _$$InputEventCopyWith<$Res> {
-  __$$InputEventCopyWithImpl(
-      _$InputEvent _value, $Res Function(_$InputEvent) _then)
+class __$$InputEventImplCopyWithImpl<$Res>
+    extends _$UIEventCopyWithImpl<$Res, _$InputEventImpl>
+    implements _$$InputEventImplCopyWith<$Res> {
+  __$$InputEventImplCopyWithImpl(
+      _$InputEventImpl _value, $Res Function(_$InputEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -711,7 +714,7 @@ class __$$InputEventCopyWithImpl<$Res>
     Object? id = null,
     Object? navigationStackId = null,
   }) {
-    return _then(_$InputEvent(
+    return _then(_$InputEventImpl(
       position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
@@ -751,8 +754,8 @@ class __$$InputEventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 7)
-class _$InputEvent extends InputEvent {
-  _$InputEvent(
+class _$InputEventImpl extends InputEvent {
+  _$InputEventImpl(
       {@HiveField(0) required this.position,
       @HiveField(1) this.type = InteractionType.input,
       @HiveField(2) this.inputData,
@@ -766,8 +769,8 @@ class _$InputEvent extends InputEvent {
         $type = $type ?? 'input',
         super._();
 
-  factory _$InputEvent.fromJson(Map<String, dynamic> json) =>
-      _$$InputEventFromJson(json);
+  factory _$InputEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$InputEventImplFromJson(json);
 
   @override
   @HiveField(0)
@@ -813,8 +816,8 @@ class _$InputEvent extends InputEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$InputEventCopyWith<_$InputEvent> get copyWith =>
-      __$$InputEventCopyWithImpl<_$InputEvent>(this, _$identity);
+  _$$InputEventImplCopyWith<_$InputEventImpl> get copyWith =>
+      __$$InputEventImplCopyWithImpl<_$InputEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1009,7 +1012,7 @@ class _$InputEvent extends InputEvent {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$InputEventToJson(
+    return _$$InputEventImplToJson(
       this,
     );
   }
@@ -1024,11 +1027,11 @@ abstract class InputEvent extends UIEvent {
       @HiveField(4) final int order,
       @HiveField(5) final List<ScrollableDescription>? externalities,
       @HiveField(6) final String id,
-      @HiveField(7) final String navigationStackId}) = _$InputEvent;
+      @HiveField(7) final String navigationStackId}) = _$InputEventImpl;
   InputEvent._() : super._();
 
   factory InputEvent.fromJson(Map<String, dynamic> json) =
-      _$InputEvent.fromJson;
+      _$InputEventImpl.fromJson;
 
   @override
   @HiveField(0)
@@ -1055,15 +1058,16 @@ abstract class InputEvent extends UIEvent {
   String get navigationStackId;
   @override
   @JsonKey(ignore: true)
-  _$$InputEventCopyWith<_$InputEvent> get copyWith =>
+  _$$InputEventImplCopyWith<_$InputEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ScrollEventCopyWith<$Res> implements $UIEventCopyWith<$Res> {
-  factory _$$ScrollEventCopyWith(
-          _$ScrollEvent value, $Res Function(_$ScrollEvent) then) =
-      __$$ScrollEventCopyWithImpl<$Res>;
+abstract class _$$ScrollEventImplCopyWith<$Res>
+    implements $UIEventCopyWith<$Res> {
+  factory _$$ScrollEventImplCopyWith(
+          _$ScrollEventImpl value, $Res Function(_$ScrollEventImpl) then) =
+      __$$ScrollEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1083,11 +1087,11 @@ abstract class _$$ScrollEventCopyWith<$Res> implements $UIEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ScrollEventCopyWithImpl<$Res>
-    extends _$UIEventCopyWithImpl<$Res, _$ScrollEvent>
-    implements _$$ScrollEventCopyWith<$Res> {
-  __$$ScrollEventCopyWithImpl(
-      _$ScrollEvent _value, $Res Function(_$ScrollEvent) _then)
+class __$$ScrollEventImplCopyWithImpl<$Res>
+    extends _$UIEventCopyWithImpl<$Res, _$ScrollEventImpl>
+    implements _$$ScrollEventImplCopyWith<$Res> {
+  __$$ScrollEventImplCopyWithImpl(
+      _$ScrollEventImpl _value, $Res Function(_$ScrollEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1103,7 +1107,7 @@ class __$$ScrollEventCopyWithImpl<$Res>
     Object? id = null,
     Object? navigationStackId = null,
   }) {
-    return _then(_$ScrollEvent(
+    return _then(_$ScrollEventImpl(
       position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
@@ -1159,8 +1163,8 @@ class __$$ScrollEventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 8)
-class _$ScrollEvent extends ScrollEvent {
-  _$ScrollEvent(
+class _$ScrollEventImpl extends ScrollEvent {
+  _$ScrollEventImpl(
       {@HiveField(0) required this.position,
       @HiveField(1) this.type = InteractionType.scroll,
       @HiveField(2) this.duration,
@@ -1175,8 +1179,8 @@ class _$ScrollEvent extends ScrollEvent {
         $type = $type ?? 'scroll',
         super._();
 
-  factory _$ScrollEvent.fromJson(Map<String, dynamic> json) =>
-      _$$ScrollEventFromJson(json);
+  factory _$ScrollEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ScrollEventImplFromJson(json);
 
   @override
   @HiveField(0)
@@ -1225,8 +1229,8 @@ class _$ScrollEvent extends ScrollEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ScrollEventCopyWith<_$ScrollEvent> get copyWith =>
-      __$$ScrollEventCopyWithImpl<_$ScrollEvent>(this, _$identity);
+  _$$ScrollEventImplCopyWith<_$ScrollEventImpl> get copyWith =>
+      __$$ScrollEventImplCopyWithImpl<_$ScrollEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1421,7 +1425,7 @@ class _$ScrollEvent extends ScrollEvent {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ScrollEventToJson(
+    return _$$ScrollEventImplToJson(
       this,
     );
   }
@@ -1437,11 +1441,11 @@ abstract class ScrollEvent extends UIEvent {
       @HiveField(5) final int order,
       @HiveField(6) final List<ScrollableDescription>? externalities,
       @HiveField(7) final String id,
-      @HiveField(8) final String navigationStackId}) = _$ScrollEvent;
+      @HiveField(8) final String navigationStackId}) = _$ScrollEventImpl;
   ScrollEvent._() : super._();
 
   factory ScrollEvent.fromJson(Map<String, dynamic> json) =
-      _$ScrollEvent.fromJson;
+      _$ScrollEventImpl.fromJson;
 
   @override
   @HiveField(0)
@@ -1470,15 +1474,16 @@ abstract class ScrollEvent extends UIEvent {
   String get navigationStackId;
   @override
   @JsonKey(ignore: true)
-  _$$ScrollEventCopyWith<_$ScrollEvent> get copyWith =>
+  _$$ScrollEventImplCopyWith<_$ScrollEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$RawKeyEventCopyWith<$Res> implements $UIEventCopyWith<$Res> {
-  factory _$$RawKeyEventCopyWith(
-          _$RawKeyEvent value, $Res Function(_$RawKeyEvent) then) =
-      __$$RawKeyEventCopyWithImpl<$Res>;
+abstract class _$$RawKeyEventImplCopyWith<$Res>
+    implements $UIEventCopyWith<$Res> {
+  factory _$$RawKeyEventImplCopyWith(
+          _$RawKeyEventImpl value, $Res Function(_$RawKeyEventImpl) then) =
+      __$$RawKeyEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1498,11 +1503,11 @@ abstract class _$$RawKeyEventCopyWith<$Res> implements $UIEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$RawKeyEventCopyWithImpl<$Res>
-    extends _$UIEventCopyWithImpl<$Res, _$RawKeyEvent>
-    implements _$$RawKeyEventCopyWith<$Res> {
-  __$$RawKeyEventCopyWithImpl(
-      _$RawKeyEvent _value, $Res Function(_$RawKeyEvent) _then)
+class __$$RawKeyEventImplCopyWithImpl<$Res>
+    extends _$UIEventCopyWithImpl<$Res, _$RawKeyEventImpl>
+    implements _$$RawKeyEventImplCopyWith<$Res> {
+  __$$RawKeyEventImplCopyWithImpl(
+      _$RawKeyEventImpl _value, $Res Function(_$RawKeyEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1519,7 +1524,7 @@ class __$$RawKeyEventCopyWithImpl<$Res>
     Object? id = null,
     Object? navigationStackId = null,
   }) {
-    return _then(_$RawKeyEvent(
+    return _then(_$RawKeyEventImpl(
       position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
@@ -1567,8 +1572,8 @@ class __$$RawKeyEventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 9)
-class _$RawKeyEvent extends RawKeyEvent {
-  _$RawKeyEvent(
+class _$RawKeyEventImpl extends RawKeyEvent {
+  _$RawKeyEventImpl(
       {@HiveField(0) this.position = const EventPosition(),
       @HiveField(1) this.type = InteractionType.rawKeyEvent,
       @HiveField(2) required this.keyId,
@@ -1584,8 +1589,8 @@ class _$RawKeyEvent extends RawKeyEvent {
         $type = $type ?? 'rawKeyEvent',
         super._();
 
-  factory _$RawKeyEvent.fromJson(Map<String, dynamic> json) =>
-      _$$RawKeyEventFromJson(json);
+  factory _$RawKeyEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RawKeyEventImplFromJson(json);
 
   @override
   @JsonKey()
@@ -1638,8 +1643,8 @@ class _$RawKeyEvent extends RawKeyEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RawKeyEventCopyWith<_$RawKeyEvent> get copyWith =>
-      __$$RawKeyEventCopyWithImpl<_$RawKeyEvent>(this, _$identity);
+  _$$RawKeyEventImplCopyWith<_$RawKeyEventImpl> get copyWith =>
+      __$$RawKeyEventImplCopyWithImpl<_$RawKeyEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1834,7 +1839,7 @@ class _$RawKeyEvent extends RawKeyEvent {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RawKeyEventToJson(
+    return _$$RawKeyEventImplToJson(
       this,
     );
   }
@@ -1851,11 +1856,11 @@ abstract class RawKeyEvent extends UIEvent {
       @HiveField(6) final int order,
       @HiveField(7) final List<ScrollableDescription>? externalities,
       @HiveField(8) final String id,
-      @HiveField(9) final String navigationStackId}) = _$RawKeyEvent;
+      @HiveField(9) final String navigationStackId}) = _$RawKeyEventImpl;
   RawKeyEvent._() : super._();
 
   factory RawKeyEvent.fromJson(Map<String, dynamic> json) =
-      _$RawKeyEvent.fromJson;
+      _$RawKeyEventImpl.fromJson;
 
   @override
   @HiveField(0)
@@ -1886,6 +1891,6 @@ abstract class RawKeyEvent extends UIEvent {
   String get navigationStackId;
   @override
   @JsonKey(ignore: true)
-  _$$RawKeyEventCopyWith<_$RawKeyEvent> get copyWith =>
+  _$$RawKeyEventImplCopyWith<_$RawKeyEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
