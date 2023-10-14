@@ -7,17 +7,17 @@ part of 'scrollable_models.dart';
 // **************************************************************************
 
 class ScrollableDescriptionAdapter
-    extends TypeAdapter<_$_ScrollableDescription> {
+    extends TypeAdapter<_$ScrollableDescriptionImpl> {
   @override
   final int typeId = 11;
 
   @override
-  _$_ScrollableDescription read(BinaryReader reader) {
+  _$ScrollableDescriptionImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_ScrollableDescription(
+    return _$ScrollableDescriptionImpl(
       axis: fields[0] as ScrollAxis,
       rect: fields[1] as ScrollableRect,
       scrollOffsetInPixels: fields[2] as double,
@@ -27,7 +27,7 @@ class ScrollableDescriptionAdapter
   }
 
   @override
-  void write(BinaryWriter writer, _$_ScrollableDescription obj) {
+  void write(BinaryWriter writer, _$ScrollableDescriptionImpl obj) {
     writer
       ..writeByte(5)
       ..writeByte(0)
@@ -53,17 +53,17 @@ class ScrollableDescriptionAdapter
           typeId == other.typeId;
 }
 
-class ScrollableRectAdapter extends TypeAdapter<_$_ScrollableRect> {
+class ScrollableRectAdapter extends TypeAdapter<_$ScrollableRectImpl> {
   @override
   final int typeId = 13;
 
   @override
-  _$_ScrollableRect read(BinaryReader reader) {
+  _$ScrollableRectImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_ScrollableRect(
+    return _$ScrollableRectImpl(
       fields[0] as double,
       fields[1] as double,
       fields[2] as double,
@@ -72,7 +72,7 @@ class ScrollableRectAdapter extends TypeAdapter<_$_ScrollableRect> {
   }
 
   @override
-  void write(BinaryWriter writer, _$_ScrollableRect obj) {
+  void write(BinaryWriter writer, _$ScrollableRectImpl obj) {
     writer
       ..writeByte(4)
       ..writeByte(0)
@@ -96,17 +96,17 @@ class ScrollableRectAdapter extends TypeAdapter<_$_ScrollableRect> {
           typeId == other.typeId;
 }
 
-class ScrollMetricsAdapter extends TypeAdapter<_$_ScrollMetrics> {
+class ScrollMetricsAdapter extends TypeAdapter<_$ScrollMetricsImpl> {
   @override
   final int typeId = 14;
 
   @override
-  _$_ScrollMetrics read(BinaryReader reader) {
+  _$ScrollMetricsImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_ScrollMetrics(
+    return _$ScrollMetricsImpl(
       minScrollExtent: fields[0] as double,
       maxScrollExtent: fields[1] as double,
       pixels: fields[2] as double,
@@ -117,7 +117,7 @@ class ScrollMetricsAdapter extends TypeAdapter<_$_ScrollMetrics> {
   }
 
   @override
-  void write(BinaryWriter writer, _$_ScrollMetrics obj) {
+  void write(BinaryWriter writer, _$ScrollMetricsImpl obj) {
     writer
       ..writeByte(6)
       ..writeByte(0)
@@ -149,9 +149,9 @@ class ScrollMetricsAdapter extends TypeAdapter<_$_ScrollMetrics> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ScrollableDescription _$$_ScrollableDescriptionFromJson(
+_$ScrollableDescriptionImpl _$$ScrollableDescriptionImplFromJson(
         Map<String, dynamic> json) =>
-    _$_ScrollableDescription(
+    _$ScrollableDescriptionImpl(
       axis: $enumDecode(_$ScrollAxisEnumMap, json['axis']),
       rect: ScrollableRect.fromJson(json['rect'] as Map<String, dynamic>),
       scrollOffsetInPixels: (json['scrollOffsetInPixels'] as num).toDouble(),
@@ -160,8 +160,8 @@ _$_ScrollableDescription _$$_ScrollableDescriptionFromJson(
       nested: json['nested'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_ScrollableDescriptionToJson(
-        _$_ScrollableDescription instance) =>
+Map<String, dynamic> _$$ScrollableDescriptionImplToJson(
+        _$ScrollableDescriptionImpl instance) =>
     <String, dynamic>{
       'axis': _$ScrollAxisEnumMap[instance.axis]!,
       'rect': instance.rect,
@@ -175,15 +175,16 @@ const _$ScrollAxisEnumMap = {
   ScrollAxis.vertical: 'vertical',
 };
 
-_$_ScrollableRect _$$_ScrollableRectFromJson(Map<String, dynamic> json) =>
-    _$_ScrollableRect(
+_$ScrollableRectImpl _$$ScrollableRectImplFromJson(Map<String, dynamic> json) =>
+    _$ScrollableRectImpl(
       (json['left'] as num).toDouble(),
       (json['top'] as num).toDouble(),
       (json['width'] as num).toDouble(),
       (json['height'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$_ScrollableRectToJson(_$_ScrollableRect instance) =>
+Map<String, dynamic> _$$ScrollableRectImplToJson(
+        _$ScrollableRectImpl instance) =>
     <String, dynamic>{
       'left': instance.left,
       'top': instance.top,
@@ -191,8 +192,8 @@ Map<String, dynamic> _$$_ScrollableRectToJson(_$_ScrollableRect instance) =>
       'height': instance.height,
     };
 
-_$_ScrollMetrics _$$_ScrollMetricsFromJson(Map<String, dynamic> json) =>
-    _$_ScrollMetrics(
+_$ScrollMetricsImpl _$$ScrollMetricsImplFromJson(Map<String, dynamic> json) =>
+    _$ScrollMetricsImpl(
       minScrollExtent: (json['minScrollExtent'] as num).toDouble(),
       maxScrollExtent: (json['maxScrollExtent'] as num).toDouble(),
       pixels: (json['pixels'] as num).toDouble(),
@@ -202,7 +203,7 @@ _$_ScrollMetrics _$$_ScrollMetricsFromJson(Map<String, dynamic> json) =>
       devicePixelRatio: (json['devicePixelRatio'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$_ScrollMetricsToJson(_$_ScrollMetrics instance) =>
+Map<String, dynamic> _$$ScrollMetricsImplToJson(_$ScrollMetricsImpl instance) =>
     <String, dynamic>{
       'minScrollExtent': instance.minScrollExtent,
       'maxScrollExtent': instance.maxScrollExtent,

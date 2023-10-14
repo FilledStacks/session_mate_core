@@ -6,17 +6,17 @@ part of 'response_event.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class ResponseEventAdapter extends TypeAdapter<_$_ResponseEvent> {
+class ResponseEventAdapter extends TypeAdapter<_$ResponseEventImpl> {
   @override
   final int typeId = 4;
 
   @override
-  _$_ResponseEvent read(BinaryReader reader) {
+  _$ResponseEventImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_ResponseEvent(
+    return _$ResponseEventImpl(
       uid: fields[0] as String,
       timeMs: fields[1] as int,
       code: fields[2] as int,
@@ -29,7 +29,7 @@ class ResponseEventAdapter extends TypeAdapter<_$_ResponseEvent> {
   }
 
   @override
-  void write(BinaryWriter writer, _$_ResponseEvent obj) {
+  void write(BinaryWriter writer, _$ResponseEventImpl obj) {
     writer
       ..writeByte(8)
       ..writeByte(0)
@@ -65,20 +65,19 @@ class ResponseEventAdapter extends TypeAdapter<_$_ResponseEvent> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ResponseEvent _$$_ResponseEventFromJson(Map<String, dynamic> json) =>
-    _$_ResponseEvent(
+_$ResponseEventImpl _$$ResponseEventImplFromJson(Map<String, dynamic> json) =>
+    _$ResponseEventImpl(
       uid: json['uid'] as String,
       timeMs: json['timeMs'] as int,
       code: json['code'] as int,
       headers: Map<String, String>.from(json['headers'] as Map),
       error: json['error'] as String?,
-      body: const BodyBytesConverter()
-          .fromJson(json['body'] as Map<String, dynamic>?),
+      body: const BodyBytesConverter().fromJson(json['body']),
       view: json['view'] as String?,
       order: json['order'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$$_ResponseEventToJson(_$_ResponseEvent instance) =>
+Map<String, dynamic> _$$ResponseEventImplToJson(_$ResponseEventImpl instance) =>
     <String, dynamic>{
       'uid': instance.uid,
       'timeMs': instance.timeMs,

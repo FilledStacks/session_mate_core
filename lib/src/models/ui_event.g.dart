@@ -6,17 +6,17 @@ part of 'ui_event.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class TapEventAdapter extends TypeAdapter<_$TapEvent> {
+class TapEventAdapter extends TypeAdapter<_$TapEventImpl> {
   @override
   final int typeId = 6;
 
   @override
-  _$TapEvent read(BinaryReader reader) {
+  _$TapEventImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$TapEvent(
+    return _$TapEventImpl(
       position: fields[0] as EventPosition,
       type: fields[1] as InteractionType,
       view: fields[2] as String,
@@ -28,7 +28,7 @@ class TapEventAdapter extends TypeAdapter<_$TapEvent> {
   }
 
   @override
-  void write(BinaryWriter writer, _$TapEvent obj) {
+  void write(BinaryWriter writer, _$TapEventImpl obj) {
     writer
       ..writeByte(7)
       ..writeByte(0)
@@ -58,17 +58,17 @@ class TapEventAdapter extends TypeAdapter<_$TapEvent> {
           typeId == other.typeId;
 }
 
-class InputEventAdapter extends TypeAdapter<_$InputEvent> {
+class InputEventAdapter extends TypeAdapter<_$InputEventImpl> {
   @override
   final int typeId = 7;
 
   @override
-  _$InputEvent read(BinaryReader reader) {
+  _$InputEventImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$InputEvent(
+    return _$InputEventImpl(
       position: fields[0] as EventPosition,
       type: fields[1] as InteractionType,
       inputData: fields[2] as String?,
@@ -81,7 +81,7 @@ class InputEventAdapter extends TypeAdapter<_$InputEvent> {
   }
 
   @override
-  void write(BinaryWriter writer, _$InputEvent obj) {
+  void write(BinaryWriter writer, _$InputEventImpl obj) {
     writer
       ..writeByte(8)
       ..writeByte(0)
@@ -113,17 +113,17 @@ class InputEventAdapter extends TypeAdapter<_$InputEvent> {
           typeId == other.typeId;
 }
 
-class ScrollEventAdapter extends TypeAdapter<_$ScrollEvent> {
+class ScrollEventAdapter extends TypeAdapter<_$ScrollEventImpl> {
   @override
   final int typeId = 8;
 
   @override
-  _$ScrollEvent read(BinaryReader reader) {
+  _$ScrollEventImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$ScrollEvent(
+    return _$ScrollEventImpl(
       position: fields[0] as EventPosition,
       type: fields[1] as InteractionType,
       duration: fields[2] as int?,
@@ -137,7 +137,7 @@ class ScrollEventAdapter extends TypeAdapter<_$ScrollEvent> {
   }
 
   @override
-  void write(BinaryWriter writer, _$ScrollEvent obj) {
+  void write(BinaryWriter writer, _$ScrollEventImpl obj) {
     writer
       ..writeByte(9)
       ..writeByte(0)
@@ -171,17 +171,17 @@ class ScrollEventAdapter extends TypeAdapter<_$ScrollEvent> {
           typeId == other.typeId;
 }
 
-class RawKeyEventAdapter extends TypeAdapter<_$RawKeyEvent> {
+class RawKeyEventAdapter extends TypeAdapter<_$RawKeyEventImpl> {
   @override
   final int typeId = 9;
 
   @override
-  _$RawKeyEvent read(BinaryReader reader) {
+  _$RawKeyEventImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$RawKeyEvent(
+    return _$RawKeyEventImpl(
       position: fields[0] as EventPosition,
       type: fields[1] as InteractionType,
       keyId: fields[2] as int,
@@ -196,7 +196,7 @@ class RawKeyEventAdapter extends TypeAdapter<_$RawKeyEvent> {
   }
 
   @override
-  void write(BinaryWriter writer, _$RawKeyEvent obj) {
+  void write(BinaryWriter writer, _$RawKeyEventImpl obj) {
     writer
       ..writeByte(10)
       ..writeByte(0)
@@ -236,7 +236,8 @@ class RawKeyEventAdapter extends TypeAdapter<_$RawKeyEvent> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TapEvent _$$TapEventFromJson(Map<String, dynamic> json) => _$TapEvent(
+_$TapEventImpl _$$TapEventImplFromJson(Map<String, dynamic> json) =>
+    _$TapEventImpl(
       position:
           EventPosition.fromJson(json['position'] as Map<String, dynamic>),
       type: $enumDecodeNullable(_$InteractionTypeEnumMap, json['type']) ??
@@ -252,7 +253,7 @@ _$TapEvent _$$TapEventFromJson(Map<String, dynamic> json) => _$TapEvent(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$TapEventToJson(_$TapEvent instance) =>
+Map<String, dynamic> _$$TapEventImplToJson(_$TapEventImpl instance) =>
     <String, dynamic>{
       'position': instance.position,
       'type': _$InteractionTypeEnumMap[instance.type]!,
@@ -274,7 +275,8 @@ const _$InteractionTypeEnumMap = {
   InteractionType.rawKeyEvent: 'rawKeyEvent',
 };
 
-_$InputEvent _$$InputEventFromJson(Map<String, dynamic> json) => _$InputEvent(
+_$InputEventImpl _$$InputEventImplFromJson(Map<String, dynamic> json) =>
+    _$InputEventImpl(
       position:
           EventPosition.fromJson(json['position'] as Map<String, dynamic>),
       type: $enumDecodeNullable(_$InteractionTypeEnumMap, json['type']) ??
@@ -291,7 +293,7 @@ _$InputEvent _$$InputEventFromJson(Map<String, dynamic> json) => _$InputEvent(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$InputEventToJson(_$InputEvent instance) =>
+Map<String, dynamic> _$$InputEventImplToJson(_$InputEventImpl instance) =>
     <String, dynamic>{
       'position': instance.position,
       'type': _$InteractionTypeEnumMap[instance.type]!,
@@ -304,8 +306,8 @@ Map<String, dynamic> _$$InputEventToJson(_$InputEvent instance) =>
       'runtimeType': instance.$type,
     };
 
-_$ScrollEvent _$$ScrollEventFromJson(Map<String, dynamic> json) =>
-    _$ScrollEvent(
+_$ScrollEventImpl _$$ScrollEventImplFromJson(Map<String, dynamic> json) =>
+    _$ScrollEventImpl(
       position:
           EventPosition.fromJson(json['position'] as Map<String, dynamic>),
       type: $enumDecodeNullable(_$InteractionTypeEnumMap, json['type']) ??
@@ -325,7 +327,7 @@ _$ScrollEvent _$$ScrollEventFromJson(Map<String, dynamic> json) =>
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$ScrollEventToJson(_$ScrollEvent instance) =>
+Map<String, dynamic> _$$ScrollEventImplToJson(_$ScrollEventImpl instance) =>
     <String, dynamic>{
       'position': instance.position,
       'type': _$InteractionTypeEnumMap[instance.type]!,
@@ -339,8 +341,8 @@ Map<String, dynamic> _$$ScrollEventToJson(_$ScrollEvent instance) =>
       'runtimeType': instance.$type,
     };
 
-_$RawKeyEvent _$$RawKeyEventFromJson(Map<String, dynamic> json) =>
-    _$RawKeyEvent(
+_$RawKeyEventImpl _$$RawKeyEventImplFromJson(Map<String, dynamic> json) =>
+    _$RawKeyEventImpl(
       position: json['position'] == null
           ? const EventPosition()
           : EventPosition.fromJson(json['position'] as Map<String, dynamic>),
@@ -360,7 +362,7 @@ _$RawKeyEvent _$$RawKeyEventFromJson(Map<String, dynamic> json) =>
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$RawKeyEventToJson(_$RawKeyEvent instance) =>
+Map<String, dynamic> _$$RawKeyEventImplToJson(_$RawKeyEventImpl instance) =>
     <String, dynamic>{
       'position': instance.position,
       'type': _$InteractionTypeEnumMap[instance.type]!,
