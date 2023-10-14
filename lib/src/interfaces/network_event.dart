@@ -7,15 +7,14 @@ import 'session_event.dart';
 
 abstract class NetworkEvent extends SessionEvent {
   bool get hasBody;
-  Map<String, dynamic> get jsonBody;
+  dynamic get jsonBody;
 }
 
-class BodyBytesConverter
-    extends JsonConverter<Uint8List?, Map<String, dynamic>?> {
+class BodyBytesConverter extends JsonConverter<Uint8List?, dynamic> {
   const BodyBytesConverter();
 
   @override
-  Uint8List? fromJson(Map<String, dynamic>? json) {
+  Uint8List? fromJson(dynamic json) {
     if (json == null) return null;
 
     final List<int> codeUnits = jsonEncode(json).codeUnits;
@@ -23,7 +22,7 @@ class BodyBytesConverter
   }
 
   @override
-  Map<String, dynamic>? toJson(Uint8List? object) {
+  dynamic toJson(Uint8List? object) {
     if (object == null) return null;
 
     if (object.isEmpty) return {};

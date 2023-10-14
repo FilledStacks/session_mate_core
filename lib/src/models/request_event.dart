@@ -26,14 +26,16 @@ class RequestEvent extends HiveObject
     @HiveField(6) @Default(0) int order,
   }) = _RequestEvent;
 
-  factory RequestEvent.fromJson(Map<String, dynamic> json) =>
-      _$RequestEventFromJson(json);
+  // factory RequestEvent.fromJson(Map<String, dynamic> json) =>
+  //     _$RequestEventFromJson(json);
+
+  factory RequestEvent.fromJson(dynamic json) => _$RequestEventFromJson(json);
 
   @override
   bool get hasBody => body != null && body!.isNotEmpty;
 
   @override
-  Map<String, dynamic> get jsonBody =>
+  dynamic get jsonBody =>
       !hasBody ? {} : jsonDecode(String.fromCharCodes(body!));
 
   @override
