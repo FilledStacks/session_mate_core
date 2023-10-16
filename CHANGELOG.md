@@ -1,3 +1,7 @@
+## 0.2.1
+
+- Upgrades xml
+
 ## 0.2.0
 
 - Adds XML serialize to avoid crash on xml response
