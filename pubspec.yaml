@@ -1,6 +1,6 @@
 name: session_mate_core
 description: The package that stores the models used for session_mate package and cli
-version: 0.1.0
+version: 0.2.0
 repository: https://github.com/FilledStacks/session_mate_core
 
 environment:
