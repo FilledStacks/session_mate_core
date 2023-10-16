@@ -1,3 +1,7 @@
+## 0.2.2
+
+- Bumps dart version
+
 ## 0.2.1
 
 - Upgrades xml
