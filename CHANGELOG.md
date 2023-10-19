@@ -1,3 +1,7 @@
+## 0.2.3
+
+- Removed `intl` package dependency
+
 ## 0.2.2
 
 - Bumps dart version
