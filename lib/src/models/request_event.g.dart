@@ -6,7 +6,7 @@ part of 'request_event.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class RequestEventAdapter extends TypeAdapter<_$RequestEventImpl> {
+class RequestEventImplAdapter extends TypeAdapter<_$RequestEventImpl> {
   @override
   final int typeId = 3;
 
@@ -53,7 +53,7 @@ class RequestEventAdapter extends TypeAdapter<_$RequestEventImpl> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is RequestEventAdapter &&
+      other is RequestEventImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

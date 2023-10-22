@@ -6,7 +6,7 @@ part of 'scrollable_models.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class ScrollableDescriptionAdapter
+class ScrollableDescriptionImplAdapter
     extends TypeAdapter<_$ScrollableDescriptionImpl> {
   @override
   final int typeId = 11;
@@ -48,12 +48,12 @@ class ScrollableDescriptionAdapter
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ScrollableDescriptionAdapter &&
+      other is ScrollableDescriptionImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
 
-class ScrollableRectAdapter extends TypeAdapter<_$ScrollableRectImpl> {
+class ScrollableRectImplAdapter extends TypeAdapter<_$ScrollableRectImpl> {
   @override
   final int typeId = 13;
 
@@ -91,12 +91,12 @@ class ScrollableRectAdapter extends TypeAdapter<_$ScrollableRectImpl> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ScrollableRectAdapter &&
+      other is ScrollableRectImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
 
-class ScrollMetricsAdapter extends TypeAdapter<_$ScrollMetricsImpl> {
+class ScrollMetricsImplAdapter extends TypeAdapter<_$ScrollMetricsImpl> {
   @override
   final int typeId = 14;
 
@@ -140,7 +140,7 @@ class ScrollMetricsAdapter extends TypeAdapter<_$ScrollMetricsImpl> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ScrollMetricsAdapter &&
+      other is ScrollMetricsImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

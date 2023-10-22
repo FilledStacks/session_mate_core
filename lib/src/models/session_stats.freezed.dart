@@ -96,11 +96,11 @@ class _$SessionStatsCopyWithImpl<$Res, $Val extends SessionStats>
 }
 
 /// @nodoc
-abstract class _$$_SessionStatsCopyWith<$Res>
+abstract class _$$SessionStatsImplCopyWith<$Res>
     implements $SessionStatsCopyWith<$Res> {
-  factory _$$_SessionStatsCopyWith(
-          _$_SessionStats value, $Res Function(_$_SessionStats) then) =
-      __$$_SessionStatsCopyWithImpl<$Res>;
+  factory _$$SessionStatsImplCopyWith(
+          _$SessionStatsImpl value, $Res Function(_$SessionStatsImpl) then) =
+      __$$SessionStatsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -112,11 +112,11 @@ abstract class _$$_SessionStatsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SessionStatsCopyWithImpl<$Res>
-    extends _$SessionStatsCopyWithImpl<$Res, _$_SessionStats>
-    implements _$$_SessionStatsCopyWith<$Res> {
-  __$$_SessionStatsCopyWithImpl(
-      _$_SessionStats _value, $Res Function(_$_SessionStats) _then)
+class __$$SessionStatsImplCopyWithImpl<$Res>
+    extends _$SessionStatsCopyWithImpl<$Res, _$SessionStatsImpl>
+    implements _$$SessionStatsImplCopyWith<$Res> {
+  __$$SessionStatsImplCopyWithImpl(
+      _$SessionStatsImpl _value, $Res Function(_$SessionStatsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -128,7 +128,7 @@ class __$$_SessionStatsCopyWithImpl<$Res>
     Object? users = null,
     Object? appVersions = null,
   }) {
-    return _then(_$_SessionStats(
+    return _then(_$SessionStatsImpl(
       occurrences: null == occurrences
           ? _value.occurrences
           : occurrences // ignore: cast_nullable_to_non_nullable
@@ -156,8 +156,8 @@ class __$$_SessionStatsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 10)
-class _$_SessionStats implements _SessionStats {
-  _$_SessionStats(
+class _$SessionStatsImpl implements _SessionStats {
+  _$SessionStatsImpl(
       {@HiveField(0) required this.occurrences,
       @HiveField(1) final Map<String, int> androidVersions = const {},
       @HiveField(2) final Map<String, int> iosVersions = const {},
@@ -168,8 +168,8 @@ class _$_SessionStats implements _SessionStats {
         _users = users,
         _appVersions = appVersions;
 
-  factory _$_SessionStats.fromJson(Map<String, dynamic> json) =>
-      _$$_SessionStatsFromJson(json);
+  factory _$SessionStatsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SessionStatsImplFromJson(json);
 
   @override
   @HiveField(0)
@@ -223,7 +223,7 @@ class _$_SessionStats implements _SessionStats {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SessionStats &&
+            other is _$SessionStatsImpl &&
             (identical(other.occurrences, occurrences) ||
                 other.occurrences == occurrences) &&
             const DeepCollectionEquality()
@@ -248,12 +248,12 @@ class _$_SessionStats implements _SessionStats {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SessionStatsCopyWith<_$_SessionStats> get copyWith =>
-      __$$_SessionStatsCopyWithImpl<_$_SessionStats>(this, _$identity);
+  _$$SessionStatsImplCopyWith<_$SessionStatsImpl> get copyWith =>
+      __$$SessionStatsImplCopyWithImpl<_$SessionStatsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SessionStatsToJson(
+    return _$$SessionStatsImplToJson(
       this,
     );
   }
@@ -265,10 +265,10 @@ abstract class _SessionStats implements SessionStats {
       @HiveField(1) final Map<String, int> androidVersions,
       @HiveField(2) final Map<String, int> iosVersions,
       @HiveField(3) final Map<String, int> users,
-      @HiveField(4) final Map<String, int> appVersions}) = _$_SessionStats;
+      @HiveField(4) final Map<String, int> appVersions}) = _$SessionStatsImpl;
 
   factory _SessionStats.fromJson(Map<String, dynamic> json) =
-      _$_SessionStats.fromJson;
+      _$SessionStatsImpl.fromJson;
 
   @override
   @HiveField(0)
@@ -287,6 +287,6 @@ abstract class _SessionStats implements SessionStats {
   Map<String, int> get appVersions;
   @override
   @JsonKey(ignore: true)
-  _$$_SessionStatsCopyWith<_$_SessionStats> get copyWith =>
+  _$$SessionStatsImplCopyWith<_$SessionStatsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

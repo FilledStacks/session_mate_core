@@ -6,7 +6,7 @@ part of 'response_event.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class ResponseEventAdapter extends TypeAdapter<_$ResponseEventImpl> {
+class ResponseEventImplAdapter extends TypeAdapter<_$ResponseEventImpl> {
   @override
   final int typeId = 4;
 
@@ -56,7 +56,7 @@ class ResponseEventAdapter extends TypeAdapter<_$ResponseEventImpl> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ResponseEventAdapter &&
+      other is ResponseEventImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

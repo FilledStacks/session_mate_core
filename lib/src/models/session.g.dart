@@ -6,7 +6,7 @@ part of 'session.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class SessionAdapter extends TypeAdapter<_$SessionImpl> {
+class SessionImplAdapter extends TypeAdapter<_$SessionImpl> {
   @override
   final int typeId = 0;
 
@@ -56,7 +56,7 @@ class SessionAdapter extends TypeAdapter<_$SessionImpl> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is SessionAdapter &&
+      other is SessionImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

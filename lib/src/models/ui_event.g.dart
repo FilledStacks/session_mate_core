@@ -6,7 +6,7 @@ part of 'ui_event.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class TapEventAdapter extends TypeAdapter<_$TapEventImpl> {
+class TapEventImplAdapter extends TypeAdapter<_$TapEventImpl> {
   @override
   final int typeId = 6;
 
@@ -53,12 +53,12 @@ class TapEventAdapter extends TypeAdapter<_$TapEventImpl> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is TapEventAdapter &&
+      other is TapEventImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
 
-class InputEventAdapter extends TypeAdapter<_$InputEventImpl> {
+class InputEventImplAdapter extends TypeAdapter<_$InputEventImpl> {
   @override
   final int typeId = 7;
 
@@ -108,12 +108,12 @@ class InputEventAdapter extends TypeAdapter<_$InputEventImpl> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is InputEventAdapter &&
+      other is InputEventImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
 
-class ScrollEventAdapter extends TypeAdapter<_$ScrollEventImpl> {
+class ScrollEventImplAdapter extends TypeAdapter<_$ScrollEventImpl> {
   @override
   final int typeId = 8;
 
@@ -166,12 +166,12 @@ class ScrollEventAdapter extends TypeAdapter<_$ScrollEventImpl> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ScrollEventAdapter &&
+      other is ScrollEventImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
 
-class RawKeyEventAdapter extends TypeAdapter<_$RawKeyEventImpl> {
+class RawKeyEventImplAdapter extends TypeAdapter<_$RawKeyEventImpl> {
   @override
   final int typeId = 9;
 
@@ -227,7 +227,7 @@ class RawKeyEventAdapter extends TypeAdapter<_$RawKeyEventImpl> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is RawKeyEventAdapter &&
+      other is RawKeyEventImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

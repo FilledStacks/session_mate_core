@@ -80,10 +80,11 @@ class _$AppStatsCopyWithImpl<$Res, $Val extends AppStats>
 }
 
 /// @nodoc
-abstract class _$$_AppStatsCopyWith<$Res> implements $AppStatsCopyWith<$Res> {
-  factory _$$_AppStatsCopyWith(
-          _$_AppStats value, $Res Function(_$_AppStats) then) =
-      __$$_AppStatsCopyWithImpl<$Res>;
+abstract class _$$AppStatsImplCopyWith<$Res>
+    implements $AppStatsCopyWith<$Res> {
+  factory _$$AppStatsImplCopyWith(
+          _$AppStatsImpl value, $Res Function(_$AppStatsImpl) then) =
+      __$$AppStatsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -91,11 +92,11 @@ abstract class _$$_AppStatsCopyWith<$Res> implements $AppStatsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AppStatsCopyWithImpl<$Res>
-    extends _$AppStatsCopyWithImpl<$Res, _$_AppStats>
-    implements _$$_AppStatsCopyWith<$Res> {
-  __$$_AppStatsCopyWithImpl(
-      _$_AppStats _value, $Res Function(_$_AppStats) _then)
+class __$$AppStatsImplCopyWithImpl<$Res>
+    extends _$AppStatsCopyWithImpl<$Res, _$AppStatsImpl>
+    implements _$$AppStatsImplCopyWith<$Res> {
+  __$$AppStatsImplCopyWithImpl(
+      _$AppStatsImpl _value, $Res Function(_$AppStatsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +107,7 @@ class __$$_AppStatsCopyWithImpl<$Res>
     Object? userId = null,
     Object? appVersion = null,
   }) {
-    return _then(_$_AppStats(
+    return _then(_$AppStatsImpl(
       platform: null == platform
           ? _value.platform
           : platform // ignore: cast_nullable_to_non_nullable
@@ -129,15 +130,15 @@ class __$$_AppStatsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AppStats implements _AppStats {
-  _$_AppStats(
+class _$AppStatsImpl implements _AppStats {
+  _$AppStatsImpl(
       {required this.platform,
       required this.osVersion,
       required this.userId,
       required this.appVersion});
 
-  factory _$_AppStats.fromJson(Map<String, dynamic> json) =>
-      _$$_AppStatsFromJson(json);
+  factory _$AppStatsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AppStatsImplFromJson(json);
 
   @override
   final String platform;
@@ -157,7 +158,7 @@ class _$_AppStats implements _AppStats {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AppStats &&
+            other is _$AppStatsImpl &&
             (identical(other.platform, platform) ||
                 other.platform == platform) &&
             (identical(other.osVersion, osVersion) ||
@@ -175,12 +176,12 @@ class _$_AppStats implements _AppStats {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AppStatsCopyWith<_$_AppStats> get copyWith =>
-      __$$_AppStatsCopyWithImpl<_$_AppStats>(this, _$identity);
+  _$$AppStatsImplCopyWith<_$AppStatsImpl> get copyWith =>
+      __$$AppStatsImplCopyWithImpl<_$AppStatsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AppStatsToJson(
+    return _$$AppStatsImplToJson(
       this,
     );
   }
@@ -191,9 +192,10 @@ abstract class _AppStats implements AppStats {
       {required final String platform,
       required final String osVersion,
       required final String userId,
-      required final String appVersion}) = _$_AppStats;
+      required final String appVersion}) = _$AppStatsImpl;
 
-  factory _AppStats.fromJson(Map<String, dynamic> json) = _$_AppStats.fromJson;
+  factory _AppStats.fromJson(Map<String, dynamic> json) =
+      _$AppStatsImpl.fromJson;
 
   @override
   String get platform;
@@ -205,6 +207,6 @@ abstract class _AppStats implements AppStats {
   String get appVersion;
   @override
   @JsonKey(ignore: true)
-  _$$_AppStatsCopyWith<_$_AppStats> get copyWith =>
+  _$$AppStatsImplCopyWith<_$AppStatsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

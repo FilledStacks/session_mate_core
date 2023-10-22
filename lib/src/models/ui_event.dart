@@ -69,7 +69,8 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
   bool operator ==(Object other) =>
       other is UIEvent && other.automationKey == other.automationKey;
 
-  String get automationKey => '${type.name}_$order';
+  String get automationKey =>
+      '${type.name}_${order}_${position.x.floor()}_${position.y.floor()}';
 
   bool get isScrollable => type == InteractionType.scroll;
 
