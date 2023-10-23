@@ -17,7 +17,9 @@ enum InteractionType {
   @HiveField(5)
   pinchIn,
   @HiveField(6)
-  rawKeyEvent;
+  backPressEvent,
+  @HiveField(7)
+  onKeyboardEnterEvent;
 
   const InteractionType();
 

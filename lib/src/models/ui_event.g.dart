@@ -184,9 +184,6 @@ class RawKeyEventImplAdapter extends TypeAdapter<_$RawKeyEventImpl> {
     return _$RawKeyEventImpl(
       position: fields[0] as EventPosition,
       type: fields[1] as InteractionType,
-      keyId: fields[2] as int,
-      keyLabel: fields[3] as String,
-      usbHidUsage: fields[4] as int,
       view: fields[5] as String,
       order: fields[6] as int,
       externalities: (fields[7] as List?)?.cast<ScrollableDescription>(),
@@ -198,17 +195,11 @@ class RawKeyEventImplAdapter extends TypeAdapter<_$RawKeyEventImpl> {
   @override
   void write(BinaryWriter writer, _$RawKeyEventImpl obj) {
     writer
-      ..writeByte(10)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.position)
       ..writeByte(1)
       ..write(obj.type)
-      ..writeByte(2)
-      ..write(obj.keyId)
-      ..writeByte(3)
-      ..write(obj.keyLabel)
-      ..writeByte(4)
-      ..write(obj.usbHidUsage)
       ..writeByte(5)
       ..write(obj.view)
       ..writeByte(6)
@@ -272,7 +263,8 @@ const _$InteractionTypeEnumMap = {
   InteractionType.longTap: 'longTap',
   InteractionType.pinchOut: 'pinchOut',
   InteractionType.pinchIn: 'pinchIn',
-  InteractionType.rawKeyEvent: 'rawKeyEvent',
+  InteractionType.backPressEvent: 'backPressEvent',
+  InteractionType.onKeyboardEnterEvent: 'onKeyboardEnterEvent',
 };
 
 _$InputEventImpl _$$InputEventImplFromJson(Map<String, dynamic> json) =>
@@ -347,10 +339,7 @@ _$RawKeyEventImpl _$$RawKeyEventImplFromJson(Map<String, dynamic> json) =>
           ? const EventPosition()
           : EventPosition.fromJson(json['position'] as Map<String, dynamic>),
       type: $enumDecodeNullable(_$InteractionTypeEnumMap, json['type']) ??
-          InteractionType.rawKeyEvent,
-      keyId: json['keyId'] as int,
-      keyLabel: json['keyLabel'] as String,
-      usbHidUsage: json['usbHidUsage'] as int,
+          InteractionType.backPressEvent,
       view: json['view'] as String? ?? '',
       order: json['order'] as int? ?? 0,
       externalities: (json['externalities'] as List<dynamic>?)
@@ -366,9 +355,6 @@ Map<String, dynamic> _$$RawKeyEventImplToJson(_$RawKeyEventImpl instance) =>
     <String, dynamic>{
       'position': instance.position,
       'type': _$InteractionTypeEnumMap[instance.type]!,
-      'keyId': instance.keyId,
-      'keyLabel': instance.keyLabel,
-      'usbHidUsage': instance.usbHidUsage,
       'view': instance.view,
       'order': instance.order,
       'externalities': instance.externalities,

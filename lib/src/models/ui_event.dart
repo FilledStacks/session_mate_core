@@ -48,10 +48,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
   @HiveType(typeId: 9)
   factory UIEvent.rawKeyEvent({
     @HiveField(0) @Default(EventPosition()) EventPosition position,
-    @HiveField(1) @Default(InteractionType.rawKeyEvent) InteractionType type,
-    @HiveField(2) required int keyId,
-    @HiveField(3) required String keyLabel,
-    @HiveField(4) required int usbHidUsage,
+    @HiveField(1) @Default(InteractionType.backPressEvent) InteractionType type,
     @HiveField(5) @Default('') String view,
     @HiveField(6) @Default(0) int order,
     @HiveField(7) List<ScrollableDescription>? externalities,
@@ -81,7 +78,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
         : type.name.contains('input')
             ? ', inputData:${(this as InputEvent).inputData}'
             : type.name.contains('rawKeyEvent')
-                ? ', keyLabel:${(this as RawKeyEvent).keyLabel}'
+                ? ', type: $type'
                 : '';
     return '$runtimeType :: view:$view, type:$type, position:$position$extra';
   }
@@ -96,7 +93,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     } else if (this is ScrollEvent) {
       text = 'Scroll from $position by ${(this as ScrollEvent).scrollDelta}';
     } else if (this is RawKeyEvent) {
-      text = 'RawKeyEvent with keyLabel:${(this as RawKeyEvent).keyLabel}';
+      text = 'RawKeyEvent with for $type';
     } else {
       text = 'TYPE_NOT_KNOWN';
     }
