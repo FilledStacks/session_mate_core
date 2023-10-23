@@ -26,7 +26,9 @@ class InteractionTypeAdapter extends TypeAdapter<InteractionType> {
       case 5:
         return InteractionType.pinchIn;
       case 6:
-        return InteractionType.rawKeyEvent;
+        return InteractionType.backPressEvent;
+      case 7:
+        return InteractionType.onKeyboardEnterEvent;
       default:
         return InteractionType.tap;
     }
@@ -53,8 +55,11 @@ class InteractionTypeAdapter extends TypeAdapter<InteractionType> {
       case InteractionType.pinchIn:
         writer.writeByte(5);
         break;
-      case InteractionType.rawKeyEvent:
+      case InteractionType.backPressEvent:
         writer.writeByte(6);
+        break;
+      case InteractionType.onKeyboardEnterEvent:
+        writer.writeByte(7);
         break;
     }
   }

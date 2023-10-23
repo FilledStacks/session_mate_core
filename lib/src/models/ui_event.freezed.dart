@@ -83,9 +83,6 @@ mixin _$UIEvent {
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) int keyId,
-            @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage,
             @HiveField(5) String view,
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
@@ -129,9 +126,6 @@ mixin _$UIEvent {
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) int keyId,
-            @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage,
             @HiveField(5) String view,
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
@@ -175,9 +169,6 @@ mixin _$UIEvent {
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) int keyId,
-            @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage,
             @HiveField(5) String view,
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
@@ -468,9 +459,6 @@ class _$TapEventImpl extends TapEvent {
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) int keyId,
-            @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage,
             @HiveField(5) String view,
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
@@ -518,9 +506,6 @@ class _$TapEventImpl extends TapEvent {
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) int keyId,
-            @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage,
             @HiveField(5) String view,
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
@@ -568,9 +553,6 @@ class _$TapEventImpl extends TapEvent {
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) int keyId,
-            @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage,
             @HiveField(5) String view,
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
@@ -855,9 +837,6 @@ class _$InputEventImpl extends InputEvent {
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) int keyId,
-            @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage,
             @HiveField(5) String view,
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
@@ -905,9 +884,6 @@ class _$InputEventImpl extends InputEvent {
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) int keyId,
-            @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage,
             @HiveField(5) String view,
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
@@ -955,9 +931,6 @@ class _$InputEventImpl extends InputEvent {
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) int keyId,
-            @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage,
             @HiveField(5) String view,
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
@@ -1268,9 +1241,6 @@ class _$ScrollEventImpl extends ScrollEvent {
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) int keyId,
-            @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage,
             @HiveField(5) String view,
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
@@ -1318,9 +1288,6 @@ class _$ScrollEventImpl extends ScrollEvent {
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) int keyId,
-            @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage,
             @HiveField(5) String view,
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
@@ -1368,9 +1335,6 @@ class _$ScrollEventImpl extends ScrollEvent {
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) int keyId,
-            @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage,
             @HiveField(5) String view,
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
@@ -1489,9 +1453,6 @@ abstract class _$$RawKeyEventImplCopyWith<$Res>
   $Res call(
       {@HiveField(0) EventPosition position,
       @HiveField(1) InteractionType type,
-      @HiveField(2) int keyId,
-      @HiveField(3) String keyLabel,
-      @HiveField(4) int usbHidUsage,
       @HiveField(5) String view,
       @HiveField(6) int order,
       @HiveField(7) List<ScrollableDescription>? externalities,
@@ -1515,9 +1476,6 @@ class __$$RawKeyEventImplCopyWithImpl<$Res>
   $Res call({
     Object? position = null,
     Object? type = null,
-    Object? keyId = null,
-    Object? keyLabel = null,
-    Object? usbHidUsage = null,
     Object? view = null,
     Object? order = null,
     Object? externalities = freezed,
@@ -1533,18 +1491,6 @@ class __$$RawKeyEventImplCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as InteractionType,
-      keyId: null == keyId
-          ? _value.keyId
-          : keyId // ignore: cast_nullable_to_non_nullable
-              as int,
-      keyLabel: null == keyLabel
-          ? _value.keyLabel
-          : keyLabel // ignore: cast_nullable_to_non_nullable
-              as String,
-      usbHidUsage: null == usbHidUsage
-          ? _value.usbHidUsage
-          : usbHidUsage // ignore: cast_nullable_to_non_nullable
-              as int,
       view: null == view
           ? _value.view
           : view // ignore: cast_nullable_to_non_nullable
@@ -1575,10 +1521,7 @@ class __$$RawKeyEventImplCopyWithImpl<$Res>
 class _$RawKeyEventImpl extends RawKeyEvent {
   _$RawKeyEventImpl(
       {@HiveField(0) this.position = const EventPosition(),
-      @HiveField(1) this.type = InteractionType.rawKeyEvent,
-      @HiveField(2) required this.keyId,
-      @HiveField(3) required this.keyLabel,
-      @HiveField(4) required this.usbHidUsage,
+      @HiveField(1) this.type = InteractionType.backPressEvent,
       @HiveField(5) this.view = '',
       @HiveField(6) this.order = 0,
       @HiveField(7) final List<ScrollableDescription>? externalities,
@@ -1600,15 +1543,6 @@ class _$RawKeyEventImpl extends RawKeyEvent {
   @JsonKey()
   @HiveField(1)
   final InteractionType type;
-  @override
-  @HiveField(2)
-  final int keyId;
-  @override
-  @HiveField(3)
-  final String keyLabel;
-  @override
-  @HiveField(4)
-  final int usbHidUsage;
   @override
   @JsonKey()
   @HiveField(5)
@@ -1682,9 +1616,6 @@ class _$RawKeyEventImpl extends RawKeyEvent {
     required TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) int keyId,
-            @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage,
             @HiveField(5) String view,
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
@@ -1692,8 +1623,8 @@ class _$RawKeyEventImpl extends RawKeyEvent {
             @HiveField(9) String navigationStackId)
         rawKeyEvent,
   }) {
-    return rawKeyEvent(position, type, keyId, keyLabel, usbHidUsage, view,
-        order, externalities, id, navigationStackId);
+    return rawKeyEvent(
+        position, type, view, order, externalities, id, navigationStackId);
   }
 
   @override
@@ -1732,9 +1663,6 @@ class _$RawKeyEventImpl extends RawKeyEvent {
     TResult? Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) int keyId,
-            @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage,
             @HiveField(5) String view,
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
@@ -1742,8 +1670,8 @@ class _$RawKeyEventImpl extends RawKeyEvent {
             @HiveField(9) String navigationStackId)?
         rawKeyEvent,
   }) {
-    return rawKeyEvent?.call(position, type, keyId, keyLabel, usbHidUsage, view,
-        order, externalities, id, navigationStackId);
+    return rawKeyEvent?.call(
+        position, type, view, order, externalities, id, navigationStackId);
   }
 
   @override
@@ -1782,9 +1710,6 @@ class _$RawKeyEventImpl extends RawKeyEvent {
     TResult Function(
             @HiveField(0) EventPosition position,
             @HiveField(1) InteractionType type,
-            @HiveField(2) int keyId,
-            @HiveField(3) String keyLabel,
-            @HiveField(4) int usbHidUsage,
             @HiveField(5) String view,
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
@@ -1794,8 +1719,8 @@ class _$RawKeyEventImpl extends RawKeyEvent {
     required TResult orElse(),
   }) {
     if (rawKeyEvent != null) {
-      return rawKeyEvent(position, type, keyId, keyLabel, usbHidUsage, view,
-          order, externalities, id, navigationStackId);
+      return rawKeyEvent(
+          position, type, view, order, externalities, id, navigationStackId);
     }
     return orElse();
   }
@@ -1849,9 +1774,6 @@ abstract class RawKeyEvent extends UIEvent {
   factory RawKeyEvent(
       {@HiveField(0) final EventPosition position,
       @HiveField(1) final InteractionType type,
-      @HiveField(2) required final int keyId,
-      @HiveField(3) required final String keyLabel,
-      @HiveField(4) required final int usbHidUsage,
       @HiveField(5) final String view,
       @HiveField(6) final int order,
       @HiveField(7) final List<ScrollableDescription>? externalities,
@@ -1868,12 +1790,6 @@ abstract class RawKeyEvent extends UIEvent {
   @override
   @HiveField(1)
   InteractionType get type;
-  @HiveField(2)
-  int get keyId;
-  @HiveField(3)
-  String get keyLabel;
-  @HiveField(4)
-  int get usbHidUsage;
   @override
   @HiveField(5)
   String get view;
