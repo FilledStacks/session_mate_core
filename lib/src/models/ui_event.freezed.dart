@@ -48,6 +48,7 @@ mixin _$UIEvent {
   String get id => throw _privateConstructorUsedError;
   @HiveField(6)
   String get navigationStackId => throw _privateConstructorUsedError;
+  String? get overrideAutomationKey => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
@@ -57,7 +58,8 @@ mixin _$UIEvent {
             @HiveField(3) int order,
             @HiveField(4) List<ScrollableDescription>? externalities,
             @HiveField(5) String id,
-            @HiveField(6) String navigationStackId)
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)
         tap,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -67,7 +69,8 @@ mixin _$UIEvent {
             @HiveField(4) int order,
             @HiveField(5) List<ScrollableDescription>? externalities,
             @HiveField(6) String id,
-            @HiveField(7) String navigationStackId)
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)
         input,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -78,7 +81,8 @@ mixin _$UIEvent {
             @HiveField(5) int order,
             @HiveField(6) List<ScrollableDescription>? externalities,
             @HiveField(7) String id,
-            @HiveField(8) String navigationStackId)
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)
         scroll,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -87,7 +91,8 @@ mixin _$UIEvent {
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
             @HiveField(8) String id,
-            @HiveField(9) String navigationStackId)
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)
         rawKeyEvent,
   }) =>
       throw _privateConstructorUsedError;
@@ -100,7 +105,8 @@ mixin _$UIEvent {
             @HiveField(3) int order,
             @HiveField(4) List<ScrollableDescription>? externalities,
             @HiveField(5) String id,
-            @HiveField(6) String navigationStackId)?
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)?
         tap,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -110,7 +116,8 @@ mixin _$UIEvent {
             @HiveField(4) int order,
             @HiveField(5) List<ScrollableDescription>? externalities,
             @HiveField(6) String id,
-            @HiveField(7) String navigationStackId)?
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)?
         input,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -121,7 +128,8 @@ mixin _$UIEvent {
             @HiveField(5) int order,
             @HiveField(6) List<ScrollableDescription>? externalities,
             @HiveField(7) String id,
-            @HiveField(8) String navigationStackId)?
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
         scroll,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -130,7 +138,8 @@ mixin _$UIEvent {
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
             @HiveField(8) String id,
-            @HiveField(9) String navigationStackId)?
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)?
         rawKeyEvent,
   }) =>
       throw _privateConstructorUsedError;
@@ -143,7 +152,8 @@ mixin _$UIEvent {
             @HiveField(3) int order,
             @HiveField(4) List<ScrollableDescription>? externalities,
             @HiveField(5) String id,
-            @HiveField(6) String navigationStackId)?
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)?
         tap,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -153,7 +163,8 @@ mixin _$UIEvent {
             @HiveField(4) int order,
             @HiveField(5) List<ScrollableDescription>? externalities,
             @HiveField(6) String id,
-            @HiveField(7) String navigationStackId)?
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)?
         input,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -164,7 +175,8 @@ mixin _$UIEvent {
             @HiveField(5) int order,
             @HiveField(6) List<ScrollableDescription>? externalities,
             @HiveField(7) String id,
-            @HiveField(8) String navigationStackId)?
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
         scroll,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -173,7 +185,8 @@ mixin _$UIEvent {
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
             @HiveField(8) String id,
-            @HiveField(9) String navigationStackId)?
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)?
         rawKeyEvent,
     required TResult orElse(),
   }) =>
@@ -220,7 +233,8 @@ abstract class $UIEventCopyWith<$Res> {
       @HiveField(3) int order,
       @HiveField(4) List<ScrollableDescription>? externalities,
       @HiveField(5) String id,
-      @HiveField(6) String navigationStackId});
+      @HiveField(6) String navigationStackId,
+      String? overrideAutomationKey});
 
   $EventPositionCopyWith<$Res> get position;
 }
@@ -245,6 +259,7 @@ class _$UIEventCopyWithImpl<$Res, $Val extends UIEvent>
     Object? externalities = freezed,
     Object? id = null,
     Object? navigationStackId = null,
+    Object? overrideAutomationKey = freezed,
   }) {
     return _then(_value.copyWith(
       position: null == position
@@ -275,6 +290,10 @@ class _$UIEventCopyWithImpl<$Res, $Val extends UIEvent>
           ? _value.navigationStackId
           : navigationStackId // ignore: cast_nullable_to_non_nullable
               as String,
+      overrideAutomationKey: freezed == overrideAutomationKey
+          ? _value.overrideAutomationKey
+          : overrideAutomationKey // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -301,7 +320,8 @@ abstract class _$$TapEventImplCopyWith<$Res> implements $UIEventCopyWith<$Res> {
       @HiveField(3) int order,
       @HiveField(4) List<ScrollableDescription>? externalities,
       @HiveField(5) String id,
-      @HiveField(6) String navigationStackId});
+      @HiveField(6) String navigationStackId,
+      String? overrideAutomationKey});
 
   @override
   $EventPositionCopyWith<$Res> get position;
@@ -325,6 +345,7 @@ class __$$TapEventImplCopyWithImpl<$Res>
     Object? externalities = freezed,
     Object? id = null,
     Object? navigationStackId = null,
+    Object? overrideAutomationKey = freezed,
   }) {
     return _then(_$TapEventImpl(
       position: null == position
@@ -355,6 +376,10 @@ class __$$TapEventImplCopyWithImpl<$Res>
           ? _value.navigationStackId
           : navigationStackId // ignore: cast_nullable_to_non_nullable
               as String,
+      overrideAutomationKey: freezed == overrideAutomationKey
+          ? _value.overrideAutomationKey
+          : overrideAutomationKey // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -371,6 +396,7 @@ class _$TapEventImpl extends TapEvent {
       @HiveField(4) final List<ScrollableDescription>? externalities,
       @HiveField(5) this.id = 'TO_BE_GENERATED',
       @HiveField(6) this.navigationStackId = '',
+      this.overrideAutomationKey,
       final String? $type})
       : _externalities = externalities,
         $type = $type ?? 'tap',
@@ -413,6 +439,8 @@ class _$TapEventImpl extends TapEvent {
   @JsonKey()
   @HiveField(6)
   final String navigationStackId;
+  @override
+  final String? overrideAutomationKey;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -433,7 +461,8 @@ class _$TapEventImpl extends TapEvent {
             @HiveField(3) int order,
             @HiveField(4) List<ScrollableDescription>? externalities,
             @HiveField(5) String id,
-            @HiveField(6) String navigationStackId)
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)
         tap,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -443,7 +472,8 @@ class _$TapEventImpl extends TapEvent {
             @HiveField(4) int order,
             @HiveField(5) List<ScrollableDescription>? externalities,
             @HiveField(6) String id,
-            @HiveField(7) String navigationStackId)
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)
         input,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -454,7 +484,8 @@ class _$TapEventImpl extends TapEvent {
             @HiveField(5) int order,
             @HiveField(6) List<ScrollableDescription>? externalities,
             @HiveField(7) String id,
-            @HiveField(8) String navigationStackId)
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)
         scroll,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -463,11 +494,12 @@ class _$TapEventImpl extends TapEvent {
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
             @HiveField(8) String id,
-            @HiveField(9) String navigationStackId)
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)
         rawKeyEvent,
   }) {
-    return tap(
-        position, type, view, order, externalities, id, navigationStackId);
+    return tap(position, type, view, order, externalities, id,
+        navigationStackId, overrideAutomationKey);
   }
 
   @override
@@ -480,7 +512,8 @@ class _$TapEventImpl extends TapEvent {
             @HiveField(3) int order,
             @HiveField(4) List<ScrollableDescription>? externalities,
             @HiveField(5) String id,
-            @HiveField(6) String navigationStackId)?
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)?
         tap,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -490,7 +523,8 @@ class _$TapEventImpl extends TapEvent {
             @HiveField(4) int order,
             @HiveField(5) List<ScrollableDescription>? externalities,
             @HiveField(6) String id,
-            @HiveField(7) String navigationStackId)?
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)?
         input,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -501,7 +535,8 @@ class _$TapEventImpl extends TapEvent {
             @HiveField(5) int order,
             @HiveField(6) List<ScrollableDescription>? externalities,
             @HiveField(7) String id,
-            @HiveField(8) String navigationStackId)?
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
         scroll,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -510,11 +545,12 @@ class _$TapEventImpl extends TapEvent {
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
             @HiveField(8) String id,
-            @HiveField(9) String navigationStackId)?
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)?
         rawKeyEvent,
   }) {
-    return tap?.call(
-        position, type, view, order, externalities, id, navigationStackId);
+    return tap?.call(position, type, view, order, externalities, id,
+        navigationStackId, overrideAutomationKey);
   }
 
   @override
@@ -527,7 +563,8 @@ class _$TapEventImpl extends TapEvent {
             @HiveField(3) int order,
             @HiveField(4) List<ScrollableDescription>? externalities,
             @HiveField(5) String id,
-            @HiveField(6) String navigationStackId)?
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)?
         tap,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -537,7 +574,8 @@ class _$TapEventImpl extends TapEvent {
             @HiveField(4) int order,
             @HiveField(5) List<ScrollableDescription>? externalities,
             @HiveField(6) String id,
-            @HiveField(7) String navigationStackId)?
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)?
         input,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -548,7 +586,8 @@ class _$TapEventImpl extends TapEvent {
             @HiveField(5) int order,
             @HiveField(6) List<ScrollableDescription>? externalities,
             @HiveField(7) String id,
-            @HiveField(8) String navigationStackId)?
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
         scroll,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -557,13 +596,14 @@ class _$TapEventImpl extends TapEvent {
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
             @HiveField(8) String id,
-            @HiveField(9) String navigationStackId)?
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)?
         rawKeyEvent,
     required TResult orElse(),
   }) {
     if (tap != null) {
-      return tap(
-          position, type, view, order, externalities, id, navigationStackId);
+      return tap(position, type, view, order, externalities, id,
+          navigationStackId, overrideAutomationKey);
     }
     return orElse();
   }
@@ -621,7 +661,8 @@ abstract class TapEvent extends UIEvent {
       @HiveField(3) final int order,
       @HiveField(4) final List<ScrollableDescription>? externalities,
       @HiveField(5) final String id,
-      @HiveField(6) final String navigationStackId}) = _$TapEventImpl;
+      @HiveField(6) final String navigationStackId,
+      final String? overrideAutomationKey}) = _$TapEventImpl;
   TapEvent._() : super._();
 
   factory TapEvent.fromJson(Map<String, dynamic> json) =
@@ -649,6 +690,8 @@ abstract class TapEvent extends UIEvent {
   @HiveField(6)
   String get navigationStackId;
   @override
+  String? get overrideAutomationKey;
+  @override
   @JsonKey(ignore: true)
   _$$TapEventImplCopyWith<_$TapEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -670,7 +713,8 @@ abstract class _$$InputEventImplCopyWith<$Res>
       @HiveField(4) int order,
       @HiveField(5) List<ScrollableDescription>? externalities,
       @HiveField(6) String id,
-      @HiveField(7) String navigationStackId});
+      @HiveField(7) String navigationStackId,
+      String? overrideAutomationKey});
 
   @override
   $EventPositionCopyWith<$Res> get position;
@@ -695,6 +739,7 @@ class __$$InputEventImplCopyWithImpl<$Res>
     Object? externalities = freezed,
     Object? id = null,
     Object? navigationStackId = null,
+    Object? overrideAutomationKey = freezed,
   }) {
     return _then(_$InputEventImpl(
       position: null == position
@@ -729,6 +774,10 @@ class __$$InputEventImplCopyWithImpl<$Res>
           ? _value.navigationStackId
           : navigationStackId // ignore: cast_nullable_to_non_nullable
               as String,
+      overrideAutomationKey: freezed == overrideAutomationKey
+          ? _value.overrideAutomationKey
+          : overrideAutomationKey // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -746,6 +795,7 @@ class _$InputEventImpl extends InputEvent {
       @HiveField(5) final List<ScrollableDescription>? externalities,
       @HiveField(6) this.id = 'TO_BE_GENERATED',
       @HiveField(7) this.navigationStackId = '',
+      this.overrideAutomationKey,
       final String? $type})
       : _externalities = externalities,
         $type = $type ?? 'input',
@@ -791,6 +841,8 @@ class _$InputEventImpl extends InputEvent {
   @JsonKey()
   @HiveField(7)
   final String navigationStackId;
+  @override
+  final String? overrideAutomationKey;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -811,7 +863,8 @@ class _$InputEventImpl extends InputEvent {
             @HiveField(3) int order,
             @HiveField(4) List<ScrollableDescription>? externalities,
             @HiveField(5) String id,
-            @HiveField(6) String navigationStackId)
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)
         tap,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -821,7 +874,8 @@ class _$InputEventImpl extends InputEvent {
             @HiveField(4) int order,
             @HiveField(5) List<ScrollableDescription>? externalities,
             @HiveField(6) String id,
-            @HiveField(7) String navigationStackId)
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)
         input,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -832,7 +886,8 @@ class _$InputEventImpl extends InputEvent {
             @HiveField(5) int order,
             @HiveField(6) List<ScrollableDescription>? externalities,
             @HiveField(7) String id,
-            @HiveField(8) String navigationStackId)
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)
         scroll,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -841,11 +896,12 @@ class _$InputEventImpl extends InputEvent {
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
             @HiveField(8) String id,
-            @HiveField(9) String navigationStackId)
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)
         rawKeyEvent,
   }) {
     return input(position, type, inputData, view, order, externalities, id,
-        navigationStackId);
+        navigationStackId, overrideAutomationKey);
   }
 
   @override
@@ -858,7 +914,8 @@ class _$InputEventImpl extends InputEvent {
             @HiveField(3) int order,
             @HiveField(4) List<ScrollableDescription>? externalities,
             @HiveField(5) String id,
-            @HiveField(6) String navigationStackId)?
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)?
         tap,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -868,7 +925,8 @@ class _$InputEventImpl extends InputEvent {
             @HiveField(4) int order,
             @HiveField(5) List<ScrollableDescription>? externalities,
             @HiveField(6) String id,
-            @HiveField(7) String navigationStackId)?
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)?
         input,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -879,7 +937,8 @@ class _$InputEventImpl extends InputEvent {
             @HiveField(5) int order,
             @HiveField(6) List<ScrollableDescription>? externalities,
             @HiveField(7) String id,
-            @HiveField(8) String navigationStackId)?
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
         scroll,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -888,11 +947,12 @@ class _$InputEventImpl extends InputEvent {
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
             @HiveField(8) String id,
-            @HiveField(9) String navigationStackId)?
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)?
         rawKeyEvent,
   }) {
     return input?.call(position, type, inputData, view, order, externalities,
-        id, navigationStackId);
+        id, navigationStackId, overrideAutomationKey);
   }
 
   @override
@@ -905,7 +965,8 @@ class _$InputEventImpl extends InputEvent {
             @HiveField(3) int order,
             @HiveField(4) List<ScrollableDescription>? externalities,
             @HiveField(5) String id,
-            @HiveField(6) String navigationStackId)?
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)?
         tap,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -915,7 +976,8 @@ class _$InputEventImpl extends InputEvent {
             @HiveField(4) int order,
             @HiveField(5) List<ScrollableDescription>? externalities,
             @HiveField(6) String id,
-            @HiveField(7) String navigationStackId)?
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)?
         input,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -926,7 +988,8 @@ class _$InputEventImpl extends InputEvent {
             @HiveField(5) int order,
             @HiveField(6) List<ScrollableDescription>? externalities,
             @HiveField(7) String id,
-            @HiveField(8) String navigationStackId)?
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
         scroll,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -935,13 +998,14 @@ class _$InputEventImpl extends InputEvent {
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
             @HiveField(8) String id,
-            @HiveField(9) String navigationStackId)?
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)?
         rawKeyEvent,
     required TResult orElse(),
   }) {
     if (input != null) {
       return input(position, type, inputData, view, order, externalities, id,
-          navigationStackId);
+          navigationStackId, overrideAutomationKey);
     }
     return orElse();
   }
@@ -1000,7 +1064,8 @@ abstract class InputEvent extends UIEvent {
       @HiveField(4) final int order,
       @HiveField(5) final List<ScrollableDescription>? externalities,
       @HiveField(6) final String id,
-      @HiveField(7) final String navigationStackId}) = _$InputEventImpl;
+      @HiveField(7) final String navigationStackId,
+      final String? overrideAutomationKey}) = _$InputEventImpl;
   InputEvent._() : super._();
 
   factory InputEvent.fromJson(Map<String, dynamic> json) =
@@ -1030,6 +1095,8 @@ abstract class InputEvent extends UIEvent {
   @HiveField(7)
   String get navigationStackId;
   @override
+  String? get overrideAutomationKey;
+  @override
   @JsonKey(ignore: true)
   _$$InputEventImplCopyWith<_$InputEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1052,7 +1119,8 @@ abstract class _$$ScrollEventImplCopyWith<$Res>
       @HiveField(5) int order,
       @HiveField(6) List<ScrollableDescription>? externalities,
       @HiveField(7) String id,
-      @HiveField(8) String navigationStackId});
+      @HiveField(8) String navigationStackId,
+      String? overrideAutomationKey});
 
   @override
   $EventPositionCopyWith<$Res> get position;
@@ -1079,6 +1147,7 @@ class __$$ScrollEventImplCopyWithImpl<$Res>
     Object? externalities = freezed,
     Object? id = null,
     Object? navigationStackId = null,
+    Object? overrideAutomationKey = freezed,
   }) {
     return _then(_$ScrollEventImpl(
       position: null == position
@@ -1117,6 +1186,10 @@ class __$$ScrollEventImplCopyWithImpl<$Res>
           ? _value.navigationStackId
           : navigationStackId // ignore: cast_nullable_to_non_nullable
               as String,
+      overrideAutomationKey: freezed == overrideAutomationKey
+          ? _value.overrideAutomationKey
+          : overrideAutomationKey // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
@@ -1147,6 +1220,7 @@ class _$ScrollEventImpl extends ScrollEvent {
       @HiveField(6) final List<ScrollableDescription>? externalities,
       @HiveField(7) this.id = 'TO_BE_GENERATED',
       @HiveField(8) this.navigationStackId = '',
+      this.overrideAutomationKey,
       final String? $type})
       : _externalities = externalities,
         $type = $type ?? 'scroll',
@@ -1195,6 +1269,8 @@ class _$ScrollEventImpl extends ScrollEvent {
   @JsonKey()
   @HiveField(8)
   final String navigationStackId;
+  @override
+  final String? overrideAutomationKey;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -1215,7 +1291,8 @@ class _$ScrollEventImpl extends ScrollEvent {
             @HiveField(3) int order,
             @HiveField(4) List<ScrollableDescription>? externalities,
             @HiveField(5) String id,
-            @HiveField(6) String navigationStackId)
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)
         tap,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -1225,7 +1302,8 @@ class _$ScrollEventImpl extends ScrollEvent {
             @HiveField(4) int order,
             @HiveField(5) List<ScrollableDescription>? externalities,
             @HiveField(6) String id,
-            @HiveField(7) String navigationStackId)
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)
         input,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -1236,7 +1314,8 @@ class _$ScrollEventImpl extends ScrollEvent {
             @HiveField(5) int order,
             @HiveField(6) List<ScrollableDescription>? externalities,
             @HiveField(7) String id,
-            @HiveField(8) String navigationStackId)
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)
         scroll,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -1245,11 +1324,12 @@ class _$ScrollEventImpl extends ScrollEvent {
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
             @HiveField(8) String id,
-            @HiveField(9) String navigationStackId)
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)
         rawKeyEvent,
   }) {
     return scroll(position, type, duration, scrollDelta, view, order,
-        externalities, id, navigationStackId);
+        externalities, id, navigationStackId, overrideAutomationKey);
   }
 
   @override
@@ -1262,7 +1342,8 @@ class _$ScrollEventImpl extends ScrollEvent {
             @HiveField(3) int order,
             @HiveField(4) List<ScrollableDescription>? externalities,
             @HiveField(5) String id,
-            @HiveField(6) String navigationStackId)?
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)?
         tap,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -1272,7 +1353,8 @@ class _$ScrollEventImpl extends ScrollEvent {
             @HiveField(4) int order,
             @HiveField(5) List<ScrollableDescription>? externalities,
             @HiveField(6) String id,
-            @HiveField(7) String navigationStackId)?
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)?
         input,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -1283,7 +1365,8 @@ class _$ScrollEventImpl extends ScrollEvent {
             @HiveField(5) int order,
             @HiveField(6) List<ScrollableDescription>? externalities,
             @HiveField(7) String id,
-            @HiveField(8) String navigationStackId)?
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
         scroll,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -1292,11 +1375,12 @@ class _$ScrollEventImpl extends ScrollEvent {
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
             @HiveField(8) String id,
-            @HiveField(9) String navigationStackId)?
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)?
         rawKeyEvent,
   }) {
     return scroll?.call(position, type, duration, scrollDelta, view, order,
-        externalities, id, navigationStackId);
+        externalities, id, navigationStackId, overrideAutomationKey);
   }
 
   @override
@@ -1309,7 +1393,8 @@ class _$ScrollEventImpl extends ScrollEvent {
             @HiveField(3) int order,
             @HiveField(4) List<ScrollableDescription>? externalities,
             @HiveField(5) String id,
-            @HiveField(6) String navigationStackId)?
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)?
         tap,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -1319,7 +1404,8 @@ class _$ScrollEventImpl extends ScrollEvent {
             @HiveField(4) int order,
             @HiveField(5) List<ScrollableDescription>? externalities,
             @HiveField(6) String id,
-            @HiveField(7) String navigationStackId)?
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)?
         input,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -1330,7 +1416,8 @@ class _$ScrollEventImpl extends ScrollEvent {
             @HiveField(5) int order,
             @HiveField(6) List<ScrollableDescription>? externalities,
             @HiveField(7) String id,
-            @HiveField(8) String navigationStackId)?
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
         scroll,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -1339,13 +1426,14 @@ class _$ScrollEventImpl extends ScrollEvent {
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
             @HiveField(8) String id,
-            @HiveField(9) String navigationStackId)?
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)?
         rawKeyEvent,
     required TResult orElse(),
   }) {
     if (scroll != null) {
       return scroll(position, type, duration, scrollDelta, view, order,
-          externalities, id, navigationStackId);
+          externalities, id, navigationStackId, overrideAutomationKey);
     }
     return orElse();
   }
@@ -1405,7 +1493,8 @@ abstract class ScrollEvent extends UIEvent {
       @HiveField(5) final int order,
       @HiveField(6) final List<ScrollableDescription>? externalities,
       @HiveField(7) final String id,
-      @HiveField(8) final String navigationStackId}) = _$ScrollEventImpl;
+      @HiveField(8) final String navigationStackId,
+      final String? overrideAutomationKey}) = _$ScrollEventImpl;
   ScrollEvent._() : super._();
 
   factory ScrollEvent.fromJson(Map<String, dynamic> json) =
@@ -1437,6 +1526,8 @@ abstract class ScrollEvent extends UIEvent {
   @HiveField(8)
   String get navigationStackId;
   @override
+  String? get overrideAutomationKey;
+  @override
   @JsonKey(ignore: true)
   _$$ScrollEventImplCopyWith<_$ScrollEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1457,7 +1548,8 @@ abstract class _$$RawKeyEventImplCopyWith<$Res>
       @HiveField(6) int order,
       @HiveField(7) List<ScrollableDescription>? externalities,
       @HiveField(8) String id,
-      @HiveField(9) String navigationStackId});
+      @HiveField(9) String navigationStackId,
+      String? overrideAutomationKey});
 
   @override
   $EventPositionCopyWith<$Res> get position;
@@ -1481,6 +1573,7 @@ class __$$RawKeyEventImplCopyWithImpl<$Res>
     Object? externalities = freezed,
     Object? id = null,
     Object? navigationStackId = null,
+    Object? overrideAutomationKey = freezed,
   }) {
     return _then(_$RawKeyEventImpl(
       position: null == position
@@ -1511,6 +1604,10 @@ class __$$RawKeyEventImplCopyWithImpl<$Res>
           ? _value.navigationStackId
           : navigationStackId // ignore: cast_nullable_to_non_nullable
               as String,
+      overrideAutomationKey: freezed == overrideAutomationKey
+          ? _value.overrideAutomationKey
+          : overrideAutomationKey // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -1527,6 +1624,7 @@ class _$RawKeyEventImpl extends RawKeyEvent {
       @HiveField(7) final List<ScrollableDescription>? externalities,
       @HiveField(8) this.id = 'TO_BE_GENERATED',
       @HiveField(9) this.navigationStackId = '',
+      this.overrideAutomationKey,
       final String? $type})
       : _externalities = externalities,
         $type = $type ?? 'rawKeyEvent',
@@ -1570,6 +1668,8 @@ class _$RawKeyEventImpl extends RawKeyEvent {
   @JsonKey()
   @HiveField(9)
   final String navigationStackId;
+  @override
+  final String? overrideAutomationKey;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -1590,7 +1690,8 @@ class _$RawKeyEventImpl extends RawKeyEvent {
             @HiveField(3) int order,
             @HiveField(4) List<ScrollableDescription>? externalities,
             @HiveField(5) String id,
-            @HiveField(6) String navigationStackId)
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)
         tap,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -1600,7 +1701,8 @@ class _$RawKeyEventImpl extends RawKeyEvent {
             @HiveField(4) int order,
             @HiveField(5) List<ScrollableDescription>? externalities,
             @HiveField(6) String id,
-            @HiveField(7) String navigationStackId)
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)
         input,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -1611,7 +1713,8 @@ class _$RawKeyEventImpl extends RawKeyEvent {
             @HiveField(5) int order,
             @HiveField(6) List<ScrollableDescription>? externalities,
             @HiveField(7) String id,
-            @HiveField(8) String navigationStackId)
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)
         scroll,
     required TResult Function(
             @HiveField(0) EventPosition position,
@@ -1620,11 +1723,12 @@ class _$RawKeyEventImpl extends RawKeyEvent {
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
             @HiveField(8) String id,
-            @HiveField(9) String navigationStackId)
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)
         rawKeyEvent,
   }) {
-    return rawKeyEvent(
-        position, type, view, order, externalities, id, navigationStackId);
+    return rawKeyEvent(position, type, view, order, externalities, id,
+        navigationStackId, overrideAutomationKey);
   }
 
   @override
@@ -1637,7 +1741,8 @@ class _$RawKeyEventImpl extends RawKeyEvent {
             @HiveField(3) int order,
             @HiveField(4) List<ScrollableDescription>? externalities,
             @HiveField(5) String id,
-            @HiveField(6) String navigationStackId)?
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)?
         tap,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -1647,7 +1752,8 @@ class _$RawKeyEventImpl extends RawKeyEvent {
             @HiveField(4) int order,
             @HiveField(5) List<ScrollableDescription>? externalities,
             @HiveField(6) String id,
-            @HiveField(7) String navigationStackId)?
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)?
         input,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -1658,7 +1764,8 @@ class _$RawKeyEventImpl extends RawKeyEvent {
             @HiveField(5) int order,
             @HiveField(6) List<ScrollableDescription>? externalities,
             @HiveField(7) String id,
-            @HiveField(8) String navigationStackId)?
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
         scroll,
     TResult? Function(
             @HiveField(0) EventPosition position,
@@ -1667,11 +1774,12 @@ class _$RawKeyEventImpl extends RawKeyEvent {
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
             @HiveField(8) String id,
-            @HiveField(9) String navigationStackId)?
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)?
         rawKeyEvent,
   }) {
-    return rawKeyEvent?.call(
-        position, type, view, order, externalities, id, navigationStackId);
+    return rawKeyEvent?.call(position, type, view, order, externalities, id,
+        navigationStackId, overrideAutomationKey);
   }
 
   @override
@@ -1684,7 +1792,8 @@ class _$RawKeyEventImpl extends RawKeyEvent {
             @HiveField(3) int order,
             @HiveField(4) List<ScrollableDescription>? externalities,
             @HiveField(5) String id,
-            @HiveField(6) String navigationStackId)?
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)?
         tap,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -1694,7 +1803,8 @@ class _$RawKeyEventImpl extends RawKeyEvent {
             @HiveField(4) int order,
             @HiveField(5) List<ScrollableDescription>? externalities,
             @HiveField(6) String id,
-            @HiveField(7) String navigationStackId)?
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)?
         input,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -1705,7 +1815,8 @@ class _$RawKeyEventImpl extends RawKeyEvent {
             @HiveField(5) int order,
             @HiveField(6) List<ScrollableDescription>? externalities,
             @HiveField(7) String id,
-            @HiveField(8) String navigationStackId)?
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
         scroll,
     TResult Function(
             @HiveField(0) EventPosition position,
@@ -1714,13 +1825,14 @@ class _$RawKeyEventImpl extends RawKeyEvent {
             @HiveField(6) int order,
             @HiveField(7) List<ScrollableDescription>? externalities,
             @HiveField(8) String id,
-            @HiveField(9) String navigationStackId)?
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)?
         rawKeyEvent,
     required TResult orElse(),
   }) {
     if (rawKeyEvent != null) {
-      return rawKeyEvent(
-          position, type, view, order, externalities, id, navigationStackId);
+      return rawKeyEvent(position, type, view, order, externalities, id,
+          navigationStackId, overrideAutomationKey);
     }
     return orElse();
   }
@@ -1778,7 +1890,8 @@ abstract class RawKeyEvent extends UIEvent {
       @HiveField(6) final int order,
       @HiveField(7) final List<ScrollableDescription>? externalities,
       @HiveField(8) final String id,
-      @HiveField(9) final String navigationStackId}) = _$RawKeyEventImpl;
+      @HiveField(9) final String navigationStackId,
+      final String? overrideAutomationKey}) = _$RawKeyEventImpl;
   RawKeyEvent._() : super._();
 
   factory RawKeyEvent.fromJson(Map<String, dynamic> json) =
@@ -1805,6 +1918,8 @@ abstract class RawKeyEvent extends UIEvent {
   @override
   @HiveField(9)
   String get navigationStackId;
+  @override
+  String? get overrideAutomationKey;
   @override
   @JsonKey(ignore: true)
   _$$RawKeyEventImplCopyWith<_$RawKeyEventImpl> get copyWith =>

@@ -241,6 +241,7 @@ _$TapEventImpl _$$TapEventImplFromJson(Map<String, dynamic> json) =>
           .toList(),
       id: json['id'] as String? ?? 'TO_BE_GENERATED',
       navigationStackId: json['navigationStackId'] as String? ?? '',
+      overrideAutomationKey: json['overrideAutomationKey'] as String?,
       $type: json['runtimeType'] as String?,
     );
 
@@ -253,6 +254,7 @@ Map<String, dynamic> _$$TapEventImplToJson(_$TapEventImpl instance) =>
       'externalities': instance.externalities,
       'id': instance.id,
       'navigationStackId': instance.navigationStackId,
+      'overrideAutomationKey': instance.overrideAutomationKey,
       'runtimeType': instance.$type,
     };
 
@@ -282,6 +284,7 @@ _$InputEventImpl _$$InputEventImplFromJson(Map<String, dynamic> json) =>
           .toList(),
       id: json['id'] as String? ?? 'TO_BE_GENERATED',
       navigationStackId: json['navigationStackId'] as String? ?? '',
+      overrideAutomationKey: json['overrideAutomationKey'] as String?,
       $type: json['runtimeType'] as String?,
     );
 
@@ -295,6 +298,7 @@ Map<String, dynamic> _$$InputEventImplToJson(_$InputEventImpl instance) =>
       'externalities': instance.externalities,
       'id': instance.id,
       'navigationStackId': instance.navigationStackId,
+      'overrideAutomationKey': instance.overrideAutomationKey,
       'runtimeType': instance.$type,
     };
 
@@ -316,6 +320,7 @@ _$ScrollEventImpl _$$ScrollEventImplFromJson(Map<String, dynamic> json) =>
           .toList(),
       id: json['id'] as String? ?? 'TO_BE_GENERATED',
       navigationStackId: json['navigationStackId'] as String? ?? '',
+      overrideAutomationKey: json['overrideAutomationKey'] as String?,
       $type: json['runtimeType'] as String?,
     );
 
@@ -330,6 +335,7 @@ Map<String, dynamic> _$$ScrollEventImplToJson(_$ScrollEventImpl instance) =>
       'externalities': instance.externalities,
       'id': instance.id,
       'navigationStackId': instance.navigationStackId,
+      'overrideAutomationKey': instance.overrideAutomationKey,
       'runtimeType': instance.$type,
     };
 
@@ -348,6 +354,7 @@ _$RawKeyEventImpl _$$RawKeyEventImplFromJson(Map<String, dynamic> json) =>
           .toList(),
       id: json['id'] as String? ?? 'TO_BE_GENERATED',
       navigationStackId: json['navigationStackId'] as String? ?? '',
+      overrideAutomationKey: json['overrideAutomationKey'] as String?,
       $type: json['runtimeType'] as String?,
     );
 
@@ -360,5 +367,6 @@ Map<String, dynamic> _$$RawKeyEventImplToJson(_$RawKeyEventImpl instance) =>
       'externalities': instance.externalities,
       'id': instance.id,
       'navigationStackId': instance.navigationStackId,
+      'overrideAutomationKey': instance.overrideAutomationKey,
       'runtimeType': instance.$type,
     };
