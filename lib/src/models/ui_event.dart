@@ -18,6 +18,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(4) List<ScrollableDescription>? externalities,
     @HiveField(5) @Default('TO_BE_GENERATED') String id,
     @HiveField(6) @Default('') String navigationStackId,
+    String? overrideAutomationKey,
   }) = TapEvent;
 
   @HiveType(typeId: 7)
@@ -30,6 +31,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(5) List<ScrollableDescription>? externalities,
     @HiveField(6) @Default('TO_BE_GENERATED') String id,
     @HiveField(7) @Default('') String navigationStackId,
+    String? overrideAutomationKey,
   }) = InputEvent;
 
   @HiveType(typeId: 8)
@@ -43,6 +45,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(6) List<ScrollableDescription>? externalities,
     @HiveField(7) @Default('TO_BE_GENERATED') String id,
     @HiveField(8) @Default('') String navigationStackId,
+    String? overrideAutomationKey,
   }) = ScrollEvent;
 
   @HiveType(typeId: 9)
@@ -54,6 +57,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(7) List<ScrollableDescription>? externalities,
     @HiveField(8) @Default('TO_BE_GENERATED') String id,
     @HiveField(9) @Default('') String navigationStackId,
+    String? overrideAutomationKey,
   }) = RawKeyEvent;
 
   factory UIEvent.fromJson(Map<String, dynamic> json) =>
@@ -67,6 +71,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
       other is UIEvent && other.automationKey == other.automationKey;
 
   String get automationKey =>
+      overrideAutomationKey ??
       '${type.name}_${order}_${position.x.floor()}_${position.y.floor()}';
 
   bool get isScrollable => type == InteractionType.scroll;
