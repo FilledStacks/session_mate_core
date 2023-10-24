@@ -1,3 +1,9 @@
+## 0.2.4
+
+- Added PackageInstruction model
+- Added SweetCoreInstruction model
+- Added SweetCoreInstructionType enum
+
 ## 0.2.3
 
 - Removed `intl` package dependency
