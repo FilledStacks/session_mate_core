@@ -79,11 +79,11 @@ class _$SweetCoreInstructionCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_SweetCoreInstructionCopyWith<$Res>
+abstract class _$$SweetCoreInstructionImplCopyWith<$Res>
     implements $SweetCoreInstructionCopyWith<$Res> {
-  factory _$$_SweetCoreInstructionCopyWith(_$_SweetCoreInstruction value,
-          $Res Function(_$_SweetCoreInstruction) then) =
-      __$$_SweetCoreInstructionCopyWithImpl<$Res>;
+  factory _$$SweetCoreInstructionImplCopyWith(_$SweetCoreInstructionImpl value,
+          $Res Function(_$SweetCoreInstructionImpl) then) =
+      __$$SweetCoreInstructionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -93,11 +93,11 @@ abstract class _$$_SweetCoreInstructionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SweetCoreInstructionCopyWithImpl<$Res>
-    extends _$SweetCoreInstructionCopyWithImpl<$Res, _$_SweetCoreInstruction>
-    implements _$$_SweetCoreInstructionCopyWith<$Res> {
-  __$$_SweetCoreInstructionCopyWithImpl(_$_SweetCoreInstruction _value,
-      $Res Function(_$_SweetCoreInstruction) _then)
+class __$$SweetCoreInstructionImplCopyWithImpl<$Res>
+    extends _$SweetCoreInstructionCopyWithImpl<$Res, _$SweetCoreInstructionImpl>
+    implements _$$SweetCoreInstructionImplCopyWith<$Res> {
+  __$$SweetCoreInstructionImplCopyWithImpl(_$SweetCoreInstructionImpl _value,
+      $Res Function(_$SweetCoreInstructionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -107,7 +107,7 @@ class __$$_SweetCoreInstructionCopyWithImpl<$Res>
     Object? data = freezed,
     Object? type = null,
   }) {
-    return _then(_$_SweetCoreInstruction(
+    return _then(_$SweetCoreInstructionImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -126,12 +126,12 @@ class __$$_SweetCoreInstructionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SweetCoreInstruction implements _SweetCoreInstruction {
-  const _$_SweetCoreInstruction(
+class _$SweetCoreInstructionImpl implements _SweetCoreInstruction {
+  const _$SweetCoreInstructionImpl(
       {@NullableToTimeStampConverter() this.id, this.data, required this.type});
 
-  factory _$_SweetCoreInstruction.fromJson(Map<String, dynamic> json) =>
-      _$$_SweetCoreInstructionFromJson(json);
+  factory _$SweetCoreInstructionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SweetCoreInstructionImplFromJson(json);
 
   @override
   @NullableToTimeStampConverter()
@@ -145,7 +145,7 @@ class _$_SweetCoreInstruction implements _SweetCoreInstruction {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SweetCoreInstruction &&
+            other is _$SweetCoreInstructionImpl &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other.data, data) &&
             (identical(other.type, type) || other.type == type));
@@ -159,13 +159,14 @@ class _$_SweetCoreInstruction implements _SweetCoreInstruction {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SweetCoreInstructionCopyWith<_$_SweetCoreInstruction> get copyWith =>
-      __$$_SweetCoreInstructionCopyWithImpl<_$_SweetCoreInstruction>(
-          this, _$identity);
+  _$$SweetCoreInstructionImplCopyWith<_$SweetCoreInstructionImpl>
+      get copyWith =>
+          __$$SweetCoreInstructionImplCopyWithImpl<_$SweetCoreInstructionImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SweetCoreInstructionToJson(
+    return _$$SweetCoreInstructionImplToJson(
       this,
     );
   }
@@ -173,12 +174,13 @@ class _$_SweetCoreInstruction implements _SweetCoreInstruction {
 
 abstract class _SweetCoreInstruction implements SweetCoreInstruction {
   const factory _SweetCoreInstruction(
-      {@NullableToTimeStampConverter() final String? id,
-      final dynamic data,
-      required final SweetCoreInstructionType type}) = _$_SweetCoreInstruction;
+          {@NullableToTimeStampConverter() final String? id,
+          final dynamic data,
+          required final SweetCoreInstructionType type}) =
+      _$SweetCoreInstructionImpl;
 
   factory _SweetCoreInstruction.fromJson(Map<String, dynamic> json) =
-      _$_SweetCoreInstruction.fromJson;
+      _$SweetCoreInstructionImpl.fromJson;
 
   @override
   @NullableToTimeStampConverter()
@@ -189,6 +191,6 @@ abstract class _SweetCoreInstruction implements SweetCoreInstruction {
   SweetCoreInstructionType get type;
   @override
   @JsonKey(ignore: true)
-  _$$_SweetCoreInstructionCopyWith<_$_SweetCoreInstruction> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SweetCoreInstructionImplCopyWith<_$SweetCoreInstructionImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

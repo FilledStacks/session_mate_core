@@ -6,16 +6,16 @@ part of 'sweet_core_instruction.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SweetCoreInstruction _$$_SweetCoreInstructionFromJson(
+_$SweetCoreInstructionImpl _$$SweetCoreInstructionImplFromJson(
         Map<String, dynamic> json) =>
-    _$_SweetCoreInstruction(
+    _$SweetCoreInstructionImpl(
       id: const NullableToTimeStampConverter().fromJson(json['id'] as String?),
       data: json['data'],
       type: $enumDecode(_$SweetCoreInstructionTypeEnumMap, json['type']),
     );
 
-Map<String, dynamic> _$$_SweetCoreInstructionToJson(
-        _$_SweetCoreInstruction instance) =>
+Map<String, dynamic> _$$SweetCoreInstructionImplToJson(
+        _$SweetCoreInstructionImpl instance) =>
     <String, dynamic>{
       'id': const NullableToTimeStampConverter().toJson(instance.id),
       'data': instance.data,
