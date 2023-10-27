@@ -60,7 +60,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     String? overrideAutomationKey,
   }) = RawKeyEvent;
 
-  @HiveType(typeId: 9)
+  @HiveType(typeId: 16)
   factory UIEvent.dragEvent({
     @HiveField(0) required EventPosition position,
     @HiveField(1) @Default(EventPosition()) EventPosition scrollDelta,
