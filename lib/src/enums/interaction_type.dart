@@ -19,7 +19,9 @@ enum InteractionType {
   @HiveField(6)
   backPressEvent,
   @HiveField(7)
-  onKeyboardEnterEvent;
+  onKeyboardEnterEvent,
+  @HiveField(8)
+  drag;
 
   const InteractionType();
 

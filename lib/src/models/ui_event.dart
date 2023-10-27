@@ -60,6 +60,20 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     String? overrideAutomationKey,
   }) = RawKeyEvent;
 
+  @HiveType(typeId: 9)
+  factory UIEvent.dragEvent({
+    @HiveField(0) required EventPosition position,
+    @HiveField(1) @Default(EventPosition()) EventPosition scrollDelta,
+    @HiveField(2) @Default(0) int duration,
+    @HiveField(3) @Default(InteractionType.drag) InteractionType type,
+    @HiveField(4) @Default('') String view,
+    @HiveField(5) @Default(0) int order,
+    @HiveField(6) List<ScrollableDescription>? externalities,
+    @HiveField(7) @Default('TO_BE_GENERATED') String id,
+    @HiveField(8) @Default('') String navigationStackId,
+    String? overrideAutomationKey,
+  }) = DragEvent;
+
   factory UIEvent.fromJson(Map<String, dynamic> json) =>
       _$UIEventFromJson(json);
 

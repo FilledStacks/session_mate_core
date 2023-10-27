@@ -223,6 +223,64 @@ class RawKeyEventImplAdapter extends TypeAdapter<_$RawKeyEventImpl> {
           typeId == other.typeId;
 }
 
+class DragEventImplAdapter extends TypeAdapter<_$DragEventImpl> {
+  @override
+  final int typeId = 9;
+
+  @override
+  _$DragEventImpl read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return _$DragEventImpl(
+      position: fields[0] as EventPosition,
+      scrollDelta: fields[1] as EventPosition,
+      duration: fields[2] as int,
+      type: fields[3] as InteractionType,
+      view: fields[4] as String,
+      order: fields[5] as int,
+      externalities: (fields[6] as List?)?.cast<ScrollableDescription>(),
+      id: fields[7] as String,
+      navigationStackId: fields[8] as String,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, _$DragEventImpl obj) {
+    writer
+      ..writeByte(9)
+      ..writeByte(0)
+      ..write(obj.position)
+      ..writeByte(1)
+      ..write(obj.scrollDelta)
+      ..writeByte(2)
+      ..write(obj.duration)
+      ..writeByte(3)
+      ..write(obj.type)
+      ..writeByte(4)
+      ..write(obj.view)
+      ..writeByte(5)
+      ..write(obj.order)
+      ..writeByte(7)
+      ..write(obj.id)
+      ..writeByte(8)
+      ..write(obj.navigationStackId)
+      ..writeByte(6)
+      ..write(obj.externalities);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is DragEventImplAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
@@ -267,6 +325,7 @@ const _$InteractionTypeEnumMap = {
   InteractionType.pinchIn: 'pinchIn',
   InteractionType.backPressEvent: 'backPressEvent',
   InteractionType.onKeyboardEnterEvent: 'onKeyboardEnterEvent',
+  InteractionType.drag: 'drag',
 };
 
 _$InputEventImpl _$$InputEventImplFromJson(Map<String, dynamic> json) =>
@@ -361,6 +420,43 @@ _$RawKeyEventImpl _$$RawKeyEventImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$RawKeyEventImplToJson(_$RawKeyEventImpl instance) =>
     <String, dynamic>{
       'position': instance.position,
+      'type': _$InteractionTypeEnumMap[instance.type]!,
+      'view': instance.view,
+      'order': instance.order,
+      'externalities': instance.externalities,
+      'id': instance.id,
+      'navigationStackId': instance.navigationStackId,
+      'overrideAutomationKey': instance.overrideAutomationKey,
+      'runtimeType': instance.$type,
+    };
+
+_$DragEventImpl _$$DragEventImplFromJson(Map<String, dynamic> json) =>
+    _$DragEventImpl(
+      position:
+          EventPosition.fromJson(json['position'] as Map<String, dynamic>),
+      scrollDelta: json['scrollDelta'] == null
+          ? const EventPosition()
+          : EventPosition.fromJson(json['scrollDelta'] as Map<String, dynamic>),
+      duration: json['duration'] as int? ?? 0,
+      type: $enumDecodeNullable(_$InteractionTypeEnumMap, json['type']) ??
+          InteractionType.drag,
+      view: json['view'] as String? ?? '',
+      order: json['order'] as int? ?? 0,
+      externalities: (json['externalities'] as List<dynamic>?)
+          ?.map(
+              (e) => ScrollableDescription.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      id: json['id'] as String? ?? 'TO_BE_GENERATED',
+      navigationStackId: json['navigationStackId'] as String? ?? '',
+      overrideAutomationKey: json['overrideAutomationKey'] as String?,
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$DragEventImplToJson(_$DragEventImpl instance) =>
+    <String, dynamic>{
+      'position': instance.position,
+      'scrollDelta': instance.scrollDelta,
+      'duration': instance.duration,
       'type': _$InteractionTypeEnumMap[instance.type]!,
       'view': instance.view,
       'order': instance.order,

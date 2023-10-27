@@ -18,11 +18,19 @@ class EventPosition with _$EventPosition {
     @Default(0) double yDeviation,
   }) = _EventPosition;
 
+  operator -(EventPosition position) {
+    return EventPosition(
+      x: x - position.x,
+      y: y - position.y,
+      xDeviation: xDeviation,
+      yDeviation: yDeviation,
+      capturedDeviceHeight: capturedDeviceHeight,
+      capturedDeviceWidth: capturedDeviceWidth,
+    );
+  }
+
   factory EventPosition.fromJson(Map<String, dynamic> json) =>
       _$EventPositionFromJson(json);
-
-  EventPosition operator -(EventPosition other) =>
-      EventPosition(x: x - other.x, y: y - other.y);
 
   @override
   String toString() {

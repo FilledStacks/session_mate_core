@@ -29,6 +29,8 @@ class InteractionTypeAdapter extends TypeAdapter<InteractionType> {
         return InteractionType.backPressEvent;
       case 7:
         return InteractionType.onKeyboardEnterEvent;
+      case 8:
+        return InteractionType.drag;
       default:
         return InteractionType.tap;
     }
@@ -60,6 +62,9 @@ class InteractionTypeAdapter extends TypeAdapter<InteractionType> {
         break;
       case InteractionType.onKeyboardEnterEvent:
         writer.writeByte(7);
+        break;
+      case InteractionType.drag:
+        writer.writeByte(8);
         break;
     }
   }

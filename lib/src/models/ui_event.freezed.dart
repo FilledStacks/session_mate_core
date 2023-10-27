@@ -24,6 +24,8 @@ UIEvent _$UIEventFromJson(Map<String, dynamic> json) {
       return ScrollEvent.fromJson(json);
     case 'rawKeyEvent':
       return RawKeyEvent.fromJson(json);
+    case 'dragEvent':
+      return DragEvent.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'runtimeType', 'UIEvent',
@@ -94,6 +96,18 @@ mixin _$UIEvent {
             @HiveField(9) String navigationStackId,
             String? overrideAutomationKey)
         rawKeyEvent,
+    required TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)
+        dragEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -141,6 +155,18 @@ mixin _$UIEvent {
             @HiveField(9) String navigationStackId,
             String? overrideAutomationKey)?
         rawKeyEvent,
+    TResult? Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
+        dragEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -188,6 +214,18 @@ mixin _$UIEvent {
             @HiveField(9) String navigationStackId,
             String? overrideAutomationKey)?
         rawKeyEvent,
+    TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
+        dragEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -197,6 +235,7 @@ mixin _$UIEvent {
     required TResult Function(InputEvent value) input,
     required TResult Function(ScrollEvent value) scroll,
     required TResult Function(RawKeyEvent value) rawKeyEvent,
+    required TResult Function(DragEvent value) dragEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -205,6 +244,7 @@ mixin _$UIEvent {
     TResult? Function(InputEvent value)? input,
     TResult? Function(ScrollEvent value)? scroll,
     TResult? Function(RawKeyEvent value)? rawKeyEvent,
+    TResult? Function(DragEvent value)? dragEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -213,6 +253,7 @@ mixin _$UIEvent {
     TResult Function(InputEvent value)? input,
     TResult Function(ScrollEvent value)? scroll,
     TResult Function(RawKeyEvent value)? rawKeyEvent,
+    TResult Function(DragEvent value)? dragEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -497,6 +538,18 @@ class _$TapEventImpl extends TapEvent {
             @HiveField(9) String navigationStackId,
             String? overrideAutomationKey)
         rawKeyEvent,
+    required TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)
+        dragEvent,
   }) {
     return tap(position, type, view, order, externalities, id,
         navigationStackId, overrideAutomationKey);
@@ -548,6 +601,18 @@ class _$TapEventImpl extends TapEvent {
             @HiveField(9) String navigationStackId,
             String? overrideAutomationKey)?
         rawKeyEvent,
+    TResult? Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
+        dragEvent,
   }) {
     return tap?.call(position, type, view, order, externalities, id,
         navigationStackId, overrideAutomationKey);
@@ -599,6 +664,18 @@ class _$TapEventImpl extends TapEvent {
             @HiveField(9) String navigationStackId,
             String? overrideAutomationKey)?
         rawKeyEvent,
+    TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
+        dragEvent,
     required TResult orElse(),
   }) {
     if (tap != null) {
@@ -615,6 +692,7 @@ class _$TapEventImpl extends TapEvent {
     required TResult Function(InputEvent value) input,
     required TResult Function(ScrollEvent value) scroll,
     required TResult Function(RawKeyEvent value) rawKeyEvent,
+    required TResult Function(DragEvent value) dragEvent,
   }) {
     return tap(this);
   }
@@ -626,6 +704,7 @@ class _$TapEventImpl extends TapEvent {
     TResult? Function(InputEvent value)? input,
     TResult? Function(ScrollEvent value)? scroll,
     TResult? Function(RawKeyEvent value)? rawKeyEvent,
+    TResult? Function(DragEvent value)? dragEvent,
   }) {
     return tap?.call(this);
   }
@@ -637,6 +716,7 @@ class _$TapEventImpl extends TapEvent {
     TResult Function(InputEvent value)? input,
     TResult Function(ScrollEvent value)? scroll,
     TResult Function(RawKeyEvent value)? rawKeyEvent,
+    TResult Function(DragEvent value)? dragEvent,
     required TResult orElse(),
   }) {
     if (tap != null) {
@@ -899,6 +979,18 @@ class _$InputEventImpl extends InputEvent {
             @HiveField(9) String navigationStackId,
             String? overrideAutomationKey)
         rawKeyEvent,
+    required TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)
+        dragEvent,
   }) {
     return input(position, type, inputData, view, order, externalities, id,
         navigationStackId, overrideAutomationKey);
@@ -950,6 +1042,18 @@ class _$InputEventImpl extends InputEvent {
             @HiveField(9) String navigationStackId,
             String? overrideAutomationKey)?
         rawKeyEvent,
+    TResult? Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
+        dragEvent,
   }) {
     return input?.call(position, type, inputData, view, order, externalities,
         id, navigationStackId, overrideAutomationKey);
@@ -1001,6 +1105,18 @@ class _$InputEventImpl extends InputEvent {
             @HiveField(9) String navigationStackId,
             String? overrideAutomationKey)?
         rawKeyEvent,
+    TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
+        dragEvent,
     required TResult orElse(),
   }) {
     if (input != null) {
@@ -1017,6 +1133,7 @@ class _$InputEventImpl extends InputEvent {
     required TResult Function(InputEvent value) input,
     required TResult Function(ScrollEvent value) scroll,
     required TResult Function(RawKeyEvent value) rawKeyEvent,
+    required TResult Function(DragEvent value) dragEvent,
   }) {
     return input(this);
   }
@@ -1028,6 +1145,7 @@ class _$InputEventImpl extends InputEvent {
     TResult? Function(InputEvent value)? input,
     TResult? Function(ScrollEvent value)? scroll,
     TResult? Function(RawKeyEvent value)? rawKeyEvent,
+    TResult? Function(DragEvent value)? dragEvent,
   }) {
     return input?.call(this);
   }
@@ -1039,6 +1157,7 @@ class _$InputEventImpl extends InputEvent {
     TResult Function(InputEvent value)? input,
     TResult Function(ScrollEvent value)? scroll,
     TResult Function(RawKeyEvent value)? rawKeyEvent,
+    TResult Function(DragEvent value)? dragEvent,
     required TResult orElse(),
   }) {
     if (input != null) {
@@ -1327,6 +1446,18 @@ class _$ScrollEventImpl extends ScrollEvent {
             @HiveField(9) String navigationStackId,
             String? overrideAutomationKey)
         rawKeyEvent,
+    required TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)
+        dragEvent,
   }) {
     return scroll(position, type, duration, scrollDelta, view, order,
         externalities, id, navigationStackId, overrideAutomationKey);
@@ -1378,6 +1509,18 @@ class _$ScrollEventImpl extends ScrollEvent {
             @HiveField(9) String navigationStackId,
             String? overrideAutomationKey)?
         rawKeyEvent,
+    TResult? Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
+        dragEvent,
   }) {
     return scroll?.call(position, type, duration, scrollDelta, view, order,
         externalities, id, navigationStackId, overrideAutomationKey);
@@ -1429,6 +1572,18 @@ class _$ScrollEventImpl extends ScrollEvent {
             @HiveField(9) String navigationStackId,
             String? overrideAutomationKey)?
         rawKeyEvent,
+    TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
+        dragEvent,
     required TResult orElse(),
   }) {
     if (scroll != null) {
@@ -1445,6 +1600,7 @@ class _$ScrollEventImpl extends ScrollEvent {
     required TResult Function(InputEvent value) input,
     required TResult Function(ScrollEvent value) scroll,
     required TResult Function(RawKeyEvent value) rawKeyEvent,
+    required TResult Function(DragEvent value) dragEvent,
   }) {
     return scroll(this);
   }
@@ -1456,6 +1612,7 @@ class _$ScrollEventImpl extends ScrollEvent {
     TResult? Function(InputEvent value)? input,
     TResult? Function(ScrollEvent value)? scroll,
     TResult? Function(RawKeyEvent value)? rawKeyEvent,
+    TResult? Function(DragEvent value)? dragEvent,
   }) {
     return scroll?.call(this);
   }
@@ -1467,6 +1624,7 @@ class _$ScrollEventImpl extends ScrollEvent {
     TResult Function(InputEvent value)? input,
     TResult Function(ScrollEvent value)? scroll,
     TResult Function(RawKeyEvent value)? rawKeyEvent,
+    TResult Function(DragEvent value)? dragEvent,
     required TResult orElse(),
   }) {
     if (scroll != null) {
@@ -1726,6 +1884,18 @@ class _$RawKeyEventImpl extends RawKeyEvent {
             @HiveField(9) String navigationStackId,
             String? overrideAutomationKey)
         rawKeyEvent,
+    required TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)
+        dragEvent,
   }) {
     return rawKeyEvent(position, type, view, order, externalities, id,
         navigationStackId, overrideAutomationKey);
@@ -1777,6 +1947,18 @@ class _$RawKeyEventImpl extends RawKeyEvent {
             @HiveField(9) String navigationStackId,
             String? overrideAutomationKey)?
         rawKeyEvent,
+    TResult? Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
+        dragEvent,
   }) {
     return rawKeyEvent?.call(position, type, view, order, externalities, id,
         navigationStackId, overrideAutomationKey);
@@ -1828,6 +2010,18 @@ class _$RawKeyEventImpl extends RawKeyEvent {
             @HiveField(9) String navigationStackId,
             String? overrideAutomationKey)?
         rawKeyEvent,
+    TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
+        dragEvent,
     required TResult orElse(),
   }) {
     if (rawKeyEvent != null) {
@@ -1844,6 +2038,7 @@ class _$RawKeyEventImpl extends RawKeyEvent {
     required TResult Function(InputEvent value) input,
     required TResult Function(ScrollEvent value) scroll,
     required TResult Function(RawKeyEvent value) rawKeyEvent,
+    required TResult Function(DragEvent value) dragEvent,
   }) {
     return rawKeyEvent(this);
   }
@@ -1855,6 +2050,7 @@ class _$RawKeyEventImpl extends RawKeyEvent {
     TResult? Function(InputEvent value)? input,
     TResult? Function(ScrollEvent value)? scroll,
     TResult? Function(RawKeyEvent value)? rawKeyEvent,
+    TResult? Function(DragEvent value)? dragEvent,
   }) {
     return rawKeyEvent?.call(this);
   }
@@ -1866,6 +2062,7 @@ class _$RawKeyEventImpl extends RawKeyEvent {
     TResult Function(InputEvent value)? input,
     TResult Function(ScrollEvent value)? scroll,
     TResult Function(RawKeyEvent value)? rawKeyEvent,
+    TResult Function(DragEvent value)? dragEvent,
     required TResult orElse(),
   }) {
     if (rawKeyEvent != null) {
@@ -1923,5 +2120,473 @@ abstract class RawKeyEvent extends UIEvent {
   @override
   @JsonKey(ignore: true)
   _$$RawKeyEventImplCopyWith<_$RawKeyEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DragEventImplCopyWith<$Res>
+    implements $UIEventCopyWith<$Res> {
+  factory _$$DragEventImplCopyWith(
+          _$DragEventImpl value, $Res Function(_$DragEventImpl) then) =
+      __$$DragEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@HiveField(0) EventPosition position,
+      @HiveField(1) EventPosition scrollDelta,
+      @HiveField(2) int duration,
+      @HiveField(3) InteractionType type,
+      @HiveField(4) String view,
+      @HiveField(5) int order,
+      @HiveField(6) List<ScrollableDescription>? externalities,
+      @HiveField(7) String id,
+      @HiveField(8) String navigationStackId,
+      String? overrideAutomationKey});
+
+  @override
+  $EventPositionCopyWith<$Res> get position;
+  $EventPositionCopyWith<$Res> get scrollDelta;
+}
+
+/// @nodoc
+class __$$DragEventImplCopyWithImpl<$Res>
+    extends _$UIEventCopyWithImpl<$Res, _$DragEventImpl>
+    implements _$$DragEventImplCopyWith<$Res> {
+  __$$DragEventImplCopyWithImpl(
+      _$DragEventImpl _value, $Res Function(_$DragEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? position = null,
+    Object? scrollDelta = null,
+    Object? duration = null,
+    Object? type = null,
+    Object? view = null,
+    Object? order = null,
+    Object? externalities = freezed,
+    Object? id = null,
+    Object? navigationStackId = null,
+    Object? overrideAutomationKey = freezed,
+  }) {
+    return _then(_$DragEventImpl(
+      position: null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as EventPosition,
+      scrollDelta: null == scrollDelta
+          ? _value.scrollDelta
+          : scrollDelta // ignore: cast_nullable_to_non_nullable
+              as EventPosition,
+      duration: null == duration
+          ? _value.duration
+          : duration // ignore: cast_nullable_to_non_nullable
+              as int,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as InteractionType,
+      view: null == view
+          ? _value.view
+          : view // ignore: cast_nullable_to_non_nullable
+              as String,
+      order: null == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int,
+      externalities: freezed == externalities
+          ? _value._externalities
+          : externalities // ignore: cast_nullable_to_non_nullable
+              as List<ScrollableDescription>?,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      navigationStackId: null == navigationStackId
+          ? _value.navigationStackId
+          : navigationStackId // ignore: cast_nullable_to_non_nullable
+              as String,
+      overrideAutomationKey: freezed == overrideAutomationKey
+          ? _value.overrideAutomationKey
+          : overrideAutomationKey // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $EventPositionCopyWith<$Res> get scrollDelta {
+    return $EventPositionCopyWith<$Res>(_value.scrollDelta, (value) {
+      return _then(_value.copyWith(scrollDelta: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+@HiveType(typeId: 9)
+class _$DragEventImpl extends DragEvent {
+  _$DragEventImpl(
+      {@HiveField(0) required this.position,
+      @HiveField(1) this.scrollDelta = const EventPosition(),
+      @HiveField(2) this.duration = 0,
+      @HiveField(3) this.type = InteractionType.drag,
+      @HiveField(4) this.view = '',
+      @HiveField(5) this.order = 0,
+      @HiveField(6) final List<ScrollableDescription>? externalities,
+      @HiveField(7) this.id = 'TO_BE_GENERATED',
+      @HiveField(8) this.navigationStackId = '',
+      this.overrideAutomationKey,
+      final String? $type})
+      : _externalities = externalities,
+        $type = $type ?? 'dragEvent',
+        super._();
+
+  factory _$DragEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DragEventImplFromJson(json);
+
+  @override
+  @HiveField(0)
+  final EventPosition position;
+  @override
+  @JsonKey()
+  @HiveField(1)
+  final EventPosition scrollDelta;
+  @override
+  @JsonKey()
+  @HiveField(2)
+  final int duration;
+  @override
+  @JsonKey()
+  @HiveField(3)
+  final InteractionType type;
+  @override
+  @JsonKey()
+  @HiveField(4)
+  final String view;
+  @override
+  @JsonKey()
+  @HiveField(5)
+  final int order;
+  final List<ScrollableDescription>? _externalities;
+  @override
+  @HiveField(6)
+  List<ScrollableDescription>? get externalities {
+    final value = _externalities;
+    if (value == null) return null;
+    if (_externalities is EqualUnmodifiableListView) return _externalities;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey()
+  @HiveField(7)
+  final String id;
+  @override
+  @JsonKey()
+  @HiveField(8)
+  final String navigationStackId;
+  @override
+  final String? overrideAutomationKey;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DragEventImplCopyWith<_$DragEventImpl> get copyWith =>
+      __$$DragEventImplCopyWithImpl<_$DragEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) InteractionType type,
+            @HiveField(2) String view,
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id,
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)
+        tap,
+    required TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) InteractionType type,
+            @HiveField(2) String? inputData,
+            @HiveField(3) String view,
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id,
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)
+        input,
+    required TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) InteractionType type,
+            @HiveField(2) int? duration,
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)
+        scroll,
+    required TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) InteractionType type,
+            @HiveField(5) String view,
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id,
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)
+        rawKeyEvent,
+    required TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)
+        dragEvent,
+  }) {
+    return dragEvent(position, scrollDelta, duration, type, view, order,
+        externalities, id, navigationStackId, overrideAutomationKey);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) InteractionType type,
+            @HiveField(2) String view,
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id,
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)?
+        tap,
+    TResult? Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) InteractionType type,
+            @HiveField(2) String? inputData,
+            @HiveField(3) String view,
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id,
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)?
+        input,
+    TResult? Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) InteractionType type,
+            @HiveField(2) int? duration,
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
+        scroll,
+    TResult? Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) InteractionType type,
+            @HiveField(5) String view,
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id,
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)?
+        rawKeyEvent,
+    TResult? Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
+        dragEvent,
+  }) {
+    return dragEvent?.call(position, scrollDelta, duration, type, view, order,
+        externalities, id, navigationStackId, overrideAutomationKey);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) InteractionType type,
+            @HiveField(2) String view,
+            @HiveField(3) int order,
+            @HiveField(4) List<ScrollableDescription>? externalities,
+            @HiveField(5) String id,
+            @HiveField(6) String navigationStackId,
+            String? overrideAutomationKey)?
+        tap,
+    TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) InteractionType type,
+            @HiveField(2) String? inputData,
+            @HiveField(3) String view,
+            @HiveField(4) int order,
+            @HiveField(5) List<ScrollableDescription>? externalities,
+            @HiveField(6) String id,
+            @HiveField(7) String navigationStackId,
+            String? overrideAutomationKey)?
+        input,
+    TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) InteractionType type,
+            @HiveField(2) int? duration,
+            @HiveField(3) EventPosition? scrollDelta,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
+        scroll,
+    TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) InteractionType type,
+            @HiveField(5) String view,
+            @HiveField(6) int order,
+            @HiveField(7) List<ScrollableDescription>? externalities,
+            @HiveField(8) String id,
+            @HiveField(9) String navigationStackId,
+            String? overrideAutomationKey)?
+        rawKeyEvent,
+    TResult Function(
+            @HiveField(0) EventPosition position,
+            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(2) int duration,
+            @HiveField(3) InteractionType type,
+            @HiveField(4) String view,
+            @HiveField(5) int order,
+            @HiveField(6) List<ScrollableDescription>? externalities,
+            @HiveField(7) String id,
+            @HiveField(8) String navigationStackId,
+            String? overrideAutomationKey)?
+        dragEvent,
+    required TResult orElse(),
+  }) {
+    if (dragEvent != null) {
+      return dragEvent(position, scrollDelta, duration, type, view, order,
+          externalities, id, navigationStackId, overrideAutomationKey);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TapEvent value) tap,
+    required TResult Function(InputEvent value) input,
+    required TResult Function(ScrollEvent value) scroll,
+    required TResult Function(RawKeyEvent value) rawKeyEvent,
+    required TResult Function(DragEvent value) dragEvent,
+  }) {
+    return dragEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TapEvent value)? tap,
+    TResult? Function(InputEvent value)? input,
+    TResult? Function(ScrollEvent value)? scroll,
+    TResult? Function(RawKeyEvent value)? rawKeyEvent,
+    TResult? Function(DragEvent value)? dragEvent,
+  }) {
+    return dragEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TapEvent value)? tap,
+    TResult Function(InputEvent value)? input,
+    TResult Function(ScrollEvent value)? scroll,
+    TResult Function(RawKeyEvent value)? rawKeyEvent,
+    TResult Function(DragEvent value)? dragEvent,
+    required TResult orElse(),
+  }) {
+    if (dragEvent != null) {
+      return dragEvent(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$DragEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class DragEvent extends UIEvent {
+  factory DragEvent(
+      {@HiveField(0) required final EventPosition position,
+      @HiveField(1) final EventPosition scrollDelta,
+      @HiveField(2) final int duration,
+      @HiveField(3) final InteractionType type,
+      @HiveField(4) final String view,
+      @HiveField(5) final int order,
+      @HiveField(6) final List<ScrollableDescription>? externalities,
+      @HiveField(7) final String id,
+      @HiveField(8) final String navigationStackId,
+      final String? overrideAutomationKey}) = _$DragEventImpl;
+  DragEvent._() : super._();
+
+  factory DragEvent.fromJson(Map<String, dynamic> json) =
+      _$DragEventImpl.fromJson;
+
+  @override
+  @HiveField(0)
+  EventPosition get position;
+  @HiveField(1)
+  EventPosition get scrollDelta;
+  @HiveField(2)
+  int get duration;
+  @override
+  @HiveField(3)
+  InteractionType get type;
+  @override
+  @HiveField(4)
+  String get view;
+  @override
+  @HiveField(5)
+  int get order;
+  @override
+  @HiveField(6)
+  List<ScrollableDescription>? get externalities;
+  @override
+  @HiveField(7)
+  String get id;
+  @override
+  @HiveField(8)
+  String get navigationStackId;
+  @override
+  String? get overrideAutomationKey;
+  @override
+  @JsonKey(ignore: true)
+  _$$DragEventImplCopyWith<_$DragEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
