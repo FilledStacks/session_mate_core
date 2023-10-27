@@ -225,7 +225,7 @@ class RawKeyEventImplAdapter extends TypeAdapter<_$RawKeyEventImpl> {
 
 class DragEventImplAdapter extends TypeAdapter<_$DragEventImpl> {
   @override
-  final int typeId = 9;
+  final int typeId = 17;
 
   @override
   _$DragEventImpl read(BinaryReader reader) {

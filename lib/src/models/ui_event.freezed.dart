@@ -2225,7 +2225,7 @@ class __$$DragEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@HiveType(typeId: 9)
+@HiveType(typeId: 17)
 class _$DragEventImpl extends DragEvent {
   _$DragEventImpl(
       {@HiveField(0) required this.position,
