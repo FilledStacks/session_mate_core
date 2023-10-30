@@ -57,6 +57,7 @@ _$EventPositionImpl _$$EventPositionImplFromJson(Map<String, dynamic> json) =>
           (json['capturedDeviceHeight'] as num?)?.toDouble() ?? 0,
       xDeviation: (json['xDeviation'] as num?)?.toDouble() ?? 0,
       yDeviation: (json['yDeviation'] as num?)?.toDouble() ?? 0,
+      devicePixelRatio: (json['devicePixelRatio'] as num?)?.toDouble() ?? 0,
     );
 
 Map<String, dynamic> _$$EventPositionImplToJson(_$EventPositionImpl instance) =>
@@ -67,4 +68,5 @@ Map<String, dynamic> _$$EventPositionImplToJson(_$EventPositionImpl instance) =>
       'capturedDeviceHeight': instance.capturedDeviceHeight,
       'xDeviation': instance.xDeviation,
       'yDeviation': instance.yDeviation,
+      'devicePixelRatio': instance.devicePixelRatio,
     };

@@ -16,6 +16,7 @@ class EventPosition with _$EventPosition {
     @Default(0) double capturedDeviceHeight,
     @Default(0) double xDeviation,
     @Default(0) double yDeviation,
+    @Default(0) double devicePixelRatio,
   }) = _EventPosition;
 
   operator -(EventPosition position) {
@@ -26,6 +27,7 @@ class EventPosition with _$EventPosition {
       yDeviation: yDeviation,
       capturedDeviceHeight: capturedDeviceHeight,
       capturedDeviceWidth: capturedDeviceWidth,
+      devicePixelRatio: devicePixelRatio,
     );
   }
 

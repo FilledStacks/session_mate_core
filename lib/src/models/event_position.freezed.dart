@@ -28,6 +28,7 @@ mixin _$EventPosition {
   double get capturedDeviceHeight => throw _privateConstructorUsedError;
   double get xDeviation => throw _privateConstructorUsedError;
   double get yDeviation => throw _privateConstructorUsedError;
+  double get devicePixelRatio => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -47,7 +48,8 @@ abstract class $EventPositionCopyWith<$Res> {
       double capturedDeviceWidth,
       double capturedDeviceHeight,
       double xDeviation,
-      double yDeviation});
+      double yDeviation,
+      double devicePixelRatio});
 }
 
 /// @nodoc
@@ -69,6 +71,7 @@ class _$EventPositionCopyWithImpl<$Res, $Val extends EventPosition>
     Object? capturedDeviceHeight = null,
     Object? xDeviation = null,
     Object? yDeviation = null,
+    Object? devicePixelRatio = null,
   }) {
     return _then(_value.copyWith(
       x: null == x
@@ -95,6 +98,10 @@ class _$EventPositionCopyWithImpl<$Res, $Val extends EventPosition>
           ? _value.yDeviation
           : yDeviation // ignore: cast_nullable_to_non_nullable
               as double,
+      devicePixelRatio: null == devicePixelRatio
+          ? _value.devicePixelRatio
+          : devicePixelRatio // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
@@ -113,7 +120,8 @@ abstract class _$$EventPositionImplCopyWith<$Res>
       double capturedDeviceWidth,
       double capturedDeviceHeight,
       double xDeviation,
-      double yDeviation});
+      double yDeviation,
+      double devicePixelRatio});
 }
 
 /// @nodoc
@@ -133,6 +141,7 @@ class __$$EventPositionImplCopyWithImpl<$Res>
     Object? capturedDeviceHeight = null,
     Object? xDeviation = null,
     Object? yDeviation = null,
+    Object? devicePixelRatio = null,
   }) {
     return _then(_$EventPositionImpl(
       x: null == x
@@ -159,6 +168,10 @@ class __$$EventPositionImplCopyWithImpl<$Res>
           ? _value.yDeviation
           : yDeviation // ignore: cast_nullable_to_non_nullable
               as double,
+      devicePixelRatio: null == devicePixelRatio
+          ? _value.devicePixelRatio
+          : devicePixelRatio // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -173,7 +186,8 @@ class _$EventPositionImpl extends _EventPosition {
       this.capturedDeviceWidth = 0,
       this.capturedDeviceHeight = 0,
       this.xDeviation = 0,
-      this.yDeviation = 0})
+      this.yDeviation = 0,
+      this.devicePixelRatio = 0})
       : super._();
 
   factory _$EventPositionImpl.fromJson(Map<String, dynamic> json) =>
@@ -199,6 +213,9 @@ class _$EventPositionImpl extends _EventPosition {
   @override
   @JsonKey()
   final double yDeviation;
+  @override
+  @JsonKey()
+  final double devicePixelRatio;
 
   @override
   bool operator ==(dynamic other) {
@@ -214,13 +231,15 @@ class _$EventPositionImpl extends _EventPosition {
             (identical(other.xDeviation, xDeviation) ||
                 other.xDeviation == xDeviation) &&
             (identical(other.yDeviation, yDeviation) ||
-                other.yDeviation == yDeviation));
+                other.yDeviation == yDeviation) &&
+            (identical(other.devicePixelRatio, devicePixelRatio) ||
+                other.devicePixelRatio == devicePixelRatio));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, x, y, capturedDeviceWidth,
-      capturedDeviceHeight, xDeviation, yDeviation);
+      capturedDeviceHeight, xDeviation, yDeviation, devicePixelRatio);
 
   @JsonKey(ignore: true)
   @override
@@ -243,7 +262,8 @@ abstract class _EventPosition extends EventPosition {
       final double capturedDeviceWidth,
       final double capturedDeviceHeight,
       final double xDeviation,
-      final double yDeviation}) = _$EventPositionImpl;
+      final double yDeviation,
+      final double devicePixelRatio}) = _$EventPositionImpl;
   const _EventPosition._() : super._();
 
   factory _EventPosition.fromJson(Map<String, dynamic> json) =
@@ -263,6 +283,8 @@ abstract class _EventPosition extends EventPosition {
   double get xDeviation;
   @override
   double get yDeviation;
+  @override
+  double get devicePixelRatio;
   @override
   @JsonKey(ignore: true)
   _$$EventPositionImplCopyWith<_$EventPositionImpl> get copyWith =>

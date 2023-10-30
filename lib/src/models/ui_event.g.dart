@@ -235,7 +235,7 @@ class DragEventImplAdapter extends TypeAdapter<_$DragEventImpl> {
     };
     return _$DragEventImpl(
       position: fields[0] as EventPosition,
-      scrollDelta: fields[1] as EventPosition,
+      scrollEnd: fields[1] as EventPosition,
       duration: fields[2] as int,
       type: fields[3] as InteractionType,
       view: fields[4] as String,
@@ -253,7 +253,7 @@ class DragEventImplAdapter extends TypeAdapter<_$DragEventImpl> {
       ..writeByte(0)
       ..write(obj.position)
       ..writeByte(1)
-      ..write(obj.scrollDelta)
+      ..write(obj.scrollEnd)
       ..writeByte(2)
       ..write(obj.duration)
       ..writeByte(3)
@@ -434,9 +434,9 @@ _$DragEventImpl _$$DragEventImplFromJson(Map<String, dynamic> json) =>
     _$DragEventImpl(
       position:
           EventPosition.fromJson(json['position'] as Map<String, dynamic>),
-      scrollDelta: json['scrollDelta'] == null
+      scrollEnd: json['scrollEnd'] == null
           ? const EventPosition()
-          : EventPosition.fromJson(json['scrollDelta'] as Map<String, dynamic>),
+          : EventPosition.fromJson(json['scrollEnd'] as Map<String, dynamic>),
       duration: json['duration'] as int? ?? 0,
       type: $enumDecodeNullable(_$InteractionTypeEnumMap, json['type']) ??
           InteractionType.drag,
@@ -455,7 +455,7 @@ _$DragEventImpl _$$DragEventImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$DragEventImplToJson(_$DragEventImpl instance) =>
     <String, dynamic>{
       'position': instance.position,
-      'scrollDelta': instance.scrollDelta,
+      'scrollEnd': instance.scrollEnd,
       'duration': instance.duration,
       'type': _$InteractionTypeEnumMap[instance.type]!,
       'view': instance.view,

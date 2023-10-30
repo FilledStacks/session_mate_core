@@ -63,7 +63,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
   @HiveType(typeId: 17)
   factory UIEvent.dragEvent({
     @HiveField(0) required EventPosition position,
-    @HiveField(1) @Default(EventPosition()) EventPosition scrollDelta,
+    @HiveField(1) @Default(EventPosition()) EventPosition scrollEnd,
     @HiveField(2) @Default(0) int duration,
     @HiveField(3) @Default(InteractionType.drag) InteractionType type,
     @HiveField(4) @Default('') String view,
@@ -111,6 +111,8 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
       text = 'Input ${(this as InputEvent).inputData} at $position';
     } else if (this is ScrollEvent) {
       text = 'Scroll from $position by ${(this as ScrollEvent).scrollDelta}';
+    } else if (this is DragEvent) {
+      text = 'Drag from $position to ${(this as DragEvent).scrollEnd}';
     } else if (this is RawKeyEvent) {
       text = 'RawKeyEvent with for $type';
     } else {

@@ -98,7 +98,7 @@ mixin _$UIEvent {
         rawKeyEvent,
     required TResult Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -157,7 +157,7 @@ mixin _$UIEvent {
         rawKeyEvent,
     TResult? Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -216,7 +216,7 @@ mixin _$UIEvent {
         rawKeyEvent,
     TResult Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -540,7 +540,7 @@ class _$TapEventImpl extends TapEvent {
         rawKeyEvent,
     required TResult Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -603,7 +603,7 @@ class _$TapEventImpl extends TapEvent {
         rawKeyEvent,
     TResult? Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -666,7 +666,7 @@ class _$TapEventImpl extends TapEvent {
         rawKeyEvent,
     TResult Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -981,7 +981,7 @@ class _$InputEventImpl extends InputEvent {
         rawKeyEvent,
     required TResult Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -1044,7 +1044,7 @@ class _$InputEventImpl extends InputEvent {
         rawKeyEvent,
     TResult? Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -1107,7 +1107,7 @@ class _$InputEventImpl extends InputEvent {
         rawKeyEvent,
     TResult Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -1448,7 +1448,7 @@ class _$ScrollEventImpl extends ScrollEvent {
         rawKeyEvent,
     required TResult Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -1511,7 +1511,7 @@ class _$ScrollEventImpl extends ScrollEvent {
         rawKeyEvent,
     TResult? Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -1574,7 +1574,7 @@ class _$ScrollEventImpl extends ScrollEvent {
         rawKeyEvent,
     TResult Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -1886,7 +1886,7 @@ class _$RawKeyEventImpl extends RawKeyEvent {
         rawKeyEvent,
     required TResult Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -1949,7 +1949,7 @@ class _$RawKeyEventImpl extends RawKeyEvent {
         rawKeyEvent,
     TResult? Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -2012,7 +2012,7 @@ class _$RawKeyEventImpl extends RawKeyEvent {
         rawKeyEvent,
     TResult Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -2133,7 +2133,7 @@ abstract class _$$DragEventImplCopyWith<$Res>
   @useResult
   $Res call(
       {@HiveField(0) EventPosition position,
-      @HiveField(1) EventPosition scrollDelta,
+      @HiveField(1) EventPosition scrollEnd,
       @HiveField(2) int duration,
       @HiveField(3) InteractionType type,
       @HiveField(4) String view,
@@ -2145,7 +2145,7 @@ abstract class _$$DragEventImplCopyWith<$Res>
 
   @override
   $EventPositionCopyWith<$Res> get position;
-  $EventPositionCopyWith<$Res> get scrollDelta;
+  $EventPositionCopyWith<$Res> get scrollEnd;
 }
 
 /// @nodoc
@@ -2160,7 +2160,7 @@ class __$$DragEventImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? position = null,
-    Object? scrollDelta = null,
+    Object? scrollEnd = null,
     Object? duration = null,
     Object? type = null,
     Object? view = null,
@@ -2175,9 +2175,9 @@ class __$$DragEventImplCopyWithImpl<$Res>
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as EventPosition,
-      scrollDelta: null == scrollDelta
-          ? _value.scrollDelta
-          : scrollDelta // ignore: cast_nullable_to_non_nullable
+      scrollEnd: null == scrollEnd
+          ? _value.scrollEnd
+          : scrollEnd // ignore: cast_nullable_to_non_nullable
               as EventPosition,
       duration: null == duration
           ? _value.duration
@@ -2216,9 +2216,9 @@ class __$$DragEventImplCopyWithImpl<$Res>
 
   @override
   @pragma('vm:prefer-inline')
-  $EventPositionCopyWith<$Res> get scrollDelta {
-    return $EventPositionCopyWith<$Res>(_value.scrollDelta, (value) {
-      return _then(_value.copyWith(scrollDelta: value));
+  $EventPositionCopyWith<$Res> get scrollEnd {
+    return $EventPositionCopyWith<$Res>(_value.scrollEnd, (value) {
+      return _then(_value.copyWith(scrollEnd: value));
     });
   }
 }
@@ -2229,7 +2229,7 @@ class __$$DragEventImplCopyWithImpl<$Res>
 class _$DragEventImpl extends DragEvent {
   _$DragEventImpl(
       {@HiveField(0) required this.position,
-      @HiveField(1) this.scrollDelta = const EventPosition(),
+      @HiveField(1) this.scrollEnd = const EventPosition(),
       @HiveField(2) this.duration = 0,
       @HiveField(3) this.type = InteractionType.drag,
       @HiveField(4) this.view = '',
@@ -2252,7 +2252,7 @@ class _$DragEventImpl extends DragEvent {
   @override
   @JsonKey()
   @HiveField(1)
-  final EventPosition scrollDelta;
+  final EventPosition scrollEnd;
   @override
   @JsonKey()
   @HiveField(2)
@@ -2348,7 +2348,7 @@ class _$DragEventImpl extends DragEvent {
         rawKeyEvent,
     required TResult Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -2359,7 +2359,7 @@ class _$DragEventImpl extends DragEvent {
             String? overrideAutomationKey)
         dragEvent,
   }) {
-    return dragEvent(position, scrollDelta, duration, type, view, order,
+    return dragEvent(position, scrollEnd, duration, type, view, order,
         externalities, id, navigationStackId, overrideAutomationKey);
   }
 
@@ -2411,7 +2411,7 @@ class _$DragEventImpl extends DragEvent {
         rawKeyEvent,
     TResult? Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -2422,7 +2422,7 @@ class _$DragEventImpl extends DragEvent {
             String? overrideAutomationKey)?
         dragEvent,
   }) {
-    return dragEvent?.call(position, scrollDelta, duration, type, view, order,
+    return dragEvent?.call(position, scrollEnd, duration, type, view, order,
         externalities, id, navigationStackId, overrideAutomationKey);
   }
 
@@ -2474,7 +2474,7 @@ class _$DragEventImpl extends DragEvent {
         rawKeyEvent,
     TResult Function(
             @HiveField(0) EventPosition position,
-            @HiveField(1) EventPosition scrollDelta,
+            @HiveField(1) EventPosition scrollEnd,
             @HiveField(2) int duration,
             @HiveField(3) InteractionType type,
             @HiveField(4) String view,
@@ -2487,7 +2487,7 @@ class _$DragEventImpl extends DragEvent {
     required TResult orElse(),
   }) {
     if (dragEvent != null) {
-      return dragEvent(position, scrollDelta, duration, type, view, order,
+      return dragEvent(position, scrollEnd, duration, type, view, order,
           externalities, id, navigationStackId, overrideAutomationKey);
     }
     return orElse();
@@ -2544,7 +2544,7 @@ class _$DragEventImpl extends DragEvent {
 abstract class DragEvent extends UIEvent {
   factory DragEvent(
       {@HiveField(0) required final EventPosition position,
-      @HiveField(1) final EventPosition scrollDelta,
+      @HiveField(1) final EventPosition scrollEnd,
       @HiveField(2) final int duration,
       @HiveField(3) final InteractionType type,
       @HiveField(4) final String view,
@@ -2562,7 +2562,7 @@ abstract class DragEvent extends UIEvent {
   @HiveField(0)
   EventPosition get position;
   @HiveField(1)
-  EventPosition get scrollDelta;
+  EventPosition get scrollEnd;
   @HiveField(2)
   int get duration;
   @override
