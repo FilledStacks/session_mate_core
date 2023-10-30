@@ -1,3 +1,8 @@
+## 0.3.0
+
+- Adds drag event
+- Adds devicePixelRatio to EventPosition
+
 ## 0.2.4
 
 - Added PackageInstruction model
