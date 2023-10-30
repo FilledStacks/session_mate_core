@@ -24,10 +24,15 @@ mixin _$EventPosition {
   double get x => throw _privateConstructorUsedError;
   @HiveField(1, defaultValue: 0.0)
   double get y => throw _privateConstructorUsedError;
+  @HiveField(2, defaultValue: 0.0)
   double get capturedDeviceWidth => throw _privateConstructorUsedError;
+  @HiveField(3, defaultValue: 0.0)
   double get capturedDeviceHeight => throw _privateConstructorUsedError;
+  @HiveField(4, defaultValue: 0.0)
   double get xDeviation => throw _privateConstructorUsedError;
+  @HiveField(5, defaultValue: 0.0)
   double get yDeviation => throw _privateConstructorUsedError;
+  @HiveField(6, defaultValue: 0.0)
   double get devicePixelRatio => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -45,11 +50,11 @@ abstract class $EventPositionCopyWith<$Res> {
   $Res call(
       {@HiveField(0, defaultValue: 0.0) double x,
       @HiveField(1, defaultValue: 0.0) double y,
-      double capturedDeviceWidth,
-      double capturedDeviceHeight,
-      double xDeviation,
-      double yDeviation,
-      double devicePixelRatio});
+      @HiveField(2, defaultValue: 0.0) double capturedDeviceWidth,
+      @HiveField(3, defaultValue: 0.0) double capturedDeviceHeight,
+      @HiveField(4, defaultValue: 0.0) double xDeviation,
+      @HiveField(5, defaultValue: 0.0) double yDeviation,
+      @HiveField(6, defaultValue: 0.0) double devicePixelRatio});
 }
 
 /// @nodoc
@@ -117,11 +122,11 @@ abstract class _$$EventPositionImplCopyWith<$Res>
   $Res call(
       {@HiveField(0, defaultValue: 0.0) double x,
       @HiveField(1, defaultValue: 0.0) double y,
-      double capturedDeviceWidth,
-      double capturedDeviceHeight,
-      double xDeviation,
-      double yDeviation,
-      double devicePixelRatio});
+      @HiveField(2, defaultValue: 0.0) double capturedDeviceWidth,
+      @HiveField(3, defaultValue: 0.0) double capturedDeviceHeight,
+      @HiveField(4, defaultValue: 0.0) double xDeviation,
+      @HiveField(5, defaultValue: 0.0) double yDeviation,
+      @HiveField(6, defaultValue: 0.0) double devicePixelRatio});
 }
 
 /// @nodoc
@@ -183,11 +188,11 @@ class _$EventPositionImpl extends _EventPosition {
   const _$EventPositionImpl(
       {@HiveField(0, defaultValue: 0.0) this.x = 0.0,
       @HiveField(1, defaultValue: 0.0) this.y = 0.0,
-      this.capturedDeviceWidth = 0,
-      this.capturedDeviceHeight = 0,
-      this.xDeviation = 0,
-      this.yDeviation = 0,
-      this.devicePixelRatio = 0})
+      @HiveField(2, defaultValue: 0.0) this.capturedDeviceWidth = 0,
+      @HiveField(3, defaultValue: 0.0) this.capturedDeviceHeight = 0,
+      @HiveField(4, defaultValue: 0.0) this.xDeviation = 0,
+      @HiveField(5, defaultValue: 0.0) this.yDeviation = 0,
+      @HiveField(6, defaultValue: 0.0) this.devicePixelRatio = 0})
       : super._();
 
   factory _$EventPositionImpl.fromJson(Map<String, dynamic> json) =>
@@ -203,18 +208,23 @@ class _$EventPositionImpl extends _EventPosition {
   final double y;
   @override
   @JsonKey()
+  @HiveField(2, defaultValue: 0.0)
   final double capturedDeviceWidth;
   @override
   @JsonKey()
+  @HiveField(3, defaultValue: 0.0)
   final double capturedDeviceHeight;
   @override
   @JsonKey()
+  @HiveField(4, defaultValue: 0.0)
   final double xDeviation;
   @override
   @JsonKey()
+  @HiveField(5, defaultValue: 0.0)
   final double yDeviation;
   @override
   @JsonKey()
+  @HiveField(6, defaultValue: 0.0)
   final double devicePixelRatio;
 
   @override
@@ -257,13 +267,14 @@ class _$EventPositionImpl extends _EventPosition {
 
 abstract class _EventPosition extends EventPosition {
   const factory _EventPosition(
-      {@HiveField(0, defaultValue: 0.0) final double x,
-      @HiveField(1, defaultValue: 0.0) final double y,
-      final double capturedDeviceWidth,
-      final double capturedDeviceHeight,
-      final double xDeviation,
-      final double yDeviation,
-      final double devicePixelRatio}) = _$EventPositionImpl;
+          {@HiveField(0, defaultValue: 0.0) final double x,
+          @HiveField(1, defaultValue: 0.0) final double y,
+          @HiveField(2, defaultValue: 0.0) final double capturedDeviceWidth,
+          @HiveField(3, defaultValue: 0.0) final double capturedDeviceHeight,
+          @HiveField(4, defaultValue: 0.0) final double xDeviation,
+          @HiveField(5, defaultValue: 0.0) final double yDeviation,
+          @HiveField(6, defaultValue: 0.0) final double devicePixelRatio}) =
+      _$EventPositionImpl;
   const _EventPosition._() : super._();
 
   factory _EventPosition.fromJson(Map<String, dynamic> json) =
@@ -276,14 +287,19 @@ abstract class _EventPosition extends EventPosition {
   @HiveField(1, defaultValue: 0.0)
   double get y;
   @override
+  @HiveField(2, defaultValue: 0.0)
   double get capturedDeviceWidth;
   @override
+  @HiveField(3, defaultValue: 0.0)
   double get capturedDeviceHeight;
   @override
+  @HiveField(4, defaultValue: 0.0)
   double get xDeviation;
   @override
+  @HiveField(5, defaultValue: 0.0)
   double get yDeviation;
   @override
+  @HiveField(6, defaultValue: 0.0)
   double get devicePixelRatio;
   @override
   @JsonKey(ignore: true)

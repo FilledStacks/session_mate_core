@@ -12,11 +12,11 @@ class EventPosition with _$EventPosition {
   const factory EventPosition({
     @HiveField(0, defaultValue: 0.0) @Default(0.0) double x,
     @HiveField(1, defaultValue: 0.0) @Default(0.0) double y,
-    @Default(0) double capturedDeviceWidth,
-    @Default(0) double capturedDeviceHeight,
-    @Default(0) double xDeviation,
-    @Default(0) double yDeviation,
-    @Default(0) double devicePixelRatio,
+    @HiveField(2, defaultValue: 0.0) @Default(0) double capturedDeviceWidth,
+    @HiveField(3, defaultValue: 0.0) @Default(0) double capturedDeviceHeight,
+    @HiveField(4, defaultValue: 0.0) @Default(0) double xDeviation,
+    @HiveField(5, defaultValue: 0.0) @Default(0) double yDeviation,
+    @HiveField(6, defaultValue: 0.0) @Default(0) double devicePixelRatio,
   }) = _EventPosition;
 
   operator -(EventPosition position) {

@@ -19,17 +19,32 @@ class EventPositionImplAdapter extends TypeAdapter<_$EventPositionImpl> {
     return _$EventPositionImpl(
       x: fields[0] == null ? 0.0 : fields[0] as double,
       y: fields[1] == null ? 0.0 : fields[1] as double,
+      capturedDeviceWidth: fields[2] == null ? 0.0 : fields[2] as double,
+      capturedDeviceHeight: fields[3] == null ? 0.0 : fields[3] as double,
+      xDeviation: fields[4] == null ? 0.0 : fields[4] as double,
+      yDeviation: fields[5] == null ? 0.0 : fields[5] as double,
+      devicePixelRatio: fields[6] == null ? 0.0 : fields[6] as double,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$EventPositionImpl obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.x)
       ..writeByte(1)
-      ..write(obj.y);
+      ..write(obj.y)
+      ..writeByte(2)
+      ..write(obj.capturedDeviceWidth)
+      ..writeByte(3)
+      ..write(obj.capturedDeviceHeight)
+      ..writeByte(4)
+      ..write(obj.xDeviation)
+      ..writeByte(5)
+      ..write(obj.yDeviation)
+      ..writeByte(6)
+      ..write(obj.devicePixelRatio);
   }
 
   @override
