@@ -34,6 +34,9 @@ class EventPosition with _$EventPosition {
   factory EventPosition.fromJson(Map<String, dynamic> json) =>
       _$EventPositionFromJson(json);
 
+  double get nativeX => x * devicePixelRatio;
+  double get nativeY => y * devicePixelRatio;
+
   @override
   String toString() {
     final hasCapturedDeviceHeight = capturedDeviceHeight > 0;
