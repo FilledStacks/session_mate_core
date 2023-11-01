@@ -1,3 +1,8 @@
+## 0.3.2
+
+- Remove `xml` and `xml2json` packages dependencies
+- Improve BodyBytesConverter on NetworkEvent
+
 ## 0.3.1
 
 - Adds `startedAt` to SessionEvent instances
