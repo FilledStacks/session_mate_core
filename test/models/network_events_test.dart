@@ -22,6 +22,7 @@ void main() {
         body: null,
         view: '/books-list-view',
         order: 1697766587821,
+        startedAt: 1697766587821,
       ).toJson();
 
       final matcher = {
@@ -37,7 +38,8 @@ void main() {
         },
         "body": null,
         "view": "/books-list-view",
-        "order": 1697766587821
+        "order": 1697766587821,
+        "startedAt": 1697766587821,
       };
 
       expect(actual, matcher);
@@ -126,6 +128,7 @@ void main() {
         ]),
         view: '/books-list-view',
         order: 1697766587821,
+        startedAt: 1697766587821,
       ).toJson();
 
       final matcher = {
@@ -145,7 +148,8 @@ void main() {
           'expiresInMins': 60
         },
         "view": "/books-list-view",
-        "order": 1697766587821
+        "order": 1697766587821,
+        "startedAt": 1697766587821,
       };
 
       expect(actual, matcher);
@@ -287,6 +291,7 @@ void main() {
         ]),
         view: '/books-list-view',
         order: 1697766587821,
+        startedAt: 1697766587821,
       ).toJson();
 
       final matcher = {
@@ -304,7 +309,8 @@ void main() {
           'Request': {'Login': 'login', 'Password': 'password'}
         },
         "view": "/books-list-view",
-        "order": 1697766587821
+        "order": 1697766587821,
+        "startedAt": 1697766587821,
       };
 
       expect(actual, matcher);
@@ -328,7 +334,8 @@ void main() {
         },
         "body": null,
         "view": "/books-list-view",
-        "order": 1697766587821
+        "order": 1697766587821,
+        "startedAt": 1697766587821
       };
 
       final actual = RequestEvent.fromJson(json);
@@ -347,6 +354,7 @@ void main() {
         body: null,
         view: '/books-list-view',
         order: 1697766587821,
+        startedAt: 1697766587821,
       );
 
       expect(actual, matcher);
@@ -373,7 +381,8 @@ void main() {
           'expiresInMins': 60
         },
         "view": "/books-list-view",
-        "order": 1697766587821
+        "order": 1697766587821,
+        "startedAt": 1697766587821
       };
 
       final actual = RequestEvent.fromJson(json);
@@ -459,6 +468,7 @@ void main() {
         ]),
         view: '/books-list-view',
         order: 1697766587821,
+        startedAt: 1697766587821,
       );
 
       expect(actual, matcher);

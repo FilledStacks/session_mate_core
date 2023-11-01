@@ -1,3 +1,7 @@
+## 0.3.1
+
+- Adds `startedAt` to SessionEvent instances
+
 ## 0.3.0
 
 - Adds drag event
