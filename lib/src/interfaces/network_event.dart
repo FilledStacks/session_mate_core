@@ -2,13 +2,11 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:json_annotation/json_annotation.dart';
-import 'package:xml2json/xml2json.dart';
 
 import 'session_event.dart';
 
 abstract class NetworkEvent extends SessionEvent {
   bool get hasBody;
-  dynamic get decodedBody;
 }
 
 class BodyBytesConverter extends JsonConverter<Uint8List?, dynamic> {
@@ -28,12 +26,10 @@ class BodyBytesConverter extends JsonConverter<Uint8List?, dynamic> {
 
     final data = String.fromCharCodes(object!);
 
-    if (data.startsWith('<?xml')) {
-      final xml2Json = Xml2Json();
-      xml2Json.parse(data);
-      return jsonDecode(xml2Json.toParker());
+    try {
+      return jsonDecode(data);
+    } on FormatException catch (_) {
+      return data;
     }
-
-    return jsonDecode(data);
   }
 }
