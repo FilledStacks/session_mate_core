@@ -18,6 +18,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(4) List<ScrollableDescription>? externalities,
     @HiveField(5) @Default('TO_BE_GENERATED') String id,
     @HiveField(6) @Default('') String navigationStackId,
+    @HiveField(7) @Default(0) int startedAt,
     String? overrideAutomationKey,
   }) = TapEvent;
 
@@ -31,6 +32,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(5) List<ScrollableDescription>? externalities,
     @HiveField(6) @Default('TO_BE_GENERATED') String id,
     @HiveField(7) @Default('') String navigationStackId,
+    @HiveField(8) @Default(0) int startedAt,
     String? overrideAutomationKey,
   }) = InputEvent;
 
@@ -45,6 +47,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(6) List<ScrollableDescription>? externalities,
     @HiveField(7) @Default('TO_BE_GENERATED') String id,
     @HiveField(8) @Default('') String navigationStackId,
+    @HiveField(9) @Default(0) int startedAt,
     String? overrideAutomationKey,
   }) = ScrollEvent;
 
@@ -57,6 +60,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(7) List<ScrollableDescription>? externalities,
     @HiveField(8) @Default('TO_BE_GENERATED') String id,
     @HiveField(9) @Default('') String navigationStackId,
+    @HiveField(10) @Default(0) int startedAt,
     String? overrideAutomationKey,
   }) = RawKeyEvent;
 
@@ -71,6 +75,7 @@ class UIEvent extends HiveObject with _$UIEvent implements SessionEvent {
     @HiveField(6) List<ScrollableDescription>? externalities,
     @HiveField(7) @Default('TO_BE_GENERATED') String id,
     @HiveField(8) @Default('') String navigationStackId,
+    @HiveField(9) @Default(0) int startedAt,
     String? overrideAutomationKey,
   }) = DragEvent;
 

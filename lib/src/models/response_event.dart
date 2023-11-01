@@ -26,6 +26,7 @@ class ResponseEvent extends HiveObject
     @HiveField(5) @BodyBytesConverter() Uint8List? body,
     @HiveField(6) String? view,
     @HiveField(7) @Default(0) int order,
+    @HiveField(8) @Default(0) int startedAt,
   }) = _ResponseEvent;
 
   factory ResponseEvent.fromJson(dynamic json) => _$ResponseEventFromJson(json);

@@ -14,8 +14,6 @@ class NullableToTimeStampConverter extends JsonConverter<String?, String?> {
 
   @override
   String? toJson(String? object) {
-    if (object == null) return null;
-
     return object;
   }
 }
