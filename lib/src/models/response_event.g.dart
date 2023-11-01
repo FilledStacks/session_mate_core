@@ -6,17 +6,17 @@ part of 'response_event.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class ResponseEventImplAdapter extends TypeAdapter<_$ResponseEventImpl> {
+class ResponseEventAdapter extends TypeAdapter<_$_ResponseEvent> {
   @override
   final int typeId = 4;
 
   @override
-  _$ResponseEventImpl read(BinaryReader reader) {
+  _$_ResponseEvent read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$ResponseEventImpl(
+    return _$_ResponseEvent(
       uid: fields[0] as String,
       timeMs: fields[1] as int,
       code: fields[2] as int,
@@ -25,13 +25,14 @@ class ResponseEventImplAdapter extends TypeAdapter<_$ResponseEventImpl> {
       body: fields[5] as Uint8List?,
       view: fields[6] as String?,
       order: fields[7] as int,
+      startedAt: fields[8] as int,
     );
   }
 
   @override
-  void write(BinaryWriter writer, _$ResponseEventImpl obj) {
+  void write(BinaryWriter writer, _$_ResponseEvent obj) {
     writer
-      ..writeByte(8)
+      ..writeByte(9)
       ..writeByte(0)
       ..write(obj.uid)
       ..writeByte(1)
@@ -46,6 +47,8 @@ class ResponseEventImplAdapter extends TypeAdapter<_$ResponseEventImpl> {
       ..write(obj.view)
       ..writeByte(7)
       ..write(obj.order)
+      ..writeByte(8)
+      ..write(obj.startedAt)
       ..writeByte(3)
       ..write(obj.headers);
   }
@@ -56,7 +59,7 @@ class ResponseEventImplAdapter extends TypeAdapter<_$ResponseEventImpl> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ResponseEventImplAdapter &&
+      other is ResponseEventAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -65,8 +68,8 @@ class ResponseEventImplAdapter extends TypeAdapter<_$ResponseEventImpl> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ResponseEventImpl _$$ResponseEventImplFromJson(Map<String, dynamic> json) =>
-    _$ResponseEventImpl(
+_$_ResponseEvent _$$_ResponseEventFromJson(Map<String, dynamic> json) =>
+    _$_ResponseEvent(
       uid: json['uid'] as String,
       timeMs: json['timeMs'] as int,
       code: json['code'] as int,
@@ -75,9 +78,10 @@ _$ResponseEventImpl _$$ResponseEventImplFromJson(Map<String, dynamic> json) =>
       body: const BodyBytesConverter().fromJson(json['body']),
       view: json['view'] as String?,
       order: json['order'] as int? ?? 0,
+      startedAt: json['startedAt'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$$ResponseEventImplToJson(_$ResponseEventImpl instance) =>
+Map<String, dynamic> _$$_ResponseEventToJson(_$_ResponseEvent instance) =>
     <String, dynamic>{
       'uid': instance.uid,
       'timeMs': instance.timeMs,
@@ -87,4 +91,5 @@ Map<String, dynamic> _$$ResponseEventImplToJson(_$ResponseEventImpl instance) =>
       'body': const BodyBytesConverter().toJson(instance.body),
       'view': instance.view,
       'order': instance.order,
+      'startedAt': instance.startedAt,
     };

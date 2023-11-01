@@ -116,11 +116,11 @@ class _$SessionPostRequestCopyWithImpl<$Res, $Val extends SessionPostRequest>
 }
 
 /// @nodoc
-abstract class _$$SessionPostRequestImplCopyWith<$Res>
+abstract class _$$_SessionPostRequestCopyWith<$Res>
     implements $SessionPostRequestCopyWith<$Res> {
-  factory _$$SessionPostRequestImplCopyWith(_$SessionPostRequestImpl value,
-          $Res Function(_$SessionPostRequestImpl) then) =
-      __$$SessionPostRequestImplCopyWithImpl<$Res>;
+  factory _$$_SessionPostRequestCopyWith(_$_SessionPostRequest value,
+          $Res Function(_$_SessionPostRequest) then) =
+      __$$_SessionPostRequestCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -137,11 +137,11 @@ abstract class _$$SessionPostRequestImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SessionPostRequestImplCopyWithImpl<$Res>
-    extends _$SessionPostRequestCopyWithImpl<$Res, _$SessionPostRequestImpl>
-    implements _$$SessionPostRequestImplCopyWith<$Res> {
-  __$$SessionPostRequestImplCopyWithImpl(_$SessionPostRequestImpl _value,
-      $Res Function(_$SessionPostRequestImpl) _then)
+class __$$_SessionPostRequestCopyWithImpl<$Res>
+    extends _$SessionPostRequestCopyWithImpl<$Res, _$_SessionPostRequest>
+    implements _$$_SessionPostRequestCopyWith<$Res> {
+  __$$_SessionPostRequestCopyWithImpl(
+      _$_SessionPostRequest _value, $Res Function(_$_SessionPostRequest) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -155,7 +155,7 @@ class __$$SessionPostRequestImplCopyWithImpl<$Res>
     Object? appStats = null,
     Object? createdAtTimestamp = null,
   }) {
-    return _then(_$SessionPostRequestImpl(
+    return _then(_$_SessionPostRequest(
       appId: null == appId
           ? _value.appId
           : appId // ignore: cast_nullable_to_non_nullable
@@ -190,8 +190,8 @@ class __$$SessionPostRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SessionPostRequestImpl implements _SessionPostRequest {
-  _$SessionPostRequestImpl(
+class _$_SessionPostRequest implements _SessionPostRequest {
+  _$_SessionPostRequest(
       {required this.appId,
       @SessionEventConverter() required final List<SessionEvent> events,
       required final List<String> views,
@@ -202,8 +202,8 @@ class _$SessionPostRequestImpl implements _SessionPostRequest {
       : _events = events,
         _views = views;
 
-  factory _$SessionPostRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SessionPostRequestImplFromJson(json);
+  factory _$_SessionPostRequest.fromJson(Map<String, dynamic> json) =>
+      _$$_SessionPostRequestFromJson(json);
 
   @override
   final String appId;
@@ -242,7 +242,7 @@ class _$SessionPostRequestImpl implements _SessionPostRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SessionPostRequestImpl &&
+            other is _$_SessionPostRequest &&
             (identical(other.appId, appId) || other.appId == appId) &&
             const DeepCollectionEquality().equals(other._events, _events) &&
             const DeepCollectionEquality().equals(other._views, _views) &&
@@ -271,13 +271,13 @@ class _$SessionPostRequestImpl implements _SessionPostRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SessionPostRequestImplCopyWith<_$SessionPostRequestImpl> get copyWith =>
-      __$$SessionPostRequestImplCopyWithImpl<_$SessionPostRequestImpl>(
+  _$$_SessionPostRequestCopyWith<_$_SessionPostRequest> get copyWith =>
+      __$$_SessionPostRequestCopyWithImpl<_$_SessionPostRequest>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SessionPostRequestImplToJson(
+    return _$$_SessionPostRequestToJson(
       this,
     );
   }
@@ -291,10 +291,10 @@ abstract class _SessionPostRequest implements SessionPostRequest {
       required final String exception,
       required final String stackTrace,
       required final AppStats appStats,
-      required final int createdAtTimestamp}) = _$SessionPostRequestImpl;
+      required final int createdAtTimestamp}) = _$_SessionPostRequest;
 
   factory _SessionPostRequest.fromJson(Map<String, dynamic> json) =
-      _$SessionPostRequestImpl.fromJson;
+      _$_SessionPostRequest.fromJson;
 
   @override
   String get appId;
@@ -313,6 +313,6 @@ abstract class _SessionPostRequest implements SessionPostRequest {
   int get createdAtTimestamp;
   @override
   @JsonKey(ignore: true)
-  _$$SessionPostRequestImplCopyWith<_$SessionPostRequestImpl> get copyWith =>
+  _$$_SessionPostRequestCopyWith<_$_SessionPostRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -6,9 +6,9 @@ part of 'session_post_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SessionPostRequestImpl _$$SessionPostRequestImplFromJson(
+_$_SessionPostRequest _$$_SessionPostRequestFromJson(
         Map<String, dynamic> json) =>
-    _$SessionPostRequestImpl(
+    _$_SessionPostRequest(
       appId: json['appId'] as String,
       events: (json['events'] as List<dynamic>)
           .map((e) =>
@@ -21,8 +21,8 @@ _$SessionPostRequestImpl _$$SessionPostRequestImplFromJson(
       createdAtTimestamp: json['createdAtTimestamp'] as int,
     );
 
-Map<String, dynamic> _$$SessionPostRequestImplToJson(
-        _$SessionPostRequestImpl instance) =>
+Map<String, dynamic> _$$_SessionPostRequestToJson(
+        _$_SessionPostRequest instance) =>
     <String, dynamic>{
       'appId': instance.appId,
       'events':

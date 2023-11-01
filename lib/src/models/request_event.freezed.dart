@@ -35,6 +35,8 @@ mixin _$RequestEvent {
   String? get view => throw _privateConstructorUsedError;
   @HiveField(6)
   int get order => throw _privateConstructorUsedError;
+  @HiveField(7)
+  int get startedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,7 +57,8 @@ abstract class $RequestEventCopyWith<$Res> {
       @HiveField(3) Map<String, String> headers,
       @HiveField(4) @BodyBytesConverter() Uint8List? body,
       @HiveField(5) String? view,
-      @HiveField(6) int order});
+      @HiveField(6) int order,
+      @HiveField(7) int startedAt});
 }
 
 /// @nodoc
@@ -78,6 +81,7 @@ class _$RequestEventCopyWithImpl<$Res, $Val extends RequestEvent>
     Object? body = freezed,
     Object? view = freezed,
     Object? order = null,
+    Object? startedAt = null,
   }) {
     return _then(_value.copyWith(
       uid: null == uid
@@ -108,16 +112,20 @@ class _$RequestEventCopyWithImpl<$Res, $Val extends RequestEvent>
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as int,
+      startedAt: null == startedAt
+          ? _value.startedAt
+          : startedAt // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$RequestEventImplCopyWith<$Res>
+abstract class _$$_RequestEventCopyWith<$Res>
     implements $RequestEventCopyWith<$Res> {
-  factory _$$RequestEventImplCopyWith(
-          _$RequestEventImpl value, $Res Function(_$RequestEventImpl) then) =
-      __$$RequestEventImplCopyWithImpl<$Res>;
+  factory _$$_RequestEventCopyWith(
+          _$_RequestEvent value, $Res Function(_$_RequestEvent) then) =
+      __$$_RequestEventCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -127,15 +135,16 @@ abstract class _$$RequestEventImplCopyWith<$Res>
       @HiveField(3) Map<String, String> headers,
       @HiveField(4) @BodyBytesConverter() Uint8List? body,
       @HiveField(5) String? view,
-      @HiveField(6) int order});
+      @HiveField(6) int order,
+      @HiveField(7) int startedAt});
 }
 
 /// @nodoc
-class __$$RequestEventImplCopyWithImpl<$Res>
-    extends _$RequestEventCopyWithImpl<$Res, _$RequestEventImpl>
-    implements _$$RequestEventImplCopyWith<$Res> {
-  __$$RequestEventImplCopyWithImpl(
-      _$RequestEventImpl _value, $Res Function(_$RequestEventImpl) _then)
+class __$$_RequestEventCopyWithImpl<$Res>
+    extends _$RequestEventCopyWithImpl<$Res, _$_RequestEvent>
+    implements _$$_RequestEventCopyWith<$Res> {
+  __$$_RequestEventCopyWithImpl(
+      _$_RequestEvent _value, $Res Function(_$_RequestEvent) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -148,8 +157,9 @@ class __$$RequestEventImplCopyWithImpl<$Res>
     Object? body = freezed,
     Object? view = freezed,
     Object? order = null,
+    Object? startedAt = null,
   }) {
-    return _then(_$RequestEventImpl(
+    return _then(_$_RequestEvent(
       uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -178,6 +188,10 @@ class __$$RequestEventImplCopyWithImpl<$Res>
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as int,
+      startedAt: null == startedAt
+          ? _value.startedAt
+          : startedAt // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -185,20 +199,21 @@ class __$$RequestEventImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 3)
-class _$RequestEventImpl extends _RequestEvent {
-  _$RequestEventImpl(
+class _$_RequestEvent extends _RequestEvent {
+  _$_RequestEvent(
       {@HiveField(0) required this.uid,
       @HiveField(1) required this.url,
       @HiveField(2) required this.method,
       @HiveField(3) required final Map<String, String> headers,
       @HiveField(4) @BodyBytesConverter() this.body,
       @HiveField(5) this.view,
-      @HiveField(6) this.order = 0})
+      @HiveField(6) this.order = 0,
+      @HiveField(7) this.startedAt = 0})
       : _headers = headers,
         super._();
 
-  factory _$RequestEventImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RequestEventImplFromJson(json);
+  factory _$_RequestEvent.fromJson(Map<String, dynamic> json) =>
+      _$$_RequestEventFromJson(json);
 
   @override
   @HiveField(0)
@@ -229,19 +244,25 @@ class _$RequestEventImpl extends _RequestEvent {
   @JsonKey()
   @HiveField(6)
   final int order;
+  @override
+  @JsonKey()
+  @HiveField(7)
+  final int startedAt;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RequestEventImpl &&
+            other is _$_RequestEvent &&
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.method, method) || other.method == method) &&
             const DeepCollectionEquality().equals(other._headers, _headers) &&
             const DeepCollectionEquality().equals(other.body, body) &&
             (identical(other.view, view) || other.view == view) &&
-            (identical(other.order, order) || other.order == order));
+            (identical(other.order, order) || other.order == order) &&
+            (identical(other.startedAt, startedAt) ||
+                other.startedAt == startedAt));
   }
 
   @JsonKey(ignore: true)
@@ -254,17 +275,18 @@ class _$RequestEventImpl extends _RequestEvent {
       const DeepCollectionEquality().hash(_headers),
       const DeepCollectionEquality().hash(body),
       view,
-      order);
+      order,
+      startedAt);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RequestEventImplCopyWith<_$RequestEventImpl> get copyWith =>
-      __$$RequestEventImplCopyWithImpl<_$RequestEventImpl>(this, _$identity);
+  _$$_RequestEventCopyWith<_$_RequestEvent> get copyWith =>
+      __$$_RequestEventCopyWithImpl<_$_RequestEvent>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RequestEventImplToJson(
+    return _$$_RequestEventToJson(
       this,
     );
   }
@@ -278,11 +300,12 @@ abstract class _RequestEvent extends RequestEvent {
       @HiveField(3) required final Map<String, String> headers,
       @HiveField(4) @BodyBytesConverter() final Uint8List? body,
       @HiveField(5) final String? view,
-      @HiveField(6) final int order}) = _$RequestEventImpl;
+      @HiveField(6) final int order,
+      @HiveField(7) final int startedAt}) = _$_RequestEvent;
   _RequestEvent._() : super._();
 
   factory _RequestEvent.fromJson(Map<String, dynamic> json) =
-      _$RequestEventImpl.fromJson;
+      _$_RequestEvent.fromJson;
 
   @override
   @HiveField(0)
@@ -307,7 +330,10 @@ abstract class _RequestEvent extends RequestEvent {
   @HiveField(6)
   int get order;
   @override
+  @HiveField(7)
+  int get startedAt;
+  @override
   @JsonKey(ignore: true)
-  _$$RequestEventImplCopyWith<_$RequestEventImpl> get copyWith =>
+  _$$_RequestEventCopyWith<_$_RequestEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }

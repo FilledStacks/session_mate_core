@@ -6,17 +6,17 @@ part of 'session.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class SessionImplAdapter extends TypeAdapter<_$SessionImpl> {
+class SessionAdapter extends TypeAdapter<_$_Session> {
   @override
   final int typeId = 0;
 
   @override
-  _$SessionImpl read(BinaryReader reader) {
+  _$_Session read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$SessionImpl(
+    return _$_Session(
       id: fields[0] as String,
       events: (fields[1] as List).cast<SessionEvent>(),
       priority: fields[2] as SessionPriority,
@@ -29,7 +29,7 @@ class SessionImplAdapter extends TypeAdapter<_$SessionImpl> {
   }
 
   @override
-  void write(BinaryWriter writer, _$SessionImpl obj) {
+  void write(BinaryWriter writer, _$_Session obj) {
     writer
       ..writeByte(8)
       ..writeByte(0)
@@ -56,7 +56,7 @@ class SessionImplAdapter extends TypeAdapter<_$SessionImpl> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is SessionImplAdapter &&
+      other is SessionAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -65,8 +65,7 @@ class SessionImplAdapter extends TypeAdapter<_$SessionImpl> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SessionImpl _$$SessionImplFromJson(Map<String, dynamic> json) =>
-    _$SessionImpl(
+_$_Session _$$_SessionFromJson(Map<String, dynamic> json) => _$_Session(
       id: json['id'] as String,
       events: (json['events'] as List<dynamic>)
           .map((e) =>
@@ -85,7 +84,7 @@ _$SessionImpl _$$SessionImplFromJson(Map<String, dynamic> json) =>
       createdAtTimestamp: json['createdAtTimestamp'] as int,
     );
 
-Map<String, dynamic> _$$SessionImplToJson(_$SessionImpl instance) =>
+Map<String, dynamic> _$$_SessionToJson(_$_Session instance) =>
     <String, dynamic>{
       'id': instance.id,
       'events':

@@ -112,11 +112,11 @@ class _$EventPositionCopyWithImpl<$Res, $Val extends EventPosition>
 }
 
 /// @nodoc
-abstract class _$$EventPositionImplCopyWith<$Res>
+abstract class _$$_EventPositionCopyWith<$Res>
     implements $EventPositionCopyWith<$Res> {
-  factory _$$EventPositionImplCopyWith(
-          _$EventPositionImpl value, $Res Function(_$EventPositionImpl) then) =
-      __$$EventPositionImplCopyWithImpl<$Res>;
+  factory _$$_EventPositionCopyWith(
+          _$_EventPosition value, $Res Function(_$_EventPosition) then) =
+      __$$_EventPositionCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -130,11 +130,11 @@ abstract class _$$EventPositionImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$EventPositionImplCopyWithImpl<$Res>
-    extends _$EventPositionCopyWithImpl<$Res, _$EventPositionImpl>
-    implements _$$EventPositionImplCopyWith<$Res> {
-  __$$EventPositionImplCopyWithImpl(
-      _$EventPositionImpl _value, $Res Function(_$EventPositionImpl) _then)
+class __$$_EventPositionCopyWithImpl<$Res>
+    extends _$EventPositionCopyWithImpl<$Res, _$_EventPosition>
+    implements _$$_EventPositionCopyWith<$Res> {
+  __$$_EventPositionCopyWithImpl(
+      _$_EventPosition _value, $Res Function(_$_EventPosition) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -148,7 +148,7 @@ class __$$EventPositionImplCopyWithImpl<$Res>
     Object? yDeviation = null,
     Object? devicePixelRatio = null,
   }) {
-    return _then(_$EventPositionImpl(
+    return _then(_$_EventPosition(
       x: null == x
           ? _value.x
           : x // ignore: cast_nullable_to_non_nullable
@@ -184,8 +184,8 @@ class __$$EventPositionImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 2)
-class _$EventPositionImpl extends _EventPosition {
-  const _$EventPositionImpl(
+class _$_EventPosition extends _EventPosition {
+  const _$_EventPosition(
       {@HiveField(0, defaultValue: 0.0) this.x = 0.0,
       @HiveField(1, defaultValue: 0.0) this.y = 0.0,
       @HiveField(2, defaultValue: 0.0) this.capturedDeviceWidth = 0,
@@ -195,8 +195,8 @@ class _$EventPositionImpl extends _EventPosition {
       @HiveField(6, defaultValue: 0.0) this.devicePixelRatio = 0})
       : super._();
 
-  factory _$EventPositionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EventPositionImplFromJson(json);
+  factory _$_EventPosition.fromJson(Map<String, dynamic> json) =>
+      _$$_EventPositionFromJson(json);
 
   @override
   @JsonKey()
@@ -231,7 +231,7 @@ class _$EventPositionImpl extends _EventPosition {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EventPositionImpl &&
+            other is _$_EventPosition &&
             (identical(other.x, x) || other.x == x) &&
             (identical(other.y, y) || other.y == y) &&
             (identical(other.capturedDeviceWidth, capturedDeviceWidth) ||
@@ -254,12 +254,12 @@ class _$EventPositionImpl extends _EventPosition {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$EventPositionImplCopyWith<_$EventPositionImpl> get copyWith =>
-      __$$EventPositionImplCopyWithImpl<_$EventPositionImpl>(this, _$identity);
+  _$$_EventPositionCopyWith<_$_EventPosition> get copyWith =>
+      __$$_EventPositionCopyWithImpl<_$_EventPosition>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$EventPositionImplToJson(
+    return _$$_EventPositionToJson(
       this,
     );
   }
@@ -274,11 +274,11 @@ abstract class _EventPosition extends EventPosition {
           @HiveField(4, defaultValue: 0.0) final double xDeviation,
           @HiveField(5, defaultValue: 0.0) final double yDeviation,
           @HiveField(6, defaultValue: 0.0) final double devicePixelRatio}) =
-      _$EventPositionImpl;
+      _$_EventPosition;
   const _EventPosition._() : super._();
 
   factory _EventPosition.fromJson(Map<String, dynamic> json) =
-      _$EventPositionImpl.fromJson;
+      _$_EventPosition.fromJson;
 
   @override
   @HiveField(0, defaultValue: 0.0)
@@ -303,6 +303,6 @@ abstract class _EventPosition extends EventPosition {
   double get devicePixelRatio;
   @override
   @JsonKey(ignore: true)
-  _$$EventPositionImplCopyWith<_$EventPositionImpl> get copyWith =>
+  _$$_EventPositionCopyWith<_$_EventPosition> get copyWith =>
       throw _privateConstructorUsedError;
 }

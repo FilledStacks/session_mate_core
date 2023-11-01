@@ -6,17 +6,17 @@ part of 'request_event.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class RequestEventImplAdapter extends TypeAdapter<_$RequestEventImpl> {
+class RequestEventAdapter extends TypeAdapter<_$_RequestEvent> {
   @override
   final int typeId = 3;
 
   @override
-  _$RequestEventImpl read(BinaryReader reader) {
+  _$_RequestEvent read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$RequestEventImpl(
+    return _$_RequestEvent(
       uid: fields[0] as String,
       url: fields[1] as String,
       method: fields[2] as String,
@@ -24,13 +24,14 @@ class RequestEventImplAdapter extends TypeAdapter<_$RequestEventImpl> {
       body: fields[4] as Uint8List?,
       view: fields[5] as String?,
       order: fields[6] as int,
+      startedAt: fields[7] as int,
     );
   }
 
   @override
-  void write(BinaryWriter writer, _$RequestEventImpl obj) {
+  void write(BinaryWriter writer, _$_RequestEvent obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.uid)
       ..writeByte(1)
@@ -43,6 +44,8 @@ class RequestEventImplAdapter extends TypeAdapter<_$RequestEventImpl> {
       ..write(obj.view)
       ..writeByte(6)
       ..write(obj.order)
+      ..writeByte(7)
+      ..write(obj.startedAt)
       ..writeByte(3)
       ..write(obj.headers);
   }
@@ -53,7 +56,7 @@ class RequestEventImplAdapter extends TypeAdapter<_$RequestEventImpl> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is RequestEventImplAdapter &&
+      other is RequestEventAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -62,8 +65,8 @@ class RequestEventImplAdapter extends TypeAdapter<_$RequestEventImpl> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RequestEventImpl _$$RequestEventImplFromJson(Map<String, dynamic> json) =>
-    _$RequestEventImpl(
+_$_RequestEvent _$$_RequestEventFromJson(Map<String, dynamic> json) =>
+    _$_RequestEvent(
       uid: json['uid'] as String,
       url: json['url'] as String,
       method: json['method'] as String,
@@ -71,9 +74,10 @@ _$RequestEventImpl _$$RequestEventImplFromJson(Map<String, dynamic> json) =>
       body: const BodyBytesConverter().fromJson(json['body']),
       view: json['view'] as String?,
       order: json['order'] as int? ?? 0,
+      startedAt: json['startedAt'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$$RequestEventImplToJson(_$RequestEventImpl instance) =>
+Map<String, dynamic> _$$_RequestEventToJson(_$_RequestEvent instance) =>
     <String, dynamic>{
       'uid': instance.uid,
       'url': instance.url,
@@ -82,4 +86,5 @@ Map<String, dynamic> _$$RequestEventImplToJson(_$RequestEventImpl instance) =>
       'body': const BodyBytesConverter().toJson(instance.body),
       'view': instance.view,
       'order': instance.order,
+      'startedAt': instance.startedAt,
     };

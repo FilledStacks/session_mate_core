@@ -6,17 +6,17 @@ part of 'event_position.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class EventPositionImplAdapter extends TypeAdapter<_$EventPositionImpl> {
+class EventPositionAdapter extends TypeAdapter<_$_EventPosition> {
   @override
   final int typeId = 2;
 
   @override
-  _$EventPositionImpl read(BinaryReader reader) {
+  _$_EventPosition read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$EventPositionImpl(
+    return _$_EventPosition(
       x: fields[0] == null ? 0.0 : fields[0] as double,
       y: fields[1] == null ? 0.0 : fields[1] as double,
       capturedDeviceWidth: fields[2] == null ? 0.0 : fields[2] as double,
@@ -28,7 +28,7 @@ class EventPositionImplAdapter extends TypeAdapter<_$EventPositionImpl> {
   }
 
   @override
-  void write(BinaryWriter writer, _$EventPositionImpl obj) {
+  void write(BinaryWriter writer, _$_EventPosition obj) {
     writer
       ..writeByte(7)
       ..writeByte(0)
@@ -53,7 +53,7 @@ class EventPositionImplAdapter extends TypeAdapter<_$EventPositionImpl> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is EventPositionImplAdapter &&
+      other is EventPositionAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -62,8 +62,8 @@ class EventPositionImplAdapter extends TypeAdapter<_$EventPositionImpl> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$EventPositionImpl _$$EventPositionImplFromJson(Map<String, dynamic> json) =>
-    _$EventPositionImpl(
+_$_EventPosition _$$_EventPositionFromJson(Map<String, dynamic> json) =>
+    _$_EventPosition(
       x: (json['x'] as num?)?.toDouble() ?? 0.0,
       y: (json['y'] as num?)?.toDouble() ?? 0.0,
       capturedDeviceWidth:
@@ -75,7 +75,7 @@ _$EventPositionImpl _$$EventPositionImplFromJson(Map<String, dynamic> json) =>
       devicePixelRatio: (json['devicePixelRatio'] as num?)?.toDouble() ?? 0,
     );
 
-Map<String, dynamic> _$$EventPositionImplToJson(_$EventPositionImpl instance) =>
+Map<String, dynamic> _$$_EventPositionToJson(_$_EventPosition instance) =>
     <String, dynamic>{
       'x': instance.x,
       'y': instance.y,

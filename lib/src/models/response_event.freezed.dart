@@ -37,6 +37,8 @@ mixin _$ResponseEvent {
   String? get view => throw _privateConstructorUsedError;
   @HiveField(7)
   int get order => throw _privateConstructorUsedError;
+  @HiveField(8)
+  int get startedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -58,7 +60,8 @@ abstract class $ResponseEventCopyWith<$Res> {
       @HiveField(4) String? error,
       @HiveField(5) @BodyBytesConverter() Uint8List? body,
       @HiveField(6) String? view,
-      @HiveField(7) int order});
+      @HiveField(7) int order,
+      @HiveField(8) int startedAt});
 }
 
 /// @nodoc
@@ -82,6 +85,7 @@ class _$ResponseEventCopyWithImpl<$Res, $Val extends ResponseEvent>
     Object? body = freezed,
     Object? view = freezed,
     Object? order = null,
+    Object? startedAt = null,
   }) {
     return _then(_value.copyWith(
       uid: null == uid
@@ -116,16 +120,20 @@ class _$ResponseEventCopyWithImpl<$Res, $Val extends ResponseEvent>
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as int,
+      startedAt: null == startedAt
+          ? _value.startedAt
+          : startedAt // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$ResponseEventImplCopyWith<$Res>
+abstract class _$$_ResponseEventCopyWith<$Res>
     implements $ResponseEventCopyWith<$Res> {
-  factory _$$ResponseEventImplCopyWith(
-          _$ResponseEventImpl value, $Res Function(_$ResponseEventImpl) then) =
-      __$$ResponseEventImplCopyWithImpl<$Res>;
+  factory _$$_ResponseEventCopyWith(
+          _$_ResponseEvent value, $Res Function(_$_ResponseEvent) then) =
+      __$$_ResponseEventCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -136,15 +144,16 @@ abstract class _$$ResponseEventImplCopyWith<$Res>
       @HiveField(4) String? error,
       @HiveField(5) @BodyBytesConverter() Uint8List? body,
       @HiveField(6) String? view,
-      @HiveField(7) int order});
+      @HiveField(7) int order,
+      @HiveField(8) int startedAt});
 }
 
 /// @nodoc
-class __$$ResponseEventImplCopyWithImpl<$Res>
-    extends _$ResponseEventCopyWithImpl<$Res, _$ResponseEventImpl>
-    implements _$$ResponseEventImplCopyWith<$Res> {
-  __$$ResponseEventImplCopyWithImpl(
-      _$ResponseEventImpl _value, $Res Function(_$ResponseEventImpl) _then)
+class __$$_ResponseEventCopyWithImpl<$Res>
+    extends _$ResponseEventCopyWithImpl<$Res, _$_ResponseEvent>
+    implements _$$_ResponseEventCopyWith<$Res> {
+  __$$_ResponseEventCopyWithImpl(
+      _$_ResponseEvent _value, $Res Function(_$_ResponseEvent) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -158,8 +167,9 @@ class __$$ResponseEventImplCopyWithImpl<$Res>
     Object? body = freezed,
     Object? view = freezed,
     Object? order = null,
+    Object? startedAt = null,
   }) {
-    return _then(_$ResponseEventImpl(
+    return _then(_$_ResponseEvent(
       uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -192,6 +202,10 @@ class __$$ResponseEventImplCopyWithImpl<$Res>
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as int,
+      startedAt: null == startedAt
+          ? _value.startedAt
+          : startedAt // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -199,8 +213,8 @@ class __$$ResponseEventImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 4)
-class _$ResponseEventImpl extends _ResponseEvent {
-  _$ResponseEventImpl(
+class _$_ResponseEvent extends _ResponseEvent {
+  _$_ResponseEvent(
       {@HiveField(0) required this.uid,
       @HiveField(1) required this.timeMs,
       @HiveField(2) required this.code,
@@ -208,12 +222,13 @@ class _$ResponseEventImpl extends _ResponseEvent {
       @HiveField(4) this.error,
       @HiveField(5) @BodyBytesConverter() this.body,
       @HiveField(6) this.view,
-      @HiveField(7) this.order = 0})
+      @HiveField(7) this.order = 0,
+      @HiveField(8) this.startedAt = 0})
       : _headers = headers,
         super._();
 
-  factory _$ResponseEventImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ResponseEventImplFromJson(json);
+  factory _$_ResponseEvent.fromJson(Map<String, dynamic> json) =>
+      _$$_ResponseEventFromJson(json);
 
   @override
   @HiveField(0)
@@ -247,12 +262,16 @@ class _$ResponseEventImpl extends _ResponseEvent {
   @JsonKey()
   @HiveField(7)
   final int order;
+  @override
+  @JsonKey()
+  @HiveField(8)
+  final int startedAt;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ResponseEventImpl &&
+            other is _$_ResponseEvent &&
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.timeMs, timeMs) || other.timeMs == timeMs) &&
             (identical(other.code, code) || other.code == code) &&
@@ -260,7 +279,9 @@ class _$ResponseEventImpl extends _ResponseEvent {
             (identical(other.error, error) || other.error == error) &&
             const DeepCollectionEquality().equals(other.body, body) &&
             (identical(other.view, view) || other.view == view) &&
-            (identical(other.order, order) || other.order == order));
+            (identical(other.order, order) || other.order == order) &&
+            (identical(other.startedAt, startedAt) ||
+                other.startedAt == startedAt));
   }
 
   @JsonKey(ignore: true)
@@ -274,17 +295,18 @@ class _$ResponseEventImpl extends _ResponseEvent {
       error,
       const DeepCollectionEquality().hash(body),
       view,
-      order);
+      order,
+      startedAt);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ResponseEventImplCopyWith<_$ResponseEventImpl> get copyWith =>
-      __$$ResponseEventImplCopyWithImpl<_$ResponseEventImpl>(this, _$identity);
+  _$$_ResponseEventCopyWith<_$_ResponseEvent> get copyWith =>
+      __$$_ResponseEventCopyWithImpl<_$_ResponseEvent>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ResponseEventImplToJson(
+    return _$$_ResponseEventToJson(
       this,
     );
   }
@@ -299,11 +321,12 @@ abstract class _ResponseEvent extends ResponseEvent {
       @HiveField(4) final String? error,
       @HiveField(5) @BodyBytesConverter() final Uint8List? body,
       @HiveField(6) final String? view,
-      @HiveField(7) final int order}) = _$ResponseEventImpl;
+      @HiveField(7) final int order,
+      @HiveField(8) final int startedAt}) = _$_ResponseEvent;
   _ResponseEvent._() : super._();
 
   factory _ResponseEvent.fromJson(Map<String, dynamic> json) =
-      _$ResponseEventImpl.fromJson;
+      _$_ResponseEvent.fromJson;
 
   @override
   @HiveField(0)
@@ -331,7 +354,10 @@ abstract class _ResponseEvent extends ResponseEvent {
   @HiveField(7)
   int get order;
   @override
+  @HiveField(8)
+  int get startedAt;
+  @override
   @JsonKey(ignore: true)
-  _$$ResponseEventImplCopyWith<_$ResponseEventImpl> get copyWith =>
+  _$$_ResponseEventCopyWith<_$_ResponseEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
