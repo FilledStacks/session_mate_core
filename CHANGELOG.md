@@ -1,3 +1,7 @@
+## 0.3.3
+
+- Generates new model definitions
+
 ## 0.3.2
 
 - Remove `xml` and `xml2json` packages dependencies
