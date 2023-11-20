@@ -6,17 +6,17 @@ part of 'session_stats.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class SessionStatsAdapter extends TypeAdapter<_$_SessionStats> {
+class SessionStatsImplAdapter extends TypeAdapter<_$SessionStatsImpl> {
   @override
   final int typeId = 10;
 
   @override
-  _$_SessionStats read(BinaryReader reader) {
+  _$SessionStatsImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_SessionStats(
+    return _$SessionStatsImpl(
       occurrences: fields[0] as int,
       androidVersions: (fields[1] as Map).cast<String, int>(),
       iosVersions: (fields[2] as Map).cast<String, int>(),
@@ -26,7 +26,7 @@ class SessionStatsAdapter extends TypeAdapter<_$_SessionStats> {
   }
 
   @override
-  void write(BinaryWriter writer, _$_SessionStats obj) {
+  void write(BinaryWriter writer, _$SessionStatsImpl obj) {
     writer
       ..writeByte(5)
       ..writeByte(0)
@@ -47,7 +47,7 @@ class SessionStatsAdapter extends TypeAdapter<_$_SessionStats> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is SessionStatsAdapter &&
+      other is SessionStatsImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -56,8 +56,8 @@ class SessionStatsAdapter extends TypeAdapter<_$_SessionStats> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SessionStats _$$_SessionStatsFromJson(Map<String, dynamic> json) =>
-    _$_SessionStats(
+_$SessionStatsImpl _$$SessionStatsImplFromJson(Map<String, dynamic> json) =>
+    _$SessionStatsImpl(
       occurrences: json['occurrences'] as int,
       androidVersions: (json['androidVersions'] as Map<String, dynamic>?)?.map(
             (k, e) => MapEntry(k, e as int),
@@ -77,7 +77,7 @@ _$_SessionStats _$$_SessionStatsFromJson(Map<String, dynamic> json) =>
           const {},
     );
 
-Map<String, dynamic> _$$_SessionStatsToJson(_$_SessionStats instance) =>
+Map<String, dynamic> _$$SessionStatsImplToJson(_$SessionStatsImpl instance) =>
     <String, dynamic>{
       'occurrences': instance.occurrences,
       'androidVersions': instance.androidVersions,

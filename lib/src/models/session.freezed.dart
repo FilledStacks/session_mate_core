@@ -129,10 +129,10 @@ class _$SessionCopyWithImpl<$Res, $Val extends Session>
 }
 
 /// @nodoc
-abstract class _$$_SessionCopyWith<$Res> implements $SessionCopyWith<$Res> {
-  factory _$$_SessionCopyWith(
-          _$_Session value, $Res Function(_$_Session) then) =
-      __$$_SessionCopyWithImpl<$Res>;
+abstract class _$$SessionImplCopyWith<$Res> implements $SessionCopyWith<$Res> {
+  factory _$$SessionImplCopyWith(
+          _$SessionImpl value, $Res Function(_$SessionImpl) then) =
+      __$$SessionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -150,10 +150,11 @@ abstract class _$$_SessionCopyWith<$Res> implements $SessionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_SessionCopyWithImpl<$Res>
-    extends _$SessionCopyWithImpl<$Res, _$_Session>
-    implements _$$_SessionCopyWith<$Res> {
-  __$$_SessionCopyWithImpl(_$_Session _value, $Res Function(_$_Session) _then)
+class __$$SessionImplCopyWithImpl<$Res>
+    extends _$SessionCopyWithImpl<$Res, _$SessionImpl>
+    implements _$$SessionImplCopyWith<$Res> {
+  __$$SessionImplCopyWithImpl(
+      _$SessionImpl _value, $Res Function(_$SessionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -168,7 +169,7 @@ class __$$_SessionCopyWithImpl<$Res>
     Object? sessionStats = null,
     Object? createdAtTimestamp = null,
   }) {
-    return _then(_$_Session(
+    return _then(_$SessionImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -208,8 +209,8 @@ class __$$_SessionCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 0)
-class _$_Session extends _Session {
-  _$_Session(
+class _$SessionImpl extends _Session {
+  _$SessionImpl(
       {@HiveField(0) required this.id,
       @HiveField(1)
       @SessionEventConverter()
@@ -224,8 +225,8 @@ class _$_Session extends _Session {
         _views = views,
         super._();
 
-  factory _$_Session.fromJson(Map<String, dynamic> json) =>
-      _$$_SessionFromJson(json);
+  factory _$SessionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SessionImplFromJson(json);
 
   @override
   @HiveField(0)
@@ -276,7 +277,7 @@ class _$_Session extends _Session {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Session &&
+            other is _$SessionImpl &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._events, _events) &&
             (identical(other.priority, priority) ||
@@ -308,12 +309,12 @@ class _$_Session extends _Session {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SessionCopyWith<_$_Session> get copyWith =>
-      __$$_SessionCopyWithImpl<_$_Session>(this, _$identity);
+  _$$SessionImplCopyWith<_$SessionImpl> get copyWith =>
+      __$$SessionImplCopyWithImpl<_$SessionImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SessionToJson(
+    return _$$SessionImplToJson(
       this,
     );
   }
@@ -330,10 +331,10 @@ abstract class _Session extends Session {
       @HiveField(4) final String? exception,
       @HiveField(5) final String? stackTrace,
       @HiveField(6) required final SessionStats sessionStats,
-      @HiveField(7) required final int createdAtTimestamp}) = _$_Session;
+      @HiveField(7) required final int createdAtTimestamp}) = _$SessionImpl;
   _Session._() : super._();
 
-  factory _Session.fromJson(Map<String, dynamic> json) = _$_Session.fromJson;
+  factory _Session.fromJson(Map<String, dynamic> json) = _$SessionImpl.fromJson;
 
   @override
   @HiveField(0)
@@ -362,6 +363,6 @@ abstract class _Session extends Session {
   int get createdAtTimestamp;
   @override
   @JsonKey(ignore: true)
-  _$$_SessionCopyWith<_$_Session> get copyWith =>
+  _$$SessionImplCopyWith<_$SessionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

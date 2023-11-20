@@ -69,22 +69,22 @@ class _$PackageInstructionCopyWithImpl<$Res, $Val extends PackageInstruction>
 }
 
 /// @nodoc
-abstract class _$$_PackageInstructionCopyWith<$Res>
+abstract class _$$PackageInstructionImplCopyWith<$Res>
     implements $PackageInstructionCopyWith<$Res> {
-  factory _$$_PackageInstructionCopyWith(_$_PackageInstruction value,
-          $Res Function(_$_PackageInstruction) then) =
-      __$$_PackageInstructionCopyWithImpl<$Res>;
+  factory _$$PackageInstructionImplCopyWith(_$PackageInstructionImpl value,
+          $Res Function(_$PackageInstructionImpl) then) =
+      __$$PackageInstructionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@NullableToTimeStampConverter() String? id, dynamic data});
 }
 
 /// @nodoc
-class __$$_PackageInstructionCopyWithImpl<$Res>
-    extends _$PackageInstructionCopyWithImpl<$Res, _$_PackageInstruction>
-    implements _$$_PackageInstructionCopyWith<$Res> {
-  __$$_PackageInstructionCopyWithImpl(
-      _$_PackageInstruction _value, $Res Function(_$_PackageInstruction) _then)
+class __$$PackageInstructionImplCopyWithImpl<$Res>
+    extends _$PackageInstructionCopyWithImpl<$Res, _$PackageInstructionImpl>
+    implements _$$PackageInstructionImplCopyWith<$Res> {
+  __$$PackageInstructionImplCopyWithImpl(_$PackageInstructionImpl _value,
+      $Res Function(_$PackageInstructionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -93,7 +93,7 @@ class __$$_PackageInstructionCopyWithImpl<$Res>
     Object? id = freezed,
     Object? data = freezed,
   }) {
-    return _then(_$_PackageInstruction(
+    return _then(_$PackageInstructionImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -108,12 +108,12 @@ class __$$_PackageInstructionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PackageInstruction implements _PackageInstruction {
-  const _$_PackageInstruction(
+class _$PackageInstructionImpl implements _PackageInstruction {
+  const _$PackageInstructionImpl(
       {@NullableToTimeStampConverter() this.id, required this.data});
 
-  factory _$_PackageInstruction.fromJson(Map<String, dynamic> json) =>
-      _$$_PackageInstructionFromJson(json);
+  factory _$PackageInstructionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PackageInstructionImplFromJson(json);
 
   @override
   @NullableToTimeStampConverter()
@@ -125,7 +125,7 @@ class _$_PackageInstruction implements _PackageInstruction {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PackageInstruction &&
+            other is _$PackageInstructionImpl &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other.data, data));
   }
@@ -138,13 +138,13 @@ class _$_PackageInstruction implements _PackageInstruction {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PackageInstructionCopyWith<_$_PackageInstruction> get copyWith =>
-      __$$_PackageInstructionCopyWithImpl<_$_PackageInstruction>(
+  _$$PackageInstructionImplCopyWith<_$PackageInstructionImpl> get copyWith =>
+      __$$PackageInstructionImplCopyWithImpl<_$PackageInstructionImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PackageInstructionToJson(
+    return _$$PackageInstructionImplToJson(
       this,
     );
   }
@@ -153,10 +153,10 @@ class _$_PackageInstruction implements _PackageInstruction {
 abstract class _PackageInstruction implements PackageInstruction {
   const factory _PackageInstruction(
       {@NullableToTimeStampConverter() final String? id,
-      required final dynamic data}) = _$_PackageInstruction;
+      required final dynamic data}) = _$PackageInstructionImpl;
 
   factory _PackageInstruction.fromJson(Map<String, dynamic> json) =
-      _$_PackageInstruction.fromJson;
+      _$PackageInstructionImpl.fromJson;
 
   @override
   @NullableToTimeStampConverter()
@@ -165,6 +165,6 @@ abstract class _PackageInstruction implements PackageInstruction {
   dynamic get data;
   @override
   @JsonKey(ignore: true)
-  _$$_PackageInstructionCopyWith<_$_PackageInstruction> get copyWith =>
+  _$$PackageInstructionImplCopyWith<_$PackageInstructionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

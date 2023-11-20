@@ -110,11 +110,12 @@ class _$ScrollableDescriptionCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ScrollableDescriptionCopyWith<$Res>
+abstract class _$$ScrollableDescriptionImplCopyWith<$Res>
     implements $ScrollableDescriptionCopyWith<$Res> {
-  factory _$$_ScrollableDescriptionCopyWith(_$_ScrollableDescription value,
-          $Res Function(_$_ScrollableDescription) then) =
-      __$$_ScrollableDescriptionCopyWithImpl<$Res>;
+  factory _$$ScrollableDescriptionImplCopyWith(
+          _$ScrollableDescriptionImpl value,
+          $Res Function(_$ScrollableDescriptionImpl) then) =
+      __$$ScrollableDescriptionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -129,11 +130,12 @@ abstract class _$$_ScrollableDescriptionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ScrollableDescriptionCopyWithImpl<$Res>
-    extends _$ScrollableDescriptionCopyWithImpl<$Res, _$_ScrollableDescription>
-    implements _$$_ScrollableDescriptionCopyWith<$Res> {
-  __$$_ScrollableDescriptionCopyWithImpl(_$_ScrollableDescription _value,
-      $Res Function(_$_ScrollableDescription) _then)
+class __$$ScrollableDescriptionImplCopyWithImpl<$Res>
+    extends _$ScrollableDescriptionCopyWithImpl<$Res,
+        _$ScrollableDescriptionImpl>
+    implements _$$ScrollableDescriptionImplCopyWith<$Res> {
+  __$$ScrollableDescriptionImplCopyWithImpl(_$ScrollableDescriptionImpl _value,
+      $Res Function(_$ScrollableDescriptionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -145,7 +147,7 @@ class __$$_ScrollableDescriptionCopyWithImpl<$Res>
     Object? maxScrollExtentByPixels = null,
     Object? nested = null,
   }) {
-    return _then(_$_ScrollableDescription(
+    return _then(_$ScrollableDescriptionImpl(
       axis: null == axis
           ? _value.axis
           : axis // ignore: cast_nullable_to_non_nullable
@@ -173,16 +175,16 @@ class __$$_ScrollableDescriptionCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 11)
-class _$_ScrollableDescription implements _ScrollableDescription {
-  _$_ScrollableDescription(
+class _$ScrollableDescriptionImpl implements _ScrollableDescription {
+  _$ScrollableDescriptionImpl(
       {@HiveField(0) required this.axis,
       @HiveField(1) required this.rect,
       @HiveField(2) required this.scrollOffsetInPixels,
       @HiveField(3) required this.maxScrollExtentByPixels,
       @HiveField(4) this.nested = false});
 
-  factory _$_ScrollableDescription.fromJson(Map<String, dynamic> json) =>
-      _$$_ScrollableDescriptionFromJson(json);
+  factory _$ScrollableDescriptionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ScrollableDescriptionImplFromJson(json);
 
   @override
   @HiveField(0)
@@ -212,7 +214,7 @@ class _$_ScrollableDescription implements _ScrollableDescription {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ScrollableDescription &&
+            other is _$ScrollableDescriptionImpl &&
             (identical(other.axis, axis) || other.axis == axis) &&
             (identical(other.rect, rect) || other.rect == rect) &&
             (identical(other.scrollOffsetInPixels, scrollOffsetInPixels) ||
@@ -231,13 +233,13 @@ class _$_ScrollableDescription implements _ScrollableDescription {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ScrollableDescriptionCopyWith<_$_ScrollableDescription> get copyWith =>
-      __$$_ScrollableDescriptionCopyWithImpl<_$_ScrollableDescription>(
-          this, _$identity);
+  _$$ScrollableDescriptionImplCopyWith<_$ScrollableDescriptionImpl>
+      get copyWith => __$$ScrollableDescriptionImplCopyWithImpl<
+          _$ScrollableDescriptionImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ScrollableDescriptionToJson(
+    return _$$ScrollableDescriptionImplToJson(
       this,
     );
   }
@@ -249,10 +251,10 @@ abstract class _ScrollableDescription implements ScrollableDescription {
       @HiveField(1) required final ScrollableRect rect,
       @HiveField(2) required final double scrollOffsetInPixels,
       @HiveField(3) required final double maxScrollExtentByPixels,
-      @HiveField(4) final bool nested}) = _$_ScrollableDescription;
+      @HiveField(4) final bool nested}) = _$ScrollableDescriptionImpl;
 
   factory _ScrollableDescription.fromJson(Map<String, dynamic> json) =
-      _$_ScrollableDescription.fromJson;
+      _$ScrollableDescriptionImpl.fromJson;
 
   @override
   @HiveField(0)
@@ -273,8 +275,8 @@ abstract class _ScrollableDescription implements ScrollableDescription {
   bool get nested;
   @override
   @JsonKey(ignore: true)
-  _$$_ScrollableDescriptionCopyWith<_$_ScrollableDescription> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ScrollableDescriptionImplCopyWith<_$ScrollableDescriptionImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 ScrollableRect _$ScrollableRectFromJson(Map<String, dynamic> json) {
@@ -351,11 +353,11 @@ class _$ScrollableRectCopyWithImpl<$Res, $Val extends ScrollableRect>
 }
 
 /// @nodoc
-abstract class _$$_ScrollableRectCopyWith<$Res>
+abstract class _$$ScrollableRectImplCopyWith<$Res>
     implements $ScrollableRectCopyWith<$Res> {
-  factory _$$_ScrollableRectCopyWith(
-          _$_ScrollableRect value, $Res Function(_$_ScrollableRect) then) =
-      __$$_ScrollableRectCopyWithImpl<$Res>;
+  factory _$$ScrollableRectImplCopyWith(_$ScrollableRectImpl value,
+          $Res Function(_$ScrollableRectImpl) then) =
+      __$$ScrollableRectImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -366,11 +368,11 @@ abstract class _$$_ScrollableRectCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ScrollableRectCopyWithImpl<$Res>
-    extends _$ScrollableRectCopyWithImpl<$Res, _$_ScrollableRect>
-    implements _$$_ScrollableRectCopyWith<$Res> {
-  __$$_ScrollableRectCopyWithImpl(
-      _$_ScrollableRect _value, $Res Function(_$_ScrollableRect) _then)
+class __$$ScrollableRectImplCopyWithImpl<$Res>
+    extends _$ScrollableRectCopyWithImpl<$Res, _$ScrollableRectImpl>
+    implements _$$ScrollableRectImplCopyWith<$Res> {
+  __$$ScrollableRectImplCopyWithImpl(
+      _$ScrollableRectImpl _value, $Res Function(_$ScrollableRectImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -381,7 +383,7 @@ class __$$_ScrollableRectCopyWithImpl<$Res>
     Object? width = null,
     Object? height = null,
   }) {
-    return _then(_$_ScrollableRect(
+    return _then(_$ScrollableRectImpl(
       null == left
           ? _value.left
           : left // ignore: cast_nullable_to_non_nullable
@@ -405,12 +407,12 @@ class __$$_ScrollableRectCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 13)
-class _$_ScrollableRect implements _ScrollableRect {
-  _$_ScrollableRect(@HiveField(0) this.left, @HiveField(1) this.top,
+class _$ScrollableRectImpl implements _ScrollableRect {
+  _$ScrollableRectImpl(@HiveField(0) this.left, @HiveField(1) this.top,
       @HiveField(2) this.width, @HiveField(3) this.height);
 
-  factory _$_ScrollableRect.fromJson(Map<String, dynamic> json) =>
-      _$$_ScrollableRectFromJson(json);
+  factory _$ScrollableRectImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ScrollableRectImplFromJson(json);
 
   @override
   @HiveField(0)
@@ -434,7 +436,7 @@ class _$_ScrollableRect implements _ScrollableRect {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ScrollableRect &&
+            other is _$ScrollableRectImpl &&
             (identical(other.left, left) || other.left == left) &&
             (identical(other.top, top) || other.top == top) &&
             (identical(other.width, width) || other.width == width) &&
@@ -448,12 +450,13 @@ class _$_ScrollableRect implements _ScrollableRect {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ScrollableRectCopyWith<_$_ScrollableRect> get copyWith =>
-      __$$_ScrollableRectCopyWithImpl<_$_ScrollableRect>(this, _$identity);
+  _$$ScrollableRectImplCopyWith<_$ScrollableRectImpl> get copyWith =>
+      __$$ScrollableRectImplCopyWithImpl<_$ScrollableRectImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ScrollableRectToJson(
+    return _$$ScrollableRectImplToJson(
       this,
     );
   }
@@ -464,10 +467,10 @@ abstract class _ScrollableRect implements ScrollableRect {
       @HiveField(0) final double left,
       @HiveField(1) final double top,
       @HiveField(2) final double width,
-      @HiveField(3) final double height) = _$_ScrollableRect;
+      @HiveField(3) final double height) = _$ScrollableRectImpl;
 
   factory _ScrollableRect.fromJson(Map<String, dynamic> json) =
-      _$_ScrollableRect.fromJson;
+      _$ScrollableRectImpl.fromJson;
 
   @override
   @HiveField(0)
@@ -483,7 +486,7 @@ abstract class _ScrollableRect implements ScrollableRect {
   double get height;
   @override
   @JsonKey(ignore: true)
-  _$$_ScrollableRectCopyWith<_$_ScrollableRect> get copyWith =>
+  _$$ScrollableRectImplCopyWith<_$ScrollableRectImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -577,11 +580,11 @@ class _$ScrollMetricsCopyWithImpl<$Res, $Val extends ScrollMetrics>
 }
 
 /// @nodoc
-abstract class _$$_ScrollMetricsCopyWith<$Res>
+abstract class _$$ScrollMetricsImplCopyWith<$Res>
     implements $ScrollMetricsCopyWith<$Res> {
-  factory _$$_ScrollMetricsCopyWith(
-          _$_ScrollMetrics value, $Res Function(_$_ScrollMetrics) then) =
-      __$$_ScrollMetricsCopyWithImpl<$Res>;
+  factory _$$ScrollMetricsImplCopyWith(
+          _$ScrollMetricsImpl value, $Res Function(_$ScrollMetricsImpl) then) =
+      __$$ScrollMetricsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -594,11 +597,11 @@ abstract class _$$_ScrollMetricsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ScrollMetricsCopyWithImpl<$Res>
-    extends _$ScrollMetricsCopyWithImpl<$Res, _$_ScrollMetrics>
-    implements _$$_ScrollMetricsCopyWith<$Res> {
-  __$$_ScrollMetricsCopyWithImpl(
-      _$_ScrollMetrics _value, $Res Function(_$_ScrollMetrics) _then)
+class __$$ScrollMetricsImplCopyWithImpl<$Res>
+    extends _$ScrollMetricsCopyWithImpl<$Res, _$ScrollMetricsImpl>
+    implements _$$ScrollMetricsImplCopyWith<$Res> {
+  __$$ScrollMetricsImplCopyWithImpl(
+      _$ScrollMetricsImpl _value, $Res Function(_$ScrollMetricsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -611,7 +614,7 @@ class __$$_ScrollMetricsCopyWithImpl<$Res>
     Object? scrollDirection = null,
     Object? devicePixelRatio = null,
   }) {
-    return _then(_$_ScrollMetrics(
+    return _then(_$ScrollMetricsImpl(
       minScrollExtent: null == minScrollExtent
           ? _value.minScrollExtent
           : minScrollExtent // ignore: cast_nullable_to_non_nullable
@@ -643,8 +646,8 @@ class __$$_ScrollMetricsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 14)
-class _$_ScrollMetrics extends _ScrollMetrics {
-  _$_ScrollMetrics(
+class _$ScrollMetricsImpl extends _ScrollMetrics {
+  _$ScrollMetricsImpl(
       {@HiveField(0) required this.minScrollExtent,
       @HiveField(1) required this.maxScrollExtent,
       @HiveField(2) required this.pixels,
@@ -653,8 +656,8 @@ class _$_ScrollMetrics extends _ScrollMetrics {
       @HiveField(5) required this.devicePixelRatio})
       : super._();
 
-  factory _$_ScrollMetrics.fromJson(Map<String, dynamic> json) =>
-      _$$_ScrollMetricsFromJson(json);
+  factory _$ScrollMetricsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ScrollMetricsImplFromJson(json);
 
   @override
   @HiveField(0)
@@ -684,7 +687,7 @@ class _$_ScrollMetrics extends _ScrollMetrics {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ScrollMetrics &&
+            other is _$ScrollMetricsImpl &&
             (identical(other.minScrollExtent, minScrollExtent) ||
                 other.minScrollExtent == minScrollExtent) &&
             (identical(other.maxScrollExtent, maxScrollExtent) ||
@@ -706,12 +709,12 @@ class _$_ScrollMetrics extends _ScrollMetrics {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ScrollMetricsCopyWith<_$_ScrollMetrics> get copyWith =>
-      __$$_ScrollMetricsCopyWithImpl<_$_ScrollMetrics>(this, _$identity);
+  _$$ScrollMetricsImplCopyWith<_$ScrollMetricsImpl> get copyWith =>
+      __$$ScrollMetricsImplCopyWithImpl<_$ScrollMetricsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ScrollMetricsToJson(
+    return _$$ScrollMetricsImplToJson(
       this,
     );
   }
@@ -719,16 +722,17 @@ class _$_ScrollMetrics extends _ScrollMetrics {
 
 abstract class _ScrollMetrics extends ScrollMetrics {
   factory _ScrollMetrics(
-      {@HiveField(0) required final double minScrollExtent,
-      @HiveField(1) required final double maxScrollExtent,
-      @HiveField(2) required final double pixels,
-      @HiveField(3) required final double viewportDimension,
-      @HiveField(4) required final ScrollAxis scrollDirection,
-      @HiveField(5) required final double devicePixelRatio}) = _$_ScrollMetrics;
+          {@HiveField(0) required final double minScrollExtent,
+          @HiveField(1) required final double maxScrollExtent,
+          @HiveField(2) required final double pixels,
+          @HiveField(3) required final double viewportDimension,
+          @HiveField(4) required final ScrollAxis scrollDirection,
+          @HiveField(5) required final double devicePixelRatio}) =
+      _$ScrollMetricsImpl;
   _ScrollMetrics._() : super._();
 
   factory _ScrollMetrics.fromJson(Map<String, dynamic> json) =
-      _$_ScrollMetrics.fromJson;
+      _$ScrollMetricsImpl.fromJson;
 
   @override
   @HiveField(0)
@@ -750,6 +754,6 @@ abstract class _ScrollMetrics extends ScrollMetrics {
   double get devicePixelRatio;
   @override
   @JsonKey(ignore: true)
-  _$$_ScrollMetricsCopyWith<_$_ScrollMetrics> get copyWith =>
+  _$$ScrollMetricsImplCopyWith<_$ScrollMetricsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

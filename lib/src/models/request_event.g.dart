@@ -6,17 +6,17 @@ part of 'request_event.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class RequestEventAdapter extends TypeAdapter<_$_RequestEvent> {
+class RequestEventImplAdapter extends TypeAdapter<_$RequestEventImpl> {
   @override
   final int typeId = 3;
 
   @override
-  _$_RequestEvent read(BinaryReader reader) {
+  _$RequestEventImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_RequestEvent(
+    return _$RequestEventImpl(
       uid: fields[0] as String,
       url: fields[1] as String,
       method: fields[2] as String,
@@ -29,7 +29,7 @@ class RequestEventAdapter extends TypeAdapter<_$_RequestEvent> {
   }
 
   @override
-  void write(BinaryWriter writer, _$_RequestEvent obj) {
+  void write(BinaryWriter writer, _$RequestEventImpl obj) {
     writer
       ..writeByte(8)
       ..writeByte(0)
@@ -56,7 +56,7 @@ class RequestEventAdapter extends TypeAdapter<_$_RequestEvent> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is RequestEventAdapter &&
+      other is RequestEventImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -65,8 +65,8 @@ class RequestEventAdapter extends TypeAdapter<_$_RequestEvent> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_RequestEvent _$$_RequestEventFromJson(Map<String, dynamic> json) =>
-    _$_RequestEvent(
+_$RequestEventImpl _$$RequestEventImplFromJson(Map<String, dynamic> json) =>
+    _$RequestEventImpl(
       uid: json['uid'] as String,
       url: json['url'] as String,
       method: json['method'] as String,
@@ -77,7 +77,7 @@ _$_RequestEvent _$$_RequestEventFromJson(Map<String, dynamic> json) =>
       startedAt: json['startedAt'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$$_RequestEventToJson(_$_RequestEvent instance) =>
+Map<String, dynamic> _$$RequestEventImplToJson(_$RequestEventImpl instance) =>
     <String, dynamic>{
       'uid': instance.uid,
       'url': instance.url,

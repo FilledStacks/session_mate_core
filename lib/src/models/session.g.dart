@@ -6,17 +6,17 @@ part of 'session.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class SessionAdapter extends TypeAdapter<_$_Session> {
+class SessionImplAdapter extends TypeAdapter<_$SessionImpl> {
   @override
   final int typeId = 0;
 
   @override
-  _$_Session read(BinaryReader reader) {
+  _$SessionImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_Session(
+    return _$SessionImpl(
       id: fields[0] as String,
       events: (fields[1] as List).cast<SessionEvent>(),
       priority: fields[2] as SessionPriority,
@@ -29,7 +29,7 @@ class SessionAdapter extends TypeAdapter<_$_Session> {
   }
 
   @override
-  void write(BinaryWriter writer, _$_Session obj) {
+  void write(BinaryWriter writer, _$SessionImpl obj) {
     writer
       ..writeByte(8)
       ..writeByte(0)
@@ -56,7 +56,7 @@ class SessionAdapter extends TypeAdapter<_$_Session> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is SessionAdapter &&
+      other is SessionImplAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -65,7 +65,8 @@ class SessionAdapter extends TypeAdapter<_$_Session> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Session _$$_SessionFromJson(Map<String, dynamic> json) => _$_Session(
+_$SessionImpl _$$SessionImplFromJson(Map<String, dynamic> json) =>
+    _$SessionImpl(
       id: json['id'] as String,
       events: (json['events'] as List<dynamic>)
           .map((e) =>
@@ -84,7 +85,7 @@ _$_Session _$$_SessionFromJson(Map<String, dynamic> json) => _$_Session(
       createdAtTimestamp: json['createdAtTimestamp'] as int,
     );
 
-Map<String, dynamic> _$$_SessionToJson(_$_Session instance) =>
+Map<String, dynamic> _$$SessionImplToJson(_$SessionImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'events':

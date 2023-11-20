@@ -6,15 +6,15 @@ part of 'package_instruction.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PackageInstruction _$$_PackageInstructionFromJson(
+_$PackageInstructionImpl _$$PackageInstructionImplFromJson(
         Map<String, dynamic> json) =>
-    _$_PackageInstruction(
+    _$PackageInstructionImpl(
       id: const NullableToTimeStampConverter().fromJson(json['id'] as String?),
       data: json['data'],
     );
 
-Map<String, dynamic> _$$_PackageInstructionToJson(
-        _$_PackageInstruction instance) =>
+Map<String, dynamic> _$$PackageInstructionImplToJson(
+        _$PackageInstructionImpl instance) =>
     <String, dynamic>{
       'id': const NullableToTimeStampConverter().toJson(instance.id),
       'data': instance.data,
